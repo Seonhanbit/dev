@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Heading Example</title>
+</head>
+<body>
+	this is heading
+	<h1>This is heading 1</h1>
+	<h2>This is heading 1</h2>
+	<h3>This is heading 1</h3>
+	<h4>This is heading 1</h4>
+	<h5>This is heading 1</h5>
+	<h6>This is heading 1</h6>
+	<span>This is span1</span>
+	<span>This is span1</span>
+	<span>This is span1</span>
+	<span>This is span1</span>
+	
+</body>
+</html>

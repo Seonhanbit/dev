@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Anchor example</title>
+</head>
+<body>
+<a href="http://www.w3c.org">Visit World Wide Web Consortium</a>
+<a href="http://Localhost:8080/HtmlEx/03grouping/03.pre.html">pre</a>
+</body>
+</html>

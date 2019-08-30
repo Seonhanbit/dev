@@ -1,0 +1,28 @@
+package sw_expert2;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class s_8104_조만들기 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int T = sc.nextInt();
+		for(int tc = 1; tc<=T; tc++) {
+			int n = sc.nextInt();
+			int k = sc.nextInt();
+			int[][] arr = new int[k][n];
+			
+			int a=1;
+			for(int i=0; i<k; i++) {
+				arr[i][0] = a;
+				a++;
+			}
+			System.out.println(a);
+			
+			System.out.println("#"+tc+" " );
+		}
+	}
+
+}

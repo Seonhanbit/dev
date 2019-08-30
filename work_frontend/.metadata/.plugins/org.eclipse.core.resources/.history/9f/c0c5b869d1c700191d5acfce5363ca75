@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<title>Image</title>
+</head>
+<body>
+	<section>
+		<h1>쿵 푸 팬 더</h1>
+		<p>'평화의 계곡'에서 아버지의 국수 가게를 돕고 있는 팬더, 포. 아버지는 국수의 비법을</p>
+		<br>
+		<p>'평화의 계곡'에서 아버지의 국수 가게를 돕고 있는 팬더, 포. 아버지는 국수의 비법을</p>
+		<br> <img src="./img/movie_image3.jpg" alt="movie logo" />
+	</section>
+</body>
+</html>

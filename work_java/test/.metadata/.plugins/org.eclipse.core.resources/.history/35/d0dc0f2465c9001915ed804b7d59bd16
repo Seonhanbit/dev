@@ -1,0 +1,64 @@
+package test;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Scanner;
+
+//원자소멸시뮬
+public class Solution3 {
+	public class info implements Comparable<info>{
+		int x;
+		int y;
+		int dic;
+		int power;
+		public info(int a, int b, int c, int d) {
+			x = a;
+			y = b;
+			dic = c;
+			power = d;
+		}
+		@Override
+		public int compareTo(info o) {
+			if(this.x==o.x)
+				return this.y-o.y;
+			return this.x - o.x;
+		}
+	}
+	
+	public static void main(String args[]) throws Exception {
+		// System.setIn(new java.io.FileInputStream("res/sample_input.txt"));
+		Scanner sc = new Scanner(System.in);
+		int T = sc.nextInt();
+		int[] dx = { -1, 1, 0, 0 };
+		int[] dy = { 0, 0, -1, 1 };
+		for (int tc = 1; tc <= T; tc++) {
+			int n = sc.nextInt();
+			info[] arr = new info[n];
+			for (int i = 0; i < n; i++) {
+				arr[i] = new info(sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt());
+			}
+
+
+			for (int i = 0; i < n; i++) {
+				for (int j = 0; j < 4; j++) {
+					System.out.print(arr[i][j] + " ");
+				}
+				System.out.println();
+			}
+			int sum = 0;
+			while (true) {
+				boolean ck = false;
+				for (int i = 0; i < n; i++) {
+					
+				}
+				if(ck==false)
+					break;
+			}
+
+			int cnt = 0;
+
+			System.out.println("#" + tc + " " + cnt);
+		}
+	}
+}

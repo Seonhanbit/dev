@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<section>
+		<h1>SSAFY 극장</h1>
+		<ul>
+			<li>영화</li>
+			<li>극장</li>
+			<li>예매</li>
+			<li>이벤트</li>
+			<li>상영영화소개.RSS</li>
+		</ul>
+	</section>
+	<section>
+		<h3>무공해 힐링 시네마</h3>
+		<h4>무공해 힐링 시네마는 새로운 개념의 영화장르의 한가지를 말하는 것입니다. 지친 영혼을 위한
+		휴식을 주는 영화나, 마음을 정화시키고 치유하는 힘을 가진 영화들 ... .</h4>
+	</section>
+</body>
+</html>

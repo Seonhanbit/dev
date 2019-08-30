@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href ="mycss.css" rel="styleheet" type="text/css">
+
+<title>CSS Define Example</title>
+<style type="text/css">
+p{
+	font-size: 20px;
+	color: red;
+}
+#aaa{
+	color: blue;
+}
+#bbb{
+	color: aqua;
+}
+.ccc{
+	color: red;
+}
+#ccc{
+	color: purple;
+}
+
+</style>
+</head>
+<body>
+	<p id="aaa" class="ccc"id ="ccc">am I red or blue?</p>
+	<p class="ccc" id="bbb">am I red or blue?</p>
+	<p style="color: black; font-size: 30px;">am I black?</p>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

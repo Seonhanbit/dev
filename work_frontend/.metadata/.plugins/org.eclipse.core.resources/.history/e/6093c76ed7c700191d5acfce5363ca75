@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<section>
+		<h2 id="ul">Movies</h2>
+		<ul>
+			<li><a href="">현재상영작</a></li>
+			<li><a href="">상영예정작</a></li>
+			<li><a href="">영화뉴스</a></li>
+			<li><a href="">테마뉴스</a></li>
+			<li><a href="">맥스무비 예매순위</a></li>
+		</ul>
+	</section>
+	<section>
+		<h2>About</h2>
+		<p>서울 강남 역삼 멀티캠퍼스.</p>
+		<p>
+			<a href="">ssafy@ssafy.com</a>
+		</p>
+	</section>
+	<section>
+		<h2 id="ul">개인정보 취급 방침</h2>
+		<ul>
+			<li><a href="">개요</a></li>
+			<li><a href="">문의처</a></li>
+		</ul>
+	</section>
+	<section>
+		<h2 id="ul">공지사항</h2>
+		<ul>
+			<li><a href="">오시는 길</a></li>
+			<li><a href="">오류시 문의사항</a></li>
+		</ul>
+	</section>
+
+</body>
+</html>

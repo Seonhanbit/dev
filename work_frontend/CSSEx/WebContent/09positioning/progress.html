@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ProgressBar Example</title>
+
+<style type="text/css">
+.progress{
+    width:300px; height:20px;
+    border: 1px solid #000;
+    position:relative;
+    background:    #f00 url(./img/progress_bg.gif);
+    font: 12px gulim;
+}
+.progress_bar{
+    width:70%;
+    height:100%;
+    background:#0f0 url(./img/progress_bar.gif);
+    position:absolute;     left:0px; top:0px;
+    overflow: hidden;
+}
+.text{
+    display: inline-block;
+    text-align:center;
+    virtical-align:middle;
+    line-height:20px;
+}
+.progress_text{    width:100%; color:#000;}
+.progress_bar_text{    width:300px;    color: #fff; }
+</style>
+
+</head>
+<body>
+<div class="progress">
+    <span class="progress_text text">50%</span>
+    <div class="progress_bar">
+        <span class="progress_bar_text text">70%</span>
+    </div>
+</div>
+</body>
+</html>

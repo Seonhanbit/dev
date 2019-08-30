@@ -1,0 +1,15 @@
+package com.ssafy.chap02;
+
+public class DispatcherConsole {
+	int menu;
+	public DispatcherConsole() {}
+	private void go() {
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new DispatcherConsole().go();
+	}
+
+}
