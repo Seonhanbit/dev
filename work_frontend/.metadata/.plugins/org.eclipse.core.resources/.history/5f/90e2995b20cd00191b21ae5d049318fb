@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title> new document </title>
+<script type="text/javascript">
+
+function comFactory(cpuInfo,ramInfo,hddInfo){
+	this.cpu=cpuInfo;
+	this.ram=ramInfo;
+	this.hdd=hddInfo;
+
+	this.totInfo=function(){
+		document.write("제조업체:한국전자 <br />");
+		document.write("시스템종류:64비트 운영체제 <br />");
+	}
+}
+
+var speedCom=new comFactory("2.8GHZ","2.0GB","1TB");
+document.write(speedCom.cpu+"<br />");
+document.write(speedCom.ram+"<br />");
+
+speedCom.totInfo();
+
+</script>
+ </head>
+
+ <body>
+  
+ </body>
+</html>

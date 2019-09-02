@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <script type="text/javascript">
+  //<![CDATA[
+	var theText="web js hi ciy";
+	//document.write();
+	document.write(theText.bold()+"<br />");
+	document.write(theText.link("http://www.naver.com")+"<br />");
+	document.write(theText.length+"<br />");
+	document.write(theText.toLowerCase()+"<br />");
+	document.write(theText.toUpperCase()+"<br />");
+	document.write(theText.indexOf("i")+"<br />");
+	document.write(theText.lastIndexOf("i")+"<br />");
+	document.write(theText.charAt(5)+"<br />");
+	document.write(theText.substring(4,6)+"<br />");
+	document.write(theText.substr(10,3)+"<br />");
+	document.write(theText.replace("web","bye")+"<br />");
+	document.write(theText.slice(7,9)+"<br />");
+	document.write(theText.concat(" good")+"<br />");
+	document.write(theText.split(" ")+"<br />");
+	
+	//======================
+		
+	document.write("<h3>문자치환</h3>");
+	var theText1="img2_out.jpg";
+	theText1=theText1.replace("out.jpg","over.jpg");
+	document.write(theText1+"<br />");
+
+	document.write("<h3>문자추출</h3>");
+	var theText2="images/img10.jpg";
+	theText2=theText2.split("/")[1];
+	theText2=theText2.substring(3);
+	theText2=parseInt(theText2);
+	document.write(theText2+"<br />");
+
+	document.write("<h3>마지막 문자 추출</h3>");
+	var theText3="hello javascript";
+	var lastIndex=theText3.length-1;
+	theText3=theText3.charAt(lastIndex);
+	document.write(theText3+"<br />")
+
+
+  //]]>
+  </script>
+  <title> new document </title>
+
+ </head>
+
+ <body>
+  
+ </body>
+</html>

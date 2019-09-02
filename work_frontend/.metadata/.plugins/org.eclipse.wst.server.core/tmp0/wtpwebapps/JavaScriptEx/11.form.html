@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+body{
+	margin-top: 100px;
+}
+</style>
+<script type="text/javascript">
+/*
+function check(ob){
+	//위치 찾는 방법
+	//1. name이용
+	//var idvalue=loginForm.user.value;
+	
+	// 2. id 이용
+	//var idvalue=document.getElementById("user").value;
+	
+	//3. 파라메터 이용	
+	var idvalue=ob.value;
+		
+	if(idvalue.length <8){
+		alert("아이디를 8글자 이상 입력하세요."+idvalue);
+		loginForm.user.focus();
+	}
+}
+*/
+
+function check(){ //로그인 버튼 클릭시 수행
+	var ob1=document.getElementById("user");
+	var ob2=document.getElementById("pass");
+	
+	if(ob1.value==""){
+		alert("아이디는 8글자 이상입니다.");
+		ob1.focus();
+		return;
+	}
+	if(ob2.value.length<8){
+		alert("패스워드는 8글자 이상입니다.");
+		ob2.focus();
+		return;
+	}
+	loginForm.submit();//form 데이터를 서버로 전송, next.html로
+	location.href="next.html?user="+ob1.value; //next.html로 이동
+}
+function winOpen(){
+	window.open("Member.html","회원가입",
+		"top=300, left=300,width=400,height=400,scrollbars=yes");
+}
+</script>
+</head>
+<body>
+	<h2>로그인해 주세요.</h2>
+	<p />
+	<form action="next.html" name="loginForm" method="post">
+		<table>
+			<tr>
+				<th id="myid">ID :</th>
+				<td><Input type="text" id='user'  name='user' /></td>
+			</tr>
+			<tr>
+				<th  class="myclass">PW :</th>
+				<td><Input type="password" id="pass" name="pass" /></td>
+			</tr>
+		</table>
+		<Input type="button" value="로그인" onclick="check()" />
+		<Input type="button" value="회원가입" onclick="location.href='Member.html'" />
+	</form>
+	<p>스타일 적용</p>
+<a href="#" onclick="winOpen()">팝업창 띄우기</a>
+</body>
+</html>

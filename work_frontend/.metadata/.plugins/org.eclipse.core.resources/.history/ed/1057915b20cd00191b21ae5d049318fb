@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="kor" xml:lang="ko">
+<head>
+<title>new document</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script type="text/javascript">
+	var num1 = 30;
+	var num2 = 20;
+	console.log(typeof(num1));
+	num1 >= num2 ? alert("참(true)일 경우") : alert("거짓(true)일 경우");
+	// 조건식이 참(true)이므로 "참(true)일 경우" 경고창을 띄웁니다.
+	//=================================
+	document.write("==========================<p/>");
+	var txt1 = "아름다운";
+	console.log(typeof(txt1));
+	var txt2 = "우리강산";
+	document.write(txt1 + txt2 + "<br />"); //문자결합=문자+문자
+
+	var txt3 = "은하철도";
+	var txt4 = 999;
+	document.write(txt3 + txt4 + "<br />"); //문자결합=문자+숫자
+
+	var num1 = 200;
+	var num2 = 300;
+	var txt5 = String(1000);
+	document.write(num1 + num2 + txt5 + "<br />"); //  문자결합=숫자+숫자+문자
+
+	var addText = "2002월드컵";
+	addText += " 대한민국"; //기존 문자데이터에 추가 결합 "2002월드컵 대한민국"
+	addText += " 짝짝~짝짝~!!"; //기존 문자데이터에 추가 결합 "2002월드컵 대한민국 짝짝~짝짝~"
+	document.write(addText); //출력: 기존 문자데이터에 추가 결합 "2002월드컵 대한민국"
+	
+	var arr = "hello,saffy,edu".split(',');
+	for(var i=0;i<arr.length;i++){
+		console.log(arr[i]);
+	}
+	
+</script>
+</head>
+
+<body>
+
+</body>
+</html>

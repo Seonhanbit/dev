@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>new document</title>
+<script type="text/javascript">
+	function theFnc() {
+		alert("javascript!!!!!!!!!!!!!!!");
+	}
+
+	function theFnc2() {
+		alert("javascript2!!!!");
+	}
+
+	window.onload = function() {
+		var myBtn = document.getElementById("btn1");
+		console.log(myBtn);
+		
+		myBtn.onclick = theFnc;
+		//myBtn.onclick = theFnc2;
+	}
+	
+/* 	function aa(){
+		var btn = document.getElementById('btn1');
+		var btns = document.getElementsByTagName('button'); // 배열
+		console.log(btn);
+	} */	
+	aa();
+	//window.document.getElementsByTagName(tagName)
+	//document.getElementById
+	//document.querySelector(selectors)
+</script>
+</head>
+<body >
+	<button id="btn1" onclick="theFnc()">버튼1</button>
+	<br/>
+	<button id="btn2" onclick="theFnc2()">버튼2</button>
+	function aa(){
+		var btn = document.getElementById('btn1');
+		var btns = document.getElementsByTagName('button'); // 배열
+		console.log(btn);
+	}	
+	aa();
+</body>
+</html>
+
+
+
+
+
+
+
+

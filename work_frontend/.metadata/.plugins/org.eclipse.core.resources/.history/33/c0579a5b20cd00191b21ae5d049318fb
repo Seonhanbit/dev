@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var Super = function() {
+		this.name = 'super ';
+	}
+
+	Super.prototype.getName = function() {
+		return this.name + 'from super';
+	}
+
+	var Sub = function() {
+	}
+
+	Sub.prototype = new Super;
+	Sub.prototype.constructor = Sub;
+
+	var sup = new Super();
+	var sub = new Sub();
+
+	console.log(sup.getName()); //super from super
+	console.log(sub.getName()); //super from super
+</script>
+</head>
+<body>
+
+</body>
+</html>

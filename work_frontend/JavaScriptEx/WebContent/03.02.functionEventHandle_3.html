@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function handle(evt){
+		console.log(evt); //evt-  event 정보 객체
+		//evt.target : 이벤트가 발생한 대상 
+		//evt.target.id : 이벤트가 발생한 대상 id 
+		alert("click me를 눌렀군요~~~~ ㅋㅋ"+evt.target.value);
+	}
+	function init(){
+		var ctx1 = document.getElementById("time1");
+		var ctx2 = document.getElementById("time2");
+		var ctx3 = document.getElementById("time3");
+		ctx1.onchange=handle;
+		ctx2.onchange=handle;
+		ctx3.onchange=handle;
+	}
+	window.onload = init; 
+</script>
+</head>
+<body>
+<form action="">
+	<label for="time">시간선택</label>
+	<input type="radio" name="time" value="08:30" id="time1"/>08:30
+	<input type="radio" name="time" value="11:00" id="time2"/>11:00
+	<input type="radio" name="time" value="14:20" id="time3"/>14:20
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

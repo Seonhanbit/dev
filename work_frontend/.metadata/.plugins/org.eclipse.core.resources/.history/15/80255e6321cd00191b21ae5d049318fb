@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>new document</title>
+<script type="text/javascript">
+	var num1 = 10;
+	var num2 = 20;
+	num1 += 5; //기존에 num1에 저장된 10 에 5를 더해서 num1에 저장합니다.
+	num1++;
+	document.write(num1 + "<br />"); //출력 15
+
+	num1 -= 5; //기존에 num1에 저장된 15 에 5를 빼서 num1에 저장합니다.
+	document.write(num1 + "<br />"); //출력 10
+
+	num1 *= 5; //기존에 num1에 저장된 10 에 5를 곱해서 num1에 저장합니다.
+	document.write(num1 + "<br />"); //출력 50
+
+	num1 /= 5; //기존에 num1에 저장된 50 에 5를 나누어 num1에 저장합니다.
+	document.write(num1 + "<br />"); //출력 10
+
+	num2 %= 3; //기존에 num2에 저장된 20에 3으로 나눈 나머지값을 num1에 저장합니다.
+	document.write(num2 + "<br />"); //출력 2
+	/*=======================*/
+	document.write("==========================<p/>");
+	var A = 10;
+	var B = 3;
+	var result;
+	result = A + B;
+	document.write(result + "<br />")
+	result = A - B;
+	document.write(result + "<br />")
+	result = A * B;
+	document.write(result + "<br />")
+	result = A / B;
+	document.write(result + "<br />")
+	result = A % B;
+	document.write(result + "<br />")
+	//=================================
+	document.write("==========================<p/>");
+	result = A > B; // A(10)가 B(20)보다 크다             결과 true
+	document.write(result + "<br />");
+	result = A <= B; // A(10)가 B(20)보다 작거나 같다     결과 false
+	document.write(result + "<br />");
+	result = A == B // A(10)가 B(20)와 같다               결과 false
+	document.write(result + "<br />");
+	result = A != B; // A(10)가 B(20)와 다르다             결과 true
+	document.write(result + "<br />");
+	
+	if(0 == ""){
+		document.write('0 == ""<br />');
+	}else{
+		document.write('0 != ""<br />');
+	}
+	if(0 === ""){
+		document.write('0 === ""<br />');
+	}else{
+		document.write('0 !== ""<br />');
+	}
+	
+	//===========================
+	document.write("==========================<p/>");
+
+	num1++; //num1의 10에서 1 더하여 저장
+	document.write(num1 + "<br />"); //출력값: 11
+	num2--; //num2의 20에서 1을 감하여 저장
+	document.write(num2 + "<br />"); //출력값: 19
+	
+</script>
+</head>
+
+<body>
+
+</body>
+</html>

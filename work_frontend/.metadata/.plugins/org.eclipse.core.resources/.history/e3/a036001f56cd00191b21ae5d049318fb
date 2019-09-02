@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>계산기</title>
+<style>
+#show {
+	text-align: right;
+}
+</style>
+<script type="text/javascript">
+	var text1 = "";
+	var text2 = "";
+	var op = "";
+	var result = "";
+/* 	function view(text) {
+		var show = document.getElementById('show');
+		show.value = show.value+text; 
+	}
+	function calculate() {
+
+	}
+	function showResult() {
+		result = text1 + op + text2;
+		document.getElementById('show').value = eval(result);
+	}
+	function clearAll() {
+		text1 = "";
+		text2 = "";
+		op = "";
+		result = "";
+		var display = document.getElementById('show').value = "";
+	} */
+</script>
+</head>
+<body>
+	<table>
+		<tr>
+			<td colspan="4"><Input type="text" id='show' name='user'
+				value="0.0" /></td>
+		</tr>
+		<tr>
+			<td><Input type="button" id='7' value="7" onclick="check()"
+				style="width: 30pt; height: 30pt" /></td>
+			<td><Input type="button" id='8' value="8" onclick="check()"
+				style="width: 30pt; height: 30pt" /></td>
+			<td><Input type="button" id='9' value="9" onclick="check()"
+				style="width: 30pt; height: 30pt" /></td>
+			<td><Input type="button" id='+' value="+" onclick="check()"
+				style="width: 30pt; height: 30pt" /></td>
+		</tr>
+		<tr>
+
+			<td><Input type="button" id='4' value="4" onclick="check()"
+				style="width: 30pt; height: 30pt" /></td>
+			<td><Input type="button" id='5' value="5" onclick="check()"
+				style="width: 30pt; height: 30pt" /></td>
+			<td><Input type="button" id='6' value="6" onclick="check()"
+				style="width: 30pt; height: 30pt" /></td>
+			<td><Input type="button" id='-' value="-" onclick="check()"
+				style="width: 30pt; height: 30pt" /></td>
+		</tr>
+		<tr>
+			<td><Input type="button" id='1' value="1" onclick="check()"
+				style="width: 30pt; height: 30pt" /></td>
+			<td><Input type="button" id='2' value="2" onclick="check()"
+				style="width: 30pt; height: 30pt" /></td>
+			<td><Input type="button" id='3' value="3" onclick="check()"
+				style="width: 30pt; height: 30pt" /></td>
+			<td><Input type="button" id='*' value="*" onclick="check()"
+				style="width: 30pt; height: 30pt" /></td>
+		</tr>
+		<tr>
+			<td><Input type="button" id='0' value="0" onclick="check()"
+				style="width: 30pt; height: 30pt" /></td>
+			<td><Input type="button" id='CE' value="CE" onclick="check()"
+				style="width: 30pt; height: 30pt" /></td>
+			<td><Input type="button" id='=' value="=" onclick="check()"
+				style="width: 30pt; height: 30pt" /></td>
+			<td><Input type="button" id='/' value="/" onclick="check()"
+				style="width: 30pt; height: 30pt" /></td>
+		</tr>
+	</table>
+</body>
+</html>

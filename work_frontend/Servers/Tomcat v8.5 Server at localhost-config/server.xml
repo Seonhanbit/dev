@@ -149,7 +149,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="HelloMyFristHtml" path="/HelloMyFristHtml" reloadable="true" source="org.eclipse.jst.jee.server:HelloMyFristHtml"/><Context docBase="HtmlEx" path="/HtmlEx" reloadable="true" source="org.eclipse.jst.jee.server:HtmlEx"/><Context docBase="ws_frontend_0826_선한빛" path="/ws_frontend_0826_선한빛" reloadable="true" source="org.eclipse.jst.jee.server:ws_frontend_0826_선한빛"/><Context docBase="CSSEx" path="/CSSEx" reloadable="true" source="org.eclipse.jst.jee.server:CSSEx"/></Host>
+      <Context docBase="HelloMyFristHtml" path="/HelloMyFristHtml" reloadable="true" source="org.eclipse.jst.jee.server:HelloMyFristHtml"/><Context docBase="HtmlEx" path="/HtmlEx" reloadable="true" source="org.eclipse.jst.jee.server:HtmlEx"/><Context docBase="ws_frontend_0826_선한빛" path="/ws_frontend_0826_선한빛" reloadable="true" source="org.eclipse.jst.jee.server:ws_frontend_0826_선한빛"/><Context docBase="CSSEx" path="/CSSEx" reloadable="true" source="org.eclipse.jst.jee.server:CSSEx"/><Context docBase="JavaScriptEx" path="/JavaScriptEx" reloadable="true" source="org.eclipse.jst.jee.server:JavaScriptEx"/><Context docBase="ws_frontend_0902_선한빛" path="/ws_frontend_0902_선한빛" reloadable="true" source="org.eclipse.jst.jee.server:ws_frontend_0902_선한빛"/></Host>
     </Engine>
   </Service>
 </Server>

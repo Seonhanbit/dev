@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script>
+function hello(){
+	var i = 10;
+	console.log
+	console.log(typeof(i));
+	var str = 'string';
+	var obj = new Object();
+	j = 20;
+	i = j + str; // “20string”
+	console.log(typeof(i));
+	if(obj){   // true
+		 console.log(obj);
+	}
+	
+	var sin= Math.sin("1.45");
+	var sum = 10 + true;  			//11
+	var done = sum > "10"; 			//true
+	var total = sum - "3";  		//8
+	console.log("sin:"+sin + "sum:"+ sum + "done:"+ done+"total:" + total);
+	var total = sum + "3";  		//113
+	console.log("total:"+ total);
+	if(0 == ""){
+		console.log("0 == \"\":"+ true);
+	}
+	
+	if(0 === ""){   //type check
+		console.log("0 === \"\":"+ true);
+	}else{
+		console.log("0 === \"\":"+ false);
+	}
+};
+hello();
+</script>
+</head>
+<body>
+
+</body>
+</html>

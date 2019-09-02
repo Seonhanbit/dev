@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+      var p;
+      function myOpen(){
+       
+       p=window.open('10.11.OpenCallee.html', 'child', 'width=300, height=200', true);
+       var w=(screen.width-300)/2;
+       var h=(screen.height-200)/2;
+       p.moveBy(w,h);
+      
+     }
+      function send(){
+    	  var msg=document.getElementById("msg").value;
+          p.document.getElementById("address").value=msg;
+      }
+      function closePopup(){
+    	  if(p){
+    		  p.close();
+    	  }
+      }
+     </script>
+</head>
+<body>
+전달 메세지 : <input type="text" id="msg" /><br/>
+<a href="javascript:myOpen();">팝업창 오픈</a>
+<a href="javascript:send()">데이터 전달</a>
+<a href="javascript:closePopup()">팝업창 닫기</a>
+<p/>
+<div id="result"></div>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var inter;
+	function sayHello() {
+		inter = window.setInterval(display, 100);
+	}
+	function display() {
+		var dd = document.getElementById("dd");
+		var darr = document.getElementsByTagName("div");
+		var qd = document.querySelector("div");
+		dd.innerHTML = "<h1>" + new Date() + "</h1>";
+	}
+	window.onload = function() {
+		var b = document.getElementById("btnstart");
+		//console.log(b);
+		b.addEventListener("click", sayHello);
+		document.getElementById('btnclear').addEventListener('click',
+				function() {
+					window.clearInterval(inter);
+				});
+		document.getElementById('btnloc').addEventListener('click', function() {
+			window.location.href = "http://www.naver.com";
+		});
+		document.getElementById('btnsubmit').addEventListener('click',
+				function() {
+					//var form = document.getElementById('idform');
+					//form.submit();
+					nameform.submit();
+				});
+	}
+	function go() {
+		location.href = "http://www.nate.com"
+	}
+</script>
+</head>
+<body>
+	<button id="btnstart">click me</button>
+	<button id="btnclear">stop</button>
+	<button id="btnloc">naver</button>
+	<a href="http://www.daum.net">Daum</a>
+	<form name="nameform" id="idform" action="#" method="get">
+		<input type="text" name="name"> 
+		<input type="password" name="pw"> 
+		<input onclick="location.href='http://www.naver.com'" type="button"	value="전송"> 
+		<input onclick="go()" type="button" value="전송">
+		<input type="button" id="btnsubmit" value="전송">
+	</form>
+	<div id="dd"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

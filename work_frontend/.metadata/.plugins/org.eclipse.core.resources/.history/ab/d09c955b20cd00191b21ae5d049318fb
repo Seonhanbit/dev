@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	window.onload = function() {
+		var btn1 = document.getElementById('btn1');
+		btn1.addEventListener('click',function(){
+			var dd = document.getElementById('dd');
+			
+			dd.innerHTML = "<h1>Hello DIV</h1>";
+			dd.setAttribute("style", "border: 1px solid #000");
+		});
+	}
+		
+</script>
+</head>
+<body>
+	<button id='btn1' value='버튼1'>버튼1</button>
+	<div id="dd"></div>
+	
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script>
+	function a(arg1) {
+		arg1();
+		var r = function() {
+			console.log("inner");
+		}
+		var rr = function(){
+			console.log("inner2");
+		}
+		return {
+			aa : r,
+			bb: rr
+		};
+	}
+	
+	var b = function() {
+		console.log("bbbbbb");
+	}
+
+	var res = a(b);
+	//res[0]();
+	//res[1]();
+	res.aa();
+	res.bb();
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

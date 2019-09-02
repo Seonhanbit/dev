@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>웹표준퍼블리셔</title>
+<style type="text/css">
+body,p,h1,h2,h3,h4,h5,h5,ul,ol,li,dl,dt,dd,table,caption,form,fieldset,legend
+	{
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	list-style-type: none;
+}
+
+img,fieldset {
+	border: 0;
+}
+
+.hdd {
+	font-size: 0;
+	width: 0;
+	height: 0;
+	line-height: 0;
+	position: absolute;
+	left: -9999px;
+}
+</style>
+<script type="text/javascript">
+	var name = new Array();
+	name[0] = "김부자";
+	name[1] = "정현철";
+	name[2] = "정주영";
+	name[3] = "김민경";
+	name[4] = "장영주";
+	document.write(name[3] + "<br />"); //3번 인덱스에 저장된 데이터를 출력
+
+	var days = new Array("일", "월", "화", "수", "목", "금", "토");
+	var today = new Date();
+	var yoil = days[today.getDay()]; //오늘 요일에 해당하는 값을 반환 일:0 ~ 토:6
+	document.write(yoil + "요일 <br />"); //오늘의 요일 반환
+
+	var money = [ 100, 100, 200, 50 ];
+	var theLen = money.length;
+	var total = 0;
+	for ( var i = 0; i < theLen; i++) {
+		total = total + money[i];
+	}
+	document.write(total);
+	//====================================
+	//1. reverse()-배열 데이터 역순 정렬
+	var theFood = [ "짜장면", "냉면", "갈비탕", "돈까스", "삼겹살" ];
+	theFood.reverse();
+	console.log(theFood)
+
+	//2. sort()-배열 데이터 이름또는숫자 정렬
+	var theSubway = [ "2", "9", "7", "4", "3" ];
+	theSubway.sort();
+	console.log(theSubway);
+
+	//3. concat()-배열들에 데이터를 결합
+	var Mountain1 = [ "남산", "도봉산", "관악산", "청계산", "북한산" ];
+	var Mountain2 = [ "설악산", "지리산", "한라산", "속리산" ];
+	var joinResult = Mountain1.concat(Mountain2);
+	console.log(joinResult);
+
+	//4. slice(시작인덱스,마지막인덱스)-원하는 데이터만 선택
+	var theName = [ "최준호", "이성은", "기오정", "김민경", "정예선" ];
+	var result = theName.slice(2, 4);
+	console.log(result);
+
+	//5. join("구분자")-구분자 기준으로 데이터를 합칩니다.
+	var theProduct = [ "냉장고", "컴퓨터", "선풍기", "밥솥", "핸드폰" ];
+	var joinResult = theProduct.join("-");
+	console.log(joinResult);
+	//======================================
+	var theSubway = [ "2호선", "9호선", "7호선", "4호선", "3호선" ];
+	var newLine1 = "1호선";
+	var newLine2 = "분당선";
+
+	theSubway.shift();
+	console.log(theSubway)
+	theSubway.unshift(newLine1);
+	console.log(theSubway)
+
+	theSubway.pop();
+	console.log(theSubway)
+	theSubway.push(newLine2);
+	console.log(theSubway)
+	
+</script>
+</head>
+
+<body>
+
+</body>
+</html>

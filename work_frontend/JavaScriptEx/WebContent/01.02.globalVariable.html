@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+ <head>
+ <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+ <title> new document </title>
+<script type="text/javascript">
+	 var i=10;
+	 let num=20;
+	 
+	 var i = 30;
+	 console.log(i);
+	 
+	 function scopeTest(){
+		 //let num = 50;
+		 var num = 100;
+		 console.log("local : "+num);
+		 num = 100;
+	 }
+	 scopeTest();
+	 console.log('global : '+ num)
+	 
+	 //scopeTest();
+	 //console.log(num);
+	 
+	 function theTest(){
+		var num=i+200;
+		alert(num);
+	 };
+	 
+	 var theTest2 = function(){
+		var num = i+300;
+		alert(num);
+	 };
+	 
+	 //console.log(theTest);
+	 //theTest();
+	 //theTest2();
+/*
+	function theFnc(){
+		document.write(num);
+	 }
+*/
+	 //theFnc();
+//]]>
+</script>
+
+ </head>
+
+ <body>
+  
+ </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<title>new document</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script type="text/javascript">
+	window.onload = function() {
+		var id = setInterval(display1, 100);
+		
+		window.addEventListener('click', function(evt) {
+			console.log(evt.target.tagName);
+			if (evt.target.tagName == "HTML") {
+				clearInterval(id);
+			}
+		});
+	}
+
+	function display1() {
+		var today = new Date();
+		document.getElementById('a').innerHTML = "<h1>" + today + "</h1>";
+	}
+	function display() {
+		document.write("<h1>현재날짜/시간 정보</h1>")
+		var today = new Date();
+
+		var nowMonth = today.getMonth() + 1; //현재 월  (0~11)
+		var nowDate = today.getDate(); //현재 일
+		var nowDay = today.getDay(); //현재 요일 (0:일요일~6:토요일)
+		var nowHours = today.getHours(); //현재 시간
+		var nowMinutes = today.getMinutes(); //현재 분
+		var nowSeconds = today.getSeconds(); //현재 초
+		var nowTime = today.getTime(); //1970년1월1일부터 밀리초 경과된 시간
+
+		document.write("월: " + nowMonth + "<br />");
+		document.write("일: " + nowDate + "<br />");
+		document.write("요일: " + nowDay + "<br />");
+		document.write("시: " + nowHours + "<br />");
+		document.write("분: " + nowMinutes + "<br />");
+		document.write("초: " + nowSeconds + "<br />");
+		document.write("경과시간: " + nowTime + "<br />");
+
+		document.write("<h1>날짜 바꾸기</h1>")
+		today.setMonth(11); //월을 12월로 지정
+		today.setDate(25); //일을 25일로 지정
+
+		document.write("월: " + nowMonth + "<br />");
+		document.write("일: " + nowDate + "<br />");
+
+		if (nowDay == 1) {
+			document.write('<img src="img/img1.jpg" alt="월요일" />');
+		} else if (nowDay == 2) {
+			document.write('<img src="img/img2.jpg" alt="화요일" />');
+		} else if (nowDay == 3) {
+			document.write('<img src="img/img3.jpg" alt="수요일" />');
+		} else if (nowDay == 4) {
+			document.write('<img src="img/img4.jpg" alt="목요일" />');
+		} else if (nowDay == 5) {
+			document.write('<img src="img/img5.jpg" alt="금요일" />');
+		} else if (nowDay == 6) {
+			document.write('<img src="img/img6.jpg" alt="토요일" />');
+		} else {
+			document.write('<img src="img/img7.jpg" alt="일요일" />');
+		}
+	}
+</script>
+
+</head>
+
+<body>
+	<div id=a></div>
+</body>
+</html>

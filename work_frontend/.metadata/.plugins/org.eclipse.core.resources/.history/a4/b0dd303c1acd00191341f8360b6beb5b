@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Hello JavaScript</title>
+</head>
+<body>
+	<h1>Hello JavaScript</h1>
+	<script type="text/javascript">
+		window.document.write("<h2>Hello My Frist JavaScript</h2>");
+		var a = 10;
+		var b = 20;
+		var sum = a+b;
+		console.log(a+b);
+		window.document.write(a+" + "+b+" = "+sum);
+	</script>
+</body>
+</html>

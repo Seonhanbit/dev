@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+var Person = function(name){
+    this.name = name;
+}
+var Apple = function(apple){
+    this.name=apple;
+}
+
+Person.prototype.getName = function(){
+	return this.name;
+}
+
+var p1 = new Person('lee');
+var app = new Apple("사과");
+console.log(p1.getName())
+console.log(p1.getName.call(app)); //apple 객체에 있는 this
+console.log(p1.getName.apply(app));
+</script>
+</head>
+<body>
+
+</body>
+</html>

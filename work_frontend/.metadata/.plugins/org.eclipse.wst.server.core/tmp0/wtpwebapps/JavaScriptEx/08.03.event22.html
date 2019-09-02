@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="kor" xml:lang="ko">
+<head>
+<title>new document</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script type="text/javascript">
+	//<![CDATA[
+	function btnEvent() {
+		alert("button");
+	}
+
+	function winEvent() {
+		alert("window");
+	}
+
+	function ddEvent() {
+		alert("dd");
+	}
+
+	window.onload = function() {
+		var myBtn1 = document.getElementById("btn1");
+		var d = document.getElementById("dd");
+		if (window.addEventListener) { //1. 표준 브라우저일 경우 실행
+			window.addEventListener("click", winEvent, true);
+			myBtn1.addEventListener("click", btnEvent, true);
+			d.addEventListener("click", ddEvent, true);
+
+		} else if (window.attachEvent) { //2. 비표준 브라우저(IE)일 경우 실행
+			window.attachEvent("onclick", theFnc);
+			window.attachEvent("onclick", theFnc2);
+		}
+
+	}
+	/*
+	if(window.addEventListener){   //1. 표준 브라우저일 경우 실행
+		window.addEventListener("load",theFnc,false); 
+	}else if(window.attachEvent){  //2. 비표준 브라우저(IE)일 경우 실행
+		 window.attachEvent("onload",theFnc)
+	}
+	 */
+	//]]>
+</script>
+
+</head>
+
+<body>
+	<div id="dd">
+		<button id="btn1">버튼1</button>
+		<button id="btn2">버튼2</button>
+	</div>
+</body>
+</html>

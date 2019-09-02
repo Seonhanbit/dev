@@ -1,3 +1,7 @@
 INDEX VERSION 1.131
 C:\ssafy\work_frontend\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\638204779.index
 \HtmlEx\src
+C:\ssafy\work_frontend\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3665370982.index
+\JavaScriptEx\src
+C:\ssafy\work_frontend\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2073371947.index
+\JavaScriptEx\src

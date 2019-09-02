@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>new document</title>
+<script type="text/javascript">
+	var myAge = 25;
+	if (myAge >= 20) { //myAge에 저장된 값이 25이므로 20보다 크므로 조건 만족함.
+		document.write("당신은 성인입니다<br/>"); // 출력값: “당신은 성인입니다.”
+	}
+	/*=======================*/
+	document.write("==========================<p/>");
+	if (myAge >= 20 && myAge < 30) { //20세이상이고 30세미만 조건을 만족하면 실행
+		document.write("통과");
+	} else { //조건을 만족하지 않을때 실행
+		document.write("비통과");
+	}
+	var num = 75;
+	if (num >= 90) {
+		document.write("A학점");
+	} else if (num >= 80) {
+		document.write("B학점");
+	} else if (num >= 70) {
+		document.write("C학점");
+	} else if (num >= 60) {
+		document.write("D학점");
+	} else {
+		document.write("F학점");
+	}
+	document.write("<br/>");
+	/*=======================*/
+	document.write("==========================<p/>");
+	var myArea = prompt("지역을 입력하세요", "서울");
+	switch (myArea) {
+	case "서울": //myArea에 값이 “서울”인 경우
+		areaNum = "02";
+		break;
+	case "경기": //myArea에 값이 “경기”인 경우
+		areaNum = "031";
+		break;
+	case "부산": //myArea에 값이 “부산”인 경우
+		areaNum = "051";
+		break;
+	default: //myArea에 값이 “서울”인 경우
+		alert("등록되지 않은 지역입니다")
+	}
+	document.write(myArea + "지역번호는 " + areaNum + "<br/>");
+	/*=======================*/
+	document.write("==========================<p/>");
+	var i = 10;
+
+	while (i >= 1) {
+		if (i % 2 == 0)
+			document.write(i + "<br />");
+		i--;
+	}
+	/*=======================*/
+	document.write("==========================<p/>");
+	for (var k = 6; k >= 1; k--) {
+		document.write("<h"+k+">h" + k + " 재미있는 자바스크립트" + "</h"+k+">");
+	}
+	/*=======================*/
+	document.write("==========================<p/>");
+	var result;
+	var dan = 2;
+	document.write("<h1>" + dan + "단</h1>");
+	for (var k = 1; k <= 9; k++) {
+		result = k * dan;
+		document.write("2X" + k + "=" + result + " <br />");
+	}
+	/*=======================*/
+	document.write("==========================<p/>");
+	for (var k = 2; k <= 9; k++) {
+		document.write("<h1>" + k + "단</h1>");
+		for (var m = 1; m <= 9; m++) {
+			document.write(k + "X" + m + "=" + (k * m) + "<br />");
+		}
+	}
+	
+</script>
+</head>
+
+<body>
+
+</body>
+</html>
