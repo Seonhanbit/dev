@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head><title>jquery</title>
+<meta charset="utf-8">
+<style type="text/css">
+</style>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.1.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+		$(document).ready(function(){//$(function() 줄이기 가능
+		//1.id="list1"인 요소에 <li> 요소중  홀수 인덱스만 선택후 배경색상 적용
+		$("#list1 li:odd").css("background","yellow");
+		//2.id="list1"인 요소에 <li> 요소중   짝수 인덱스만 선택후 배경색상 적용
+		$("#list1 li:even").css("background","gray");
+		//3.id="list1"인 요소에 <li> 요소중   첫번째 <li>요소만 선택후 폰트색상 적용
+		$("#list1 li:first").css("color","red"); 
+		//4.id="list1"인 요소에 <li> 요소중  마지막번째 <li>요소만 선택후 폰트색상 적용
+		$("#list1 li:last").css("color","green");
+		//5.id="list1"인 요소에 <li> 요소중  두번째 <li>요소만 선택후 폰트스타일 기울임 적용
+		$("#list1 li").eq(1).css("font-style","italic");
+		//6.id="list1"인 요소에 <li> 요소중  3번째 이전요소만 선택후 2px 하늘색 점선 적용
+		$("#list1 li:lt(2)").css("border","dotted 2px aqua");
+		//7.id="list1"인 요소에 <li> 요소중  3번째 이후요소만 선택후 2ㄴpx 보라색 점선 적용
+		$("#list1 li:gt(2)").css("border","dotted 2px purple");
+
+
+		//8.	id="list2"인 요소에 <li> 요소중  2의 배수번째 요소만 선택(인덱스와 상관 없음)
+		//**중요**nth-child(2n) 짝수들
+		$("#list2 li:nth-child(2n)").css("background","orange");
+		//9.	 id="list2"인 요소에 <li> 요소중  내용이 "리스트11"이 포함된 <li>요소만 선택
+		$("#list2 li:contains('리스트11')").css("color","red");
+		//10. id="list2"인 요소에 <li> 요소중  태그 <span>이 포함된 <li>요소만 선택
+		$("#list2 li:has('span')").css("color","aqua");
+		//11. id="list2"인 요소에 <li> 요소중  class="theObj"인 <li>요소만 선택
+		$("#list2 li").filter(".theObj").css("font-size","20px");
+		//12. id="list2"인 요소에 <li> 요소중에 하위요소 <a>요소만 선택
+		$("#list2 li").find("a").css("background-color","red");
+
+
+		//13. class="theTitle"인 요소에 하위요소를 새요소로 바꿉니다.
+		//**외우기**
+		$(".theTitle").html("<a href='#'>요소 객체 조작</a>");
+		//14. class="obj1"인 요소에 텍스트를 새 텍스트로 바꿉니다.
+		$(".obj1").text("리스트_2");
+		//15. id="list3"인 요소에 마지막 위치에 새요소를 추가합니다.
+		$("#list3").append("<li>list_6</li>");
+		//16. id="list3"인 요소에 첫 위치에 새요소를 추가합니다.
+		$("#list3").prepend("<li>list_1</li>");
+		//17. id="list3"인 5번째 li요소 이전에 새요소를 추가합니다.
+		$("<li>insertBefore</li>").insertBefore($("#list3 li").eq(4));
+		//18. id="list3"인 6번째 li요소 이후에 새요소를 추가합니다.
+		$("<li>insertAfter</li>").insertAfter($("#list3 li").eq(5));
+
+		//19. class="obj1"인 요소를 복제후에 id="list3"인요소 마지막 위치에 추가
+		$(".obj1").clone().appendTo("#list3");
+		//20. id="list3"인 요소에 하위 <li>요소중 첫번째 요소 삭제
+		$("#list3 li").eq(0).remove();
+		//21. id="list3"인 요소에 하위 <li>요소중 첫번째 요소에 클래스 값을 반환 합니다.
+		//클래스 속성을 가져오세요
+		$("#list3 li").eq(0).attr("class");
+		//22. id="list3"인 요소에 하위 <li>요소중 첫번째 요소에 클래스 값을 새 데이터로 바꿉니다.
+		//클래스 속성으로 "obj2"을 주세요 
+		//21,22 이름은 같지만 역할은 조금 다름
+		$("#list3 li").eq(0).attr("class","obj2");
+		$(".obj2").css("background-color","yellow");
+		//23. id="list3"인 요소에 하위 <li>요소중 첫번째 요소에 클래스 값을 추가합니다.
+		$("#list3 li").eq(0).addClass("obj3");
+		$(".obj3").css("color","red");
+});
+//]]>
+</script>
+</head>
+<body>
+	<div id="wrap">
+		<h1>탐색 선택자  및 html조작</h1>
+		<h2>탐색 선택자</h2>
+		<ul id="list1">
+			<li>리스트1</li>
+			<li>리스트2</li>
+			<li>리스트3</li>
+			<li>리스트4</li>
+			<li>리스트5</li>
+			<li>리스트6</li>
+			<li>리스트7</li>
+		</ul>
+		<ul id="list2">
+			<li>리스트8</li>
+			<li class="theObj">리스트9</li>
+			<li><span>리스트10</span></li>
+			<li>리스트11</li>
+			<li><a href="#">리스트12</a></li>
+			<li>리스트13</li>
+			<li>리스트14</li>
+		</ul>
+	
+		<h2 class="theTitle">html 조작</h2>
+		<ul  id="list3">
+			<li class="obj1">list_2</li>
+			<li>list_3</li>
+			<li>list_4</li>
+			<li>list_5</li>
+		</ul>
+	</div>
+</body>
+</html>

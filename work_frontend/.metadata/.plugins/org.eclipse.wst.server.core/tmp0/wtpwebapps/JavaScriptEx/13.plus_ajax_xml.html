@@ -9,6 +9,8 @@ function execute(){
 	var url = './jsp/plus_xml.jsp?op1='+op1+'&op2='+op2 ;
 	
     xhr = new XMLHttpRequest();
+    //비동기방식이라 callback 필요 
+    //상태가 바뀌면 해당 함수를 실행
 	xhr.onreadystatechange = function(){
 		if(xhr.readyState == 4 && xhr.status == 200){
 			var resDoc = xhr.responseXML;

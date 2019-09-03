@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>계산기</title>
+<script type="text/javascript">
+	var text1 = "";
+	var text2 = "";
+	var op = "";
+	var result = "";
+	function view(text) {
+		var textShow = document.getElementById('show');
+		textShow.value= textShow.value + text;
+	}
+	function showResult() {
+		var textShow = document.getElementById('show');
+		result = eval(textShow.value);
+		document.getElementById('show').value = result;
+	}
+	function clearAll() {
+		text1 = "";
+		text2 = "";
+		op = "";
+		result = "";
+		var display = document.getElementById('show').value = "";
+	}
+</script>
+</head>
+<body>
+	<table>
+		<tr>
+			<td colspan="4"><Input style="text-align: right" type="text" id='show' name='user'
+				placeholder="0.0" /></td>
+		</tr>
+		<tr>
+			<td><Input type="button" id='7' value="7" onclick="view('7')"
+				style="width: 30pt; height: 30pt" /></td>
+			<td><Input type="button" id='8' value="8" onclick="view('8')"
+				style="width: 30pt; height: 30pt" /></td>
+			<td><Input type="button" id='9' value="9" onclick="view('9')"
+				style="width: 30pt; height: 30pt" /></td>
+			<td><Input type="button" id='+' value="+" onclick="view('+')"
+				style="width: 30pt; height: 30pt" /></td>
+		</tr>
+		<tr>
+
+			<td><Input type="button" id='4' value="4" onclick="view('4')"
+				style="width: 30pt; height: 30pt" /></td>
+			<td><Input type="button" id='5' value="5" onclick="view('5')"
+				style="width: 30pt; height: 30pt" /></td>
+			<td><Input type="button" id='6' value="6" onclick="view('6')"
+				style="width: 30pt; height: 30pt" /></td>
+			<td><Input type="button" id='-' value="-" onclick="view('-')"
+				style="width: 30pt; height: 30pt" /></td>
+		</tr>
+		<tr>
+			<td><Input type="button" id='1' value="1" onclick="view('1')"
+				style="width: 30pt; height: 30pt" /></td>
+			<td><Input type="button" id='2' value="2" onclick="view('2')"
+				style="width: 30pt; height: 30pt" /></td>
+			<td><Input type="button" id='3' value="3" onclick="view('3')"
+				style="width: 30pt; height: 30pt" /></td>
+			<td><Input type="button" id='*' value="*" onclick="view('*')"
+				style="width: 30pt; height: 30pt" /></td>
+		</tr>
+		<tr>
+			<td><Input type="button" id='0' value="0" onclick="view('0')"
+				style="width: 30pt; height: 30pt" /></td>
+			<td><Input type="button" id='CE' value="CE" onclick="clearAll()"
+				style="width: 30pt; height: 30pt" /></td>
+			<td><Input type="button" id='=' value="=" onclick="showResult()"
+				style="width: 30pt; height: 30pt" /></td>
+			<td><Input type="button" id='/' value="/" onclick="view('/')"
+				style="width: 30pt; height: 30pt" /></td>
+		</tr>
+	</table>
+</body>
+</html>

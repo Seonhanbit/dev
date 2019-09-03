@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript"
+		src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script type="text/javascript">
+//window.onload = init; ////javaScript style
+
+var init =function(){
+	window.alert("Hello JQuery");
+}
+$(init); //jQuery style
+</script>
+</head>
+<body>
+	<h1>Hello jQuery</h1>
+	<script>
+		//window.alert("Hello JQuery");
+	</script>
+</body>
+</html>

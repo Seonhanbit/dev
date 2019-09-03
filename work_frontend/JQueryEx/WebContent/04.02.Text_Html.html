@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<script type="text/javascript" src="js/jquery-1.10.1.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('#btn1').on('click',function(){
+		var str = $('div').text();
+		//$('div').attr('name','ȫ');
+		console.log(str);
+		str = str+"!!!!!";
+		$('div').text(str);
+	})
+	$('#btn2').on('click',function(){
+		var str = $('div').html();
+		console.log(str);
+		str = "<h1>"+str+"</h1>";
+		$('div').html(str);
+	})
+});
+</script>
+</head>
+<body>
+<button id="btn1">Click Me</button>
+<button id="btn2">Click Me</button>
+<div>hello</div>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head><title>jquery</title>
+<meta charset="utf-8">
+<style type="text/css">
+* { margin:0; padding:0; } li{ list-style-type:none; }
+body { font:12px/1.5 "굴림",Gulim; margin:10px; }
+h2{margin-top:30px;}
+a{color:#333;}
+#textZone{width:700px;}
+
+#listWrap{
+	background:#cfcfcf;
+	width:110px;
+	padding:10px;
+}
+.list1{display:none;}
+</style>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.1.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function(){
+		//1. id="btn1" 클릭 했을때 id="textZone" 글자 색상을 파란색으로 변경
+		
+		//javaScript code
+		/* var btn = document.getElementById("btn1");
+		btn.addEventListener("click", function(){
+			var aa = document.getElementById("textZone");
+			aa.setAttribute("style", "color:blue")
+			
+		}, false); */
+		
+		$("#btn1").click(function(){
+			$("#textZone").css("color","blue")
+		});
+		//2. id="btn2"에 마우스 오버 했을때 id="textZone" 배경 색상을 노란색으로 변경
+		$("#btn2").mouseover(function(){
+			$("#textZone").css("background-color","yellow")
+		});
+		//3. id="btn2"에 포커스가 생겼을때 id="textZone" 배경 색상을 노란색으로 변경
+		$("#btn2").focus(function(){
+			$("#textZone").css("background-color","yellow")
+		});
+		/*4. id="btn3"에 마우스오버 또는 포커스 오버 했을때 id="textZone"에
+		글자 색상을 초록색으로 변경하고 글자 두께를 두껍게 변경*/
+		$("#btn3").on("mouseover focus", function(){
+			$(this) //this는 "#btn3"
+			$("#textZone").css("color","green")
+			.css("font-weight","bold");
+		});
+
+
+		//5. id="listWrap"에 마우스가 올라가 있으면 class="list1" 을 블록요소 변경합니다.
+		$("#listWrap").on('mouseenter',function(){
+			$(".list1").css("display","block");
+		})
+		//6. id="listWrap"에서 마우스가 벗어나면 class="list1" 을 블록요소 변경합니다.
+		$("#listWrap").mouseleave(function(){
+			$(".list1").css("display","none");
+		})
+
+		//7. id="btn4"요소를 클릭할때마다 함수1, 함수2, 함수3, 함수4 순으로  실행합니다.
+		$("#btn4").toggle(function(){
+			$(this).next().css("background-color","red"); //함수1
+		}, function(){
+			$(this).next().css("background-color","orange");  //함수2
+		}, function(){
+			$(this).next().css("background-color","yellow"); //함수3
+		}, function(){
+			$(this).next().css("background-color","white");  //함수4
+		})
+
+		//8. class="hover"인 요소에 마우스를 올렸을땐 함수1을 벗어났을때에는 함수2를 실행 합니다.
+		$(".hover").hover(function(){
+			$(this).css("color","aqua"); //함수1
+		},function(){
+			$(this).css("color","red");		 //함수2
+		})
+});
+//]]>
+</script>
+</head>
+<body>
+<div id="wrap">
+  <h1>이벤트 연습</h1>
+  <p id="textZone">웹 브라우저에서 버튼을 클릭한다거나 mouse를 움직이거나 하는 모든 행위를 ‘이벤트’라고 합니다. 그리고 이벤트발생 시 함수의 실행문이 수행되도록 이벤트를 지정하는 것을 이벤트 핸들러라고 합니다.
+  </p>
+  <h2>click 메서드</h2>
+  <p><button id="btn1">click</button> </p>
+  <h2>mouseover 메서드</h2>
+  <p><button id="btn2">mouseover</button> </p>
+  <h2>bind 메서드</h2>
+  <p><button id="btn3">bind</button> </p>
+  <h2>mouseleave 메서드</h2>
+  <div  id="listWrap">
+    <h3>관련 사이트</h3>
+    <ul class="list1">
+      <li><a href="#">list1</a></li>
+      <li><a href="#">list2</a></li>
+      <li><a href="#">list3</a></li>
+      <li><a href="#">list3</a></li>
+    </ul>
+  </div>
+  <h2>toggle 메서드</h2>
+  <button id="btn4">toggle</button>	
+  <p>누를 때마다 실행 함수를 차례대로 번갈아 가면서 실행합니다. <br />위의 toggle 버튼을 계속 클릭해 보세요!!
+  </p>
+  <h2>hover 메서드</h2>
+  <h3><a href="#" class="hover">hover</a></h3>
+</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-1.10.1.js"></script>
+<script type="text/javascript">
+var i = 0;
+$(function(){
+	$('button').on('click', function(evt){
+		$('<button class="new">New Button'+ i++ +'</button>').appendTo($("#d1"));
+		//새로운 버튼을 추가
+		
+	});
+	
+	//동적 바인딩 시험에 나옴 ************
+	$('#d1').on('click', "button.new", function(evt){
+		console.log(evt.target);
+		$(this).remove();
+	});
+	
+});
+</script>
+</head>
+<body>
+<button>Create Button</button>
+<div id="d1"></div>
+<hr/>
+</body>
+</html>

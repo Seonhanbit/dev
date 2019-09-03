@@ -1,0 +1,41 @@
+<!-- 10.ajaxJson.html -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-1.10.1.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#call").click(send);
+	});
+	function send() {
+		$.ajax(
+			{
+				type : "get",
+				url : "./jsp/resultXml.jsp",
+				dataType : "xml",
+				success : resXml,
+				error : eXml
+			}
+		);
+	}
+	function eXml(s) {
+		console.log(s);
+	}
+	function resXml(data) {
+		//$(data).find('friend')
+		
+		$("friend",data).each(function() {
+			var n = $("name", this).text();
+			var a = $("addr", this).text();
+			$("#content").append(n + ":" + a + "<br/>");
+		});
+	}
+</script>
+</head>
+<body>
+	<button id="call">Server Call</button>
+	<div id="content"></div>
+</body>
+</html>

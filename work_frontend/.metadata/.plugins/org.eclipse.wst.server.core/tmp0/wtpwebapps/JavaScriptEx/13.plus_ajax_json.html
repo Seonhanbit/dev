@@ -13,8 +13,8 @@
 			if (xhr.readyState == 4 && xhr.status == 200) {
 				var json = xhr.responseText;
 				//var res = eval('('+ json +')');
-				var res = JSON.parse(json);
-				//var str = JSON.stringify(value)
+				var res = JSON.parse(json); //문자열을 객체로 바꿔줌 
+				//var str = JSON.stringify(value) // json 객체를 String 객체로 변환
 				document.getElementById('result').value = res.result;
 			}
 		}

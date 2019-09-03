@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jquery</title>
+<meta charset="utf-8">
+<style type="text/css">
+  body {font:12px/1.5 "굴림",Gulim; margin:10px;}
+</style>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.js"></script>
+<script type="text/javascript">
+
+$(function(){
+	//document.querySelector('*').setAttribute('style',"font-size:13px;");
+	
+	$("*").css("font-size","13px");
+	$("h1").css("color","red");
+	$("#firstTitle").css("color","green");
+	$(".nextTitle").css("color","blue");
+	$(".obj3>li").css("font-weight","bold");
+	$(".obj3").children(".theObj1").css("color","purple");
+
+	$(".obj5").parent().css("border","dashed 2px #f00");
+	$(".obj5").prev().css("text-align","center");
+
+	$("#wrap h3").css("font-size","20px").css("background-color","yellow");
+	
+	$(".obj4").next().css("color","orange");
+	$(".obj6").siblings("li").css("text-align","center");
+
+	$(":text").css({"background-color":"#ccc", "border":"solid 1px #000", "color":"green"});
+});
+
+</script>
+</head>
+
+<body>
+<div id="wrap">
+  <h1>h1제이쿼리</h1>
+  <h2 id="firstTitle">firstTitle 선택자</h2>
+  <h3 class="nextTitle">nextTitle 부모 요소 선택자</h3>
+  <div>
+    <p class="obj1">현재 id가 "obj1"인 요소를 기준으로, 부모 요소는 ‘div’요소입니다.</p>
+  </div>
+  <h3>자식 요소 선택자</h3>
+  <ul class="obj3">
+    <li>리스트1</li>
+    <li class="theObj1">리스트2</li>
+    <li>리스트3</li>
+  </ul>
+  <h3>형 요소 선택자</h3>
+  <ul>
+    <li>리스트4</li>
+    <li class="obj4">리스트5</li>
+    <li>리스트6</li>
+  </ul>		
+  <h3>동생 요소 선택자</h3>
+  <ul>
+    <li>리스트7</li>
+    <li class="obj5">리스트8</li>
+    <li>리스트9</li>
+  </ul>		
+  <h3>형제 요소들 선택자</h3>
+  <ul>
+    <li>리스트10</li>
+    <li class="obj6">리스트11</li>
+    <li>리스트12</li>
+  </ul>
+  <h3>입력 요소 선택자</h3>
+  <p><label for="user_name">이름</label> 
+    <input type="text" name="user_name" id="user_name" />
+  </p>
+</div>
+</body>
+</html>

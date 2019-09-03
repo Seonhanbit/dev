@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript">
+		window.alert("Hello JQuery");
+	</script>
+</head>
+<body>
+	<h1>Hello jQuery</h1>
+	<script>
+		//window.alert("Hello JQuery");
+	</script>
+</body>
+</html>

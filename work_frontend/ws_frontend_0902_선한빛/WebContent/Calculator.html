@@ -4,9 +4,6 @@
 <meta charset="UTF-8">
 <title>계산기</title>
 <script type="text/javascript">
-	var text1 = "";
-	var text2 = "";
-	var op = "";
 	var result = "";
 	function view(text) {
 		var textShow = document.getElementById('show');
@@ -18,9 +15,6 @@
 		document.getElementById('show').value = result;
 	}
 	function clearAll() {
-		text1 = "";
-		text2 = "";
-		op = "";
 		result = "";
 		var display = document.getElementById('show').value = "";
 	}
