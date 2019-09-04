@@ -1,0 +1,10 @@
+package ws_java_0819_선한빛;
+
+public class Book {
+	private String isbn;
+	private String title;
+	private String author;
+	private String publisher;
+	private int price;
+	private String description;
+}

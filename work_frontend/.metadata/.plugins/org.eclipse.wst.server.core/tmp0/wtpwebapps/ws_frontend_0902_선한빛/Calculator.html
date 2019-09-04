@@ -7,12 +7,13 @@
 	var result = "";
 	function view(text) {
 		var textShow = document.getElementById('show');
-		textShow.value= textShow.value + text;
+		textShow.value = textShow.value + text;
 	}
 	function showResult() {
 		var textShow = document.getElementById('show');
 		result = eval(textShow.value);
 		document.getElementById('show').value = result;
+		document.getElementById('결과').innerText = textShow.value + "+" + result;
 	}
 	function clearAll() {
 		result = "";
@@ -23,8 +24,8 @@
 <body>
 	<table>
 		<tr>
-			<td colspan="4"><Input style="text-align: right" type="text" id='show' name='user'
-				placeholder="0.0" /></td>
+			<td colspan="4"><Input style="text-align: right" type="text"
+				id='show' name='user' placeholder="0.0" /></td>
 		</tr>
 		<tr>
 			<td><Input type="button" id='7' value="7" onclick="view('7')"
@@ -68,5 +69,7 @@
 				style="width: 30pt; height: 30pt" /></td>
 		</tr>
 	</table>
+	<h3>결과출력</h3>
+	<div id="결과"></div>
 </body>
 </html>

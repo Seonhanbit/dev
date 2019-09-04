@@ -1,0 +1,26 @@
+package com.ssafy.chap01;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.Statement;
+
+public class JDBCTest4 {
+
+	public static void main(String[] args) throws Exception {
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection con = DriverManager.getConnection(
+				"jdbc:mysql://127.0.0.1:3306/testdb?serverTimezone=UTC&useUniCode=yes&characterEncoding=UTF-8",
+				"ssafy", "ssafy");
+		String str = "insert into customer(name, address)values(?,?)";
+		PreparedStatement pst = con.prepareStatement(str);
+		pst.setString(1, "홍길동");
+		pst.setString(2, "광산구");
+	
+		boolean execute = pst.execute(str);
+		System.out.println("테이블 생성");
+		pst.close();
+		con.close();
+	}
+
+}

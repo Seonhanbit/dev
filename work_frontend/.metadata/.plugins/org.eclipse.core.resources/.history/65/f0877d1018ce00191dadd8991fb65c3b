@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Calculator</title>
+<style type="text/css">
+button {
+	width: 30pt;
+	height: 30pt;
+}
+</style>
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-1.8.1.js"></script>
+<script type="text/javascript">
+	$(function() {
+		var result = "";
+		var calc = "";
+		$(".num").on('click', function(evt) {
+			calc += $(this).text();
+			$("#show").val(calc);
+		});
+		$("#eq").on('click', function(evt) {
+			console.log(calc);
+			result = eval(calc);
+			console.log(result);
+			$("#show").val(result);
+			$("#결과").val(calc+"="+result);
+			calc = result;
+		});
+		$("#CE").on('click', function() {
+			result = '';
+			calc = '';
+			$("#show").val(result);
+		});
+	});
+</script>
+</head>
+<body>
+	<table>
+		<tr>
+			<td colspan="4"><Input style="text-align: right" type="text"
+				id='show' name='user' placeholder="0.0" /></td>
+		</tr>
+		<tr>
+			<td><button class='num' id='7' value="7">7</button></td>
+			<td><button class='num' id='8' value="8">8</button></td>
+			<td><button class='num' id='9' value="9">9</button></td>
+			<td><button class='num' id='+' value="+">+</button></td>
+		</tr>
+		<tr>
+
+			<td><button class='num' id='4' value="4">4</button></td>
+			<td><button class='num' id='5' value="5">5</button></td>
+			<td><button class='num' id='6' value="6">6</button></td>
+			<td><button class='num' id='-' value="-">-</button></td>
+		</tr>
+		<tr>
+			<td><button class='num' id='1' value="1">1</button></td>
+			<td><button class='num' id='2' value="2">2</button></td>
+			<td><button class='num' id='3' value="3">3</button></td>
+			<td><button class='num' id='*' value="*">*</button></td>
+		</tr>
+		<tr>
+			<td><button class='num' id='0' value="0">0</button></td>
+			<td><button id='CE' value="CE">CE</button></td>
+			<td><button id='eq'>=</button></td>
+			<td><button class='num' id='/' value="/">/</button></td>
+		</tr>
+	</table>
+	<h3>결과출력</h3>
+	<div id="결과"></div>
+</body>
+</html>
