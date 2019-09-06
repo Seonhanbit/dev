@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+  *{
+  margin: 0px;
+  padding: 0px;
+  }
+  
+  body{
+    margin: 0 auto;
+    padding: 22px 0;
+    width: 900px;
+    font: 13px/22px Helvetica, Areal, sens-serif; 
+    background: #f0f0f0;
+    
+  }
+  
+  h1{
+    font-size: 28px;
+    line-height: 44px;
+    padding: 22px 0;
+  }
+  
+  header > nav {
+    position: relative;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-image: url('img/nav_background.png')
+  }
+  
+  header > nav > ul{
+    magin :0 auto;
+    width: 850px;
+  }
+  
+  header > nav > ul a{
+    text-decoration: none;
+    display: block;
+    margin-left: 20px;
+    width: 140px;
+    font-weight: bold;
+    font-size: 14px;
+    color:#fff;
+    line-height: 44px;
+  }
+  
+  header > nav > ul a:hover{
+    font-size: 16px;
+  } 
+  
+  header > nav > ul > li{
+    float: left; 
+    display: block;
+  }
+  header, footer, section {
+    display: block;
+  }
+  header > nav  ul{
+  	list-style: none;
+  	margin: 0;
+  	padding: 0;
+  	overflow: hidden;
+  }
+  header > nav > ul ul{
+  	display: none;
+  	background: gray;
+  }  
+  header > nav > ul > li:hover ul{
+		display: block;
+		position: relative;
+  }
+	
+</style>
+</head>
+<body>
+
+<header>
+	<h1>KT 극장</h1>
+	<nav>
+		<ul>
+			<li><a href="#">영화</a></li>
+			<li><a href="#">극장</a>
+					<ul>
+					<li><a href="#">서초점</a></li>
+					<li><a href="#">성북점</a></li>
+					</ul>
+			</li>
+			<li><a href="#">예매</a></li>
+			<li><a href="#">이벤트</a></li>
+			<li><a href="#">상영영화소개RSS</a></li>
+		</ul>		
+	</nav>
+</header>
+<section>  
+	main content	
+</section>
+<footer> copy right</footer>
+
+</body>
+</html>

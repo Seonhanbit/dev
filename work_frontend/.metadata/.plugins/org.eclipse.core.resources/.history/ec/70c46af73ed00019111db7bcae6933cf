@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="layout.css">
+<title>영화 정보 웹 페이지</title>
+<style type="text/css">
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	margin: 0 auto;
+	padding: 22px 0;
+	width: 900px;
+	font: 13px/22px Helvetica, Areal, sens-serif;
+	background: #f0f0f0;
+}
+
+h1 {
+	font-size: 28px;
+	line-height: 44px;
+	padding: 22px 0;
+}
+
+header>nav {
+	position: relative;
+	left: 0;
+	width: 100%;
+	height: 50px;
+	background-image: url('img/nav_background.png')
+}
+
+header>nav>ul {
+	magin: 0 auto;
+	width: 900px;
+}
+
+header>nav>ul a {
+	text-decoration: none;
+	display: block;
+	margin-left: 20px;
+	width: 140px;
+	font-weight: bold;
+	font-size: 14px;
+	color: #fff;
+	line-height: 44px;
+}
+
+header>nav>ul a:hover {
+	font-size: 16px;
+}
+
+header>nav>ul>li {
+	float: left;
+	display: block;
+}
+
+header, footer, section {
+	display: block;
+}
+
+header>nav  ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+header>nav>ul ul {
+	display: none;
+	background: gray;
+}
+
+header>nav>ul>li:hover ul {
+	display: inline;
+	position: relative;
+}
+</style>
+</head>
+<body>
+	<header>
+		<h1>SSAFY 극장</h1>
+		<nav>
+			<ul>
+				<li><a href="#">영화</a>
+					<ul>
+						<li><a href="#">상영작</a></li>
+						<li><a href="#">예정작</a></li>
+					</ul></li>
+				<li><a href="#">극장</a>
+					<ul>
+						<li><a href="#">영화관소개</a></li>
+						<li><a href="#">관별 안내</a></li>
+					</ul></li>
+				<li><a href="reservation.html">예매</a>
+					<ul>
+						<li><a href="#">상영시간표</a></li>
+						<li><a href="#">빠른예매</a></li>
+					</ul></li>
+				<li><a href="#">이벤트</a></li>
+				<li><a href="#">상영영화소개RSS</a></li>
+			</ul>
+		</nav>
+	</header>
+	<section id="intro">
+		<h2>무공해 힐링 시네마</h2>
+		<p>무공해 힐링 시네마는 새로운 개념의 영화장르의 한가지를 말하는 것입니다. 지친 영혼을 위한 휴식을 주는 영화나,
+			마음을 정화시키고 치유하는 힘을 가진 영화들 ... .</p>
+		<img src="img/movie_image.jpg" alt="쿵푸팬더" />
+	</section>
+	<section id="content">
+		<article id="mainContent">
+			<section class="blogPost">
+				<article>
+					<header>
+						<h2>쿵 푸 펜 더</h2>
+					</header>
+					<p>
+						<span>개 봉</span><span>2011. 5. 26</span>
+					</p>
+					<p>
+						<span>감 독</span><span><a href="#">여 인 영</a></span>
+					</p>
+					<p>
+						<span>등 급</span><span>[국내]전체 관람가</span>
+					</p>
+				</article>
+			</section>
+			<section class="blogPost" id="postContent">
+				<section>
+					<p>
+						<mark>하.면.된.다 - 포.스.작.렬</mark>
+						<br /> ‘평화의 계곡’에서 아버지의 국수 가게를 돕고 있는 팬더, 포. 아버지는 국수의 비법을 알려주어 가업을
+						잇게 하고 싶지만, 포의 관심사는 오로지 '쿵푸 마스터'. 가게 일은 뒷전으로 하고 쿵푸의 비법이 적힌 용문서의
+						전수자를 정하는 ‘무적의 5인방’ 대결을 보러 시합장을 찾은 포,
+					</p>
+
+					<img src="img/movie_image3.jpg" alt="쿵푸팬더식성" />
+				</section>
+				<section>
+					<p>그런데 이게 웬일! 마을의 현인 우그웨이 대사부가 포를 용문서의 전수자로 점지하는 이변이 일어난다. 무적의
+						5인방은 물론 시푸 사부 역시 이 사태를 받아들이지 못하는 가운데, 용문서를 노리고 어둠의 감옥에서 탈출한 타이렁이
+						마을을 습격해오자 그를 막아야 하는 미션이 포에게 떨어지는데... 포는 쿵푸마스터로 거듭날 수 있을까? 아니... 포가
+						쿵푸를 할 수는 있을까? 똥배 안에 숨겨진 포스를 깨우기 위한 포의 도전이 시작된다!</p>
+					<video controls="controls" src="media/KungFuPanda_Sample.mp4"
+						poster="img/movie_image2.jpg" width="300">
+					</video>
+				</section>
+			</section>
+			<section id="actors">
+				<header>
+					<h3>배우/제작진</h3>
+				</header>
+				<section>
+					<header>
+						<span><a href="#">Jack Black</a></span> <img alt=""
+							src="img/jack.jpg" />
+					</header>
+					<article>팬더곰 포 목소리역</article>
+				</section>
+				<section>
+					<header>
+						<span><a href="#">Jack Chan</a></span> <img alt=""
+							src="img/jackie.jpg" />
+					</header>
+					<article>원숭이, 몽키 목소리역</article>
+				</section>
+				<section>
+					<header>
+						<span><a href="#">Angelina Jolie</a></span> <img alt=""
+							src="img/angelina.jpg" />
+					</header>
+					<article>호랑이, 타이그리스 목소리역</article>
+				</section>
+			</section>
+		</article>
+		<aside>
+			<header>
+				<h3>Movies</h3>
+			</header>
+			<nav>
+				<ul>
+					<li><a href="#">현재 상영작</a></li>
+					<li><a href="#">상영 예정작</a></li>
+					<li><a href="#">영화 뉴스</a></li>
+					<li><a href="#">테마 뉴스</a></li>
+					<li><a href="#">맥스 무비 예매 순위</a></li>
+				</ul>
+			</nav>
+		</aside>
+	</section>
+	<footer>
+		<article>
+			<section id="about">
+				<h3>About</h3>
+				<P>
+					서울시 강남구 역삼동<br /> <a href="#"> admin@ssafy.com</a>
+				</P>
+			</section>
+			<section id="security">
+				<h3>개인 정보 취급 방침</h3>
+				<nav>
+					<ul>
+						<li><a href="#">개요</a></li>
+						<li><a href="#">문의처</a></li>
+					</ul>
+				</nav>
+			</section>
+			<section>
+				<h3>공지 사항</h3>
+				<nav>
+					<ul>
+						<li><a href="#">오시는 길</a></li>
+						<li><a href="#">오류시 문의 사항</a></li>
+					</ul>
+				</nav>
+			</section>
+		</article>
+	</footer>
+</body>
+</html>

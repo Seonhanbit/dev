@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>영화 예매</title>
+<script type='text/javascript' src='js/jquery-3.3.1.js'></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#check").change(function() {
+			if ($("#check").is(":checked")) {
+				$("#option").css("display", "block");
+			} else {
+				$("#option").css("display", "none");
+			}
+		});
+		$('[name="time"]').change(function() {
+			if ($("#early").is(":checked")) {
+				$("#priceLable").html("<del>W9,000</del>");
+				$("#priceLable").append("&nbsp" + "<ins>W5,000</ins>");
+			} else {
+				$("#priceLable").html("W9,000");
+			}
+		});
+		$("#person").bind("change keyup paste", function() {
+			var price;
+			if ($("#early").is(":checked")) {
+				price = 5000;
+			} else {
+				price = 9000;
+			}
+			var str = $("#person").val();
+			var ret = eval(str * price);
+			$("#price").val(ret);
+		});
+		$("#popcorn").change(function() {
+			if ($("#popcorn").is(":checked")) {
+				var temp = parseInt($("#price").val());
+				var ret = temp + 5000;
+				$("#price").val(ret);
+			} else {
+				var temp = parseInt($("#price").val());
+				var ret = temp - 5000;
+				$("#price").val(ret);
+			}
+		});
+		$("#cola").change(function() {
+			if ($("#cola").is(":checked")) {
+				var temp = parseInt($("#price").val());
+				var ret = temp + 2000;
+				$("#price").val(ret);
+			} else {
+				var temp = parseInt($("#price").val());
+				var ret = temp - 2000;
+				$("#price").val(ret);
+			}
+		});
+	});
+</script>
+<style type="text/css">
+#option {
+	display: none;
+}
+</style>
+</head>
+<body>
+	<header>
+		<hgroup>
+			<h1>영화 예매</h1>
+			<h2>쿵푸팬더</h2>
+		</hgroup>
+	</header>
+	​
+	<article id="reservation">
+		<section>
+			<img id="poster" alt="쿵푸팬더 poster" src="./img/movie_image2.jpg">
+		</section>
+		<section>
+			<form>
+				<fieldset id="wrapperFieldset">
+					<legend id="wrapperLegend">예매정보 입력</legend>
+					<label>상영관</label> <select>
+						<option>CGV</option>
+						<option>롯데시네마</option>
+						<option>메가박스</option>
+						<option>프리머스</option>
+						<option>다른극장</option>
+					</select> <label>날짜 &nbsp;선택</label><input type="date" /><br /> <br />
+					<fieldset class="innerFiledSet">
+						<legend>시간</legend>
+						<input type="radio" name="time" value="08:30" id="early" /><label>08:30</label>
+						<input type="radio" name="time" value="11:00" /><label>11:00</label>
+						<input type="radio" name="time" value="14:20" /><label>14:20</label>
+						<input type="radio" name="time" value="17:25" /><label>17:25</label>
+						<input type="radio" name="time" value="20:10" /><label>20:10</label>
+						<input type="radio" name="time" value="23:05" /><label>23:05</label>
+					</fieldset>
+					<p />
+					<label>요금&nbsp;</label><span id="priceLable">W9,000</span>
+					<p />
+					<label>인원&nbsp;</label><input type="number" required="required"
+						min="1" id='person' value="0" style="text-align: right;" />
+					<p />
+					<label>금액&nbsp;</label><input type="number" readonly="readonly"
+						id='price' value="0" style="text-align: right;" /> <br> <input
+						type="checkbox" name="option" id="check" /><label>옵션</label>
+					<fieldset class="innerFiledSet" id="option">
+						<input type="checkbox" name="popcorn" value="5000" id="popcorn" /><label>팝콘 W5000</label>
+						<input type="checkbox" name="cola" value="2000" id="cola" /><label>콜라 W2000</label>
+					</fieldset>
+				</fieldset>
+				<fieldset id="buttons">
+					<input type="reset" id="reset" value="취소"> <input
+						type="submit" id="submit" value="예매">
+				</fieldset>
+			</form>
+		</section>
+	</article>
+</body>
+</html>
