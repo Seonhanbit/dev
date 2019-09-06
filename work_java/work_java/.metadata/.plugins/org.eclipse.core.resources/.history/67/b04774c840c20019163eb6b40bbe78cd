@@ -1,0 +1,24 @@
+package com.ssafy.chap02;
+
+import java.sql.SQLException;
+
+public class CustomerMain {
+
+	public static void main(String[] args) {
+		DBManager man = null;
+		try {
+			man = new DBManager();
+			man.insertCustomer("홍길동", 21, "광산구");
+			man.insertCustomer("박길동", 41, "광산구");
+			man.insertCustomer("고길동", 31, "광산구");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			man.close();
+		}
+		
+
+	}
+
+}

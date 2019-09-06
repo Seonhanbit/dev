@@ -1,0 +1,32 @@
+package September;
+
+import java.util.Scanner;
+
+public class s_2839_설탕배달 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int N = sc.nextInt();
+		int mok = 0;
+		int na = 0;
+		int sum = 0;
+		mok = N / 5;
+		sum += mok;
+		na = N % 5;
+		if (na % 3 == 0) {
+			mok = na / 3;
+			sum += mok;
+		} else {
+			if (N % 3 == 0) {
+				sum =0;
+				mok = N/3;
+				sum = mok;
+			} else {
+				sum = -1;
+			}
+		}
+
+		System.out.println(sum);
+	}
+
+}

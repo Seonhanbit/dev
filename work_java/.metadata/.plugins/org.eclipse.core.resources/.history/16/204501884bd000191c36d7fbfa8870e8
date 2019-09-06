@@ -1,0 +1,23 @@
+package September;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class s_4179_불 {
+	static int R;
+	static int C;
+	static int[][] arr;
+
+	static boolean range(int x, int y) {
+		if (x <= 0 && x < R && y >= 0 && y < R)
+			return true;
+		else
+			return false;
+	}
+
+	public static void main(String[] args) {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+	}
+
+}

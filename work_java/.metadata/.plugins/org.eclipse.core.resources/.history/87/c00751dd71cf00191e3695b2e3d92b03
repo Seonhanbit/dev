@@ -1,0 +1,118 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class 구슬탈출2 {
+	public static int N;
+	public static int M;
+	public static char[][] arr;
+	public static char[][] copy_arr;
+	public static boolean redcheck[][];
+	public static boolean bluecheck[][];
+	public static boolean redchk;
+	public static boolean bluechk;
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		// ���� ���� 1��, �Ķ� ���� 1��
+		// ���忡 Ż�ⱸ �ϳ�
+		// ���� ������ ������ ���ؼ� ������.�Ķ����� X
+		// �߷��� �̿��Ѵ�. ���� �������� ����
+		// �������� �����̴� �Ͱ� �Ķ����� �����̴� ���� ���ÿ�
+		// ���ÿ� ������ ����
+		// ����Ž��, 10�� ��ȸ
+		// ���� ����� �� ���� ������ �Ķ������� ��ǥ�� ���� ��
+		// ���� ������ �����ϰ� �ٽ� ��Ʈ��ŷ�ؾ��Ѵ�.
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String str = br.readLine();
+		StringTokenizer st = new StringTokenizer(str);
+		N = Integer.parseInt(st.nextToken());
+		M = Integer.parseInt(st.nextToken());
+		arr = new char[N][M];
+		redcheck = new boolean[N][M];
+		bluecheck = new boolean[N][M];
+		int red_row = -1;
+		int red_col = -1;
+		int blue_row = -1;
+		int blue_col = -1;
+		for (int row = 0; row < N; row++) {
+			str = br.readLine();
+			for (int col = 0; col < M; col++) {
+				arr[row][col] = str.charAt(col);
+				if (arr[row][col] == 'R') {
+					red_row = row;
+					red_row = col;
+				} else if (arr[row][col] == 'B') {
+					blue_row = row;
+					blue_col = col;
+				}
+			}
+		}
+		// 4���� Ž���� �����Ѵ�.������ ���������� �����϶� �Ķ� ������ ���� �����δ�.
+		int move=1;
+		for (; move <= 10; move++) {
+			//blue�� red�� ��ġ�� �ٽ� ã���´�.
+			dfs(red_row, red_col, blue_row, blue_col);
+			if(bluechk==true||redchk==true) {
+				break;
+			}
+		}
+		if(bluechk)
+			System.out.println(-1);
+		else if(redchk)
+			System.out.println(move-1);
+	}
+
+	// ���������� �Ķ������� ��ǥ�� �Է¹޴´�.
+	// ���ʹ����� ���� ���������� �� Ÿ�� �����Ѵ�.
+	public static int dx[] = { 0, 0, 1, -1 };
+	public static int dy[] = { 1, -1, 0, 0 };
+
+	// ���� �� �� �� �� �� �־��
+	//1(��),2(��),3(��),4(��)
+	public static void dfs (int rd_row,int rd_col, int bl_row,int bl_col) {
+		
+		//�������� ���� ���������� ���� ���������� �տ� �ִٸ�� �Ķ� ������ �տ� �ִٸ����� ������ �ش�.
+		for(int k=0;k<4;k++) {
+			int nr_r=rd_row+dx[k];
+			int nr_c=rd_col+dy[k];
+			int nb_r=bl_row+dx[k];
+			int nb_c=bl_col+dy[k];
+			//���������� ���ε� �Ķ������� ���� �ƴ϶�� �ϴ� �����δ�.
+			//���� ���������� ���ε� �Ķ������� �ƴѰ��
+			//�Ķ������� ���ε� ���������� �ƴѰ��
+			if(arr[nr_r][nr_c]=='#'&&arr[nb_r][nb_c]=='.'&&!bluecheck[nb_r][nb_c]) {
+				bluecheck[nb_r][nb_c]=true;
+				arr[nb_r][nb_c]='B';
+				arr[bl_row][bl_col]='.';
+				dfs(rd_row,rd_col,nb_r,nb_c);
+			}else if(arr[nr_r][nr_c]=='.'&&arr[nb_r][nb_c]=='#'&&!redcheck[nr_r][nr_c]&&!bluecheck[nb_r][nb_c]) {
+				redcheck[nr_r][nr_c]=true;
+				arr[nr_r][nr_c]='R';
+				arr[rd_row][rd_col]='.';
+				dfs(nr_r,nr_c,bl_row,bl_col);
+			}else if(arr[nr_r][nr_c]=='.'&&arr[nb_r][nb_c]=='.'&&!redcheck[nr_r][nr_c]&&!bluecheck[nb_r][nb_c]) {
+				bluecheck[nb_r][nb_c]=true;
+				redcheck[nr_r][nr_c]=true;
+				arr[nr_r][nr_c]='R';
+				arr[rd_row][rd_col]='.';
+				arr[nb_r][nb_c]='B';
+				arr[bl_row][bl_col]='.';
+				dfs(nr_r,nr_c,nb_r,nb_c);
+			}else if(arr[nr_r][nr_c]=='#'&&arr[nb_r][nb_c]=='#'&&!redcheck[nr_r][nr_c]&&!bluecheck[nb_r][nb_c]) {
+				return;
+			}else if(arr[nr_r][nr_c]=='#'&&arr[nb_r][nb_c]=='R'&&!redcheck[nr_r][nr_c]&&!bluecheck[nb_r][nb_c]) {
+				return;
+			}
+			else if(arr[nr_r][nr_c]=='B'&&arr[nb_r][nb_c]=='#'&&!redcheck[nr_r][nr_c]&&!bluecheck[nb_r][nb_c]) {
+				return;
+			}
+			else if(arr[nr_r][nr_c]=='O') {
+				redchk=true;
+			}
+			else if(arr[nb_r][nb_c]=='O') {
+				bluechk=true;
+			}
+		}
+	}
+}

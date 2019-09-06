@@ -1,0 +1,58 @@
+package September;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class s_4179_불 {
+	static int R;
+	static int C;
+	static char[][] arr;
+
+	static boolean range(int x, int y) {
+		if (x <= 0 && x < R && y >= 0 && y < R)
+			return true;
+		else
+			return false;
+	}
+
+	static class pair {
+		int x;
+		int y;
+		int cnt;
+		char c;
+
+		pair(int x, int y, int cnt, char c) {
+			this.x = x;
+			this.y = y;
+			this.cnt = cnt;
+			this.c = c;
+		}
+	}
+
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		R = Integer.parseInt(st.nextToken());
+		C = Integer.parseInt(st.nextToken());
+		arr = new char[R][C];
+		int a, b, fa, fb;
+		for (int i = 0; i < R; i++) {
+			st = new StringTokenizer(br.readLine());
+			for (int j = 0; j < C; j++) {
+				arr[i][j] = st.nextToken().charAt(j);
+				if (arr[i][j] == 'J') {
+					a = i;
+					b = j;
+				}
+				if (arr[i][j] == 'F') {
+					fa = i;
+					fb = j;
+				}
+			}
+		}
+
+	}
+
+}

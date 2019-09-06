@@ -1,0 +1,10 @@
+package com.ssafy.chap02;
+
+public class DispatcherConsole {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

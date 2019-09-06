@@ -1,0 +1,10 @@
+package com.ssafy.chap01;
+
+public class JDBCTest3 {
+
+	public static void main(String[] args) {
+		Class.forName("com.mysql.cj.jdbc.Driver");
+
+	}
+
+}

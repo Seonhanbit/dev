@@ -1,0 +1,48 @@
+package D3;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Scanner;
+
+public class s_5948_새샘이의735 {
+	static HashSet<Integer> res = null;
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int T = sc.nextInt();
+		for (int tc = 1; tc <= T; tc++) {
+			int[] arr = new int[7];
+			int[] sel = new int[3];
+			for (int i = 0; i < 7; i++) {
+				arr[i] = sc.nextInt();
+			}
+			sum(arr, sel, 0, 0);
+			ArrayList<Integer> list = new ArrayList<>();
+			for (int i : res) {
+			    list.add(i);
+			}
+			Collections.sort(list);
+			System.out.println("#"+tc+" "+list.get(4));
+		}
+	}
+
+	static void sum(int[] arr, int[] sel, int n, int c) {
+		if (c == sel.length) {
+			int sum = 0;
+			for (int i = 0; i < sel.length; i++) {
+				sum += sel[i];
+			}
+//			System.out.println(Arrays.toString(sel));
+			res.add(sum);
+			return;
+		}
+		if (n == arr.length) {
+			return;
+		}
+		sel[c] = arr[n];
+		sum(arr, sel, n + 1, c + 1);
+		sum(arr, sel, n + 1, c);
+	}
+}

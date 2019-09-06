@@ -1,0 +1,80 @@
+package September;
+
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+public class s_1012_유기농배추 {
+	static int[] dr = {-1, 1, 0, 0 };
+	static int[] dc = {0, 0, -1, 1};
+	static boolean [][] visit;
+	static Queue<Q> queue;
+	static int M = 0;
+	static int N = 0;
+	static int sum =0;
+	static boolean range(int x, int y) {
+		if(x>=0&&x<N&&y>=0&&y<M)
+			return true;
+		else
+			return false;
+	}
+	
+	static class Q{
+		int x;
+		int y;
+		Q(int x, int y){
+			this.x=x;
+			this.y=y;
+		}
+	}
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int T = sc.nextInt();
+		M = sc.nextInt();
+		N = sc.nextInt();
+		int k = sc.nextInt();
+		int[][] arr = new int[N][M];
+		visit = new boolean[N][M];
+		for(int n=0; n<k; n++) {
+			arr[sc.nextInt()][sc.nextInt()] = 1;
+		}
+		for(int i=0; i<N; i++) {
+			for(int j=0; j<M; j++) {
+				if(arr[i][j] ==1) {
+					bfs(arr);
+				}
+			}
+		}
+		
+		System.out.println(sum);
+		sum=0;
+	}
+	
+	//깊이
+	public static int dfs(int[][] arr) {
+		return 0;
+	}
+	//너비
+	public static int bfs(int x, int y) {
+		//1. 큐를 생성하여 들어가는 x,y 좌표를 넣고, 방문 체크를 한다
+		//2. 무한루프를 들어가서 자기 위치는 꺼내고, 자기가 검사하고 싶은(4방향) 방향을 검사한다
+		//3. range 검사
+		//4. 방문했는지 안했는지 배열을 검사 후, 다음 1의 값인 좌표를 큐에 넣는다
+		//5. 한바퀴 돌고 sum을 추가하기
+		queue = new LinkedList<Q>();
+		queue.add(new Q(x,y));
+		visit[x][y]=true;
+		while(!queue.isEmpty()) {
+			Q temp=queue.poll();
+			for(int i=0; i<4; i++) {
+				if(range(temp.x+dr[i], temp.y+dc[i])) {
+					
+				}
+			}
+			
+		}
+	}
+
+
+}

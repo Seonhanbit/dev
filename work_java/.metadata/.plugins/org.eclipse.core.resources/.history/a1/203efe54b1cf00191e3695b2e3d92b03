@@ -1,0 +1,37 @@
+package September;
+
+import java.util.Scanner;
+
+public class s_2839_설탕배달 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int N = sc.nextInt();
+		int mok = N / 5;
+		int na = 0;
+		int sum = 0;
+
+		for (int i = 1; i <= mok; i++) {
+			sum += i;
+			na = N-(i*5);
+			System.out.println(sum);
+			System.out.println(na);
+			if (na % 3 == 0) {
+				System.out.println("---");
+				mok = na / 3;
+				sum += mok;
+				break;
+			} else {
+				if (N % 3 == 0) {
+					mok = N / 3;
+					sum = mok;
+				} else {
+					sum = -1;
+				}
+			}
+		}
+
+		System.out.println(sum);
+	}
+
+}

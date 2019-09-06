@@ -1,0 +1,49 @@
+package com.ssafy.chap02;
+
+import java.sql.SQLException;
+import java.util.Scanner;
+
+public class DispatcherConsole {
+	int menu;
+	Scanner s;
+	DBManager man;
+	public DispatcherConsole() throws SQLException {
+		s = new Scanner(System.in);
+		man = new DBManager();
+	}
+	private void go() {
+		System.out.println("1.입력 2.수정 3.삭제 4.조회 5.검색 6.종료");
+		menu = s.nextInt();
+		switch(menu) {
+		case 1:
+			
+			break;
+		case 2:
+			
+			break;
+		case 3:
+			
+			break;
+		case 4:
+			
+			break;
+		case 5:
+			
+			break;
+		case 6:
+			
+			break;
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {
+			new DispatcherConsole().go();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}
