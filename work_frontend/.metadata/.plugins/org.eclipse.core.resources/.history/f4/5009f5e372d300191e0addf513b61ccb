@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+<head><title>연습</title>
+<meta http-equiv="Content-Type" Content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<style type="text/css">
+<!--
+body {font-size:11pt; background-color: #f1f1f1;}
+.title {width: 560px; text-align:center;}
+h3 {color: #85144b; font-size: 14pt;}
+
+.list {position: relative; width: 1400px; margin:0 auto;}
+.list ul { list-style: none;}
+.list ul li {position: relative; width: 340px; height: 340px; float: left; margin: 5px; overflow: hidden; text-align:center;}
+.shadow {position: absolute ; top: 250px; background-color: rgba(0, 0, 0, .4); width: 340px; height: 340px; margin:0; transition: 0.5s;}
+.shadow span {color: white; font-size: 12pt; text-align:center; padding: 20px; display: block;}
+.detail {display: none; color: white; margin: a auto; padding: 20px;}
+.detail p {text-align: left;}
+.detail img {clear: both;}
+
+.list ul li:hover {cursor: pointer;}
+.list ul li:hover .shadow {top: 0px;}
+.list ul li:hover span {display: none;}
+.list ul li:hover .detail {display: block;}
+
+
+//--></style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script type="text/javascript">
+<!--
+	$(document).ready(function() {
+
+	}); 
+//-->
+</script>
+</head>
+<body>
+	
+	<div class="title">
+		<h3>CSS만으로 썸네일 이미지에 마우스오버 효과</h3>
+	</div>
+
+
+	<div class="list">
+		<ul>
+			<li><img src="./img/thumb01.png">
+				<div class="shadow">
+					<!-- 실제로는 DB에서 데이터를 가져와서 뿌려 줘야 할듯 하다.  -->
+					<span>물속에서 숨 오래 참는 기막힌 방법</span>
+					<div class="detail">
+						<img src="http://www.iconninja.com/files/38/267/666/profile-icon.png" width="70">
+						아놀드
+						<p>숨을 오래 참는 능력은 다양한 이유로 많은 사람들이 그 노하우를 궁금해 하는 기술이다. 다이빙 연습이나 수영 그리고 서핑 등을 즐기는 사람은 물론이고 그저 단순한 묘기처럼 생각하는 사람들까지 많은 사람들이 물 속에서 혹은 밖에서 숨을 오래 참는 능력을 갖고 싶어 하는데 기술을 갖추고 충분한 연습을 해야 하며 그리고 안전 예방 역시 미리 알고 있어야 한다.</p>
+					</div>
+				</div>
+			</li>
+			<li><img src="./img/thumb02.png">
+				<div class="shadow">
+					<span>★ 앵두를 혼자서 맛있게 먹는 방법</span>
+					<div class="detail">
+					<img src="http://www.iconninja.com/files/38/267/666/profile-icon.png" width="70">
+					다니엘
+					<p>앵두나무(櫻桃-; Prunus tomentosa)는 중국 화북지방 원산의 낙엽 활엽관목으로서 한국에서는 중북부 지방에서 재배하며 높이는 1-3m 가량이다. 잎은 타원형 또는 달걀을 거꾸로 놓은 모양이다. 꽃은 분홍색 또는 흰색으로 4월경에 잎겨드랑이로부터 1-2개씩이 피어난다. 열매는 공 모양의 핵과로 6월 무렵 빨갛게 익는다.</p>
+					</div>
+				</div>
+			</li>
+			<li><img src="./img/thumb03.png">
+				<div class="shadow"><span>뽀얀 피부를 위해 숨은 얼굴 마사지 비법</span>
+					<div class="detail">
+					<img src="http://www.iconninja.com/files/38/267/666/profile-icon.png" width="70">
+					홍길동
+					<p>가을에는 아침에는 쌀쌀하다가도 오후만 되면 햇볕이 따갑게 내리쬐기 때문에 피부에 무리가 가기 쉽습니다. 피부가 쉽게 건조해지기 때문인데요. 이런 시기에는 유수분 밸런스가 깨져 주름이나 각종 피부트러블이 생기기 쉬워, 지속적으로 피부 관리를 해줘야 한다고 합니다.</p>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+
+</body>
+</html>

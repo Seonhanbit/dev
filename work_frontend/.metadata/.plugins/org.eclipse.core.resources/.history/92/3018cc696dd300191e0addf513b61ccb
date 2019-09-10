@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>SafeFood | 상품 정보 목록</title>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="../bootstrap-3.3.2-dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../bootstrap-3.3.2-dist/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="../css/main.css">
+	
+	<script type="text/javascript" src="../js/function.js"></script>
+	<script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="../bootstrap-3.3.2-dist/js/bootstrap.min.js"></script>
+</head>
+
+<nav class="navbar navbar-fixed-top" style="background-color: #2e3537;">
+	<div class="col-md-1"></div>
+	<div class="col-md-10" style="text-align: right;">
+		<button class="btn btn-default dropdown-toggle glyphicon glyphicon-user" data-toggle="dropdown" style="background-color: #2c2c2c; color: #ffffff; margin: 7px">&nbspLogin</button>
+		<ul	class="dropdown-menu dropdown-menu-right" style="border: 1px solid #252a2c; background: #2e3537;">
+			<li>
+				<form class="login-form margin-clear" style="background: #2e3537; margin: 20px 20px;">
+					<div class="form-group has-feedback">
+						<label class="control-label" style="color: #ffffff;">아 이 디</label>
+						<input type="text" class="form-control" >
+						<span class="glyphicon glyphicon-user form-control-feedback" aria-hidden="true"></span>
+					</div>
+					<div class="form-group has-feedback">
+						<label class="control-label" style="color: #ffffff;">비밀번호</label>
+						<input type="password" class="form-control">
+						<span class="glyphicon glyphicon-user form-control-feedback" aria-hidden="true"></span>
+					</div>
+						<button type="submit" class="btn btn-gray btn-sm" style="margin = 20px">로 그 인</button><br>
+						<button type="submit" class="btn btn-default btn-sm" style="background-color: #2c2c2c; color: #ffffff;">비밀번호 찾기</button>
+				</form>
+			</li>
+		</ul>
+		<button class="btn btn-sm glyphicon glyphicon-user" style="background-color: #2c2c2c; color: #ffffff; margin: 7px">&nbsp회원정보</button>
+	</div>
+	<div class="col-md-1"></div>
+</nav>
+
+<body style="padding-top: 40px;">
+	<div class="container-fluid">
+		<!-- 로그아웃, 회원정보 -->
+		
+		<!-- 메뉴바 -->
+		<div class="row" style="background-color: #ffffff; height: 100px; margin-top: 10px;">
+			<div class="col-md-1"></div>
+			<div class="col-md-3"> <img src="../img/ssafy.png" width="120px"> </div>
+			<div class="col-md-7">
+				<ul class="nav navbar-nav" style="float: right;">
+					<li><a href="#">공지 사항</a></li>
+					<li><a href="#">상품 정보</a></li>
+					<li><a href="#">베스트 섭취 정보</a></li>
+					<li><a href="#">내 섭취 정보</a></li>
+					<li><a href="#">예상 섭취 정보</a></li>
+					<li><a href="#" class="glyphicon glyphicon-search"></a></li>
+				</ul>
+			</div>
+			<div class="col-md-1"></div>
+		</div>
+		
+		<!-- 점보트론? -->
+		<div class="row" style="background-color: #6C6C6C; height: 200px;">
+			<div class="col-md-1"></div>
+			<div class="col-md-10" style="color: white; margin: 30px; text-align: center;">
+				<h2>WHAT WE PROVIDE</h2>
+				<div class="divide-line-center"></div>
+				<p style="padding:15px;">건강한 삶을 위한 먹거리 프로젝트</p>
+			</div>
+			<div class="col-md-1"></div>
+		</div>
+		
+		<!-- 검색 -->
+		<div class="row" style="height: 100px; background-color: #373737;">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+				<div class="row" style="color: white; margin: 10px;">
+					<div class="col-md-4"">검색 조건</div>
+					<div class="col-md-7">검색 단어</div>
+					<div class="col-md-1"></div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<select class="form-control" name="key" id="key">
+							<option value="name" selected="selected">상품명</option>
+							<option value="maker">제조사</option>
+							<option value="material">재료명</option>
+						</select>
+					</div>
+					<div class="col-md-7">
+						<input type="text" class="form-control">
+					</div>
+					<div class="col-md-1">
+						<button type="button" name="search" class="btn btn-info">검색</button>
+					</div>
+				</div>
+				<div class="row"></div>
+			</div>
+			<div class="col-md-4"></div>
+		</div>
+		
+		<!-- 리스트 목록 -->
+		<section style="padding: 50px 0;">
+			<div class="container">
+				<div class="row">
+					<div class="main col-12">
+					
+						<div class="card-container">
+							<div class="row">
+								<div class="col-md-4">
+									<div class="image-container"><img alt="아카페라아메리카노" src="../img/아카페라아메리카노.jpg" width="200">
+									</div>
+								</div>
+								<div class="col-md-8">
+									<div class="body">
+										<h3 class="title">아카페라아메리카노</h3>
+										<p class="card-description">
+											<i class="glyphicon glyphicon-calendar"></i>&nbspFeb, 2017&nbsp&nbsp
+											<i class="glyphicon glyphicon-tag"></i>&nbspWeb, Design&nbsp
+										</p>
+										<div class="divide-line"></div>
+										<p>정제수,콜드브루커피추출액7%(고형분3%이상/커피원두:에티오피아40%,콜롬비아30%,브라질30%),백설탕,에스프레소커피추출액
+											1.54% ( 고형분 34%이상 /커피원두:브라질),탄산수소나트륨,아스코르빈산나트륨,천연커피향
+										</p>
+										<div class="btn-group">
+											<a class="btn btn-info btn-sm"><i class="glyphicon glyphicon-user"></i>추가</a>
+											<a class="btn btn-info btn-sm"><i class="glyphicon glyphicon-user"></i>찜</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="card-container">
+							<div class="row">
+								<div class="col-md-4">
+									<div class="image-container"><img alt="칸타타프리미엄라떼" src="../img/칸타타프리미엄라떼.jpg" width="200">
+									</div>
+								</div>
+								<div class="col-md-8">
+									<div class="body">
+										<h3 class="title">칸타타프리미엄라떼</h3>
+										<p class="card-description">
+											<i class="glyphicon glyphicon-calendar"></i>&nbspFeb, 2017&nbsp&nbsp
+											<i class="glyphicon glyphicon-tag"></i>&nbspWeb, Design&nbsp
+										</p>
+										<div class="divide-line"></div>
+										<p>칸타타원두커피추출액42%(에티오피아50%,콜롬비아30%,브라질20%),정제수,우유15%(국내산),백설탕,혼합분유
+											( 탈지분유 , 유청분말 ),탄산수소나트륨,합성착향료 ( 커피향 , 우유향 ),유화제,L-아스코르빈산나트륨</p>
+										<div class="btn-group">
+											<a class="btn btn-info btn-sm"><i class="glyphicon glyphicon-user"></i>추가</a>
+											<a class="btn btn-info btn-sm"><i class="glyphicon glyphicon-user"></i>찜</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<div class="footer-main bg-dark py-5 small">
+			<div class="container-fluid" style="margin: 20px;">
+				<h3>Find Us</h3>
+				<hr>
+				<i class="glyphicon glyphicon-map-marker">&nbsp</i><span>(SSAFY) 서울시 강남구 테헤란로 멀티스퀘어</span><br>
+				<i class="glyphicon glyphicon-earphone">&nbsp</i><span>1544-9001</span><br>
+				<i class="glyphicon glyphicon-envelope">&nbsp</i><span>admin@ssafy.com</span><br>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

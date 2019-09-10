@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>SafeFood | 상품 정보 목록</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../bootstrap-3.3.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bootstrap-3.3.2-dist/css/bootstrap-theme.min.css">
+    <script src="../bootstrap-3.3.2-dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container-fluid" style="background-color: #4C4C4C;">
+        <button style="float: right;"><img src="../img/warning.png" width=10px; height=10px;>Logout</button>
+        <button style="float: right;"><img src="../img/warning.png" width=10px; height=10px;>회원정보</button>
+    </div>
+    <!-- Navigation Bar -->
+    <div class="container-fluid" style="background-color: #ffffff;">
+        <img src="../img/ssafy.png">
+        <ul class="nav navbar-nav" style="float: right">
+            <li><a href="#">공지 사항</a></li>
+           <li><a href="#">상품 정보</a></li>
+           <li><a href="#">베스트 섭취 정보</a></li>
+            <li><a href="#">내 섭취 정보</a></li>
+            <li><a href="#">예상 섭취 정보</a></li>
+            <li><a href="#"><img src="../img/검색.png" width=15px; height=15px;></a></li>
+        </ul>
+    </div>
+    <div class="container-fluid" style="background-color: #8C8C8C;">
+        <div class="container" style="text-align: center;">
+            <p class="lead">WHAT WE PROVIDE</p>
+            <hr style="color: gray;">
+            <p class="lead">건강한 삶을 위한 먹거리 프로젝트</p>
+        </div>
+    </div>
+    <div class="container-fluid" style="background-color: #6C6C6C; height:80px; padding: 15px 700px;">
+        <table class="container-fluid">
+            <tr>
+                <th>검색 조건</th>
+                <th>검색 단어</th>
+            </tr>
+            <tr>
+                <th><input list="ProductName" value="상품명" style="margin-right: 5px;"></th>
+                	<datalist id ="ProductName">
+                		<option value="ㅎㅇ">
+                		<option value="ㅎㅇ2">
+                		<option value="ㅎㅇ">
+                	</datalist>
+                <th><input type="text" style="margin-right: 5px"><button id="search"; style="width: 80px; text-align: center; background-color:aqua;">검색</button></th>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

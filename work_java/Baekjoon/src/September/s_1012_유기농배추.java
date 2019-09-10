@@ -40,11 +40,13 @@ public class s_1012_유기농배추 {
 			int k = sc.nextInt();
 			arr = new int[N][M];
 			visit = new boolean[N][M];
+			
 			for (int n = 0; n < k; n++) {
 				int y = sc.nextInt();
 				int x = sc.nextInt();
 				arr[x][y] = 1;
 			}
+			
 			for (int i = 0; i < N; i++) {
 				for (int j = 0; j < M; j++) {
 					if (arr[i][j] == 1) {

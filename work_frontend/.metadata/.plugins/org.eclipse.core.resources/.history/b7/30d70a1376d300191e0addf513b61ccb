@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<meta charset="UTF-8">
+	<title>SafeFood | 유진레이아웃연습</title>
+<head>
+<body>
+	<div class="hongsim">
+		<img src="../img/새우탕.jpg" class="sae"/>
+		<div class="text">text</div>
+	</div>
+</body>
+</html>

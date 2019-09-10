@@ -1,0 +1,2 @@
+// 드롭다운 호출함수
+$('.dropdown-toggle').dropdown();

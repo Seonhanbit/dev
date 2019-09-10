@@ -1,0 +1,10 @@
+<frinedList>
+	<friend>
+		<name>Hong</name>
+		<addr>Seoul</addr>
+	</friend>
+	<friend>
+		<name>Kim</name>
+		<addr>Inchon</addr>
+	</friend>
+</frinedList>

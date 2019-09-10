@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<meta charset="UTF-8">
+<title>SafeFood | 유진레이아웃연습</title>
+<head>
+<style>
+ul {
+	list-style:none;
+	float:left;
+	display:inline;
+}
+ul li {
+	float:left;
+}
+ul li a {
+	float:left;
+	padding:4px;
+	margin-right:3px;
+	width:15px;
+	color:#000;
+	font:bold 12px tahoma;
+	border:1px solid #eee;
+	text-align:center;
+	text-decoration:none;
+}
+ul li a:hover, ul li a:focus {
+	color:#fff;
+	border:1px solid #f40;
+	background-color:#f40;
+}
+</style>
+</head>
+<body>
+	<ul>  
+    <li><a href="#">1</a></li>  
+    <li><a href="#">2</a></li>  
+    <li><a href="#">3</a></li>  
+    <li><a href="#">4</a></li>  
+    <li><a href="#">5</a></li>  
+    <li><a href="#">6</a></li>  
+    <li><a href="#">7</a></li>  
+    <li><a href="#">8</a></li>  
+    <li><a href="#">9</a></li>  
+    <li><a href="#">10</a></li>  
+</ul>
+</body>
+</html>

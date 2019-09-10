@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>SafeFood</title>
+<!-- 합쳐지고 최소화된 최신 CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<!-- 부가적인 테마 -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+	<div class="container-fluid" style="background-color: #4C4C4C;">
+		<button class="glyphicon glyphicon-user" style="float: right;">Logout</button>
+		<button class="glyphicon glyphicon-user" style="float: right;">회원정보</button>
+	</div>
+	<!-- Navigation Bar -->
+	<div class="container-fluid" style="background-color: #ffffff;">
+		<img src="img/ssafy.png" width="120px">
+		<ul class="nav navbar-nav" style="float: right">
+			<li><a href="#">공지 사항</a></li>
+			<li><a href="#">상품 정보</a></li>
+			<li><a href="#">베스트 섭취 정보</a></li>
+			<li><a href="#">내 섭취 정보</a></li>
+			<li><a href="#">예상 섭취 정보</a></li>
+			<li><a href="#" class="glyphicon glyphicon-search"></a></li>
+		</ul>
+	</div>
+	<div class="container-fluid" style="background-color: #8C8C8C;">
+		<div class="container" style="text-align: center; color: white">
+			<p class="lead">WHAT WE PROVIDE</p>
+			<hr style="color: gray;">
+			<p class="lead">건강한 삶을 위한 먹거리 프로젝트</p>
+		</div>
+	</div>
+	<div class="container-fluid"
+		style="background-color: #6C6C6C; height: 80px; padding: 15px 700px;">
+		<table class="container-fluid">
+			<tr style="color: white">
+				<th>검색 조건</th>
+				<th>검색 단어</th>
+			</tr>
+			<tr>
+				<th><input list="ProductName" value="상품명"
+					style="margin-right: 5px;"></th>
+				<datalist id="ProductName">
+					<option value="ㅎㅇ">
+					<option value="ㅎㅇ2">
+					<option value="ㅎㅇ">
+				</datalist>
+				<th><input type="text" style="margin-right: 5px">
+					<button type="button" class="btn btn-info">검색</button></th>
+			</tr>
+		</table>
+	</div>
+
+	<div class="col-md-2"></div>
+	<div class="col-md-5">
+		<div class="card mb-3" style="max-width: 600px; max-height: 300px;">
+			<div class="row no-gutters">
+				<div class="col-md-4">
+					<img src="img/새우탕큰사발.jpg" style="width: 200px" class="card-img">
+				</div>
+				<div class="col-md-8">
+					<div class="card-body">
+						<h4 class="card-title">[새우탕큰사발]</h4>
+						<p class="card-text">면 : 소맥분(호주산, 미국산) , 팜유(말레이시아산) , 감자전분 ,
+							변성전분 , 미강풍미액 , 난각칼슘 , 정제염 , 야채조미추출물 , 면류첨가알카리제(산도조절제) ,
+							혼합제제(산도조절제) , 올리고녹차풍미액 , 비타민B2 스프류 : 새우베이스분말 , 정제염 , 정백당 ,
+							육수베이스분말 , 매운맛분말 , 조미양념분 , 매운탕조미분말 , 호화옥수수분 , 육수맛조미베이스 , 오징어조미분말 ,
+							오징어풍미분말 , 양념구이조미분 , 분말고추장 , 이스트풍미분 , 호박산이나트륨 , 복합조미간장분말 ,
+							분말카라멜(카라멜색소, 물엿분말) , 다시마정미추출분말 , 혼합해물베이스분말 , 멸치조미분 , 향신조미분 , 후추가루
+							, 다시마표고조미분 , 수화검(구아검, 산탄검) , 후추추출물분말 , 어포 , 새우맛볼 , 건미역 , 건당근 ,
+							건새우</p>
+						<button type="button" class="btn btn-info">
+							<img src="img/add.png" width="15px"> 추가
+						</button>
+						<button type="button" class="btn btn-info">
+							<img src="img/heart.png" width="15px"> 찜
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-5">
+		<div class="card mb-3" style="max-width: 600px; max-height: 300px;">
+			<div class="row no-gutters">
+				<div class="col-md-4">
+					<img src="img/신라면큰사발.jpg" style="width: 200px" class="card-img">
+				</div>
+				<div class="col-md-8">
+					<div class="card-body">
+						<h4 class="card-title">[신라면큰사발]</h4>
+						<p class="card-text">면 : 소맥분(미국산, 호주산), 감자전분(독일산), 팜유(말레이시아산),
+							변성전분, 난각칼슘, 정제염, 야채조미추출물, 면류첨가알칼리제(산도조절제), 혼합제제(산도조절제), 올리고녹차풍미액,
+							비타민B2. 스프류 : 정제염, 소고기맛베이스, 정백당, 육수맛조미베이스, 볶음양념분, 조미아미노산간장분말,
+							조미소고기분말, 5'-리보뉴클레오티드이나트륨, 분말된장, 마늘베이스, 간장분말, 조미양념분, 조미홍고추분말,
+							후추가루, 매운맛조미분, 복합양념분말, 마늘발효조미분, 칠리맛풍미분, 돈골조미분말, 발효표고조미분, 호박산이나트륨,
+							후추풍미분말, 표고버섯분말, 양파풍미분, 우골마늘조미분, 조미효모분말, 마늘동결건조분말, 분말카라멜(카라멜색소,
+							물엿분말), 생강추출물분말, 대두단백, 건파, 건청경채, 건표고버섯, 건당근, 건고추.</p>
+						<button type="button" class="btn btn-info">
+							<img src="img/add.png" width="15px"> 추가
+						</button>
+						<button type="button" class="btn btn-info">
+							<img src="img/heart.png" width="15px"> 찜
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-2"></div>
+	<div class="col-md-5">
+		<div class="card mb-3" style="max-width: 600px; max-height: 300px;">
+			<div class="row no-gutters">
+				<div class="col-md-4">
+					<img src="img/아카페라아메리카노.jpg" style="width: 200px" class="card-img">
+				</div>
+				<div class="col-md-8">
+					<div class="card-body">
+						<h4 class="card-title">[아카페라아메리카노]</h4>
+						<p class="card-text">정제수, 콜드브루커피추출액 7%(고형분 3%이상/커피원두:에티오피아
+							40%, 콜롬비아 30%,브라질 30%), 백설탕, 에스프레소커피추출액1.54%(고형분 34%이상/브라질산),
+							탄산수소나트륨, L-아스크로빈산나트륨</p>
+						<button type="button" class="btn btn-info">
+							<img src="img/add.png" width="15px"> 추가
+						</button>
+						<button type="button" class="btn btn-info">
+							<img src="img/heart.png" width="15px"> 찜
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-5">
+		<div class="card mb-3" style="max-width: 600px; max-height: 300px;">
+			<div class="row no-gutters">
+				<div class="col-md-4">
+					<img src="img/N45누크바.jpg" style="width: 200px" class="card-img">
+				</div>
+				<div class="col-md-8">
+					<div class="card-body">
+						<h4 class="card-title">[누크바]</h4>
+						<p class="card-text">정제수, 기타코코아가공품 [야자유(수입산), 백설탕, 채종유(호주산),
+							땅콩버터, 혼합분유, 코코아메스], 백설탕, 혼합분유(야자유80&팜유20%), 혼합제제1(구아검,
+							로커스트콩검,카라기난,타마린드검), 천연착향로(바닐라향), 혼합제제2(치자황색소,덱스트린,비트레드)</p>
+						<button type="button" class="btn btn-info">
+							<img src="img/add.png" width="15px"> 추가
+						</button>
+						<button type="button" class="btn btn-info">
+							<img src="img/heart.png" width="15px"> 찜
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-2"></div>
+	<div class="col-md-5">
+		<div class="card mb-3" style="max-width: 600px; max-height: 300px;">
+			<div class="row no-gutters">
+				<div class="col-md-4">
+					<img src="img/수박바.jpg" style="width: 200px" class="card-img">
+				</div>
+				<div class="col-md-8">
+					<div class="card-body">
+						<h4 class="card-title">[수박바]</h4>
+						<p class="card-text">백설탕, 물엿, 젤라틴, D-소르비톨액 4.84%, 산도조절제,
+							합성착향료(수박향,딸기향), 펙틴, 자주색고구마색소, 유화제, 혼합제제(홍화황색소, 치자청색소, 주정), 수박농축액
+							0.01%(고형분 65%) *돼지고기 함유</p>
+						<button type="button" class="btn btn-info">
+							<img src="img/add.png" width="15px"> 추가
+						</button>
+						<button type="button" class="btn btn-info">
+							<img src="img/heart.png" width="15px"> 찜
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-5">
+		<div class="card mb-3" style="max-width: 600px; max-height: 300px;">
+			<div class="row no-gutters">
+				<div class="col-md-4">
+					<img src="img/메로나.jpg" style="width: 200px" class="card-img">
+				</div>
+				<div class="col-md-8">
+					<div class="card-body">
+						<h4 class="card-title">[메로나]</h4>
+						<p class="card-text">정제수, 설탕, 데어리스프레드(외국산 : 뉴질랜드, 독일, 호주),
+							올리고당, 물엿, 혼합분유(외국산 : 네덜란드, 아일랜드, 독일), 말타톨시럽, 메론시럽0.15%[메론(국산)
+							70%, 레몬농축과즙(이스라엘산)], 정제소금, 로커스트콩검, 셀룰로오스검, 혼합제제(구아검, 로커스트콩검,
+							카라기난, 세룰로오스검, 유화제), 치자청색소, 심황색소, 합성향료(메론향)</p>
+						<button type="button" class="btn btn-info">
+							<img src="img/add.png" width="15px"> 추가
+						</button>
+						<button type="button" class="btn btn-info">
+							<img src="img/heart.png" width="15px"> 찜
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-2"></div>
+	<div class="col-md-5">
+		<div class="card mb-3" style="max-width: 600px; max-height: 300px;">
+			<div class="row no-gutters">
+				<div class="col-md-4">
+					<img src="img/칸타타아메리카노.jpg" style="width: 200px" class="card-img">
+				</div>
+				<div class="col-md-8">
+					<div class="card-body">
+						<h4 class="card-title">[칸타타아메리카노]</h4>
+						<p class="card-text">칸타타원두커피추출액42%(에티오피아50%, 콜롬비아30%, 브라질20%),
+							정제수, 우유15%(국내산) , 혼합분유(탈지분유, 유청분말 네덜란드산), 탄산수소나트륨, 합성착향료(커피향,
+							우유향), 유화제, L-아스코르빈산나트륨, 커피고형분 0.941%</p>
+						<button type="button" class="btn btn-info">
+							<img src="img/add.png" width="15px"> 추가
+						</button>
+						<button type="button" class="btn btn-info">
+							<img src="img/heart.png" width="15px"> 찜
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-5">
+		<div class="card mb-3" style="max-width: 600px; max-height: 300px;">
+			<div class="row no-gutters">
+				<div class="col-md-4">
+					<img src="../img/비타파워.jpg" style="width: 200px" class="card-img">
+				</div>
+				<div class="col-md-8">
+					<div class="card-body">
+						<h4 class="card-title">[비타파워]</h4>
+						<p class="card-text">정제수, 액상과당, 비타민C, 구연산, 합성착향료(드링크향, 혼합과일향),
+							타우린, 구연산삼나트륨, 효소처리스테비아, 수크랄로스(합성미료), 비타민 B2, 인산에스테르나트륨</p>
+						<button type="button" class="btn btn-info">
+							<img src="img/add.png" width="15px"> 추가
+						</button>
+						<button type="button" class="btn btn-info">
+							<img src="img/heart.png" width="15px"> 찜
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
