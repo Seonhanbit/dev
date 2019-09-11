@@ -1,0 +1,21 @@
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class HelloServlet extends HttpServlet{
+
+	//HttpServletRequest req, 클라이언트가 보낸 요청에 대한 정보들이 들어있음
+	//HttpServletResponse resp 서블릿이 응답할 내용이나 정책에 대해서 정해줄 수 있음
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		// super.doGet(req, resp);
+		PrintWriter out = response.getWriter();
+		
+	}
+
+}

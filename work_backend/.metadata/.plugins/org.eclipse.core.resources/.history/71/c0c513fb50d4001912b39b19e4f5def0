@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form>
+		<input name = "name">
+		<br>
+		<input name = "age">
+		<br>
+		<input type = "submit" value = "제출">
+	</form>
+</body>
+</html>

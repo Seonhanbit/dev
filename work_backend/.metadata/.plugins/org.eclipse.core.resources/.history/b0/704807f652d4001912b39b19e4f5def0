@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>입력 양식 테스트</title>
+</head>
+<body>
+	<form method="get" action="param.do">
+	</form>
+</body>
+</html>

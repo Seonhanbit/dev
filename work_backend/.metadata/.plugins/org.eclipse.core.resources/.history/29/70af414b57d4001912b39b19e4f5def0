@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>입력 양식 테스트</title>
+</head>
+<body>
+	<form method="get" action="param1.do">
+		<fieldset>
+			<legend>회원 가입 양식</legend>
+			<table>
+				<caption>입력 양식 테스트</caption>
+				<tr>
+					<td>텍스트</td>
+					<td><input type="text" name="text" value="기본값"></td>
+				</tr>
+				<tr>
+					<td>비밀번호</td>
+					<td><input type="password" name="password"></td>
+				</tr>
+				<tr>
+					<td>버튼</td>
+					<td><input type="button" name="b1" value="확인"></td>
+				</tr>
+				<tr>
+					<td>체크박스</td>
+					<td><input type="checkbox" name="hobby" value="read"
+						checked="checked">독서 <input type="checkbox" name="hobby"
+						value="movie">영화 <input type="checkbox" name="hobby"
+						value="running">운동</td>
+				</tr>
+​
+				<tr>
+					<td>select</td>
+					<td>
+					<select name="job" size='3' multiple="multiple">
+							<option value="programer" selected="selected">프로그래머</option>
+							<option value="datascience">데이터분석가</option>
+							<option value="engineer">기술자</option>
+					</select></td>
+				</tr>
+​
+				<tr>
+					<td>텍스트 Area</td>
+​
+					<td><textarea rows="5" cols="30" name="content">기본값</textarea></td>
+				</tr>
+​
+				<tr>
+					<td>라디오</td>
+​
+					<td><input type="radio" name="gender" value="f">여자 <input
+						type="radio" name="gender" value="m">남자</td>
+				</tr>
+​
+				<tr>
+					<td>파일</td>
+​
+					<td><input type="file" name="fileup"></td>
+				</tr>
+				<tr>
+					<td>hidden</td>
+					<td><input type="hidden" name="page" value="1"></td>
+				</tr>
+				<tr>
+					<td>image</td>
+					<td><input type="image" name="image"
+						src="../images/Ligthouse.jpg" width="35"></td>
+				</tr>
+				<tr>
+					<td>number</td>
+					<td><input type="number" name="quantity" min='1' max='5'></td>
+				</tr>
+				<tr>
+					<td>date</td>
+					<td><input type="date" name="today"></td>
+				</tr>
+				<tr>
+					<td>url</td>
+					<td><input type="email" name="email"></td>
+				</tr>
+​
+				<tr>
+					<td colspan="2"><input type="reset" value="취소" /> <input
+						type="submit" value="전송" /></td>
+				</tr>
+​
+			</table>
+		</fieldset>
+	</form>
+</body>
+</html>

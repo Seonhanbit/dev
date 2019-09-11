@@ -1,0 +1,38 @@
+import java.io.*;
+import java.util.*;
+import javax.servlet.annotation.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class HelloServlet extends HttpServlet{
+
+	//HttpServletRequest req, 클라이언트가 보낸 요청에 대한 정보들이 들어있음
+	//HttpServletResponse resp 서블릿이 응답할 내용이나 정책에 대해서 정해줄 수 있음
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		// super.doGet(req, resp);
+		resp.setCharacterEncoding("UTF-8");
+		
+		PrintWriter out = resp.getWriter();
+		out.print("<!DOCTYPE html>");
+		out.print("<html>");
+		out.print("<head>");
+		out.print("<meta charset='UTF-8'>");
+		out.print("<title>Insert title here</title>");
+		out.print("</head>");
+		out.print("<body>");
+		out.print("<h1>hello world</h1><p><p>현재 시간 - ");
+		
+		Calendar today = Calendar.getInstance();
+		out.print(today.get(Calendar.HOUR_OF_DAY));
+		out.print(":");
+		out.print(today.get(Calendar.SECOND));	
+		out.print("</p> </body>");
+		out.print("</html>");
+		out.close();		
+	}
+
+}
