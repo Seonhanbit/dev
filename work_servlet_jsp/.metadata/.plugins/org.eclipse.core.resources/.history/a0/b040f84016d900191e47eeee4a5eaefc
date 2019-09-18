@@ -1,0 +1,114 @@
+package edu.ssafy.model;
+
+import java.util.ArrayList;
+import java.sql.*;
+
+public class MemManager {
+	private static ArrayList<MemVO> list = new ArrayList<>();
+	private static MemManager man = new MemManager();
+	private MemManager() {}
+	private Connection conn;
+	private PreparedStatement st;
+	private ResultSet rs;
+
+	public static MemManager getInstance() {
+		return man;
+	}
+
+	public boolean addMem(String id, String name, String pw, String addr, int age, String tel) {
+		String str = "insert into memberweb(id,name,pw,addr,age,tel)values(?,?,?,?,?,?)";
+		boolean res = false;
+		try {
+			conn = ConnectionProxy.getConnection();
+			
+			st = conn.prepareStatement(str);
+			st.setString(1, id);
+			st.setString(2, name);
+			st.setString(3, pw);
+			st.setString(4, addr);
+			st.setInt(5, age);
+			st.setString(6, tel);
+			res = st.execute();
+			res=true;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			res = false;
+		} finally {
+			close();
+		}
+		return res;
+	}
+
+	public boolean delMem(String id) {
+		String str = "delete from memberweb where id = ?";
+		boolean res = false;
+		try {
+			conn = ConnectionProxy.getConnection();
+			
+			st = conn.prepareStatement(str);
+			st.setString(1, id);
+			st.execute();
+			res=true;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return res;
+	}
+
+	public boolean updateMem(String id, String name, String pw, String addr, int age, String tel) {
+		String str = "update customer set name =?, pw = ?, addr = ?,age = ?,tel = ? where id = ?";
+		boolean res = false;
+		try {
+			conn = ConnectionProxy.getConnection();
+			
+			st = conn.prepareStatement(str);
+			st.setString(1, name);
+			st.setString(2, pw);
+			st.setString(3, addr);
+			st.setInt(4, age);
+			st.setString(5, tel);
+			st.setString(6, id);
+			t.execute();
+			res=true;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			res = false;
+		} finally {
+			close();
+		}
+		return res;
+	}
+
+	public ArrayList<MemVO> getList() {
+		return list;
+	}
+
+	public MemVO memInfo(String id) {
+		for (MemVO memVO : list) {
+			if (memVO.getId().equals(id)) {
+				return memVO;
+			}
+		}
+		return null;
+	}
+	
+	public void close() {
+		try {
+			if (rs != null)
+				rs.close();
+			if (st != null)
+				st.close();
+			if (conn != null)
+				conn.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}

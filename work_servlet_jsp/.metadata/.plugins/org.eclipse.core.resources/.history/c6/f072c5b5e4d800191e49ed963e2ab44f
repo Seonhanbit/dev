@@ -1,0 +1,10 @@
+package edu.ssafy.model;
+
+public class MemVO {
+	private String id;
+	private String name;
+	private String pw;
+	private String addr;
+	private String age;
+	private String tel;
+}

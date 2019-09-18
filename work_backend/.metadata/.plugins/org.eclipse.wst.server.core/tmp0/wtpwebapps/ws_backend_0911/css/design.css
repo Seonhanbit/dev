@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+table {
+	width: 50%;
+	border: 1px solid #4c4c4c;
+}
+
+th, td {
+	border: 1px solid #4c4c4c;
+	padding: 3px;
+}
+
+#td_cat {
+	background-color: #bdbdbd;
+	text-align: center;
+	width: 20%;
+	text-align: center;
+}
+
+.title_table {
+	border-right: none;
+	border-left: none;
+	border-top: none;
+	border-bottom: none;
+	margin-top: 5px;
+	text-align: center;
+}

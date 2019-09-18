@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>css example</title>
+<link href="css/using.css" rel="stylesheet" type="test/css">
+<style type="text/css">
+article {
+	border: 1px solid #000;
+}
+
+#bag1 {
+	border: 1px solid #0F0;
+}
+
+.bag1 {
+	border: 1px solid #00F;
+}
+
+#bag3 p {
+	
+}
+
+#bag3>p {
+	
+}
+
+#bag3, p {
+	
+}
+
+p:first-child {
+	
+}
+
+.bag3:nth-child(2n+1) {
+	
+}
+
+P:hover {
+	
+}
+body {
+	width: 1200px;
+	height : 1500px;
+	margin: 0 auto;
+}
+nav{
+	margin-right : 10px;
+	float: left;
+}
+section{
+	width :900px;
+	float: left;
+}
+aside{
+	position: fixed;
+	top: 30px;
+	right: 10px;
+}
+ footer{
+	clear: both;
+} 
+
+article{
+	width : 250px;
+	height : 300px;
+	float: left;
+}
+
+</style>
+</head>
+<body>
+	<h1 align="center">가방 리스트</h1>
+	<nav>
+		<ul>
+			<li>남성</li>
+			<li>여성</li>
+			<li>유아</li>
+		</ul>
+	</nav>
+	<section>
+		<article style="border: 1px dotted #F00;">
+			<p class="bag3">
+				<img alt="가방1" src="image/a1.jpg">
+			</p>
+			<span>가방1</span>
+		</article>
+		<article id="bag1">
+			<p class="bag3">
+				<img alt="가방2" src="image/a2.jpg">
+			</p>
+			<span>가방2</span>
+		</article>
+		<article class="bag1">
+			<p class="bag3">
+				<img alt="가방3" src="image/a3.jpg">
+			</p>
+			<span>가방3</span>
+		</article>
+		<article id="bag3">
+			<p class="bag3">
+				<img alt="가방4" src="image/a4.jpg">
+			</p>
+			<span>가방4</span>
+		</article>
+		<article>
+			<p class="bag3">
+				<img alt="가방5" src="image/a5.jpg">
+			</p>
+			<span>가방5</span>
+		</article>
+	</section>
+	<aside>이것은 평범한 가방 아니다</aside>
+	<footer>tel : 010-0101-9999</footer>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8" import="java.util.*, edu.ssafy.model.MemVO"%>
+<%
+	ArrayList<MemVO> list = (ArrayList<MemVO>) request.getAttribute("list");
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원 조회</title>
+</head>
+<body>
+<div align="center">
+	<h1>회원 목록</h1>
+	<table border="1">
+		<tr>
+			<th>아이디</th>
+			<th>이름</th>
+		</tr>
+		<%
+			for (int i = 0; i < list.size(); i++) {
+		%>
+		<tr>
+			<td><%=list.get(i).getId()%></td>
+			<td><a href="main.do?action=meninfo"><%=list.get(i).getName()%></a></td>
+		</tr>
+		<%
+			}
+		%>
+	</table>
+	<a href="index.html">초기화면</a>
+	</div>
+</body>
+</html>

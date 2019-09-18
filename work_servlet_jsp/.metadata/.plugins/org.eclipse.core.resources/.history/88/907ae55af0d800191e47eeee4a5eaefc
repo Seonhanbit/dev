@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<a href="registerMem.html">등록화면</a><br>
+	<a href="main.do?action=listmem.do">회원리스트</a>
+</body>
+</html>

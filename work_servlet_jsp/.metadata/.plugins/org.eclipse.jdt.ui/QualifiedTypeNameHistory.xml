@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="edu.ssafy.model.Manager"/>
+<fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
+<fullyQualifiedTypeName name="com.sun.org.apache.bcel.internal.generic.AALOAD"/>
+<fullyQualifiedTypeName name="edu.ssafy.model.MemManager"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="edu.ssafy.model.MemVO"/>
+<fullyQualifiedTypeName name="java.net.URLEncoder"/>
+<fullyQualifiedTypeName name="edu.ssafy.model.ConnectionProxy"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>상품 등록</title>
+<style>
+td:nth-child(odd) {
+	width: 120px;
+	text-align: center;
+	font-weight: bold;
+}
+</style>
+</head>
+<body>
+	<h1>상품을 등록 해 주세요.</h1>
+	<form method="post" action="product.do">
+		<table>
+			<tr>
+				<td>상 품 명 :</td>
+				<td><input type="text" name="pname"></td>
+			</tr>
+			<tr>
+				<td>상품 가격:</td>
+				<td><input type="text" name="pprice"></td>
+			</tr>
+			<tr>
+				<td>상품 설명:</td>
+				<td><input type="text" name="psub"></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="저장"><input type="reset"
+					value="취소"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
