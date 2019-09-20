@@ -1,0 +1,6 @@
+defaultTernModules=guess-types,outline,browser,ecma5,jquery,jquery-extension,browser-extension,ckeditor4.4.x
+eclipse.preferences.version=1
+loadingLocalPlugin=false
+repositories=
+traceOnConsole=false
+used-repository-name=default

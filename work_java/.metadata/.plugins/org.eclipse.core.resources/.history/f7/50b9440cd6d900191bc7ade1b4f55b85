@@ -1,0 +1,50 @@
+package argorithm3;
+
+import java.util.Scanner;
+
+7 11
+0 1 31
+0 2 31
+0 6 31
+0 5 60
+1 2 21
+2 4 46
+2 6 25
+3 4 34 
+4 6 51
+5 3 18
+5 4 40
+public class Kruskal {
+	static int[] parents;
+	int N;
+	public static void main(String[] args) {
+		String input= "7 11\n" +
+				"0 1 31\r\n" + 
+				"0 2 31\r\n" + 
+				"0 6 31\r\n" + 
+				"0 5 60\r\n" +
+				"1 2 21\r\n" + 
+				"2 4 46\r\n" + 
+				"2 6 25\r\n" + 
+				"3 4 34\r\n" + 
+				"4 6 51\r\n" + 
+				"5 3 18\r\n" + 
+				"5 4 40\r\n";
+		Scanner sc = new Scanner("7 11\n" +
+				"0 1 31\r\n" + 
+				"0 2 31\r\n" + 
+				"0 6 31\r\n" + 
+				"0 5 60\r\n" +
+				"1 2 21\r\n" + 
+				"2 4 46\r\n" + 
+				"2 6 25\r\n" + 
+				"3 4 34\r\n" + 
+				"4 6 51\r\n" + 
+				"5 3 18\r\n" + 
+				"5 4 40\r\n" ); 
+		
+		int sum;
+
+	}
+
+}

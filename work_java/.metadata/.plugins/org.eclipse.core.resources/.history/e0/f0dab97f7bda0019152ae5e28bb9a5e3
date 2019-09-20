@@ -1,0 +1,76 @@
+package argorithm3;
+
+import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.lang.reflect.Array;
+import java.util.*;
+
+public class Prim {
+	static ArrayList<Node>[] adj;
+	static int N, K, sum;
+
+	static class Node implements Comparable<Node> {
+		int dic;
+		int cost;
+
+		Node(int dic, int cost) {
+			this.dic = dic;
+			this.cost = cost;
+		}
+
+		@Override
+		public String toString() {
+			return "Node [dic=" + dic + ", cost=" + cost + "]";
+		}
+
+		@Override
+		public int compareTo(Node o) {
+			if(this.cost == o.cost)
+				return this.dic-o.dic;
+			return this.cost - o.cost;
+		}
+
+	}
+
+	public static void main(String[] args) throws IOException {
+		String input = "7 11\n" + "0 1 31\r\n" + "0 2 31\r\n" + "0 6 31\r\n" + "0 5 60\r\n" + "1 2 21\r\n"
+				+ "2 4 46\r\n" + "2 6 25\r\n" + "3 4 34\r\n" + "4 6 51\r\n" + "5 3 18\r\n" + "5 4 40\r\n";
+		BufferedReader br = new BufferedReader(new InputStreamReader(new ByteArrayInputStream(input.getBytes())));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		N = Integer.parseInt(st.nextToken());
+		K = Integer.parseInt(st.nextToken());
+		// 각 정점별로 리스트를 하나씩 가지고 있어야하고
+		adj = new ArrayList[N];
+		// 각 리스트에는 도착정점+경로비용의 정보가 들어있어야함
+		for (int i = 0; i < N; i++) {
+			adj[i] = new ArrayList<>();
+		}
+		for (int i = 0; i < K; i++) {
+			st = new StringTokenizer(br.readLine());
+			adj[Integer.parseInt(st.nextToken())]
+					.add(new Node(Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken())));
+		}
+//		for(int i = 0; i < N; i++) {
+//			System.out.println(i+"정점 출발");
+//			System.out.println(adj[i].toString());
+//		}
+		// 선택된 정점이 모여있는 곳
+		ArrayList<Integer> selList = new ArrayList<>();
+		// 선택된 정점을 표시하는 체크 배열
+		boolean[] visited = new boolean[N];
+		Arrays.sort(adj);
+		for (int i = 0; i < N; i++) {
+			// 아무거나 한 정점을 선택한다(선택배열에 담고 체크 배열에 체크)
+			selList.add(i);
+			visited[i]=true;
+			// 선택한 정점이 N개가 될 때 까지
+			while(selList.size()!=N) {
+			// 선택한 정점에서 출발하는 간선 중 도착지가 선택되지 않은 간선 중 비용이 가장 작은 간선 선택
+			// 선택된 간선으로부터 연결되는 정점을 선택(선택배열에 담고 체크 배열에 체크)
+			}
+		}
+	}
+
+}

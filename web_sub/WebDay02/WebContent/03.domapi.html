@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload=function(){
+	var p = document.getElementById("data");
+	var button = document.querySelector("button");
+	button.addEventListener("click", firstfucntion, true);
+	
+	function firstfucntion(){
+		console.log(p.innerHTML);
+		p.innerHTML="Hello P ^^";
+		p.setAttribute("style","background: #F00");
+	};
+	
+	//firstfucntion();
+	
+}
+</script>
+</head>
+<body>
+	<h1>DATA</h1>
+	<div>
+		<p id="data">content data</p>
+		<button>button</button>
+	</div>
+	
+	
+</body>
+</html>

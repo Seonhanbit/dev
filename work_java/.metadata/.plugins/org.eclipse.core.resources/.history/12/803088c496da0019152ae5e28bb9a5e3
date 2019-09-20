@@ -1,0 +1,30 @@
+package argorithm3;
+
+import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Dijkstra {
+	static int N,K;
+	public static void main(String[] args) throws IOException {
+		//거리 배열을 준비
+		//시작점을 고르고 시작점으로부터 갈 수 있는 각 정점에서는 거리를 적고 못가는 곳은 큰 값 적어줌 
+		//시작점에 대해 방문체크
+		//방문 체크가 안된 정점 중 현재까지 가장 작은 정점 찾기
+		//찾은 정점으로부터 갈 수 있는 정점들에 대해서 기존 알고 있던 거리보다 더 짧으면 갱신
+		//시작점에서 찾은 정점까지의 거리 + 찾은 정점에서 다른 정점까지 거리
+		String input = "7 11\n" + "0 1 31\r\n" + "0 2 31\r\n" + "0 6 31\r\n" + "0 5 60\r\n" + "1 2 21\r\n"
+				+ "2 4 46\r\n" + "2 6 25\r\n" + "3 4 34\r\n" + "4 6 51\r\n" + "5 3 18\r\n" + "5 4 40\r\n";
+		BufferedReader br = new BufferedReader(new InputStreamReader(new ByteArrayInputStream(input.getBytes())));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		N = Integer.parseInt(st.nextToken());
+		K = Integer.parseInt(st.nextToken());
+		
+		
+		boolean visited = new boolean[N];
+		
+	}
+
+}

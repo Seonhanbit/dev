@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<a href = hello.do> 헬로우</a><br>
+	<a href = sessionTest.do> 헬로우</a><br>
+	
+</body>
+</html>

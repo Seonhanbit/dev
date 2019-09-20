@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload=function(){
+	var button = document.querySelector("button");
+	button.addEventListener("click",go,true);
+	
+	function go(){
+		
+		xhr = new XMLHttpRequest();
+		xhr.open('POST',"my.do?name1=aaa&name2=bbb",true);
+		xhr.send();
+		xhr.onreadystatechange = function(){
+			if(xhr.readyState == 4 && xhr.status ==200){
+				var res = xhr.responseXML;
+				console.log(res.getElementsByTagName("name")[0].innerHTML);		
+				document.getElementsByTagName("p")[0].innerHTML
+						=res.getElementsByTagName("name")[1].innerHTML
+			}
+		} 
+		
+	}
+}
+</script>
+</head>
+<body>
+	<h1>DATA</h1>
+	<div>
+		<p id="data">content data</p>
+		<button>button</button>
+	</div>
+</body>
+</html>

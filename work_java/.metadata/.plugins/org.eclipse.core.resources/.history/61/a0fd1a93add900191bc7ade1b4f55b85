@@ -1,0 +1,28 @@
+package argorithm3;
+
+public class 상호배타집합 {
+	static int[] parents;
+	
+	public static void main(String[] args) {
+		parents = new int[10];
+		for (int i = 0; i < parents.length; i++) {
+			makeSet(i);
+			unoin(0,1); printSet();
+			
+		}
+	}
+	//현재 부모배열을 출력하는 함수
+	static void printSet() {
+		
+	}
+	static void makeSet(int x) {
+		
+	}
+	static void findSet(int x) {
+		
+	}
+	static void union(int x, int y) {
+		
+	}
+
+}

@@ -1,0 +1,9 @@
+package edu.ssafy.model;
+
+import java.sql.Connection;
+
+public class ConnectionProxy {
+	static Connection getConnection() {
+		
+	}
+}

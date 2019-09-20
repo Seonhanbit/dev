@@ -1,0 +1,65 @@
+package argorithm3;
+
+import java.util.Arrays;
+import java.util.Iterator;
+
+public class 상호배타집합 {
+	static int[] parents;
+
+	public static void main(String[] args) {
+		parents = new int[10];
+		for (int i = 0; i < parents.length; i++)
+			makeSet(i);
+		union(0, 1); 
+		printSet();
+		union(2, 3);
+		printSet();
+		union(0, 3);
+		printSet();
+		union(4, 5);
+		printSet();
+		union(6, 7);
+		printSet();
+		union(4, 7);
+		printSet();
+		union(3, 5);
+		printSet();
+		union(1, 8);
+		printSet();
+		union(0, 9);
+		printSet();
+	}
+
+	// 현재 부모배열을 출력하는 함수
+	static void printSet() {
+		System.out.println(Arrays.toString(parents));
+//		for (int i = 0; i < parents.length; i++) {
+//			System.out.println(findSet(i)+" ");
+//		}System.out.println();
+	}
+
+	static void makeSet(int x) {
+		//자기 자신을 자신의 부모로 지정 > 하나의 집합이 됨
+		parents[x] = x;
+	}
+
+	static int findSet(int x) {
+		//재귀적으로 부모를 찾아 올라가 루트를 반환.
+		//재귀의 기저 영역은 자신의 부모가 자기 자신인 경우. 리턴 나.
+		//재귀 호출은 자신의 부모에 대해서 다시 findSet
+		if(x==parents[x])
+			return x;
+		//루트가 구해지면 바로 부모에 넣어버리기
+		parents[x] = findSet(parents[x]);
+		return parents[x];
+	}
+
+	static void union(int x, int y) {
+		int px = findSet(x);
+		int py = findSet(y);
+		//아무나 부모가 되면 되는데 우린 뒤엣놈이 부모가 됨
+		parents[px]=py;
+		//parents[findSet(y)]=findSet(x); //얘도 가능
+	}
+
+}

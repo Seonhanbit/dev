@@ -1,0 +1,20 @@
+package D4;
+
+import java.util.Scanner;
+
+public class s_1251_kruskal {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int T = sc.nextInt();
+		for(int tc=1; tc<=T; tc++) {
+			int V = sc.nextInt();
+			double[][] points = new double[V][2];
+			for(int i=0; i<V; i++) {
+				double x1 = sc.nextDouble();
+			}
+		}
+
+	}
+
+}

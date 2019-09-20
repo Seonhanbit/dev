@@ -1,0 +1,48 @@
+package argorithm3;
+
+import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.StringTokenizer;
+
+public class Dijkstra {
+	static int N, K;
+
+	public static void main(String[] args) throws IOException {
+		// 거리 배열을 준비
+		// 시작점을 고르고 시작점으로부터 갈 수 있는 각 정점에서는 거리를 적고 못가는 곳은 큰 값 적어줌
+		// 시작점에 대해 방문체크
+		// 방문 체크가 안된 정점 중 현재까지 가장 작은 정점 찾기
+		// 찾은 정점으로부터 갈 수 있는 정점들에 대해서 기존 알고 있던 거리보다 더 짧으면 갱신
+		// 시작점에서 찾은 정점까지의 거리 + 찾은 정점에서 다른 정점까지 거리
+		String input = "6 11\r\n" + "0 1 3\r\n" + "0 2 5\r\n" + "1 2 2\r\n" + "1 3 6\r\n" + "2 1 1\r\n" + "2 4 6\r\n"
+				+ "2 3 4\r\n" + "3 4 2\r\n" + "3 5 3\r\n" + "4 0 3\r\n" + "4 5 6";
+		BufferedReader br = new BufferedReader(new InputStreamReader(new ByteArrayInputStream(input.getBytes())));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		N = Integer.parseInt(st.nextToken());
+		K = Integer.parseInt(st.nextToken());
+		//방향이 있는 이동 > 인접행렬
+		int[][] arr = new int[N][N];
+		for (int i = 0; i < K; i++) {
+			st = new StringTokenizer(br.readLine());
+			int n1 = Integer.parseInt(st.nextToken());
+			int n2 = Integer.parseInt(st.nextToken());
+			int val = Integer.parseInt(st.nextToken());
+			arr[n1][n2] = val;
+		}
+		//최단거리를 기록할 배열
+		int[] dist = new int[N];
+		boolean[] visited = new boolean[N];
+		//0번 정점에서 각 정점으로 최단거리가 얼만지 구해봅시다.
+		visited[0]=true;
+		for (int i = 0; i < N; i++) {
+			dist[0]=arr[0][i];
+			if(arr[0][i]==0)
+				dist[i]=999;
+		}
+		System.out.println(Arrays.toString(dist));
+	}
+
+}

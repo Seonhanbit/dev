@@ -1,0 +1,15 @@
+package argorithm3;
+
+public class Dijkstra {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//거리 배열을 준비
+		//시작점을 고르고 시작점으로부터 갈 수 있는 각 정점에서는 거리를 적고 못가는 곳은 큰 값 적어줌 
+		//시작점에 대해 방문체크
+		//방문 체크가 안된 정점 중 현재까지 가장 작은 정점 찾기
+		//찾은 정점으로부터 갈 수 있는 정점들에 대해서 기존 알고 있던 거리보다 더 짧으면 갱신
+		//시작점에서 찾은 정점까지의 거리 + 찾은 정점에서 다른 정점까지 거리
+	}
+
+}

@@ -1,0 +1,49 @@
+package jungol;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class s1863_종교 {
+	static int n, m, i, j;
+	static int[] parents;
+	static int cnt;
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		n= Integer.parseInt(st.nextToken());
+		m= Integer.parseInt(st.nextToken());
+		parents = new int[n+1];
+		cnt = 0;
+		for (int k=1; k<parents.length; k++) {
+			parents[k]=k;
+		}
+		for(int k=0; k<m; k++) {
+			st = new StringTokenizer(br.readLine());
+			i = Integer.parseInt(st.nextToken());
+			j = Integer.parseInt(st.nextToken());
+			union(i,j);
+		}
+		for (int k=1; k<parents.length; k++) {
+			if(k==parents[k])
+				cnt++;
+		}
+		System.out.println(cnt);
+	}
+	
+	static void findSet(int x) {
+		//재귀적으로 부모를 찾아 올라가 루트를 반환.
+		//재귀의 기저 영역은 자신의 부모가 자기 자신인 경우. 리턴 나.
+		//재귀 호출은 자신의 부모에 대해서 다시 findSet
+		if(x==parents[x])
+			return x;
+		//루트가 구해지면 바로 부모에 넣어버리기
+		parents[x] = findSet(parents[x]);
+		return parents[x];
+	}
+	static void union(int x, int y) {
+		
+	}
+
+}

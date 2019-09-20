@@ -1,0 +1,10 @@
+package argorithm3;
+
+public class 상호배타집합 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
