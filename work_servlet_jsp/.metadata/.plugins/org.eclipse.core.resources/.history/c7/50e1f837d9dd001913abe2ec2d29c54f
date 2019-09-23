@@ -1,0 +1,49 @@
+package edu.ssafy.service;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import edu.ssafy.model.IProductManager;
+import edu.ssafy.model.ProductVO;
+
+public class ProductService implements IProductService {
+	IProductManager productManager = new ProductManager();
+	
+	public void delPro(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		String num = request.getParameter("num");
+		productManager.delProduct(num);
+		response.sendRedirect("product.do?action=listProduct");
+	}
+
+	public void viewPro(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String num = request.getParameter("num");
+		ProductVO productVO = productManager.getProduct(num);
+		request.setAttribute("product", productVO);
+		request.getRequestDispatcher("viewProduct.jsp").forward(request, response);
+	}
+
+	public void addProForm(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		request.getRequestDispatcher("addProductForm.jsp").forward(request, response);
+	}
+
+	public void addPro(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		String name = request.getParameter("name");
+		int price = Integer.parseInt(request.getParameter("price"));
+		String description = request.getParameter("description");
+		productManager.addProduct(new ProductVO(name, price, description));
+		response.sendRedirect("product.do?action=listProduct");
+	}
+
+	public void listPro(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		ArrayList<ProductVO> productList = productManager.getProductList();
+		request.setAttribute("productList", productList);
+		request.getRequestDispatcher("listProduct.jsp").forward(request, response);
+	}
+}

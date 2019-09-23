@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>MemberProject</display-name>
+  <welcome-file-list>
+    <welcome-file>login.html</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>RegisterServlet</display-name>
+    <servlet-name>RegisterServlet</servlet-name>
+    <servlet-class>edu.ssafy.controller.RegisterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegisterServlet</servlet-name>
+    <url-pattern>/registmem.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MainServlet</display-name>
+    <servlet-name>MainServlet</servlet-name>
+    <servlet-class>edu.ssafy.controller.MainServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MainServlet</servlet-name>
+    <url-pattern>/main.do</url-pattern>
+  </servlet-mapping>
+  <filter>
+    <display-name>KorCharsetFilter</display-name>
+    <filter-name>KorCharsetFilter</filter-name>
+    <filter-class>edu.ssafy.controller.KorCharsetFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>KorCharsetFilter</filter-name>
+    <url-pattern>/main.do</url-pattern>
+  </filter-mapping>
+</web-app>

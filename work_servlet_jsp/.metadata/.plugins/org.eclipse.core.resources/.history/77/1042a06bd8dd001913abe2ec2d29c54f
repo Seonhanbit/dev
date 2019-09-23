@@ -1,0 +1,5 @@
+package edu.ssafy.service;
+
+public class ProductService {
+
+}

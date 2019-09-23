@@ -1,0 +1,59 @@
+package edu.ssafy.controller;
+
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.util.ArrayList;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import edu.ssafy.business.MemService;
+import edu.ssafy.model.MemManager;
+import edu.ssafy.model.MemVO;
+
+/**
+ * Servlet implementation class MainServlet
+ */
+public class MainServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	MemService service = new MemService();
+
+	// 처음에 한번 돌 때 실행됨
+	public void init() throws ServletException {
+		super.init();
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		doPost(request, response);
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		//request.setCharacterEncoding("UTF-8");
+		//response.setContentType("text/html; charset=utf-8");
+		String action = request.getParameter("action");
+		if (action.equals("registmem")) {
+			service.registMem(request, response);
+		} else if (action.equals("listmem")) {
+			service.listMem(request, response);
+		} else if (action.equals("meminfo")) {
+			service.mainInfo(request, response);
+		} else if (action.equals("deletemem")) {
+			service.deleteMem(request, response);
+		} else if (action.equals("updatemem")) {
+			service.updateMem(request, response);
+		} else if (action.equals("updatemem")) {
+			service.updateMem(request, response);
+		} else if (action.equals("login")) {
+			service.loginMem(request, response);
+		}else if (action.equals("logout")) {
+			service.logoutMem(request, response);
+		}
+	}
+
+}

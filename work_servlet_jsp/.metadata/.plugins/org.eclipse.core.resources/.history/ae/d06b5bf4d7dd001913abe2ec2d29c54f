@@ -1,0 +1,67 @@
+package edu.ssafy.servlet;
+
+import java.io.*;
+import java.util.*;
+
+import javax.servlet.*;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.*;
+
+import edu.ssafy.model.ProductManager;
+import edu.ssafy.model.ProductVO;
+
+@WebServlet("/product.do")
+public class ProductServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	private ProductManager productManager = ProductManager.getInstance();
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		doPost(request, response);
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		String action = request.getParameter("action");
+
+		if (action == null || action.equals("listProduct")) {
+			listPro(request, response);
+		} else if (action.equals("addProduct")) {
+			addPro(request, response);
+		} else if (action.equals("addProductForm")) {
+			request.getRequestDispatcher("addProductForm.jsp").forward(request, response);
+
+		} else if (action.equals("viewProduct")) {
+			String num = request.getParameter("num");
+			ProductVO productVO = productManager.getProduct(num);
+			request.setAttribute("product", productVO);
+			request.getRequestDispatcher("viewProduct.jsp").forward(request, response);
+
+		} else if (action.equals("delProduct")) {
+			String num = request.getParameter("num");
+			productManager.delProduct(num);
+			response.sendRedirect("product.do?action=listProduct");
+
+		}
+		// doGet(request, response);
+	}
+
+	private void addPro(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		String name = request.getParameter("name");
+		int price = Integer.parseInt(request.getParameter("price"));
+		String description = request.getParameter("description");
+		productManager.addProduct(new ProductVO(name, price, description));
+		response.sendRedirect("product.do?action=listProduct");
+	}
+
+	private void listPro(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		ArrayList<ProductVO> productList = productManager.getProductList();
+		request.setAttribute("productList", productList);
+		request.getRequestDispatcher("listProduct.jsp").forward(request, response);
+	}
+}
