@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('button').on("click",function(){
+		$.ajax({ //함수 안에 데이터 넣기
+			type:"post",
+			url:"data.jsp", //서버쪽 값 main.do?action, jsp, 
+			dataType:"xml",//xml, html, json, text 타입 가능
+			success: succ,
+			error: err
+		});
+	});
+	function succ(){
+		var name = $("name",data).text();
+		var age = $("age",data).text();
+		var addr = $("addr",data).text();
+	}
+	function err(){
+		
+	}
+})
+
+</script>
+</head>
+<body>
+<button>눌러</button>
+<div id="dd"/>
+</body>
+</html>

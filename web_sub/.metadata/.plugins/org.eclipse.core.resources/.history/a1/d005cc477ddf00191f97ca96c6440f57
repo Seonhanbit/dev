@@ -1,0 +1,5 @@
+package edu.ssafy.model;
+
+public class Calc {
+
+}

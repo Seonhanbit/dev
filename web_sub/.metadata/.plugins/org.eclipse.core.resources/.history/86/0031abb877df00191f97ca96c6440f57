@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="web.do">
+		<input id="op1" type ="number" value="" name="pop1">
+		<input id="op2" type ="number" value="" name="pop2">
+		<input type ="submit">
+	</form>
+</body>
+</html>

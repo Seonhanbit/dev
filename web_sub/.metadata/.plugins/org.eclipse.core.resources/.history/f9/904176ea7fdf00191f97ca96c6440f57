@@ -1,0 +1,38 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<link rel="stylesheet" href="./css/design.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript" src="./js/javascript.js"></script>
+</head>
+<body>
+	<form action="main.do?action=result" method="post" id="rfrom">
+	<div class="test_wrap">
+		<div class="test-in">
+			<div class="left">
+				<span class="tit">Input</span><br>
+				<textarea id="text_area" name="inputText" placeholder="Input값을 입력해 주세요."></textarea>
+			</div>
+			<div class="right">
+				<span class="tit">Output</span>
+				<div id="text_area2">
+					<c:forEach items="${output }" var="out">
+						${out }<br>
+					</c:forEach>
+				</div>
+			</div>
+		</div>
+		<div class="btn_right">
+			<input type="submit" class="btn_algo" value="Run">
+			<input type="reset" class="btn_algo" value="Clear">
+		</div>
+	</div>
+	</form>
+</body>
+</html>

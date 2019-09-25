@@ -1,0 +1,34 @@
+package edu.ssafy.servlet;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class MainServlet
+ */
+public class MainServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+     
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doPost(request, response);
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//브라우저에서 서블릿 넘어갈떄는 파라미터
+		//jsp연결할땐 Attribute
+		
+		String action = request.getParameter("action");
+		if(action.trim().equalsIgnoreCase("calc")){
+			calc(request,response);
+		}
+	}
+
+	private void calc(HttpServletRequest request, HttpServletResponse response) {
+		String op1 = request.getParameter("pop1");
+		String op2 = request.getParameter("pop2");		
+	}
+
+}

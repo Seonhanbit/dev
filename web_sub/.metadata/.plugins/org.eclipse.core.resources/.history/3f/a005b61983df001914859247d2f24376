@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('button').on("click",function(){
+		$.ajax();
+	})
+}
+
+</script>
+</head>
+<body>
+<button>눌러</button>
+</body>
+</html>

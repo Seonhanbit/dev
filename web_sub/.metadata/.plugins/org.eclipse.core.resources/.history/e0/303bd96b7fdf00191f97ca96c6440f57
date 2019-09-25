@@ -1,0 +1,13 @@
+package edu.ssafy.model;
+
+public class Calc {
+	int op1;
+	int op2;
+	int sum;
+	public Calc() {}
+	public Calc(int op1, int op2, int sum) {
+		this.op1=op1;
+		this.op2=op2;
+		this.sum=sum;
+	}
+}

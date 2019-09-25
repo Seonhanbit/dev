@@ -1,0 +1,12 @@
+package edu.ssafy.service;
+
+public class CalcServiceImpl implements IService {
+
+	@Override
+	public int calc(int a, int b) {
+		//알고리즘 구현하기 
+		int c = a+b;
+		return 0;
+	}
+
+}
