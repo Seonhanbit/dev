@@ -1,0 +1,511 @@
+<!doctype html>
+
+<html class="no-js" lang="en">
+ 
+<head>
+
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<title>SafeFood!!</title>
+
+<meta name="description" content="">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="icon" href="images/favicon.png">
+<link rel="stylesheet" href="./bootstrap-3.3.2-dist/css/bootstrap.css">
+<link rel="stylesheet" href="css/style.css">
+
+ 
+
+<script type="text/javascript"
+
+	src="http://code.jquery.com/jquery-3.2.0.min.js"></script>
+
+
+ 
+
+ 
+
+</head>
+
+ 
+
+<body>
+
+ 
+
+	<!-- PRELOADER -->
+
+	<div id="preloader">
+
+		<div class="preloader-area">
+
+			<div class="preloader-box">
+
+				<div class="preloader"></div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+ 
+
+ 
+
+	<section class="header-top-section">
+
+		<div class="container">
+
+			<div class="row">
+
+				<div class="col-md-6">
+
+					<div class="header-top-content">
+
+						<ul class="nav nav-pills navbar-left">
+
+						</ul>
+
+					</div>
+
+				</div>
+
+				<div class="col-md-6">
+
+					<div class="header-top-menu">
+
+						<ul class="nav nav-pills navbar-right" id="nara">
+
+							<li>
+
+								<div class="dropdown">
+
+									<button class="btn btn-secondary dropdown-toggle" type="button"
+
+										id="dropdownMenuButton" data-toggle="dropdown"
+
+										aria-haspopup="true" aria-expanded="false">Log in</button>
+
+									<div class="dropdown-menu" aria-labelledby="dropdownMenuButton"
+
+										style="background-color: #2e3537;">
+
+										<form class="login-form"
+
+											style="width: 300px; height: 310px; border: 0;">
+
+											<br />
+
+											<div style="margin-top: 10px; margin-left: 30px;">아 이 디</div>
+
+											<br /> <input type="text" maxlength="30"
+
+												style="border: none; border-right: 0px; border-top: 0px; boder-left: 0px; boder-bottom: 0px; margin-left: 30px; padding: .3em .5em; cursor: text; width: 200px; background-position: center right; background-repeat: no-repeat; background-color: #777777;">
+
+ 
+
+											<br /> <br />
+
+											<div style="margin-top: 10px; margin-left: 30px;">비 밀 번
+
+												호</div>
+
+											<br /> <input type="text" maxlength="30"
+
+												style="border: none; border-right: 0px; border-top: 0px; boder-left: 0px; boder-bottom: 0px; margin-left: 30px; padding: .3em .5em; cursor: text; width: 200px; background-position: center right; background-repeat: no-repeat; background-color: #777777;">
+
+											<br /><br />
+
+											<input type="submit" value="로그인"
+
+												style=" color:white; margin-left: 30px; margin-top: 10px; background: #e1e1e1; border: solid 2px grey; border-radius: 5px; height:30px; width:60px;"  /> <br /> 
+
+												<input type="submit" value="비밀번호 찾기"
+
+												style="color:white; margin-left: 30px; margin-top: 10px; background: #697980ad; border: solid 2px grey; boder-bottom: 0px; border-radius: 5px; height:30px; width:100px;" />
+
+												
+
+										</form>
+
+									</div>
+
+								</div>
+
+ 
+
+ 
+
+ 
+
+ 
+
+							</li>
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+							<li><a href="signupForm.html">회원가입</a></li>
+
+						</ul>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</section>
+
+ 
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+	<header class="header-section">
+
+		<nav class="navbar navbar-default">
+
+			<div class="container">
+
+
+ 
+				<!-- Collect the nav links, forms, and other content for toggling -->
+
+				<div class="collapse navbar-collapse"
+
+					id="bs-example-navbar-collapse-1">
+
+					<ul class="nav navbar-nav">
+
+						<li><a href="#">공지 사항</a></li>
+
+						<li><a href="#">상품 정보</a></li>
+
+						<li><a href="#">베스트 섭취 정보</a></li>
+
+						<li><a href="#">내 섭취 정보</a></li>
+
+						<li><a href="#">예상 섭취 정보</a></li>
+
+					</ul>
+
+ 
+
+				</div>
+
+				<!-- /.navbar-collapse -->
+
+			</div>
+
+			<!-- /.container -->
+
+		</nav>
+
+	</header>
+
+ 
+
+ 
+
+ 
+
+	<div class="container">
+
+		<div class="row">
+
+			<p></p>
+
+			<div class="col-md-6"></div>
+
+			<div class="col-md-6">
+
+				<p class="text-right"></p>
+
+			</div>
+
+		</div>
+
+ 
+
+		<div class="modal fade" id="defaultModal">
+
+			<div class="modal-dialog">
+
+				<div class="modal-content">
+
+					<div class="modal-header">
+
+						<button type="button" class="close" data-dismiss="modal"
+
+							aria-hidden="true">×</button>
+
+						<h4 class="modal-title">알림</h4>
+
+					</div>
+
+					<div class="modal-body">
+
+						<p class="modal-contents"></p>
+
+					</div>
+
+					<div class="modal-footer">
+
+						<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+
+					</div>
+
+				</div>
+
+ 
+
+			</div>
+
+ 
+
+		</div>
+
+ 
+
+		<hr />
+
+ 
+
+	</div>
+
+	<br />
+
+	<div
+
+		style="background-color: #e2e2e2c7; width: 100%; height: 4%; z-index: 1;">
+
+		<li style="display: inline-block; margin-top: 7px; margin-left: 380px"><a href="foodBestList.html">Home</a></li>
+
+		<li style="display: inline-block; margin-left: 10px">>></li>
+
+		<li style="display: inline-block; margin-left: 10px">회원가입</li>
+
+	</div>
+
+	<div
+
+		style="width: 100%; height: 700px; padding: 20px; background-color: gray; z-index: 1;">
+
+		<div
+
+			style="margin-top: 30px; margin-left: 600px; margin-right: auto; display: inline-block; width: 35%; height: 600px; background-color: #fffffff0; border-radius: 2em; border-top-left-radius: 2em; border-top-right-radius: 2em; border-bottom-left-radius: 2em; border-bottom-right-radius: 2em;">
+
+			<ul style="margin-top: 30px; margin-left: 20px; font-size: 30px;">회원가입
+
+			</ul>
+
+			<br /> <br />
+
+			<table class="type01" style="margin-left: 60px;">
+
+				<tr>
+
+					<th scope="row"
+
+						style="width: 50px; font-size: 13px; padding: 0px 0px 20px 0px; font-weight: normal;">아이디
+
+						<i style="color: red;">*</i>
+
+					</th>
+
+					<td style="padding: 0px 20px 20px 20px"><input type="text"
+
+						maxlength="30"
+
+						style="padding: .3em .5em; cursor: text; width: 400px; background-image: url('img/id.png'); background-position: top right; background-repeat: no-repeat"></td>
+
+				</tr>
+
+				<tr>
+
+					<th scope="row"
+
+						style="width: 70px; font-size: 13px; padding: 0px 0px 20px 0px; font-weight: normal;">비밀번호
+
+						<i style="color: red;">*</i>
+
+					</th>
+
+					<td style="padding: 0px 20px 20px 20px"><input type="text"
+
+						maxlength="30"
+
+						style="padding: .3em .5em; cursor: text; width: 400px; background-image: url('img/call2.png'); background-position: center right; background-repeat: no-repeat"></td>
+
+				</tr>
+
+				<tr>
+
+					<th scope="row"
+
+						style="width: 50px; font-size: 13px; padding: 0px 0px 20px 0px; font-weight: normal;">이름
+
+						<i style="color: red;">*</i>
+
+					</th>
+
+					<td style="padding: 0px 20px 20px 20px"><input type="text"
+
+						maxlength="30"
+
+						style="padding: .3em .5em; cursor: text; width: 400px; background-image: url('img/name.png'); background-position: center right; background-repeat: no-repeat"></td>
+
+				</tr>
+
+				<tr>
+
+					<th scope="row"
+
+						style="width: 50px; font-size: 13px; padding: 0px 0px 20px 0px; font-weight: normal;">주소
+
+						<i style="color: red;">*</i>
+
+					</th>
+
+					<td style="padding: 0px 20px 20px 20px"><input type="text"
+
+						maxlength="30"
+
+						style="padding: .3em .5em; cursor: text; width: 400px; background-image: url('img/addr.png'); background-position: center right; background-repeat: no-repeat"></td>
+
+				</tr>
+
+				<tr>
+
+					<th scope="row"
+
+						style="width: 50px; font-size: 13px; padding: 0px 0px 20px 0px; font-weight: normal;">전화번호
+
+						<i style="color: red;">*</i>
+
+					</th>
+
+					<td style="padding: 0px 20px 20px 20px"><input type="text"
+
+						maxlength="30"
+
+						style="padding: .3em .5em; cursor: text; width: 400px; background-image: url('img/pw.png'); background-position: center right; background-repeat: no-repeat"></td>
+
+				</tr>
+
+ 
+
+				<tr>
+
+					<th scope="row" style="font-size: 13px; font-weight: normal;">알레르기</th>
+
+					<td><br />
+
+						<div class="checks" style="margin-left: 10px">
+
+							<input type="checkbox" id="ex_chk"> <label for="ex_chk">대두</label>
+
+							<input type="checkbox" id="ex_chk1"> <label for="ex_chk1">땅콩</label>
+
+							<input type="checkbox" id="ex_chk2"> <label for="ex_chk2">우유</label>
+
+							<input type="checkbox" id="ex_chk3"> <label for="ex_chk2">게</label>
+
+							<input type="checkbox" id="ex_chk4"> <label for="ex_chk2">새우</label>
+
+							<input type="checkbox" id="ex_chk5"> <label for="ex_chk2">참치</label>
+
+							<input type="checkbox" id="ex_chk6"> <label for="ex_chk2">연어</label>
+
+							<input type="checkbox" id="ex_chk7"> <label for="ex_chk2">쑥</label>
+
+							<input type="checkbox" id="ex_chk8"> <label for="ex_chk2">소고기</label>
+
+							<br /> <input type="checkbox" id="ex_chk9"> <label
+
+								for="ex_chk2">닭고기</label> <input type="checkbox" id="ex_chk10">
+
+							<label for="ex_chk2">돼지고기</label> <input type="checkbox"
+
+								id="ex_chk11"> <label for="ex_chk2">복숭아</label> <input
+
+								type="checkbox" id="ex_chk12"> <label for="ex_chk2">민들레</label>
+
+							<input type="checkbox" id="ex_chk13"> <label
+
+								for="ex_chk2">계란흰자</label>
+
+						</div></td>
+
+				</tr>
+
+				<tr>
+
+					<th></th>
+
+					<td><br /> <br /> <br /> <br />
+
+						<div class="form-group">
+
+							<div class="col-lg-offset-2 col-lg-10">
+
+								<button type="submit" class="btn btn-default"
+
+									style="margin-left: 60px;">등록</button>
+
+							</div>
+
+						</div></td>
+
+				</tr>
+
+ 
+
+ 
+
+			</table>
+
+ 
+
+		</div>
+
+ 
+
+	</div>
+
+ 
+
+ 
+
+	<!-- JQUERY -->
+
+	<script src="js/vendor/jquery-1.11.2.min.js"></script>
+
+	<script src="js/vendor/bootstrap.min.js"></script>
+
+ 
+
+</body>
+
+</html>

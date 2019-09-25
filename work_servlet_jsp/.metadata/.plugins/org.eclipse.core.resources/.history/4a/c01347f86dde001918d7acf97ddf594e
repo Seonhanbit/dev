@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="../bootstrap-3.3.2-dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../bootstrap-3.3.2-dist/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="../css/main.css">
+	
+	<script type="text/javascript" src="../js/custom.js"></script>
+	<script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="../bootstrap-3.3.2-dist/js/bootstrap.min.js"></script>
+	
+	<style>
+	fieldset {
+		padding: 10px 25px;
+		margin: 15px 0px;
+		border: 1px solid silver;
+		backgroound-color: #fafafa;
+	}
+
+	fieldset legend {
+		display: block;
+		width: auto;
+		padding: 3px 10px;
+		margin-bottom: 0;
+		font-size: 15px;
+		line-height: inherit;
+		color: #333333;
+		border: 1px solid #ddd;
+		background-color: #ffffff;
+		font-weight: bold;
+	}
+	</style>
+	
+	<script type="text/javascript">
+	function register(){
+		rform.submit();
+	}
+	</script>
+</head>
+
+<nav class="navbar navbar-fixed-top" style="background-color: #2e3537;">
+    <div class="col-md-1"></div>
+    <div class="col-md-10" style="text-align: right;">
+        <button class="btn btn-sm dropdown-toggle glyphicon glyphicon-user" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="background-color: #2c2c2c; color: #ffffff; margin: 7px">&nbspLogin</button>
+        <ul  class="dropdown-menu dropdown-menu-right" style="border: 1px solid #252a2c; background: #2e3537;">
+            <li>
+                <form class="login-form margin-clear" style="background: #2e3537; margin: 20px 20px;">
+                    <div class="form-group has-feedback">
+                        <label class="control-label" style="color: #ffffff;">아 이 디</label>
+                        <input type="text" class="form-control" >
+                        <span class="glyphicon glyphicon-user form-control-feedback" aria-hidden="true"></span>
+                    </div>
+                    <div class="form-group has-feedback">
+                        <label class="control-label" style="color: #ffffff;">비밀번호</label>
+                        <input type="password" class="form-control">
+                        <span class="glyphicon glyphicon-user form-control-feedback" aria-hidden="true"></span>
+                    </div>
+                        <button type="submit" class="btn btn-sm" style="margin-bottom :20px">로 그 인</button><br>
+                        <button type="submit" class="btn btn-sm" style="background-color: #2c2c2c; color: #ffffff;">비밀번호 찾기</button>
+                </form>
+            </li>
+        </ul>
+        <button class="btn btn-sm glyphicon glyphicon-user" style="background-color: #2c2c2c; color: #ffffff; margin: 7px">&nbsp회원가입</button>
+    </div>
+    <div class="col-md-1"></div>
+</nav>
+
+<body style="padding-top: 40px;">
+	<!-- Navigation Bar -->
+	<div class="container-fluid">
+		
+		<!-- 메뉴바 -->
+		<div class="row" style="background-color: #ffffff; height: 100px; margin-top: 10px;">
+			<div class="col-md-1"></div>
+			<div class="col-md-3"><a href="./main.html"><img src="../img/ssafy.png" width="120px"></a></div>
+			<div class="col-md-7">
+				<ul class="nav navbar-nav" style="float: right;">
+					<li><a href="#">공지 사항</a></li>
+					<li><a href="./list_product.html">상품 정보</a></li>
+					<li><a href="#">베스트 섭취 정보</a></li>
+					<li><a href="#">내 섭취 정보</a></li>
+					<li><a href="#">예상 섭취 정보</a></li>
+					<li><a href="#" class="glyphicon glyphicon-search"></a></li>
+				</ul>
+			</div>
+			<div class="col-md-1"></div>
+		</div>
+		
+		<div class="row">
+			<ul class="nav navbar-nav" style="float: left">
+				<li class="glyphicon glyphicon-home">Home</li>
+				<li>> 회원가입</li>
+			</ul>
+		</div>
+
+
+		<div class="row" style="background-color: grey;">
+			<div class="row" style="margin: 20px;">
+				<div class="col-md-3"></div>
+				<div class="col-md-6">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-md-3" style="text-align: center;"><h3>회원가입</h3></div>
+								<div class="col-md-7"></div>
+								<div class="col-md-2"></div>
+							</div>
+							<div class="col-sm-10">
+								<form class="form-horizontal" action="member.do?action=registmem" method="post" id="rform">
+									<div class="form-group has-default has-feedback">
+										<label class="control-label col-sm-3">아이디 *</label>
+										<div class="col-sm-9">
+											<input type="text" class="form-control" name="pid" id="pid" aria-describedby="inputSuccess3Status">
+											<span class="glyphicon glyphicon-pencil form-control-feedback" aria-hidden="true"></span>
+										</div>
+									</div>
+									<div class="form-group has-default has-feedback">
+										<label class="control-label col-sm-3">비밀번호 *</label>
+										<div class="col-sm-9">
+											<input type="text" class="form-control" name="ppw" id="ppw" aria-describedby="inputSuccess3Status">
+											<span class="glyphicon glyphicon-pencil form-control-feedback" aria-hidden="true"></span>
+										</div>
+									</div>
+									<div class="form-group has-default has-feedback">
+										<label class="control-label col-sm-3">이름 *</label>
+										<div class="col-sm-9">
+											<input type="text" class="form-control" name="pname" id="pname" aria-describedby="inputSuccess3Status">
+											<span class="glyphicon glyphicon-user form-control-feedback" aria-hidden="true"></span>
+										</div>
+									</div>
+									<div class="form-group has-default has-feedback">
+										<label class="control-label col-sm-3">주소 *</label>
+										<div class="col-sm-9">
+											<input type="text" class="form-control" name="paddr" id="paddr" aria-describedby="inputSuccess3Status">
+											<span class="glyphicon glyphicon-envelope form-control-feedback" aria-hidden="true"></span>
+										</div>
+									</div>
+									<div class="form-group has-default has-feedback">
+										<label class="control-label col-sm-3">전화번호 *</label>
+										<div class="col-sm-9">
+											<input type="text" class="form-control" name="ptel" id="ptel" aria-describedby="inputSuccess3Status">
+											<span class="glyphicon glyphicon-lock form-control-feedback" aria-hidden="true"></span>
+										</div>
+									</div>
+									<div class="form-group has-default has-feedback">
+										<label class="control-label col-sm-3">알레르기 *</label>
+										<div class="col-sm-9">
+											<fieldset class="form-group">
+												<legend>Check</legend>	
+												<p>
+													<input type="checkbox" name="대두" value="대두" />대두&nbsp&nbsp
+													<input type="checkbox" name="땅콩" value="땅콩" />땅콩&nbsp&nbsp
+													<input type="checkbox" name="우유" value="우유" />우유&nbsp&nbsp
+													<input type="checkbox" name="게" value="게" />게&nbsp&nbsp
+												<p />
+												<p>
+													<input type="checkbox" name="새우" value="새우" />새우&nbsp&nbsp
+													<input type="checkbox" name="참치" value="참치" />참치&nbsp&nbsp
+													<input type="checkbox" name="연어" value="연어" />연어&nbsp&nbsp
+													<input type="checkbox" name="쑥" value="쑥" />쑥&nbsp&nbsp
+												<p />
+												<p>
+													<input type="checkbox" name="소고기" value="소고기" />소고기&nbsp&nbsp
+													<input type="checkbox" name="닭고기" value="닭고기" />닭고기&nbsp&nbsp
+													<input type="checkbox" name="돼지고기" value="돼지고기" />돼지고기&nbsp&nbsp
+													​ ​
+												<p />
+												<input type="checkbox" name="복숭아" value="복숭아" />복숭아&nbsp&nbsp
+												<input type="checkbox" name="민들레" value="민들레" />민들레&nbsp&nbsp
+												<input type="checkbox" name="계란흰자" value="계란흰자" />계란흰자&nbsp&nbsp
+											</fieldset>
+										</div>
+									</div>
+									<div class="form-group text-center">
+										<input type="button" class="btn btn-info" onclick="register()" value="등록">
+										<!-- <span class="glyphicon glyphicon-ok" aria-hidden="true"> -->
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3"></div>
+			</div>
+		</div>
+	</div>
+
+	
+
+</body>
+</html>

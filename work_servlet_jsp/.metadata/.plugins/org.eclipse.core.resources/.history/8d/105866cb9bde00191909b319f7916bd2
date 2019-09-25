@@ -1,0 +1,102 @@
+package edu.ssafy.controller;
+
+import java.io.IOException;
+import java.net.URLEncoder;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import edu.ssafy.model.IMemManager;
+import edu.ssafy.model.MemManagerImpl;
+import edu.ssafy.model.MemVO;
+
+public class MemServiceImpl implements IMemService{
+	private IMemManager man = new MemManagerImpl();
+	
+	@Override
+	public void registMem(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String id = request.getParameter("pid");
+		String pw = request.getParameter("ppw");
+		String name = request.getParameter("pname");
+		String addr = request.getParameter("paddr");
+		String tel = request.getParameter("ptel");
+		String[] tmp = request.getParameterValues("pallergy");
+	    String allergy = "";
+	    for (String str : tmp)
+	    	allergy += str + ", ";
+		boolean res = man.addMem(id, pw, name, addr, tel, allergy);
+		if(res) {
+			//성공했을때 구현하기
+			response.sendRedirect("member.do?action=main");
+		}else {
+			
+		}
+	}
+
+	@Override
+	public void searchpw(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+				
+	}
+
+	@Override
+	public void updateMem(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String id = request.getParameter("pid");
+		String pw = request.getParameter("ppw");
+		String name = request.getParameter("pname");
+		String addr = request.getParameter("paddr");
+		String tel = request.getParameter("ptel");
+		boolean res = man.updateMem(id, name, pw, addr, tel);
+		if (res) {
+			request.getRequestDispatcher("member.do?action=meminfo").forward(request, response);
+		} else {
+			//안될때 구현 
+			
+		}
+	}
+
+	@Override
+	public void deleteMem(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String id = request.getParameter("pid");
+		boolean del = man.delMem(id);
+		if (del) {
+			request.getRequestDispatcher("main.do?action=main").forward(request, response);
+		} else {
+			//안될때 구현
+		}		
+	}
+
+	@Override
+	public void memInfo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String id = request.getParameter("uid");
+		MemVO mem = man.memInfo(id);
+		if (mem != null) {
+			request.setAttribute("mem", mem);
+			request.getRequestDispatcher("meminfo.jsp").forward(request, response);
+		} else {
+			//안될때 구현
+		}
+	}
+
+	@Override
+	public void loginMem(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+		String id = request.getParameter("pid");
+		String pw = request.getParameter("ppw");
+
+		boolean isLogin = man.loginInfo(id, pw);
+		System.out.println(isLogin);
+		if (isLogin) {
+			//request.getSession().setAttribute("isLogin", isLogin);
+			request.getSession().setAttribute("id", id);
+			//request.getRequestDispatcher("registerMem.html").forward(request, response);
+			request.getRequestDispatcher("main.jsp").forward(request, response);
+		} else {
+			//request.getRequestDispatcher("registerMem.html").forward(request, response);
+		}
+	}
+	
+}

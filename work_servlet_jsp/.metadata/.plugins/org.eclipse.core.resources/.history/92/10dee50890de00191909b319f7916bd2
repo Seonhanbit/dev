@@ -1,0 +1,93 @@
+package edu.ssafy.model;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+public class MemManagerImpl implements IMemManager{
+	private static ArrayList<MemVO> list = new ArrayList<>();
+
+	public MemManagerImpl() {
+	}
+
+	private Connection conn;
+	private PreparedStatement st;
+	private ResultSet rs;
+	
+	@Override
+	public boolean addMem(String id, String pw, String name, String addr, String tel, String allergy) {
+		String str = "insert into members(id,pw,name,addr,tel,allergy)values(?,?,?,?,?,?)";
+		boolean res = false;
+		try {
+			conn = ConnectionProxy.getConnection();
+
+			st = conn.prepareStatement(str);
+			st.setString(1, id);
+			st.setString(2, pw);
+			st.setString(3, name);
+			st.setString(4, addr);
+			st.setString(5, tel);
+			st.setString(6, allergy);
+			res = st.execute();
+			res = true;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			res = false;
+		} finally {
+			close();
+		}
+		return res;
+	}
+
+	@Override
+	public boolean delMem(String id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean updateMem(String id, String pw, String name, String addr, String tel) {
+		String str = "update members set pw = ?, name =?, addr = ?,tel = ? where id = ?";
+		boolean res = false;
+		MemVO memvo = new MemVo();
+		try {
+			conn = ConnectionProxy.getConnection();
+
+			st = conn.prepareStatement(str);
+			st.setString(1, pw);
+			st.setString(2, name);
+			st.setString(3, addr);
+			st.setString(4, tel);
+			st.setString(5, id);
+			st.execute();
+			res = true;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			res = false;
+		} finally {
+			close();
+		}
+		return res;
+	}
+
+	@Override
+	public void close() {
+		try {
+			if (rs != null)
+				rs.close();
+			if (st != null)
+				st.close();
+			if (conn != null)
+				conn.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+
+}

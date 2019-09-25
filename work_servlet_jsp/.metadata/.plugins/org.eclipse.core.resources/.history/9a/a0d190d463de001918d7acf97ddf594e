@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="SafeFood_Web_Back_End_광주_3반_선한빛_임준형">
+        <wb-resource deploy-path="/" source-path="/WebContent"/>
+        <property name="context-root" value="SafeFood_Web_Back_End_광주_3반_선한빛_임준형"/>
+        <property name="java-output-path" value="/SafeFood_Web_Back_End_광주_3반_선한빛_임준형/build/classes"/>
+    </wb-module>
+</project-modules>

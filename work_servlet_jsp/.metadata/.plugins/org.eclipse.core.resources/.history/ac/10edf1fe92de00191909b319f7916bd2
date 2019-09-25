@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>SafeFood | 상품 정보 목록</title>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="./bootstrap-3.3.2-dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./bootstrap-3.3.2-dist/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="./css/main.css">
+	
+	<script type="text/javascript" src="./js/custom.js"></script>
+	<script type="text/javascript" src="./js/jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="./bootstrap-3.3.2-dist/js/bootstrap.min.js"></script>
+	
+	
+</head>
+
+<nav class="navbar navbar-fixed-top" style="background-color: #2e3537;">
+    <div class="col-md-1"></div>
+    <div class="col-md-10" style="text-align: right;">
+        <button class="btn btn-sm dropdown-toggle glyphicon glyphicon-user" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="background-color: #2c2c2c; color: #ffffff; margin: 7px">&nbspLogin</button>
+        <ul  class="dropdown-menu dropdown-menu-right" style="border: 1px solid #252a2c; background: #2e3537;">
+            <li>
+                <form class="login-form" style="background: #2e3537; margin: 20px 20px;">
+                    <div class="loginid">
+                        <label class="control-label" style="color: #ffffff;">아 이 디</label>
+                        <input type="text" class="form-control" name="pname">
+                        <span class="glyphicon glyphicon-user form-control-feedback" aria-hidden="true"></span>
+                    </div>
+                    <div class="loginpw">
+                        <label class="control-label" style="color: #ffffff;">비밀번호</label>
+                        <input type="password" class="form-control" name="ppw">
+                        <span class="glyphicon glyphicon-user form-control-feedback" aria-hidden="true"></span>
+                    </div>
+                        <button type="submit" class="login" style="margin-bottom :20px">로 그 인</button><br>
+                        <a href="./find.html"><button type="button" class="search-pw" style="background-color: #2c2c2c; color: #ffffff;">비밀번호 찾기</button></a>
+                </form>
+            </li>
+        </ul>
+        <a href="./registerMem.html"><button class="btn btn-sm glyphicon glyphicon-user" style="background-color: #2c2c2c; color: #ffffff; margin: 7px">&nbsp회원가입</button></a>
+    </div>
+    <div class="col-md-1"></div>
+</nav>
+
+<body style="padding-top: 40px;">
+	<div class="container-fluid">
+		<!-- 로그아웃, 회원정보 -->
+		
+		<!-- 메뉴바 -->
+		<div class="row" style="background-color: #ffffff; height: 100px; margin-top: 10px;">
+			<div class="col-md-1"></div>
+			<div class="col-md-3"><a href="./main.html"><img src="./img/ssafy.png" width="120px"></a></div>
+			<div class="col-md-7">
+				<ul class="nav navbar-nav" style="float: right;">
+					<li><a href="./info.html">공지 사항</a></li>
+					<li><a href="./list_product.html">상품 정보</a></li>
+					<li><a href="#">베스트 섭취 정보</a></li>
+					<li><a href="#">내 섭취 정보</a></li>
+					<li><a href="#">예상 섭취 정보</a></li>
+					<li><a href="#" class="glyphicon glyphicon-search"></a></li>
+				</ul>
+			</div>
+			<div class="col-md-1"></div>
+		</div>
+		
+		<!-- 점보트론? -->
+		<div class="row" style="background-color: #6C6C6C; height: 200px;">
+			<div class="col-md-1"></div>
+			<div class="col-md-10" style="color: white; margin: 30px; text-align: center;">
+				<h2>WHAT WE PROVIDE</h2>
+				<div class="divide-line-center"></div>
+				<p style="padding:15px;">건강한 삶을 위한 먹거리 프로젝트</p>
+			</div>
+			<div class="col-md-1"></div>
+		</div>
+		
+		<!-- 검색 -->
+		<div class="row" style="height: 100px; background-color: #373737;">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+				<div class="row" style="color: white; margin: 10px;">
+					<div class="col-md-4"">검색 조건</div>
+					<div class="col-md-7">검색 단어</div>
+					<div class="col-md-1"></div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<select class="form-control" name="key" id="key">
+							<option value="name" selected="selected">상품명</option>
+							<option value="maker">제조사</option>
+							<option value="material">재료명</option>
+						</select>
+					</div>
+					<div class="col-md-7">
+						<input type="text" class="form-control" name="search-input">
+					</div>
+					<div class="col-md-1">
+						<button type="button" name="search-main" class="btn btn-info">검색</button>
+					</div>
+				</div>
+				<div class="row"></div>
+			</div>
+			<div class="col-md-4"></div>
+		</div>
+
+		<!-- 리스트 목록 -->
+		<section class="container" style="padding: 50px 0;">
+			<div class="main col-12">
+				<div class="isotope-container row grid-space-10"
+					style="height: 476.74px; display: block; position: relative;">
+					<div class="col-lg-4 col-md-6 isotope-item app-development"
+						style="left: 0px; top: 0px; position: absolute;">
+						<div class="image-box hc-shadow-2 text-center mb-20">
+							<div class="overlay-container">
+								<a href="list_product.html"><img width="200" class="center"
+									alt="아카페라아메리카노" src="./img/아카페라아메리카노.jpg"></a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6 isotope-item app-development"
+						style="left: 373px; top: 0px; position: absolute;">
+						<div class="image-box hc-shadow-2 text-center mb-20">
+							<div class="overlay-container">
+								<a href="list_product.html"><img width="200" class="center" alt="누크바"
+									src="./img/N45누크바.jpg"></a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6 isotope-item app-development"
+						style="left: 747px; top: 0px; position: absolute;">
+						<div class="image-box hc-shadow-2 text-center mb-20">
+							<div class="overlay-container">
+								<a href="#"><img width="200" class="center" alt="비비빅"
+									src="./img/비비빅.jpg"></a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6 isotope-item app-development"
+						style="left: 0px; top: 238px; position: absolute;">
+						<div class="image-box hc-shadow-2 text-center mb-20">
+							<div class="overlay-container">
+								<a href="#"><img width="200" class="center" alt="서울우유바나나"
+									src="./img/서울우유바나나.jpg"></a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6 isotope-item app-development"
+						style="left: 373px; top: 238px; position: absolute;">
+						<div class="image-box hc-shadow-2 text-center mb-20">
+							<div class="overlay-container">
+								<a href="#"><img width="200" class="center" alt="메로나"
+									src="./img/메로나.jpg"></a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6 isotope-item app-development"
+						style="left: 747px; top: 238px; position: absolute;">
+						<div class="image-box hc-shadow-2 text-center mb-20">
+							<div class="overlay-container">
+								<a href="#"><img width="200" class="center" alt="진라면컵매운맛"
+									src="./img/진라면컵매운맛.jpg"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+​
+			</div>
+​
+		</section>
+		<!-- 리스트 end -->
+		<div class="footer-main bg-dark py-5 small">
+			<div class="container-fluid" style="margin: 20px;">
+				<h3>Find Us</h3>
+				<hr>
+				<i class="glyphicon glyphicon-map-marker">&nbsp</i><span>(SSAFY) 서울시 강남구 테헤란로 멀티스퀘어</span><br>
+				<i class="glyphicon glyphicon-earphone">&nbsp</i><span>1544-9001</span><br>
+				<i class="glyphicon glyphicon-envelope">&nbsp</i><span>admin@ssafy.com</span><br>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

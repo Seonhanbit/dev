@@ -1,0 +1,36 @@
+package edu.ssafy.servlet;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import edu.ssafy.controller.IMemService;
+import edu.ssafy.controller.MemServiceImpl;
+import edu.ssafy.model.MemManagerImpl;
+
+public class MemberServet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	IMemService service = new MemServiceImpl();
+	
+	public void init() throws ServletException {
+		super.init();
+	}
+       
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doPost(request, response);
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=utf-8");
+		String action = request.getParameter("action");
+		if (action.equals("registmem")) {
+			service.registMem(request, response);
+		}else if(action.equals("searchpw")) {
+			service.searchpw(request, response);
+		}
+	}
+
+}

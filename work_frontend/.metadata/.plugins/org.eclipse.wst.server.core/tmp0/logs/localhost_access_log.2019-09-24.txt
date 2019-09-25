@@ -1,0 +1,14 @@
+127.0.0.1 - - [24/Sep/2019:09:53:44 +0900] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [24/Sep/2019:09:53:44 +0900] "GET /SafeFood_Web_Front_%EA%B4%91%EC%A3%BC_3_%EA%B0%95%EB%AF%BC%EC%A4%80_%EC%84%A0%ED%95%9C%EB%B9%9B/ HTTP/1.1" 404 1174
+0:0:0:0:0:0:0:1 - - [24/Sep/2019:09:54:03 +0900] "GET /SafeFood_Web_Front_%EA%B4%91%EC%A3%BC_3_%EA%B0%95%EB%AF%BC%EC%A4%80_%EC%84%A0%ED%95%9C%EB%B9%9B/page/signup.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [24/Sep/2019:09:54:03 +0900] "GET /SafeFood_Web_Front_%EA%B4%91%EC%A3%BC_3_%EA%B0%95%EB%AF%BC%EC%A4%80_%EC%84%A0%ED%95%9C%EB%B9%9B/bootstrap-3.3.2-dist/css/bootstrap-theme.min.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [24/Sep/2019:09:54:03 +0900] "GET /SafeFood_Web_Front_%EA%B4%91%EC%A3%BC_3_%EA%B0%95%EB%AF%BC%EC%A4%80_%EC%84%A0%ED%95%9C%EB%B9%9B/bootstrap-3.3.2-dist/css/bootstrap.min.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [24/Sep/2019:09:54:03 +0900] "GET /SafeFood_Web_Front_%EA%B4%91%EC%A3%BC_3_%EA%B0%95%EB%AF%BC%EC%A4%80_%EC%84%A0%ED%95%9C%EB%B9%9B/css/main.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [24/Sep/2019:09:54:03 +0900] "GET /SafeFood_Web_Front_%EA%B4%91%EC%A3%BC_3_%EA%B0%95%EB%AF%BC%EC%A4%80_%EC%84%A0%ED%95%9C%EB%B9%9B/js/jquery-3.3.1.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [24/Sep/2019:09:54:03 +0900] "GET /SafeFood_Web_Front_%EA%B4%91%EC%A3%BC_3_%EA%B0%95%EB%AF%BC%EC%A4%80_%EC%84%A0%ED%95%9C%EB%B9%9B/js/custom.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [24/Sep/2019:09:54:03 +0900] "GET /SafeFood_Web_Front_%EA%B4%91%EC%A3%BC_3_%EA%B0%95%EB%AF%BC%EC%A4%80_%EC%84%A0%ED%95%9C%EB%B9%9B/bootstrap-3.3.2-dist/js/bootstrap.min.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [24/Sep/2019:09:54:03 +0900] "GET /SafeFood_Web_Front_%EA%B4%91%EC%A3%BC_3_%EA%B0%95%EB%AF%BC%EC%A4%80_%EC%84%A0%ED%95%9C%EB%B9%9B/img/ssafy.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [24/Sep/2019:09:54:03 +0900] "GET /SafeFood_Web_Front_%EA%B4%91%EC%A3%BC_3_%EA%B0%95%EB%AF%BC%EC%A4%80_%EC%84%A0%ED%95%9C%EB%B9%9B/bin/foodInfo.xml HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [24/Sep/2019:09:54:03 +0900] "GET /SafeFood_Web_Front_%EA%B4%91%EC%A3%BC_3_%EA%B0%95%EB%AF%BC%EC%A4%80_%EC%84%A0%ED%95%9C%EB%B9%9B/bootstrap-3.3.2-dist/fonts/glyphicons-halflings-regular.woff2 HTTP/1.1" 304 -
+127.0.0.1 - - [24/Sep/2019:19:07:51 +0900] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [24/Sep/2019:19:07:51 +0900] "GET /SafeFood_Web_Front_%EA%B4%91%EC%A3%BC_3_%EA%B0%95%EB%AF%BC%EC%A4%80_%EC%84%A0%ED%95%9C%EB%B9%9B/ HTTP/1.1" 404 1174
