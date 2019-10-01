@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('button').on('click',function(){
+		$.ajax({
+			type:"post",
+			dataType:"xml",
+			url:"input.jsp",
+			success:function succ(data){
+				var a1 = $("a1", data).text();
+				var a2 = $("a2", data).text();
+				location.href="main.do?action=jax&pid="+a1+"&pid1="+a2;
+			}
+		})
+	})
+})
+
+	$(function() {
+		$('button').on("click", function() {
+			$.ajax({
+				type : "post",
+				url : "data.jsp",
+				dataType : "xml", //xml html json text
+				success : succ,
+				error : err
+			});
+		});
+		$('button').on("click", function() {
+			$.ajax({
+				type : "post",
+				url : "data.jsp",
+				dataType : "xml",
+				success : function succ(data) {
+
+				}
+			});
+		});
+		function succ(data) {
+			var name = $("name", data).text();
+			var age = $("age", data).text();
+			var addr = $("addr", data).text();
+			$("#dd").text(name + "," + age + "," + addr);
+		}
+		function err() {
+
+		}
+	})
+</script>
+</head>
+<body>
+	<button>눌러</button>
+	<form action="">
+		<div id="dd" />
+	</form>
+</body>
+</html>
+

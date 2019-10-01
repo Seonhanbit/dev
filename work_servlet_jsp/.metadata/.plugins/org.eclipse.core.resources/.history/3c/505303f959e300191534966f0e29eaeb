@@ -1,0 +1,82 @@
+package edu.ssafy.controller;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.catalina.tribes.util.Arrays;
+
+import edu.ssafy.Food.Food;
+import edu.ssafy.Food.FoodManagerImpl;
+import edu.ssafy.Food.IFoodManager;
+
+public class FoodServiceImpl implements IFoodService {
+
+	private IFoodManager food = new FoodManagerImpl();
+
+	public void searchlist(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+		resp.sendRedirect("searchlist.jsp");
+	}
+
+	public void searchbutton(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String key = req.getParameter("key");
+		String value = req.getParameter("value");
+		if (key.equals("calory")) {
+			List<Food> list = food.CalorySearch(value);
+			List<String[]> powersetlist = food.powersetSearch(value);
+			req.setAttribute("foodlist", list);
+			req.setAttribute("powersetlist", powersetlist);
+			for (int i = 0; i < powersetlist.size(); i++) {
+				System.out.println(Arrays.toString(powersetlist.get(i)) + "**");
+			}
+			req.getRequestDispatcher("main.jsp").forward(req, resp);
+		} else {
+			double sum = 0;
+			List<Food> list = food.ConditionSearch(value, key);
+			for (int i = 0; i < list.size(); i++) {
+
+				sum += list.get(i).getCalory();
+			}
+			double ave = sum/list.size();
+			req.setAttribute("ave", ave);
+			req.setAttribute("foodlist", list);
+			req.getRequestDispatcher("main.jsp").forward(req, resp);
+		}
+	}
+
+	public void mainpage(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+		req.getRequestDispatcher("main.jsp").forward(req, resp);
+	}
+
+	@Override
+	public void allergyprod(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+		String id = (String) req.getSession().getAttribute("id");
+		String allergy = food.AllergySearch(id);
+//		System.out.println(allergy);
+
+		String[] str = allergy.split(", ");
+
+		for (int i = 0; i < str.length; i++)
+			System.out.println(str[i]);
+
+		List<Food> allergyFoods = new ArrayList<>();
+		List<Food> list = food.SearchAll();
+		for (int i = 0; i < list.size(); i++) {
+
+			for (int j = 0; j < str.length; j++) {
+				if (list.get(i).getMaterial().contains(str[j])) {
+					allergyFoods.add(list.get(i));
+					break;
+				}
+			}
+		}
+		req.setAttribute("myallergy", allergyFoods);
+		req.getRequestDispatcher("myallergy.jsp").forward(req, resp);
+	}
+}

@@ -1,0 +1,10 @@
+127.0.0.1 - - [30/Sep/2019:13:40:44 +0900] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [30/Sep/2019:13:40:45 +0900] "GET /WebDay04/calc.jsp HTTP/1.1" 200 183
+0:0:0:0:0:0:0:1 - - [30/Sep/2019:13:40:50 +0900] "GET /WebDay04/calc.jsp HTTP/1.1" 200 183
+0:0:0:0:0:0:0:1 - - [30/Sep/2019:13:40:59 +0900] "GET /WebDay04/ HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [30/Sep/2019:13:41:03 +0900] "POST /WebDay04/web.do?action=calc HTTP/1.1" 200 1175
+0:0:0:0:0:0:0:1 - - [30/Sep/2019:13:45:59 +0900] "GET /SafeFood_Web_Back_End_%EA%B4%91%EC%A3%BC_3%EB%B0%98_%EC%84%A0%ED%95%9C%EB%B9%9B_%EC%9E%84%EC%A4%80%ED%98%95/food.do?action=searchbutton&key=calory&value=100 HTTP/1.1" 404 1193
+0:0:0:0:0:0:0:1 - - [30/Sep/2019:13:46:02 +0900] "GET /SafeFood_Web_Back_End_%EA%B4%91%EC%A3%BC_3%EB%B0%98_%EC%84%A0%ED%95%9C%EB%B9%9B_%EC%9E%84%EC%A4%80%ED%98%95/food.do?action=searchbutton&key=calory&value=500 HTTP/1.1" 404 1193
+0:0:0:0:0:0:0:1 - - [30/Sep/2019:13:46:02 +0900] "GET /SafeFood_Web_Back_End_%EA%B4%91%EC%A3%BC_3%EB%B0%98_%EC%84%A0%ED%95%9C%EB%B9%9B_%EC%9E%84%EC%A4%80%ED%98%95/food.do?action=searchbutton&key=calory&value=500 HTTP/1.1" 404 1193
+0:0:0:0:0:0:0:1 - - [30/Sep/2019:13:46:02 +0900] "GET /SafeFood_Web_Back_End_%EA%B4%91%EC%A3%BC_3%EB%B0%98_%EC%84%A0%ED%95%9C%EB%B9%9B_%EC%9E%84%EC%A4%80%ED%98%95/food.do?action=searchbutton&key=calory&value=500 HTTP/1.1" 404 1193
+0:0:0:0:0:0:0:1 - - [30/Sep/2019:13:46:02 +0900] "GET /SafeFood_Web_Back_End_%EA%B4%91%EC%A3%BC_3%EB%B0%98_%EC%84%A0%ED%95%9C%EB%B9%9B_%EC%9E%84%EC%A4%80%ED%98%95/food.do?action=searchbutton&key=calory&value=500 HTTP/1.1" 404 1193
