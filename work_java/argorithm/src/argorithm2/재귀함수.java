@@ -9,15 +9,15 @@ public class 재귀함수 {
 //		recur(10,0);
 
 		// 부분집합 구하기
-//		int[] arr = {7,2,4};
-//		powerset(arr,0, new boolean[arr.length]);
+		int[] arr = {7,2,4};
+		powerset(arr,0, new boolean[arr.length]);
 		// 5개 원소 중 3개를 뽑는 조합
-		int[] arr = {3,1,4,5};
+//		int[] arr = {1,2,3,4,5,6,7,8,9,10};
 //		combination(arr,0 , 0, new int[3]);
 //		int[] arr = { 1, 2, 3 };
-//		re_perm(arr, 0, new int[2]);
+//		re_perm(arr, 0, new int[3]);
 //		int[] arr = { 1, 2, 3, 4 };
-		perm(arr, 0, new int[3], new boolean[4]);
+//		perm(arr, 0, new int[3], new boolean[4]);
 	}
 
 	// 순열 **************눈 디버깅 아주 많이**************************
