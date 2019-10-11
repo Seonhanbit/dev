@@ -9,18 +9,19 @@ public class 재귀함수 {
 //		recur(10,0);
 
 		// 부분집합 구하기
-		int[] arr = {7,2,4};
-		powerset(arr,0, new boolean[arr.length]);
+//		int[] arr = {7,2,4};
+//		powerset(arr,0, new boolean[arr.length]);
 		// 5개 원소 중 3개를 뽑는 조합
 //		int[] arr = {1,2,3,4,5,6,7,8,9,10};
 //		combination(arr,0 , 0, new int[3]);
 //		int[] arr = { 1, 2, 3 };
 //		re_perm(arr, 0, new int[3]);
-//		int[] arr = { 1, 2, 3, 4 };
-//		perm(arr, 0, new int[3], new boolean[4]);
+		int[] arr = { 1, 2, 3, 4 };
+		perm(arr, 0, new int[3], new boolean[4]);
 	}
 
 	// 순열 **************눈 디버깅 아주 많이**************************
+	// n진트리를 탐색하되, 해당 뎁쓰에 오기까지 이미 선택된 원소는 재끼자
 	static void perm(int[] arr, int c, int[] result, boolean[] visited) {
 		if (c == result.length) {
 			System.out.println(Arrays.toString(result));
@@ -36,7 +37,7 @@ public class 재귀함수 {
 		}
 	}
 
-	// 중복 순열
+	// 중복 순열(포화 n진 트리)
 	static void re_perm(int[] arr, int c, int[] result) {
 		if (c == result.length) {
 			System.out.println(Arrays.toString(result));

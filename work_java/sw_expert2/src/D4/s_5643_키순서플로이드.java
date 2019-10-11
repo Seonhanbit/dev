@@ -37,17 +37,14 @@ public class s_5643_키순서플로이드 {
 			int[] sum = new int[N + 1];
 			for (int i = 1; i < N + 1; i++) {
 				for (int j = 1; j < N + 1; j++) {
-					if (arr[i][j] != INF)
+					if (arr[i][j] != INF) {
 						sum[i] += 1;
-				}
-			}
-			for (int j = 1; j < N + 1; j++) {
-				for (int i = 1; i < N + 1; i++) {
-					if (arr[i][j] != INF)
 						sum[j] += 1;
+					}
 				}
 			}
 			for (int i = 1; i < N + 1; i++) {
+				System.out.println(sum[i]);
 				if(sum[i]==N-1)
 					res++;
 			}

@@ -28,6 +28,8 @@ public class s_17471_게리맨더링강사님 {
 			}
 		}
 		powerset(1);
+		for(int i=1; i<N/2; i++)
+			combination(0,0,new int[i]);
 		System.out.println(min==Integer.MAX_VALUE? -1: min);
 	}
 
@@ -51,6 +53,19 @@ public class s_17471_게리맨더링강사님 {
 		powerset(idx + 1);
 		sel[idx] = false;
 		powerset(idx + 1);
+	}
+	
+	static void combination(int idx, int s_idx, int[] sel) {
+		if(s_idx == sel.length) {
+			//do something
+			//게리맨더링.sel(위의 셀을 표현함)
+			return;
+		}
+		if(idx==N+1)
+			return;
+		sel[s_idx] = idx;
+		combination(idx+1, s_idx+1, sel);
+		combination(idx+1, s_idx, sel);
 	}
 
 	static boolean check() {
