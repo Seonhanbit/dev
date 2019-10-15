@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Source-Control-Identifier: 26447c6a91d7795c649e12418d37b0d709e6e8f2
+Built-By: bamboo
+Created-By: Apache Maven 3.0.5
+Build-Jdk: 1.8.0_45
+
+Name: feature.xml
+SHA-256-Digest: DbGkq2uxmhbDmkwNZ4C1AMZtb2ktjGwCCKQW3Mbt/S0=
+
+Name: license.txt
+SHA-256-Digest: RCd7K+xgk+SsMTr+wlGk3lmdJMTnaPhXTZWxOp0tl7U=
+
+Name: open_source_licenses.txt
+SHA-256-Digest: kNANnRi9gPCx9rUkR08mLB+3Z6kKalaAqOAuNjEI7wg=
+
+Name: feature.properties
+SHA-256-Digest: tQp7kqxPXvzjIawA8ZjLgJKGvyOMiMSAYVUyvuHmtdc=
+

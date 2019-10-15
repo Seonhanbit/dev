@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Built-By: bamboo
+Created-By: Apache Maven 3.3.9
+Build-Jdk: 1.8.0_144
+
+Name: p2.inf
+SHA-256-Digest: 9kQGBkK5gEAG9/E+FNCMevKPeooB+5ZrteQxNIEaXPM=
+
+Name: epl-1.0.txt
+SHA-256-Digest: tsa7ASj6FMotceUWUoUE4CI7/fsrPeaeR6FbaHLDzYk=
+
+Name: feature.xml
+SHA-256-Digest: Cwbmg9jyteI/ZKm97gTLXzRcpkdEPGXI5RtggRcp5Kw=
+
+Name: feature.properties
+SHA-256-Digest: kgyAJOuXhJp4RmJNndWiNOGK/5VQRBRdBO0J3nBA2/8=
+
+Name: open_source_licenses.txt
+SHA-256-Digest: 6Ol9IVQq8+X48ebxgIZISOc96Ev4QfIVD+RI5bjcFYA=
+

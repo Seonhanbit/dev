@@ -1,0 +1,3 @@
+2019-10-14 16:31:36,434 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2019-10-14 16:32:29,493 [Worker-7: Rebuilding Indexes] INFO  o.e.m.c.i.i.nexus.NexusIndexManager - Updating index for repository: central|https://repo.maven.apache.org/maven2
+2019-10-14 16:41:40,796 [Worker-7: Rebuilding Indexes] INFO  o.e.m.c.i.i.nexus.NexusIndexManager - Updated index for repository: central|https://repo.maven.apache.org/maven2 in 551303 ms

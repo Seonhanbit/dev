@@ -149,7 +149,19 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="C:\ssafy\work_servlet_jsp\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\ssafy\work_servlet_jsp\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\MemberProject" path="/MemberProject" reloadable="true" source="org.eclipse.jst.jee.server:MemberProject"/></Host>
+      <Context docBase="C:\Users\student\Documents\GitHub\dev\work_servlet_jsp\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\Users\student\Documents\GitHub\dev\work_servlet_jsp\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\hw_db_1014" path="/hw_db_1014" reloadable="true" source="org.eclipse.jst.jee.server:hw_db_1014">
+
+    <!-- Default set of monitored resources. If one of these changes, the    -->
+    <!-- web application will be reloaded.                                   -->
+    <WatchedResource>WEB-INF/web.xml</WatchedResource>
+    <WatchedResource>${catalina.base}/conf/web.xml</WatchedResource>
+
+    <!-- Uncomment this to disable session persistence across Tomcat restarts -->
+    <!--
+    <Manager pathname="" />
+    -->
+    <Resource auth="Container" driverClassName="com.mysql.cj.jdbc.Driver" maxActive="5" maxIdle="3" maxWait="-1" name="ssafy/mysql" password="ssafy" type="javax.sql.DataSource" url="jdbc:mysql://127.0.0.1:3306/hw?serverTimezone=UTC&amp;useUniCode=yes&amp;characterEncoding=UTF-8" username="ssafy"/>
+</Context></Host>
     </Engine>
   </Service>
 </Server>

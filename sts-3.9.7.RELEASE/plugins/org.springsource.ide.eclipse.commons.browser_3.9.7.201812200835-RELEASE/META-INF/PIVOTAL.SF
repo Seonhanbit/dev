@@ -1,0 +1,96 @@
+Signature-Version: 1.0
+SHA-256-Digest-Manifest-Main-Attributes: IPL0VaCFiHxHgBCMN+JdP/Igreavs
+ gmA3Y0ZoY/WzuQ=
+SHA-256-Digest-Manifest: 7nOtUM/ZgyZJEB25z6KubivG8dlK30Y4+SFY9eyDsAc=
+Created-By: 1.8.0_144 (Oracle Corporation)
+
+Name: about.html
+SHA-256-Digest: IalNqqbJ1YIRFECGMYWxWHRy4Uk0GVGKgxd4zmiD+s4=
+
+Name: plugin.xml
+SHA-256-Digest: ZBCRxh6G0dIn6chlkmEHcIudXd8+gGkSBVr4Z4YQd5g=
+
+Name: org/springsource/ide/eclipse/commons/browser/swt/StsBrowserView.
+ class
+SHA-256-Digest: JxycE2w23TCu8a319wCyhLDubS0rY9fKqsqueAWQZfE=
+
+Name: org/springsource/ide/eclipse/commons/browser/swt/StsBrowserManag
+ er.class
+SHA-256-Digest: n+r5fS76X32yGGy+vkyV8nEP6zKwzeuiK/NVvLt9Vlg=
+
+Name: org/springsource/ide/eclipse/commons/browser/swt/StsBrowserEdito
+ r$3.class
+SHA-256-Digest: 4YjiUSDl+EoKYhX0RRVZeoIioOK4SRC3i49PmfVud1U=
+
+Name: org/springsource/ide/eclipse/commons/browser/BrowserExtensions.c
+ lass
+SHA-256-Digest: 9XMnWzTk/5OiK8MIXMuJhsRcCOLYnez2PirY++d08R8=
+
+Name: org/springsource/ide/eclipse/commons/browser/swt/StsBrowserView$
+ 1.class
+SHA-256-Digest: odYEH6pRK/DTKQAmJy5mf7ym7WHYgSFm0ZhXW69Hgag=
+
+Name: org/springsource/ide/eclipse/commons/browser/swt/StsBrowserViewe
+ r.class
+SHA-256-Digest: Q58XUy/TRakaGq8XVLm26kuN7LY5F/cLz2wulx68Z8c=
+
+Name: org/springsource/ide/eclipse/commons/browser/IBrowserToEclipseFu
+ nction.class
+SHA-256-Digest: mLUt0lwP3XS5lpeV4xfKEEC5sNMqjaZbWMqDMHSv0i4=
+
+Name: org/springsource/ide/eclipse/commons/browser/BrowserPlugin.class
+SHA-256-Digest: QUn6wiXWkX0nz4fleXfNVKN2ZItRG7ShhK02vnoGmFY=
+
+Name: org/springsource/ide/eclipse/commons/browser/OpenWizardFunction.
+ class
+SHA-256-Digest: MxHheK/9ziTEde35VSTP7O5WjpBLshyhEbL3/iXrWqE=
+
+Name: org/springsource/ide/eclipse/commons/browser/swt/StsBrowserManag
+ er$1.class
+SHA-256-Digest: QQo3XVw3XtkR6V91PQNORCtXdDA7gBoIPlePF00bN94=
+
+Name: org/springsource/ide/eclipse/commons/browser/IEclipseToBrowserFu
+ nction$Callback.class
+SHA-256-Digest: k1aluE31TbX2TKwMCXtrzr2F971Icc3AoX7t93GHS0g=
+
+Name: org/springsource/ide/eclipse/commons/browser/swt/StsBrowserManag
+ er$2.class
+SHA-256-Digest: TAROS7TlmeGQyt13UdieQVN5vCArNnM/NvKHOxL6i34=
+
+Name: org/springsource/ide/eclipse/commons/browser/IEclipseToBrowserFu
+ nction.class
+SHA-256-Digest: YZTMfmuTrF5n9ooEgsgLRS1LJTaJHHtAoYyc4CZvo/0=
+
+Name: org/springsource/ide/eclipse/commons/browser/swt/StsBrowserEdito
+ r.class
+SHA-256-Digest: 0C4Kwhv8YMeO44lGDpruwzn0ivM7RGTiZmBjPiI94Mg=
+
+Name: org/springsource/ide/eclipse/commons/browser/swt/StsBrowserEdito
+ r$1.class
+SHA-256-Digest: IyjZMPh/D308voUygHRjHsNZ4Pp68rCp00Bkmg/1E/g=
+
+Name: org/springsource/ide/eclipse/commons/browser/OpenEditorFunction.
+ class
+SHA-256-Digest: 50nsmBDT52vpg6MCIOqBZ0K/9exhSWqx9OJPXRKZHSE=
+
+Name: org/springsource/ide/eclipse/commons/browser/swt/StsBrowserEdito
+ r$2.class
+SHA-256-Digest: +rRcKrP+gqa2p+5lPEMbH3wlmFouTRbVDurVOQEsH1k=
+
+Name: icons/spring_browser.png
+SHA-256-Digest: RlAK/n7vbODxloFU/VqbZWrjmCMzSRhQAF1ZF8EHtIk=
+
+Name: org/springsource/ide/eclipse/commons/browser/swt/OpenStsBrowserF
+ unction.class
+SHA-256-Digest: goKKzFNXoDsg/Qat1EElSyFHpXXyh0N2trOB3hvcAG4=
+
+Name: org/springsource/ide/eclipse/commons/browser/IEclipseToBrowserFu
+ nction$Extension.class
+SHA-256-Digest: iVOBiDpZv01CF+1hHYyELNKuiGHO7bOQFMnrZovGh3c=
+
+Name: org/springsource/ide/eclipse/commons/browser/BrowserImages.class
+SHA-256-Digest: x5UqNk+ASDsV1U1rec93ryad+R0c57RLy8bJBVVHRp0=
+
+Name: icons/home_16.png
+SHA-256-Digest: 2O/236Rw2+KzoEsjr4DQpIL44OLm/EXxKMIh3p00QT0=
+

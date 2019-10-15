@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>상품 등록</title>
+<style type="text/css">
+body {
+	width: 700px;
+	margin: 0 auto;
+}
+
+table {
+	width: 650px;
+	border: 1px solid #000;
+}
+</style>
+<script type="text/javascript">
+function check(){
+	rform.submit();
+}
+</script>
+</head>
+<body>
+	<h1 align="center"> 상품 등록</h1>
+	<form action="main.do?action=registpro" method="post" id="rform">
+		<table>
+			<tr>
+				<td>상품 번호</td>
+				<td><input type="text" name="pno" id="pno"></td>
+			</tr>
+			<tr>
+				<td>상품 이름</td>
+				<td><input type="text" name="pname" id="pname"></td>
+			</tr>
+			<tr>
+				<td>가격 : </td>
+				<td><input type="text" name="pprice" id="pprice"></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="button" value="전송" onclick="check()"><input type="reset" value="clear"></td>
+				<td><a href="index.html">초기화면</a></td>
+				<td><a href="main.do?action=search">상품리스트</a></td>
+			</tr>
+			
+		</table>
+	</form>
+</body>
+</html>

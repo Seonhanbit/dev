@@ -1,7 +1,0 @@
-package edu.ssafy.model;
-
-public class ConnectionProxy {
-	static Connection getConnection() {
-		
-	}
-}

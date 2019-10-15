@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.jgit.lfs"
+      label="%featureName"
+      version="5.2.0.201812061821-r"
+      provider-name="%providerName">
+
+   <description url="http://www.eclipse.org/jgit/">
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <url>
+      <update label="%updateSiteName" url="http://download.eclipse.org/egit/updates"/>
+      <discovery label="%updateSiteName" url="http://download.eclipse.org/egit/updates"/>
+   </url>
+
+   <requires>
+      <import plugin="org.eclipse.jgit"/>
+   </requires>
+
+   <plugin
+         id="org.eclipse.jgit.lfs"
+         download-size="71"
+         install-size="130"
+         version="5.2.0.201812061821-r"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.jgit.lfs.server"
+         download-size="46"
+         install-size="85"
+         version="5.2.0.201812061821-r"
+         unpack="false"/>
+
+   <plugin
+         id="com.google.gson"
+         download-size="253"
+         install-size="507"
+         version="2.8.2.v20180104-1110"
+         unpack="false"/>
+
+</feature>

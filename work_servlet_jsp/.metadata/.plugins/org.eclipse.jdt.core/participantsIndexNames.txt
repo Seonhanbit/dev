@@ -1,11 +1,7 @@
 INDEX VERSION 1.131
-C:\ssafy\work_servlet_jsp\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4150582883.index
-\JSPEx\src
-C:\ssafy\work_servlet_jsp\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2945621708.index
-\ws_backend_0916_¼±ÇÑºû\src
-C:\ssafy\work_servlet_jsp\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3264204677.index
-\hw_backend_0916\src
-C:\ssafy\work_servlet_jsp\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\512395420.index
-\ws_backend_0916\src
-C:\ssafy\work_servlet_jsp\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1237757170.index
+C:\Users\student\Documents\GitHub\dev\work_servlet_jsp\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1237757170.index
 \MemberProject\src
+C:\Users\student\Documents\GitHub\dev\work_servlet_jsp\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1157343063.index
+\hw_db_1014\src
+C:\Users\student\Documents\GitHub\dev\work_servlet_jsp\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1052753229.index
+\0920_Friday\src
