@@ -4,15 +4,16 @@ import java.io.*;
 import java.util.*;
 
 public class s_17471_다리만들기2 {
-	static int N, M;
+	static int N, M, sum;
 	static int[][] arr;
-	static int[][] islands;
+	static ArrayList<XY> list = new ArrayList<>();
 	static boolean[][] visited;
+	static int[] parents;
 	// 상,하,좌,우 0 1 2 3
 	static int[] dx = { -1, 1, 0, 0 };
 	static int[] dy = { 0, 0, -1, 1 };
 
-	static class XY {
+	static class XY implements Comparable<XY> {
 		int x;
 		int y;
 		int cnt;
@@ -21,6 +22,16 @@ public class s_17471_다리만들기2 {
 			this.x = x;
 			this.y = y;
 			this.cnt = cnt;
+		}
+
+		@Override
+		public String toString() {
+			return "XY [x=" + x + ", y=" + y + ", cnt=" + cnt + "]";
+		}
+
+		@Override
+		public int compareTo(XY o) {
+			return Integer.compare(cnt, o.cnt);
 		}
 	}
 
@@ -54,11 +65,6 @@ public class s_17471_다리만들기2 {
 				}
 			}
 		}
-		islands = new int[cnt + 1][cnt + 1];
-
-		for (int[] row : islands) {
-			Arrays.fill(row, 100);
-		}
 
 		for (int i = 0; i < N; i++) {
 			for (int j = 0; j < M; j++) {
@@ -67,20 +73,28 @@ public class s_17471_다리만들기2 {
 				}
 			}
 		}
+		parents = new int[cnt];
+		Collections.sort(list);
+		for (int l = 0; l < cnt; l++) // makeSet
+			parents[l] = l;
 
-		for (int i = 0; i < N; i++) {
-			for (int j = 0; j < M; j++) {
-				System.out.print(arr[i][j]);
+		int succ=0;
+		for (int i = 0; i < list.size(); i++) {
+			int nx = findSet(list.get(i).x);
+			int ny = findSet(list.get(i).y);
+			if (nx != ny) {
+				union(list.get(i).x, list.get(i).y);
+				sum += list.get(i).cnt;
+				succ ++;
 			}
-			System.out.println();
-		}
-		for (int i = 1; i < islands.length; i++) {
-			for (int j = 1; j < islands.length; j++) {
-				System.out.print(islands[i][j] + " ");
+			if (succ == cnt - 1) {
+				break;
 			}
-			System.out.println();
 		}
-
+		if (succ!=cnt-1)
+			System.out.println(-1);
+		else
+			System.out.println(sum);
 	}
 
 	static void bfs(int x, int y, int cnt) {
@@ -108,7 +122,7 @@ public class s_17471_다리만들기2 {
 	static void bfs2(int x, int y, int cnt) {
 		Queue<XY> queue = new LinkedList<>();
 		int number = arr[x][y];
-		//for문을 밖에 놔주면 한방향으로만 진행
+		// for문을 밖에 놔주면 한방향으로만 진행
 		for (int i = 0; i < 4; i++) {
 			queue.add(new XY(x, y, cnt));
 			while (!queue.isEmpty()) {
@@ -117,15 +131,27 @@ public class s_17471_다리만들기2 {
 				if (!range(nx, ny))
 					continue;
 				if (arr[nx][ny] != 0) {
-					if (tmp.cnt < islands[number][arr[nx][ny]] && tmp.cnt >= 2) {
-						islands[number][arr[nx][ny]] = tmp.cnt;
-						islands[arr[nx][ny]][number] = tmp.cnt;
+					if (tmp.cnt >= 2) {
+						// 크루스칼 리스트(출발섬, 도착섬, 간선비용)
+						list.add(new XY(number - 1, arr[nx][ny] - 1, tmp.cnt));
 					}
 					continue;
 				}
-				queue.add(new XY(nx, ny, tmp.cnt+1));
+				queue.add(new XY(nx, ny, tmp.cnt + 1));
 			}
 		}
+	}
+
+	static int findSet(int x) {
+		if (x == parents[x])
+			return x;
+		return parents[x] = findSet(parents[x]);
+	}
+
+	static void union(int x, int y) {
+		int px = findSet(x);
+		int py = findSet(y);
+		parents[py] = px;
 	}
 
 }

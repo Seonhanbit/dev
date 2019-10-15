@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- 
+		Member mem = new Member 
+		class : 객체 생성할 클래스
+		id : 변수명
+		scope : 객체 생성 범위
+				(singleton : 기본 객체를 하나만 생성하여 재사용,
+				 prototype : 요구할때마다 객체 생성,
+				 request, session : web인 경우 객체 생성 범위)
+		lazy-init : scope singleton인 경우 
+					(false : container가 생성될때 객체 생성,
+					 true  : getBean() 객체 추출할때 객체 생성)
+		init-method : 객체 생성 시 실행할 메소드
+		destroy-method : 객체 소멸 시 실행할 메소드 
+	-->
+	<bean id="mem" class="app.MemberImpl" 
+			scope="prototype" 
+			lazy-init="false" 
+			init-method="init"
+			destroy-method="destroy">
+			<constructor-arg name="name" value="고길동"></constructor-arg>
+			<constructor-arg index="1" value="41"></constructor-arg>
+			<constructor-arg index="2" value="쌍문동"></constructor-arg>
+			<constructor-arg index="3" ref="bigmouse"></constructor-arg>
+	</bean>
+	<bean id="bigmouse" class="app.BigMouse">
+		<constructor-arg name="name" value="임준형"></constructor-arg>
+	</bean>
+</beans>
