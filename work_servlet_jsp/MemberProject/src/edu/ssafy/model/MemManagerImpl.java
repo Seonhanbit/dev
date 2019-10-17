@@ -29,7 +29,7 @@ public class MemManagerImpl implements IMemManager{
 			res = st.execute();
 			res = true;
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			// 
 			e.printStackTrace();
 			res = false;
 		} finally {
@@ -90,7 +90,7 @@ public class MemManagerImpl implements IMemManager{
 			conn = ConnectionProxy.getConnection();
 
 			st = conn.prepareStatement(sql);
-			rs = st.executeQuery();
+			rs = st.executeQuery(); //조회
 			list = new ArrayList<>();
 			while (rs.next()) {
 				MemVO vo = new MemVO();

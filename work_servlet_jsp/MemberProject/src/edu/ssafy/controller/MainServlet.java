@@ -86,6 +86,7 @@ public class MainServlet extends HttpServlet {
 		} else {
 			request.setAttribute("result", id + "의 업데이트를 실패하였습니다.");
 			request.getRequestDispatcher("result.jsp").forward(request, response);
+			// response.sendRedirect("result.jsp"); 데이터 안 넘어감
 		}
 
 	}

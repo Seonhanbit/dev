@@ -1,6 +1,6 @@
 import java.io.*;
 
-public class Back_1907 {
+public class Baek_1907 {
 	// 계수는 10이하라서 10번 중복순열 돌려보기
 		static int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 		static int[] C, H, O;
