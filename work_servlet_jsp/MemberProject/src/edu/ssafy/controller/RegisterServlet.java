@@ -39,9 +39,9 @@ public class RegisterServlet extends HttpServlet {
 		boolean res = man.addMem(id, name, pw, addr, age, tel);
 		//4.출력처리
 		if(res) {
-			request.setAttribute("result", id+" 등록 성공");;
+			request.setAttribute("result", id+" 등록 성공");
 		}else {
-			request.setAttribute("result", id+" 등록  실패");;
+			request.setAttribute("result", id+" 등록  실패");
 		}
 		request.getRequestDispatcher("result.jsp").forward(request, response);
 	}

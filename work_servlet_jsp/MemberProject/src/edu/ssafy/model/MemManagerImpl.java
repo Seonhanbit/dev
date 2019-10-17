@@ -13,6 +13,7 @@ public class MemManagerImpl implements IMemManager{
 	private PreparedStatement st;
 	private ResultSet rs;
 
+
 	public boolean addMem(String id, String name, String pw, String addr, int age, String tel) {
 		String str = "insert into memberweb(id,name,pw,addr,age,tel)values(?,?,?,?,?,?)";
 		boolean res = false;
