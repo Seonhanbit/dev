@@ -56,11 +56,11 @@ public class s_17471_다리만들기2 {
 				arr[i][j] = Integer.parseInt(st.nextToken());
 			}
 		}
-		int cnt = 0;
+		int cnt = 1;
 		for (int i = 0; i < N; i++) {
 			for (int j = 0; j < M; j++) {
 				if (arr[i][j] == 1 && !visited[i][j]) {
-					bfs(i, j, cnt + 1);
+					bfs(i, j, cnt);
 					cnt++;
 				}
 			}
@@ -73,25 +73,31 @@ public class s_17471_다리만들기2 {
 				}
 			}
 		}
+		for (int i = 0; i < N; i++) {
+			for (int j = 0; j < M; j++) {
+				System.out.print(arr[i][j]);
+			}System.out.println();
+		}
+		System.out.println(list);
 		parents = new int[cnt];
 		Collections.sort(list);
 		for (int l = 0; l < cnt; l++) // makeSet
 			parents[l] = l;
 
-		int succ=0;
+		int succ = 0;
 		for (int i = 0; i < list.size(); i++) {
 			int nx = findSet(list.get(i).x);
 			int ny = findSet(list.get(i).y);
 			if (nx != ny) {
 				union(list.get(i).x, list.get(i).y);
 				sum += list.get(i).cnt;
-				succ ++;
+				succ++;
 			}
 			if (succ == cnt - 1) {
 				break;
 			}
 		}
-		if (succ!=cnt-1)
+		if (succ != cnt - 1)
 			System.out.println(-1);
 		else
 			System.out.println(sum);

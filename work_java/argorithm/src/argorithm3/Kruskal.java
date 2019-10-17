@@ -60,7 +60,7 @@ public class Kruskal {
 		parents = new int[N];
 		K = Integer.parseInt(st.nextToken());
 		xy = new XY[K];
-		for (int l = 0; l < N; l++) // makeSet
+		for (int l = 0; l < N; l++) // makeSet 자기 자신을 부모로 설정
 			parents[l] = l;
 		for (int l = 0; l < K; l++) {
 			st = new StringTokenizer(br.nextLine());
@@ -81,13 +81,13 @@ public class Kruskal {
 		}
 		System.out.println(sum);
 	}
-
+	//자기 자신이 부모인 노드가 나올때까지 재귀
 	static int findSet(int x) {
 		if (x == parents[x])
 			return x;
 		return parents[x] = findSet(parents[x]);
 	}
-
+	//두 대표자 간에 한쪽을 부모로 설정
 	static void union(int x, int y) {
 		int px = findSet(x);
 		int py = findSet(y);
