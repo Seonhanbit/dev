@@ -38,5 +38,10 @@ public class MemberController {
 	}
 	
 	//업데이트, 삭제 셀렉1, 셀렉리스트(아이디)
+	//리퀘스트매핑 
+	/*
+	 * 파라미터는 id로 처리 update delete selectOne selectList 메소드 4개를 추가하고 requestmapping으로
+	 * 만들고 postman으로 호출되는지 확인하기! 나눠주신 pdf파일 읽어보기
+	 */
 	
 }

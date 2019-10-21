@@ -3,4 +3,5 @@
 <aop-project name="hw_spring_1015"/>
 <aop-project name="SpringApp_Anno"/>
 <aop-project name="SpringApp"/>
+<aop-project name="SpringMVC"/>
 </aop-reference-model>
