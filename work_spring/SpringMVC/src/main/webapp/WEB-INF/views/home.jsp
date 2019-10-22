@@ -11,6 +11,7 @@
 </h1>
 
 <P>  The time on the server is ${serverTime}. </P>
-<a href="member/memregpage">회원등록</a>
+<a href="memregpage">회원등록</a>
+<a href="memselectlist">회원리스트</a>
 </body>
 </html>

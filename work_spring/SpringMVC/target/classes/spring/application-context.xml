@@ -1,8 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
-	
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+
 	<!-- Root Context: defines shared resources visible to all other web components -->
-		
+
+	<context:component-scan base-package="edu.ssafy" />
+
+	<!-- Database Connection Pool을 위한 DataSource 설정 : id가 변수명 -->
+	<bean class="org.apache.commons.dbcp.BasicDataSource"
+		id="datasource" destroy-method="close">
+		<property name="driverClassName"
+			value="com.mysql.cj.jdbc.Driver"></property>
+		<property name="url"
+			value="jdbc:mysql://127.0.0.1:3306/springweb?serverTimezone=UTC&amp;useUniCode=yes&amp;characterEncoding=UTF-8"></property>
+		<property name="username" value="ssafy"></property>
+		<property name="password" value="ssafy"></property>
+		<property name="maxActive" value="20"></property>
+	</bean>
+
+	<!-- Database Connection Pool : 파일로 부르기 <context:property-placeholder location="classpath:/spring/jdbc.properties"/> 
+		<bean class="org.apache.commons.dbcp.BasicDataSource" id="datasource" destroy-method="close"> 
+		<property name="driverClassName" value="${jdbc.driver}"/> <property name="url" 
+		value="${jdbc.url}"/> <property name="username" value="${jdbc.user}"/> <property 
+		name="password" value="${jdbc.password}"/> <property name="maxActive" value="${jdbc.maxPoolsize}"/> 
+		</bean> -->
+
+
+	<!-- MyBatis ref="객체생성 변수명(id)" -->
+	<bean class="org.mybatis.spring.SqlSessionFactoryBean"
+		id="SqlSessionFactory">
+		<property name="dataSource" ref="datasource"></property>
+		<!-- Mybatis 설정파일(xml) 등록 -->
+		<property name="configLocation"
+			value="classpath:/spring/SqlMapConfig.xml"></property>
+	</bean>
+	<bean class="org.mybatis.spring.SqlSessionTemplate" id="sqlSession">
+	<constructor-arg ref="SqlSessionFactory"></constructor-arg>
+	</bean>
+	
+	
+	<!-- transaction -->
+    <bean class="org.springframework.jdbc.datasource.DataSourceTransactionManager" id="transactionManager">
+        <property name="dataSource" ref="datasource"></property>
+    </bean>
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+	
+	
+	<mvc:annotation-driven></mvc:annotation-driven>
+	<context:annotation-config></context:annotation-config>
+	
 </beans>
