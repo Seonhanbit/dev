@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sql.pro">
+ <!-- resultType을 지정해주어야 한다. 이는 SqlMapConfig에서 TypeAlias로 지정해주면 클래스에 담아서 줄 수 있다. -->
+ <select id="selectPro" parameterType="string" resultType="product">
+   select num, name, price from pros where num = #{num }
+ </select>
+ 
+ <select id="selectPros" resultType="product">
+     select *from pros order by num
+ </select>
+ 
+ <insert id="insertPro" parameterType="product">
+     insert into pros values(#{num }, #{name }, #{price })
+ </insert>
+ 
+ 
+ <update id="updatePro" parameterType="product">
+ 	update pros set name=#{name },price=#{price } where num=#{num }
+ </update>
+ 
+ <delete id="deletePro" parameterType="string">
+ 	delete from pros where num=#{num }
+ </delete>
+ 
+</mapper>

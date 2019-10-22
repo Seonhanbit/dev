@@ -5,6 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>회원등록</title>
+<script type="text/javascript">
+function updatemem(){
+	rform.submit();
+}
+</script>
 </head>
 <body>
 	<h1>회원 등록</h1>
@@ -30,8 +35,9 @@
 				<td><input type="email" id="email" name="email"></td>
 			</tr>
 			<tr>
-				<td colspan="2"><input type="reset" value="초기화"><input
-					type="submit" value="제출"></td>
+				<td colspan="2"><input type="reset" value="초기화">
+							<input type="submit" value="제출">
+							</td>
 			</tr>
 		</table>
 	</form>

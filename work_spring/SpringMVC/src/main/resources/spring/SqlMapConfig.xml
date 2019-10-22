@@ -7,11 +7,13 @@
 
   <typeAliases>
   	<typeAlias type="edu.ssafy.dto.Member" alias="member"/>
+  	<typeAlias type="edu.ssafy.dto.Product" alias="product"/>
   	
   </typeAliases>
   
   <mappers>
     <mapper resource="spring/member_sql.xml"/>
     <mapper resource="spring/board_sql.xml"/>
+    <mapper resource="spring/pro_sql.xml"/>
   </mappers>
 </configuration>

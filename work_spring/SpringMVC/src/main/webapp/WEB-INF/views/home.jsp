@@ -13,5 +13,6 @@
 <P>  The time on the server is ${serverTime}. </P>
 <a href="memregpage">회원등록</a>
 <a href="memselectlist">회원리스트</a>
+<a href="prolist">상품리스트</a>
 </body>
 </html>
