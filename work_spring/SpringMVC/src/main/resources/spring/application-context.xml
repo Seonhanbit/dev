@@ -25,24 +25,25 @@
 		<property name="maxActive" value="20"></property>
 	</bean>
 
-	<!-- Database Connection Pool : 파일로 부르기 <context:property-placeholder location="classpath:/spring/jdbc.properties"/> 
+	<!-- Database Connection Pool : 파일로 부르기 
+		<context:property-placeholder location="classpath:/spring/jdbc.properties"/> 
 		<bean class="org.apache.commons.dbcp.BasicDataSource" id="datasource" destroy-method="close"> 
-		<property name="driverClassName" value="${jdbc.driver}"/> <property name="url" 
-		value="${jdbc.url}"/> <property name="username" value="${jdbc.user}"/> <property 
-		name="password" value="${jdbc.password}"/> <property name="maxActive" value="${jdbc.maxPoolsize}"/> 
+		<property name="driverClassName" value="${jdbc.driver}"/> 
+		<property name="url" value="${jdbc.url}"/> 
+		<property name="username" value="${jdbc.user}"/> 
+		<property name="password" value="${jdbc.password}"/> 
+		<property name="maxActive" value="${jdbc.maxPoolsize}"/> 
 		</bean> -->
 
 
 	<!-- MyBatis ref="객체생성 변수명(id)" -->
-	<bean class="org.mybatis.spring.SqlSessionFactoryBean"
-		id="SqlSessionFactory">
+	<bean class="org.mybatis.spring.SqlSessionFactoryBean" id="SqlSessionFactory">
 		<property name="dataSource" ref="datasource"></property>
-		<!-- Mybatis 설정파일(xml) 등록 -->
-		<property name="configLocation"
-			value="classpath:/spring/SqlMapConfig.xml"></property>
+		<!-- Mybatis 설정파일(xml) 등록 *****************경로 : value 보깅***************에러코드는 404, 500 -->
+		<property name="configLocation" value="classpath:/spring/SqlMapConfig.xml"></property>
 	</bean>
 	<bean class="org.mybatis.spring.SqlSessionTemplate" id="sqlSession">
-	<constructor-arg ref="SqlSessionFactory"></constructor-arg>
+		<constructor-arg ref="SqlSessionFactory"></constructor-arg>
 	</bean>
 	
 	

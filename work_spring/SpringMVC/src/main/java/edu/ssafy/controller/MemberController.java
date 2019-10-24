@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -19,6 +20,15 @@ import edu.ssafy.service.MemService;
 
 @Controller
 public class MemberController {
+
+	//초기 화면 설정
+	/*
+	 * @RequestMapping(value= {"/","index"}) 
+	 * public String index(){ 
+	 * 		return "index";
+	 * }
+	 */
+
 	
 	@ExceptionHandler(MyException.class)
     public String myExceptionMethod(MyException e) {
@@ -36,6 +46,14 @@ public class MemberController {
 	@Qualifier("MemServiceImpl")
 	private MemService ser;
 
+	//값을 넘겨줄때는 ModelAndView로, 필요없으면 String 가능
+	/*
+	 * @RequestMapping("/memregpage") 
+	 * public String insertPage() { 
+	 * 	return "redirect:member/memreg"; 
+	 * }
+	 */
+	
 	@RequestMapping("/memregpage")
 	public ModelAndView insertPage(ModelAndView mv) {
 		mv.setViewName("member/memreg");
@@ -43,7 +61,9 @@ public class MemberController {
 	}
 
 	@RequestMapping(value="meminsert")
-	public ModelAndView insert(HttpServletRequest req, ModelAndView mv) {
+	public ModelAndView insert(HttpServletRequest req, ModelAndView mv, HttpSession ss) {
+		//HttpSession ss session으로 받아오기
+		
 		// 입력처리
 		String id = req.getParameter("id");
 		String pw = req.getParameter("pw");
@@ -52,10 +72,16 @@ public class MemberController {
 		// 로직처리 (서비스 부르기)
 		ser.insert(id, pw, name, email);
 		// 결과처리
-		List<Member> list = ser.selectList();
-
-		mv.addObject("list", list);
-		mv.setViewName("member/memlist");
+//		List<Member> list = ser.selectList();
+//		mv.addObject("list", list);
+//		디폴트가 포워드, 그러니까 req에 값이 담겨있어서 새로고침 시 에러뜸
+//		mv.setViewName("member/memlist");
+		
+		//redirect하고 싶으면 : 액션값주기(대부분이것), update, delete, insert 할때
+		//forward:memselectlist
+		//뒤에 jsp 넣어주려면 webapp밑에 jsp파일 넣기(full name 넣기)
+		mv.setViewName("redirect:memselectlist");
+		//mv.setViewName("redirect:member/memlist");
 		return mv;
 	}
 	
@@ -67,9 +93,8 @@ public class MemberController {
 		// 로직처리 (서비스 부르기)
 		ser.delete(id);
 		// 결과처리
-		List<Member> list = ser.selectList();
-        mv.addObject("list", list);
-        mv.setViewName("member/memlist");
+        
+        mv.setViewName("redirect:memselectlist");
         
 		return mv;
 	}
@@ -85,10 +110,8 @@ public class MemberController {
 		ser.update(id, pw, name, email);
 		
 		// 화면처리
-		List<Member> list = ser.selectList();
-
-		mv.addObject("list", list);
-		mv.setViewName("member/memlist");
+		
+		mv.setViewName("redirect:memselectlist");
 		return mv;
 	}
 	

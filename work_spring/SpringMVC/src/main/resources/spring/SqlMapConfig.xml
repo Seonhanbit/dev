@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 
-
+  <!-- 순서 바뀌면 안됨  typeAliases는 mappers전에 작성, 경로보기-->
   <typeAliases>
   	<typeAlias type="edu.ssafy.dto.Member" alias="member"/>
   	<typeAlias type="edu.ssafy.dto.Product" alias="product"/>

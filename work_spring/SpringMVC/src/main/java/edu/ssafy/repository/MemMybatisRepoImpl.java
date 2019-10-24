@@ -18,6 +18,7 @@ public class MemMybatisRepoImpl implements MemRepo {
 	@Override
 	public void insert(Member m) {
 		//member_sql.xml 파일의 namespace.id 적어주기
+		//autowired 마지막에 마이바티스 에러 찾기
 		session.insert("sql.member.insertMember", m);
 	}
 
