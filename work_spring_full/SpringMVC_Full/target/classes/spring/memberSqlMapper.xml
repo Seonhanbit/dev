@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mem">
+	 
+	<resultMap type="member" id="Member">
+		<result column="id" property="id"/>
+		<result column="pw" property="pw"/>
+		<result column="name" property="name"/>
+		<result column="addr" property="addr"/>
+	</resultMap>
+	
+	
+	<resultMap type="boardmem" id="boardmem1">
+		<result column="seq" property="seq"/>
+		<result column="title" property="title"/>
+		<result column="writer" property="writer"/>
+		<result column="content" property="content"/>
+		<result column="regDate" property="regDate"/>
+		<result column="count" property="count"/>
+		<collection property="member" resultMap="Member"/>
+		
+	</resultMap>
+	 
+	<select id="selectjoin" resultMap="boardmem1">
+		select * 
+		from member join board on (board.writer = member.name);
+	</select>
+	
+	<select id="selectList" resultType="member">
+		select * from member order by id
+		
+	</select>
+	<select id="selectOne" parameterType="string"
+		resultType="member">
+		select * from member
+		where 1 = 1
+		and id = #{id }
+		
+	</select>
+	<select id="selectIf" parameterType="string"
+		resultType="member">
+		select * from member
+		where 1 = 1
+		<if test="name != null">
+			and name = #{name } 
+		</if>
+
+	</select>
+
+	<select id="selectchoose" parameterType="string"
+		resultType="member">
+
+		select * from member
+		<where>
+			<choose>
+				<when test="name != null">
+					and name = #{name }
+				</when>
+				<when test="name = aaa">
+					and id = 1
+				</when>
+				<otherwise>
+					and id = 2
+				</otherwise>
+			</choose>
+		</where>
+	</select>
+
+	<insert id="insert" parameterType="member">
+		insert into member(id, pw,
+		name, addr)
+		values(
+		#{id },
+		#{pw },
+		#{name },
+		#{addr }
+		)
+	</insert>
+
+	<update id="update" parameterType="member">
+		update member set
+		pw = #{pw},
+		name = #{name},
+		addr = #{addr}
+		where id = #{id }
+	</update>
+
+	<delete id="delete" parameterType="string">
+		delete from member where id =
+		#{id }
+	</delete>
+</mapper>
+
+
+
+
+
+

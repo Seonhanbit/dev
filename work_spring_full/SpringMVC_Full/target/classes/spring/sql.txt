@@ -1,0 +1,30 @@
+CREATE TABLE `board` (
+  
+`seq` int(11) NOT NULL AUTO_INCREMENT,
+  
+`title` varchar(11) NOT NULL,
+  
+`writer` varchar(20) DEFAULT NULL,
+  
+`content` varchar(20) DEFAULT NULL,
+  
+`regdate` datetime DEFAULT CURRENT_TIMESTAMP,
+  
+`count` int(11) DEFAULT '0',
+  PRIMARY KEY (`seq`)
+
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `member` (
+  
+`id` varchar(11) NOT NULL,
+  
+`pw` varchar(20) DEFAULT NULL,
+  
+`name` varchar(20) DEFAULT NULL,
+  
+`addr` varchar(2000) DEFAULT NULL,
+  
+PRIMARY KEY (`id`)
+
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

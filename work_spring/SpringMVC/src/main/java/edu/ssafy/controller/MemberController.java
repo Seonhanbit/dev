@@ -61,11 +61,11 @@ public class MemberController {
 	}
 
 	@RequestMapping(value="meminsert")
-	public ModelAndView insert(HttpServletRequest req, ModelAndView mv, HttpSession ss) {
+	public ModelAndView insert(HttpServletRequest req, ModelAndView mv, HttpSession ss, String id) {
 		//HttpSession ss session으로 받아오기
 		
 		// 입력처리
-		String id = req.getParameter("id");
+		//String id = req.getParameter("id");
 		String pw = req.getParameter("pw");
 		String name = req.getParameter("name");
 		String email = req.getParameter("email");
@@ -81,7 +81,6 @@ public class MemberController {
 		//forward:memselectlist
 		//뒤에 jsp 넣어주려면 webapp밑에 jsp파일 넣기(full name 넣기)
 		mv.setViewName("redirect:memselectlist");
-		//mv.setViewName("redirect:member/memlist");
 		return mv;
 	}
 	

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+	
+<mapper namespace="sql.pms">
+
+	<insert id="insert"	parameterType="phone">
+		insert into phones(num, model, price, vcode)
+		values( #{num},#{model},#{price},#{vcode} )
+	</insert>
+	
+	<select id="selectlist" resultType="phone">
+		select * from Phones
+	</select>
+	
+	<select id="selectone" parameterType="string" resultType="phone">
+		select * from Phones where num=#{num }
+	</select>
+	
+	<delete id="delete" parameterType="string">
+		delete from Phones where num=#{num}
+	</delete>
+	
+</mapper>
+
+
+
+
+
+

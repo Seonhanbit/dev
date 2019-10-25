@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+    
+  <context:component-scan base-package="com.ssafy"/>  
+  
+ 	<!-- Connection Pool을 위한 DataSource 설정 -->
+	<bean  id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"  destroy-method="close">
+		<property name="driverClassName"  	value="com.mysql.cj.jdbc.Driver" />
+		<property name="url"  				value="jdbc:mysql://localhost:3306/ssafydb?serverTimezone=UTC&amp;useSSL=false&amp;allowPublicKeyRetrieval=true" />
+		<property name="username"  			value="ssafy" />
+		<property name="password"  			value="ssafy" />
+		<property name="maxActive"  		value="20" />
+	</bean>
+	
+		
+	<!-- MyBatis 설정  -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource"  ref="dataSource"/>
+		<!-- MyBatis 기본 설정 XML 등록 -->
+		<property name="configLocation"  value="classpath:spring/SqlMapConfig.xml"/>
+	</bean>
+	
+	<bean  id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg ref="sqlSessionFactory"/>		
+	</bean> 
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
