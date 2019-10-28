@@ -3,7 +3,7 @@ import java.util.*;
 
 //연구소2
 public class Baek_17141 {
-	static int N, M;
+	static int N, M, ncnt;
 	static int[][] arr;
 	static int[] dx = { -1, 1, 0, 0 };
 	static int[] dy = { 0, 0, -1, 1 };
@@ -67,13 +67,14 @@ public class Baek_17141 {
 			for (int i = 0; i < N; i++) {
 				tmp[i] = Arrays.copyOfRange(visited[i], 0, tmp[i].length);
 			}
-			
+
 			// res배열에 조합으로 M개가 뽑힘
 			for (int i = 0; i < res.length; i++) {
 				queue.add(new XY(res[i].x, res[i].y, 0));
 			}
 			// 실제 길이를 체크하는 함수
-			
+			depth(tmp);
+			System.out.println(ncnt);
 			queue.clear();
 			return;
 		}
@@ -85,16 +86,17 @@ public class Baek_17141 {
 	}
 
 	static void depth(boolean[][] tmp) {
-		while(!queue.isEmpty()) {
+		while (!queue.isEmpty()) {
 			XY nxy = queue.poll();
+			ncnt = nxy.cnt;
 			tmp[nxy.x][nxy.y] = true;
-			for(int i=0; i<4; i++) {
-				int nx = nxy.x+dx[i], ny=nxy.y+dy[i];
-				if(!range(nx,ny))
+			for (int i = 0; i < 4; i++) {
+				int nx = nxy.x + dx[i], ny = nxy.y + dy[i];
+				if (!range(nx, ny))
 					continue;
-				if(tmp[nx][ny])
+				if (tmp[nx][ny])
 					continue;
-				queue.add(new XY(nx,ny,nxy.cnt+1));
+				queue.add(new XY(nx, ny, nxy.cnt + 1));
 			}
 		}
 	}
