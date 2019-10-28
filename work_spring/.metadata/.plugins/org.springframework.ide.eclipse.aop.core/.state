@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
+<aop-project name="SpringWebMVCREST"/>
 <aop-project name="hw_spring_1015"/>
 <aop-project name="SpringApp_Anno"/>
 <aop-project name="SpringApp"/>
