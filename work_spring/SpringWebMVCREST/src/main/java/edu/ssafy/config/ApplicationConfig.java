@@ -29,9 +29,11 @@ public class ApplicationConfig {
 		return new Docket(DocumentationType.SWAGGER_2).groupName("public-api")
 				.apiInfo(apiInfo())
 				.select()
-				.apis(RequestHandlerSelectors.any()) // 현재 RequestMapping으로 할당된 모든 URL 리스트를 추출
-				.paths(PathSelectors.ant("/api/rest*")) //api 밑에 있는 rest로 시작하는 모든 것들을 문서로 만든다.
-				
+				.apis(RequestHandlerSelectors.any())
+				.paths(PathSelectors.ant("/api/**"))// 현재 RequestMapping으로 할당된 모든 URL 리스트를 추출
+				.paths(PathSelectors.ant("/api/rest*/**")) //(정규식 표현)api 밑에 있는 rest로 시작하는 모든 것들을 문서로 만든다.
+				//"/api/rest*" >> *의 의미는 그 뒤에 있는 슬러쉬 구문을 의미함
+				//"/api/rest**" >> rest로 시작하는그 뒤 모든 슬러쉬 구문을 의미함 				
 				.build();
 	}
 	

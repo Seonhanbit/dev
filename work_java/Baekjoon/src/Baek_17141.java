@@ -3,7 +3,7 @@ import java.util.*;
 
 //연구소2
 public class Baek_17141 {
-	static int N, M, ncnt;
+	static int N, M, ncnt, result;
 	static int[][] arr;
 	static int[] dx = { -1, 1, 0, 0 };
 	static int[] dy = { 0, 0, -1, 1 };
@@ -47,6 +47,8 @@ public class Baek_17141 {
 		visited = new boolean[N][N];
 		queue = new LinkedList<>();
 		list = new ArrayList<>();
+		result = Integer.MAX_VALUE;
+		int cnt = 0;
 		for (int i = 0; i < N; i++) {
 			st = new StringTokenizer(br.readLine());
 			for (int j = 0; j < N; j++) {
@@ -58,6 +60,14 @@ public class Baek_17141 {
 			}
 		}
 		combi(0, 0, new XY[M]);
+		if (result == Integer.MAX_VALUE) {
+			result = -1;
+		}
+		if (list.size() == M)
+			result = 0;
+		bw.append(result + "\n");
+		bw.flush();
+		bw.close();
 	}
 
 	static void combi(int n, int r, XY[] res) {
@@ -74,7 +84,11 @@ public class Baek_17141 {
 			}
 			// 실제 길이를 체크하는 함수
 			depth(tmp);
-			System.out.println(ncnt);
+			boolean check = check(tmp);
+			if (check) {
+				if (ncnt < result)
+					result = ncnt;
+			}
 			queue.clear();
 			return;
 		}
@@ -96,6 +110,7 @@ public class Baek_17141 {
 					continue;
 				if (tmp[nx][ny])
 					continue;
+				tmp[nx][ny] = true;
 				queue.add(new XY(nx, ny, nxy.cnt + 1));
 			}
 		}

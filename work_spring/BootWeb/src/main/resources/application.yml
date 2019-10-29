@@ -1,0 +1,18 @@
+#server:
+#  servlet:
+#    context-path: /
+
+
+#spring:
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://127.0.0.1:3306/springweb?serverTimezone=UTC&useUniCode=yes&characterEncoding=UTF-8
+#    username: ssafy
+#    password: ssafy
+#  mvc:
+#    view:
+#      prefix: /WEB-INF/
+#      suffix: .jsp
+    
+#mybatis:
+#  config-location: classpath:/spring/MybatisConfig.xml

@@ -3,6 +3,7 @@
 <aop-project name="SpringWebMVCREST"/>
 <aop-project name="hw_spring_1015"/>
 <aop-project name="SpringApp_Anno"/>
+<aop-project name="BootWeb"/>
 <aop-project name="SpringApp"/>
 <aop-project name="SpringMVC">
 <aspect-definition advice-class-name="org.springframework.transaction.interceptor.TransactionInterceptor" advice-method-name="invoke" advice-method-parameter-types="org.aopalliance.intercept.MethodInvocation" advice-type="AROUND" aspect-end-line-number="54" aspect-name="org.springframework.transaction.interceptor.TransactionInterceptor#SpringMVC#src/main/resources/spring/application-context.xml#54" aspect-start-line-number="54" factory-id="org.springframework.ide.eclipse.aop.core.javaAdvisorDefinitionElementFactory" file="/SpringMVC/src/main/resources/spring/application-context.xml" pointcut-expression="(@within(org.springframework.transaction.annotation.Transactional) || @annotation(org.springframework.transaction.annotation.Transactional)) &amp;&amp; execution(* *..*(..))" proxy-target-class="false">
