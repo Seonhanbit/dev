@@ -13,7 +13,7 @@
 		<tr><th>no</th><th>title</th><th>content</th></tr>
 		<c:forEach items="${list }" var="board">
 			<tr>
-				<td>${board.no }</td>
+				<td><a href="boardselectOne?no=${board.no }">${board.no }</a></td>
 				<td>${board.title }</td>
 				<td>${board.content }</td>
 			</tr>

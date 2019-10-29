@@ -14,32 +14,27 @@ public class BoardServiceImpl implements BoardService {
 	BoardRepository rep;
 
 	@Override
-	public void insert(String no, String title, String content) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void update(String no, String title, String content) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void delete(String no) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public BoardDto selectOne(String no) {
-		// TODO Auto-generated method stub
-		return null;
+		return rep.selectOne(no);
 	}
 
 	@Override
 	public List<BoardDto> selectList() {
-		// TODO Auto-generated method stub
-		return null;
+		return rep.selectList();
+	}
+
+	@Override
+	public int insert(String no, String title, String content) {
+		return rep.insert(new BoardDto(no,title,content));
+	}
+
+	@Override
+	public int update(String no, String title, String content) {
+		return rep.update(new BoardDto(no,title,content));
+	}
+
+	@Override
+	public int delete(String no) {
+		return rep.delete(no);
 	}
 }
