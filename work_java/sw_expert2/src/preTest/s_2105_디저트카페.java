@@ -60,6 +60,8 @@ public class s_2105_디저트카페 {
 		if (visited[arr[x][y]])
 			return;
 
+		//현재 상태에서 방향을 바꾼 것을 선택하던가 계속 같은 방향으로 가던가!!!!
+		//빠져나올때는 false 체크해주기(안먹은 디저트 값은 다시 체크를 풀어줘야해)
 		System.out.println("시작!!!!!!!!!"+x + "," + y + " : " + cnt);
 		visited[arr[x][y]] = true;
 		dfs(x + dx[d], y + dy[d], d + 1, cnt + 1);

@@ -33,11 +33,20 @@ public class RestMemberController {
 	@PostMapping(value = "/meminsert")
 	public ResponseEntity<String> insert(Member mem) {
 		ResponseEntity<String> re = null;
+		/* 실제 데이터랑 메세지 같이 보내기
+		 * HashMap<String, Object> map = new HashMap<String, Object>();
+		 * ResponseEntity<HashMap<String, Object>> res;
+		 * 
+		 * 	map.put("resmsg", "입력성공");
+			map.put("resdata", dto);
+			res = new ResponseEntity<HashMap<String,Object>>(map,HttpStatus.OK);
+		 */
 		try {
 			ser.insert(mem.getId(), mem.getPw(), mem.getName(), mem.getEmail());
 			re = new ResponseEntity<String>("잘 들어 갔어용~", HttpStatus.OK);
 		} catch (Exception e) {
-			re = new ResponseEntity<String>("입력 실패 문제가 생겼다!", HttpStatus.NOT_MODIFIED);
+			//HttpStatus 통신은 제대로 된거니까 OK
+			re = new ResponseEntity<String>("입력 실패 문제가 생겼다!", HttpStatus.OK);
 		}
 		return re;
 	}
@@ -49,7 +58,7 @@ public class RestMemberController {
 			ser.delete(id);
 			re = new ResponseEntity<String>("잘 들어 갔어용~", HttpStatus.OK);
 		} catch (Exception e) {
-			re = new ResponseEntity<String>("삭제 실패 문제가 생겼다!", HttpStatus.NOT_MODIFIED);
+			re = new ResponseEntity<String>("삭제 실패 문제가 생겼다!", HttpStatus.OK);
 		}
 		return re;
 	}
@@ -61,7 +70,7 @@ public class RestMemberController {
 			ser.update(mem.getId(), mem.getPw(), mem.getName(), mem.getEmail());
 			re = new ResponseEntity<BoolResult>(new BoolResult("업데이트", true, "success"), HttpStatus.OK);
 		} catch (Exception e) {
-			re = new ResponseEntity<BoolResult>(new BoolResult("업데이트", false, "fail"), HttpStatus.NOT_MODIFIED);
+			re = new ResponseEntity<BoolResult>(new BoolResult("업데이트", false, "fail"), HttpStatus.OK);
 		}
 		return re;
 	}
@@ -73,7 +82,7 @@ public class RestMemberController {
 			Member selectOne = ser.selectOne(id);
 			re = new ResponseEntity<Member>(selectOne, HttpStatus.OK);
 		} catch (Exception e) {
-			re = new ResponseEntity("조회 실패 문제가 생겼다!", HttpStatus.NO_CONTENT);
+			re = new ResponseEntity("조회 실패 문제가 생겼다!", HttpStatus.OK);
 		}
 		return re;
 	}
@@ -85,7 +94,7 @@ public class RestMemberController {
 			List<Member> list = ser.selectList();
 			re = new ResponseEntity<List<Member>>(list, HttpStatus.OK);
 		} catch (Exception e) {
-			re = new ResponseEntity("조회 실패 문제가 생겼다!", HttpStatus.NO_CONTENT);
+			re = new ResponseEntity("조회 실패 문제가 생겼다!", HttpStatus.OK);
 		}
 		return re;
 	}
