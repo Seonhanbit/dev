@@ -51,6 +51,8 @@ public class RestMemberController {
 		return re;
 	}
 
+	//잭슨 바인더가 json으로 넘어온 데이터를 바꿔주는것
+	//@RequestBody Member m
 	@DeleteMapping(value = "/memdelete/{id}")
 	public ResponseEntity<String> delete(@PathVariable String id) {
 		ResponseEntity<String> re = null;

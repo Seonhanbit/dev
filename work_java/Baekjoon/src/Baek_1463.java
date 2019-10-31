@@ -17,17 +17,19 @@ public class Baek_1463 {
 		bw.flush();
 		bw.close();
 	}
-
+	//n은 숫자, cnt는 깊이(현재 내가 오는데 걸린 비용)
 	static void div(int n, int cnt) {
 		if (n == 1) {
 			min = Math.min(min, cnt);
 			return;
 		}
 		if (map.containsKey(n)) {
-			if (map.get(n) <= cnt) {
+			//map.get(n) 이전에 도착한 녀석이 걸린 비용
+			if (map.get(n) >= cnt) {
+				//작으면 갱신 아니야?
 				map.put(n, cnt);
+			}else
 				return;
-			}
 		} else
 			map.put(n, cnt);
 
