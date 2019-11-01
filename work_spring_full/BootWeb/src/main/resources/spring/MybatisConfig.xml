@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+  <!-- 순서 바뀌면 안됨  typeAliases는 mappers전에 작성, 경로보기-->
+  <typeAliases>
+  	<typeAlias type="edu.ssafy.boot.dto.Member" alias="member"/>
+  </typeAliases>
+  
+  <mappers>
+    <mapper resource="spring/member_sql.xml"/>
+  </mappers>
+</configuration>

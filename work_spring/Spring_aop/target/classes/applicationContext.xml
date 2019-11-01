@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+<!-- 	
+	@Component로 바꿔주기
+	<bean id="boy" class="edu.ssafy.aop.Boy"></bean>
+	<bean id="girl" class="edu.ssafy.aop.Girl"></bean>
+	<bean id="myAspect" class="edu.ssafy.aop.MyAspect"></bean>
+	
+	@Aspect, @Before("함수이름()"),...
+	<aop:config>
+		<aop:aspect ref="myAspect">
+			<aop:pointcut expression="execution(public void edu.ssafy.aop.*.doSomething())" id="mypt"/>
+			<aop:before method="doBefore" pointcut-ref="mypt"/>
+			<aop:after-returning method="doAfterReturning" pointcut-ref="mypt"/>
+			<aop:after-throwing method="doAfterThrowing" pointcut-ref="mypt" throwing="th"/>
+			<aop:after method="doAfter" pointcut-ref="mypt"/>
+		</aop:aspect>
+	</aop:config> 
+-->
+	
+	<context:component-scan base-package="edu.ssafy.aop"></context:component-scan>
+	<aop:aspectj-autoproxy proxy-target-class="true"></aop:aspectj-autoproxy>
+</beans>

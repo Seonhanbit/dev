@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+th {
+	width: 200px;
+}
+
+#result {
+	background-color: pink;
+}
+</style>
+</head>
+<body>
+	<form id="input_form">
+		<table>
+			<tr>
+				<th>아이디</th>
+				<th>이름</th>
+				<th>비밀번호</th>
+			</tr>
+			<tr>
+				<td><input type="text" name="userId"></td>
+				<td><input type="text" name="name"></td>
+				<td><input type="text" name="password"></td>
+			</tr>
+		</table>
+	</form>
+	<input type="button" value="추가" id="add">
+
+	<table id="result">
+		<tr>
+			<th>아이디</th>
+			<th>이름</th>
+			<th>비밀번호</th>
+			
+		</tr>
+	</table>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<script type="text/javascript">
+			$(document).ready(function() {
+				load()
+				$('#add').on('click',function(){
+					let form=$('#input_form')
+					$.ajax({
+						url:'addUser.do',
+						type:'post',
+						dataType:'json', //받는 타입
+						data:form.serialize(), //모든 form에서 name값을 키값으로 하는  json만들어 보낸다.
+						success:function(data){
+							//userController에서 성공시 리턴값이 true였다!
+							if(data.result){
+								load()
+								//input_form 아이디 아래의 input태그에서 type이 text인 얘들 빈칸으로 만들기 위해
+								$('#input_form input[type=text]').val('')
+							}
+						}
+					})
+				})
+			})
+
+			function load(){
+				/* 인덱스 0이 아닌 것은 다 지운다=>즉 아이디,이름,비밀번호 첫 줄만 남기고 다 지운다 */
+				$('#result tr').filter(function(index) {
+					return index != 0
+				}).remove() 
+
+				$.ajax({
+					url : 'userList.do',
+					type : 'get',
+					dataType : 'json', //오는 데이터 타입이 json이다
+					success : function(data) {
+						/* data는 json array이다 */
+						/* alert(data) */
+						/* foreach와 같이 각 item이 한 번씩 실행되어라 */
+
+						/* data가 결과로 가져온 리스트(객체 리스트는 json배열로 들어온다***)=>내가 몇번째인지 index, 실제 아이템 item */
+						//첫번째 매개가 배열 인덱스 index라고 고정되어있기 때문에 사용 안 해도 index명시하는거!
+						$.each(data, function(index, item) {
+							let user_id = item.userId
+							let name = item.name;
+							let password = item.password
+							let tr = $('<tr>')
+							$('<th>').text(user_id).appendTo(tr)
+							$('<th>').text(name).appendTo(tr)
+							$('<th>').text(password).appendTo(tr)
+							tr.appendTo('#result')
+						})
+					}
+				})
+			}
+	</script>
+</body>
+</html>
+
+<!-- /* jsp가 실행될 때 바로 실해되는 함수 */
+$(document).ready(function(){
+	$.ajax({
+		url:'userList.do',
+		type:'get',
+		dataType:'json',
+		success:function(data){
+			/* data는 json array이다 */
+			/* alert(data) */
+			/* foreach와 같이 각 item이 한 번씩 실행되어라 */
+			
+			/* 내가 몇번째인지 index, 실제 아이템 item */
+			$.each(data,function(index,item){
+				let user_id=item.userId
+				let name=item.name;
+				let password=item.password
+				let tr=$('<tr>')
+				$('<th>').text(user_id).appendTo(tr)
+				$('<th>').text(name).appendTo(tr)
+				$('<th>').text(password).appendTo(tr)
+				tr.appendTo('#result')
+			})
+		}
+	})
+}) -->

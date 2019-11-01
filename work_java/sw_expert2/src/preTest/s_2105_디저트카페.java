@@ -31,6 +31,7 @@ public class s_2105_디저트카페 {
 
 			for (int i = 2; i < N; i++) {
 				for (int j = 1; j < N; j++) {
+					//디저트 숫자는 101개
 					visited = new boolean[101];
 					sr = i;
 					sc = j;
