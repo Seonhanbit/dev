@@ -18,10 +18,11 @@
 		<item value="255" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="ExternalProjectImportWizard">
-		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<item value="true" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
 		<item value="true" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\student\Downloads\safeFood_Web_DB\safefood_webbackend"/>
 			<item value="C:\Users\student\Downloads\SafeFood_Web_Back_End_광주_3_최근창_홍강우\SafeFood_Web_Back_End_광주_3_최근창_홍강우"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">

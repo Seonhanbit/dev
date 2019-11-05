@@ -13,3 +13,5 @@ C:\Users\student\Documents\GitHub\dev\work_servlet_jsp\.metadata\.plugins\org.ec
 \SafeFood_Web_Back_End_±¤ÁÖ_3¹İ_¼±ÇÑºû_ÀÓÁØÇü\src
 C:\Users\student\Documents\GitHub\dev\work_servlet_jsp\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3532236702.index
 \Safefood\src
+C:\Users\student\Documents\GitHub\dev\work_servlet_jsp\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2366517115.index
+\safefood_webbackend\src

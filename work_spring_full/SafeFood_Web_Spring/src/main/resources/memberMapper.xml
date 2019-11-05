@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="member">
+  
+  <select id="selectMem" parameterType="string" resultType="member">
+    select * from memtb where id = #{id}
+  </select>
+  <insert id="insertMem" parameterType="member">
+    insert into memtb(id, pw, name, addr, email, tel, alinfo) values(#{id}, #{pw}, #{name}, #{addr}, #{email}, #{tel}, #{alinfo})
+  </insert>
+  <select id="isLogin" resultType="int">
+    select 1 from memtb where id = #{id} and pw = #{pw}
+  </select>
+  <update id="updateMem" parameterType="member" >
+    update memtb set pw = #{pw}, name = #{name}, addr = #{addr}, email = #{email}, tel = #{tel}, alinfo = #{alinfo} where id = #{id}
+  </update>
+  <delete id="deleteMem" parameterType="string">
+    delete from memtb where id = #{id}
+  </delete>
+  <select id="searchPw" parameterType="map" resultType="string">
+    select pw from memtb where id = #{id} and name = #{name}    
+  </select>
+  
+  <insert id="pick" parameterType="map">
+  	insert into pick(id, code, date) values(#{id}, #{code}, curdate())
+  </insert>
+</mapper>
