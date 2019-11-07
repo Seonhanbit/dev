@@ -65,7 +65,7 @@
 		<item value="400" key="height"/>
 	</section>
 	<section name="SourceActionDialog.methods">
-		<item value="true" key="IgnoreDefault"/>
+		<item value="false" key="IgnoreDefault"/>
 		<item value="false" key="SynchronizedModifier"/>
 		<item value="false" key="Comments"/>
 		<item value="1" key="VisibilityModifier"/>

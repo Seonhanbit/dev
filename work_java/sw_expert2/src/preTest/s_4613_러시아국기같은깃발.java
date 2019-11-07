@@ -59,6 +59,7 @@ public class s_4613_러시아국기같은깃발 {
 	}
 
 	// 현재 위치 컬러랑 행(바꿔주기위해서)이랑 행을 지날때마다 더할 cnt
+	// 완전 탐색하기 WWWW, WBBB, WBBR, WBRR ...
 	static void dfs(int col, int x, int cnt) {
 		if (x == N&& col == 3) {
 			if (cnt > max)
