@@ -78,7 +78,7 @@ public class Baek_17135 {
 
 			// sel배열에 궁수가 갈 M(번호)이 적혀져 있음
 			// i는 N-1부터 올라가기
-			for (int i = N - 1; i >= 0; i--) {
+			for (int i = N; i >= 0; i--) {
 				// 세 마리의 궁수가 돌거야
 				for (int k = 0; k < sel.length; k++) {
 					// D까지 돌기
