@@ -18,5 +18,4 @@ INDEX VERSION 1.131+C:\Users\student\Documents\GitHub\dev\work_java\.metadata\.p
 4256083167.index
 1593856350.index
 3719453941.index
-62772670.index
 3421848420.index
