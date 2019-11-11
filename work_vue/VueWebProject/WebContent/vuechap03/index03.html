@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>SSAFY</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+  <div id="app">
+    <h2 v-for="(value, name, index) in items">{{ index+"번째 물품 : "+name+", 가격 : "+value}}</h2>
+  </div>
+  <script type="text/javascript">
+    new Vue({
+      el: "#app",
+      data: {
+        items: {
+          pencil: 500,
+          pen: 1000,
+          eraser: 300
+        }
+      }
+    });
+    Vue.config.devtools = true;
+  </script>
+</body>
+</html>

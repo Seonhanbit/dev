@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>SSAFY</title>
+  <style>
+    body {background-color: #ffffff;}
+    #second  > h2 { margin:auto; padding:0px; text-align:center; color: blue;}	
+    .red {color: red;}
+    #signup-form{width:70%;height:200px; margin:auto; padding:20px; text-align:center; font-family: serif; font-size: 14px;}
+    #signup-form2{width:70%;height:200px; margin:auto; padding:20px; text-align:center; font-family: serif; font-size: 14px;color: red; }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+  <div id="app">
+    <h2 v-pre>{{그대로출력해주세요 }}</h2>
+  </div>
+  <script type="text/javascript">
+    new Vue({
+      el: "#app",
+      data: { 그대로출력해주세요 : "Hello" }
+    });
+    Vue.config.devtools = true;
+  </script>
+</body>
+</html>

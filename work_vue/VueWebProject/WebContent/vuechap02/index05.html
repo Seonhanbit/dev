@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>SSAFY</title>
+  <style type="text/css">
+  #first div {color: blue ;}
+  </style>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+<div id='first'>
+   <div v-html="title"></div>
+</div>
+<div id='second'>
+   <div onclick="hello('안녕하세요');">자바스크립트: 이벤트 클릭하세요.</div>
+</div>
+<input id='third' onclick="hello2(this);" />
+
+<script type="text/javascript">
+  var model = {title : '<h2>SSAFY</h2>'};
+  var first = new Vue({
+      el : '#first',
+      data : model,
+      method:{test:function(){
+	
+      }}
+   });
+  function hello(d){			
+	  first.$data.title=d; 		//자바 스크립트와 연동     first 객체의 속성을 사용할 때 $이용    first.$el   first.$data
+	  alert(first.title);		// first.title == first.$data.title       => first.title는  data의 속성들은 $data를 생략 가능 
+  }  
+  function hello2(d){
+	  first.$data.title=d.value;  //input의 value값이 들어옴
+	  if(d.value===document.getElementById('third').value){
+		  alert(first.title);
+	  };
+  }
+  Vue.config.devtools = true;
+</script>
+</body>
+</html>

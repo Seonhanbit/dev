@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>SSAFY</title>
+  <style type="text/css">
+    #first div {
+      color: blue;
+    }
+  </style>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+  <div id='first'>
+    <div v-html="title"></div>
+    <input v-model="val">
+    <template v-if="val==='A'">
+      <div>val의</div>
+      <div>값이</div>
+      <div>A인 경우입니다.</div>
+    </template>
+    <template v-else>
+      <div>val의</div>
+      <div>값이</div>
+      <div>A가 아닌 경우입니다.</div>
+    </template>
+  </div>
+  <script type="text/javascript">
+    var model = {
+      title: 'SSAFY',
+      val: 'A'
+    };
+    var first = new Vue({
+      el: '#first',
+      data: model,
+    });
+    Vue.config.devtools = true;
+  </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>SSAFY</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+  <div id="app">
+    <h2 v-once>{{ "초기값 : "+count }}</h2>
+    <h2>{{ "현재값 : "+count }}</h2>
+    <button @click="count++">+</button>
+  </div>
+  <script type="text/javascript">
+    new Vue({
+      el: "#app",
+      data: {
+        count: 1
+      }
+    });
+    Vue.config.devtools = true;
+</script>
+
+</body>
+</html>

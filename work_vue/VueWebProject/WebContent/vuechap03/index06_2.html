@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>SSAFY</title>
+  <style>
+    [v-cloak] { display: none }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+  <div id="app">
+    <h2 v-cloak>{{ title }}</h2>
+  </div>
+  <script type="text/javascript">
+    setInterval(()=>{
+      new Vue({
+        el: "#app",
+        data: {
+          title: "안녕하세요"
+        }
+      });
+    }, 1000);    
+    Vue.config.devtools = true;
+    
+    // ()=> function() 람다식
+</script>
+</body>
+</html>

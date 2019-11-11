@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>SSAFY</title>
+  <style>
+    body {background-color: #ffffff;}
+    #second  > h2 { margin:auto; padding:0px; text-align:center; color: blue;}	
+    .red {color: red;}
+    #checkboxArea1{width:70%;height:30px; margin:auto; padding:20px; text-align:center; font-family: serif; font-size: 14px;}
+    #checkboxArea2{width:70%;height:30px; margin:auto; padding:20px; text-align:center; font-family: serif; font-size: 14px;color: red; }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+</head>
+<body>
+  <div id='second'>
+    <h2>SSAFY SAFE FOOD</h2>
+  </div>
+  <div id='allergenes1'>
+    <fieldset id="checkboxArea1">
+        <legend>알레르기 체크</legend>
+        <template  v-for="alergin in alergins">
+			 <input type="radio" name="box"  v-bind:value="alergin" v-model="alergen" /><label>{{alergin}}</label>
+		</template>
+    </fieldset>
+    <fieldset id="checkboxArea2" v-if='moreZero'>
+        알러지 요인 : <span v-html="alergen"></span>
+    </fieldset>
+  </div>			
+  <script type="text/javascript">
+  var model = {
+		alergen : [],
+		alergins:  ["대두","땅콩","우유","게","새우","참치","연어","쑥","소고기","닭고기","돼지고기","복숭아","민들레","계란흰자"]
+	  };
+  var allergenes1 = new Vue({
+      el : '#allergenes1', 
+      data : model,
+      computed: {
+        moreZero: function () {
+          return this.alergen.length > 0
+        }
+      }
+  });
+  Vue.config.devtools = true;
+  </script>
+</body>
+</html>

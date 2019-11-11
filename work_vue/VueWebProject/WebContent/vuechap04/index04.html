@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>SSAFY</title>
+    <style>
+    .common{margin:auto;  text-align:center; font-family: serif; font-size: 20px;}
+    .sat{color: blue;border-style: dotted;}
+    .sun{color: red; border-style:solid;}
+  </style>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+<div id = "mydirective" >
+<div class='common' v-bind:class="dayClass">토요일</div> 
+</div>
+<script type = "text/javascript">
+var model = {isSat: 1};
+var mydirective = new Vue({
+   el: '#mydirective',
+   data : model,
+   computed: { 
+	   dayClass: function() { 
+		   return{ 
+	    	   sat: this.isSat ==0?true:false,
+	    	   sun: this.isSat ==1?true:false
+	 	   }
+	} }
+});
+  Vue.config.devtools = true;
+</script>
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>SSAFY</title>
+<style>
+body {
+	background-color: #ffffff;
+}
+
+#second>h2 {
+	margin: auto;
+	padding: 0px;
+	text-align: center;
+	color: blue;
+}
+
+.red {
+	color: red;
+}
+
+#signup-form {
+	width: 70%;
+	height: 200px;
+	margin: auto;
+	padding: 20px;
+	text-align: center;
+	font-family: serif;
+	font-size: 14px;
+}
+
+#signup-form2 {
+	width: 70%;
+	height: 200px;
+	margin: auto;
+	padding: 20px;
+	text-align: center;
+	font-family: serif;
+	font-size: 14px;
+	color: red;
+}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+	<section id="signup_section">
+		<div id='signup_form'>
+			<h2>National Flags</h2>
+			<template v-for="flag in flags"> <!-- vue에서의 div  수행 후 태그가 안 남음   -->
+			<!-- 태그가 남아야 하는 경우  <태그  v-for=""> --> <label><span
+				class="label" v-html="flag.name"></span></label> <input type="text"
+				v-bind:value="flag.korname"> <!-- v-bind : 속성에 단반향으로 사용 할 때 ,      v-model : 양방향  한쪽에서 값을 수정하면 양쪽 모두 수정됨     input   -->
+			<img v-bind:src="flag.flag" />
+			<br />
+			</template>
+		</div>
+	</section>
+
+	<script type="text/javascript">
+		var model = {
+			flags : [
+					{
+						name : "Ghana",
+						korname : "가나",
+						flag : "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Flag_of_Ghana.svg/44px-Flag_of_Ghana.svg.png"
+					},
+					{
+						name : "South Korea",
+						korname : "대한민국",
+						flag : "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/44px-Flag_of_South_Korea.svg.png"
+					} ]
+		};
+		var signup_section = new Vue({
+			el : '#signup_section',
+			data : model
+		});
+		Vue.config.devtools = true;
+	</script>
+</body>
+</html>

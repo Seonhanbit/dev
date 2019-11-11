@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>JS Bin</title>
+</head>
+<body>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.js"></script> -->
+    <script src="https://unpkg.com/vue"></script>
+    <h1>aaa</h1>
+    <div id="app">
+        <div>{{print()}}</div>
+        <div>{{print2("Hello")}}</div>
+        <div v-on:click = "changemethod" >{{changemsg}}</div>
+    </div>
+    <script>
+        new Vue({
+            el : "#app",
+            data : {
+                message : "<h1>Hello Vue!!!</h1>",
+                msg : "<h1>조미료</h1>",
+                changemsg : "before"
+            },
+            methods : {
+                changemethod : function(){
+                    this.changemsg = "after";
+                },
+                print : function() {
+                    return "Hello Vue";
+                },
+                print2 : function(data) {
+                    return data + " ssafy";
+                }
+            }
+        });
+    </script>
+</body>
+</html>

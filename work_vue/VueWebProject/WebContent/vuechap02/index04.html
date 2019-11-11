@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>SSAFY</title>
+<style type="text/css">
+#first div {
+	color: blue;
+}
+</style>
+<script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+	<div id='first'>
+		<div v-html="title"></div>
+		<div>
+			<h3>{{title | toH3 }}</h3>
+		</div>
+		<!--  if는 false면  주석처리됨  -->
+		<div v-if='hasResult'>
+			<h3>{{title | toH3 }}</h3>
+		</div>
+		<!--  v-show는  flase면 display:none이됨  -->
+		<div v-show='hasResult'>
+			<h3>{{title | toH3 }}</h3>
+		</div>
+		<div v-show='aaa'>
+			<h3>{{title | toH3 }}</h3>
+		</div>
+		<!--    -->
+		<div v-on:click="changeTitle"> changeTitle >> {{title}}</div>
+		<div v-on:click="changeData"> changeData >> {{data}}</div>
+		<div>{{hasResult}}</div>
+	</div>
+	<script type="text/javascript">
+  var model = {title : 'SSAFY', data:'data'};
+  var first = new Vue({
+      el : '#first',
+      data : model,
+      filters: {
+    	  toH3 (value) {
+    		 var s="";
+    		   for(i=0;i<3; i++){  s+=value;  }
+	         return s;
+	       }
+      },
+      methods:{
+    	  changeTitle:function(){
+    	  				this.title += this.data;
+    	  				},
+    	  changeData:function(){
+        	  			this.data += this.data;
+        	  			}
+      },
+      computed: {					// 메서드와 비슷,  cache에 들어갈 정적 데이타을 사용할 때   100개를 메모리에 올려서 10개씩 보이기
+    	  							// 메서드는 cache에 안들어감 - 동적인 데이타    => 동적으로 데이타를 처리하므로 watched가 필요 없음 
+    	  							//                     메번 불림, 매번 반영
+    	  							// computed -> 오래간만에 값이 변경된다면 => 지켜보던 watched가 변경된 내용을 반영해즘 
+   	    hasResult: function () {
+   	    	alert("computed : changeTitle");
+   	      return this.$data.title.length>10; //this.데이터.속성값 쓰면 $data생략 가능
+   	    },
+   		aaa: function () {
+	    	alert("computed : changeData");
+	      return this.$data.data.length>10; //this.데이터.속성값 쓰면 $data생략 가능
+	    }
+      }
+   });
+  Vue.config.devtools = true;
+ </script>
+</body>
+</html>

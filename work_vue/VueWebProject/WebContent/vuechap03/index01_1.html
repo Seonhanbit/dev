@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>SSAFY</title>
+  <style type="text/css">
+    #first div {
+      color: blue;
+    }
+  </style>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+  <div id='first'>
+    <div v-html="title"></div>
+    <input v-model="val">
+    <div v-if="val==='A'">
+      <h3>v-if 실행</h3>
+    </div>
+    <div v-else-if="val==='B'">
+      <h3>v-else-if 실행</h3>
+    </div>
+    <div v-else>
+      <h3>v-else 실행</h3>
+    </div>
+  </div>
+  <script type="text/javascript">
+    var model = {
+      title: 'SSAFY',
+      val: 'A'
+    };
+    var first = new Vue({
+      el: '#first',
+      data: model,
+    });
+    Vue.config.devtools = true;
+  </script>
+</body>
+
+</html>

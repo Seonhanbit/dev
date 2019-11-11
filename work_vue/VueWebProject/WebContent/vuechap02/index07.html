@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>SSAFY</title>
+  <style type="text/css">
+  #first div {color: blue ;}
+  </style>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+<div id='first'>
+  <svg width="200" height="100">
+     <my-svg ccx="50" ccy="50" cr="40"></my-svg>
+     <my-svg ccx="150" ccy="50" cr="20"></my-svg>
+  </svg>
+    <h3 v-html="title"></h3>
+</div>
+
+
+<script type="text/javascript">
+ var model = {title : 'SSAFY'};
+  Vue.component('my-svg', {
+	  props: ['ccx','ccy','cr'],			//다른 컴포넌트의 속성들에 접근 
+	  template: '<circle :cx="ccx" :cy="ccy" :r="cr" stroke="green" stroke-width="4" fill="yellow" />'
+	})
+  var first = new Vue({
+      el : '#first',
+      data : {title : 'SSAFY'},
+      beforeCreate: function () {
+     	console.log('beforeCreate title: ' + this.title); 
+      },
+      created: function () {
+    	console.log('created title: ' + this.title);
+      	console.log('created 연결된 DOM 엘리먼트: ' + this.$el);
+   	  },
+   	  beforeMount: function () {
+   		console.log('beforeMount title: ' + this.title);
+		console.log('created 연결된 DOM 엘리먼트: ' + this.$el);
+  	  },
+  	  mounted: function () {
+  		console.log('mounted title: ' + this.title);
+   	  },
+   	  beforeUpdate: function () {
+		console.log('beforeUpdate 호출됨');
+   	  },
+   	  updated: function () {
+    	console.log('updated 호출됨');
+   	  },
+   	  beforeDestory: function () {
+   		console.log('beforeDestory title: ' + this.title);
+   	  },   	  
+   	  destory: function () {
+   		console.log('destory title: ' + this.title);
+   	  }
+   });
+  Vue.config.devtools = true;
+</script>
+</body>
+</html>
