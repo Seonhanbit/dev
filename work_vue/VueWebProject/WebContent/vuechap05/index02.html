@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>axios</title>
+<style>
+body {
+	background-color: #ffffff;
+}
+
+#second>h2 {
+	margin: auto;
+	padding: 0px;
+	text-align: center;
+	color: blue;
+}
+
+.red {
+	color: red;
+}
+
+#tid {
+	border: 1px;
+	border-color: blue;
+	border-collapse: collapse;
+	margin: auto;
+	text-align: center;
+}
+</style>
+<script src="https://unpkg.com/vue"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+</head>
+<body>
+	<div id='second'>
+		<h2>SSAFY SAFE FOOD</h2>
+	</div>
+	<div id="app">
+		<section v-if="errored">
+			<p>Error In AJAX Transport</p>
+		</section>
+		<section v-else>
+			<div v-if="loading">Loading...</div>
+			<table id='tid' style='border: 1px'>
+				<tr>
+					<td>분류</td>
+					<td>이름</td>
+					<td>이미지</td>
+				</tr>
+				<div v-else>
+					<tr v-for="food in info">
+						<td v-html="food.productGb"></td>
+						<td v-html="food.prdlstNm">
+						<td><img v-bind:src="food.imgurl1" /></td>
+					</tr>
+				</div>
+			</table>
+		</section>
+	</div>
+	<script type="text/javascript">
+  app = new Vue({
+	  el: '#app',
+	  data () {			// data:function()    => data(){ }     restful같은 동적 데이타 처리 할 때 
+	    return {
+	      info: null,
+	      loading: true,
+	      errored: false
+	    }
+	  },
+	  mounted () { //mounted되면 함수 실행. mounted :function() 줄여쓰기
+	    axios
+	      .get('./food.json')
+	      .then(function(response){app.info = response.data}) // .then(response => (this.info = response.data))
+	      .catch(error => {
+	        console.log(error)
+	        this.errored = true
+	      })
+	      .finally(() => this.loading = false)
+	  }
+	})
+  </script>
+</body>
+</html>

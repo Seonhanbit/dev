@@ -30,7 +30,7 @@
       beforeCreate: function () {
      	console.log('beforeCreate title: ' + this.title); 
       },
-      created: function () {
+      created: function () { //데이터에 객체가 연결되었다
     	console.log('created title: ' + this.title);
       	console.log('created 연결된 DOM 엘리먼트: ' + this.$el);
    	  },
@@ -38,13 +38,13 @@
    		console.log('beforeMount title: ' + this.title);
 		console.log('created 연결된 DOM 엘리먼트: ' + this.$el);
   	  },
-  	  mounted: function () {
+  	  mounted: function () { //el에 있는 부분과 매핑이 됨, 처음 화면이 짠!
   		console.log('mounted title: ' + this.title);
    	  },
    	  beforeUpdate: function () {
 		console.log('beforeUpdate 호출됨');
    	  },
-   	  updated: function () {
+   	  updated: function () { //값이 바뀌면 리랜더링됨
     	console.log('updated 호출됨');
    	  },
    	  beforeDestory: function () {

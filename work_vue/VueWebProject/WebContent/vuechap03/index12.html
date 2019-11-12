@@ -8,7 +8,7 @@
 <body>
 <div id = "mydirective">
 <div v-mystyle>월요일</div>
-<div v-mystyle>화요일</div>
+<div v-mystyle2>화요일</div>
 </div>
 
 <script type = "text/javascript">
@@ -18,8 +18,17 @@ Vue.directive("mystyle",{
 		 elm.style.fontSize = "20px";
 		 elm.style.border = "1px";
 		 elm.style.borderStyle = "dotted";
-		 elm.style.textAlign = 'left';
+		 elm.style.textAlign = 'center';
    }
+});
+Vue.directive("mystyle2",{
+	 bind(elm,binding, nodename) {
+		 elm.style.color = "red";
+		 elm.style.fontSize = "20px";
+		 elm.style.border = "1px";
+		 elm.style.borderStyle = "dotted";
+		 elm.style.textAlign = 'left';
+  }
 });
 var mydirective = new Vue({
    el: '#mydirective'

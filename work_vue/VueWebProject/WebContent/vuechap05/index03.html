@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>axios</title>
+  <style>
+    body {background-color: #ffffff;}
+    #second  > h2 { margin:auto; padding:0px; text-align:center; color: blue;}	
+    .red {color: red;}
+    #tid {border: 1px; border-color: blue; border-collapse: collapse; margin:auto;text-align:center;}
+  </style>
+  <script src="https://unpkg.com/vue"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+</head>
+<body>
+  <div id='second'>
+   <h2>SSAFY FLAG LIST</h2>
+  </div>
+<div id="app">
+  <section v-if="errored">
+    <p>Error In AJAX Transport </p>
+  </section>
+  <section v-else>
+    <div v-if="loading">Loading...</div>
+<ul>
+    <li v-for="flag in info">
+      <span v-html='flag.name'></span><img v-bind:src="flag.flag"/>
+    </li>
+</ul>
+  </section>
+</div>
+				
+  <script type="text/javascript">
+  new Vue({
+	  el: '#app',
+	  data () {
+	    return {
+	      info: null,
+	      loading: true,
+	      errored: false
+	    }
+	  },
+	  mounted () {
+	    axios
+	    .get('./flags.json')
+	      .then(response => (this.info = response.data.nationalflags)) //배열이 info에 들어감
+	      .catch(error => {
+	        console.log(error)
+	        this.errored = true
+	      })
+	      .finally(() => this.loading = false)
+	  }
+	})
+  </script>
+</body>
+</html>

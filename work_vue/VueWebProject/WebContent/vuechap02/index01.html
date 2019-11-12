@@ -37,7 +37,16 @@
 				changeMyName : function() {
 					this.title = 'SSAFY HRM SSAFY HRM';
 				}
-			}
+			},
+			 filters: {           // 있는 값 중에서 가공해서 뿌려 줄때 
+		    	  toH3 (value) {
+		    		 var s="";
+		    		 for(i=0;i<3; i++){
+		    			 s+=(value+" ");
+		    		 }
+			         return s;
+			       }
+		      }
 		});
 		Vue.config.devtools = true; // devtools에 보인다.
 	</script>

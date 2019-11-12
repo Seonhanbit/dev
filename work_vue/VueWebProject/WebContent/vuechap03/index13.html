@@ -7,17 +7,19 @@
 </head>
 <body>
 <div id = "mydirective" >
-<div v-mystyle="{color:'blue', fontSize:'20px', border:'1px', borderStyle:'dotted'}">토요일</div>
-<div v-mystyle="{color:'red', fontSize:'20px', border:'1px', borderStyle:'solid'}">일요일</div>
+<div v-mystyle="{color:'blue', fontSize:'20px', border:'1px', borderStyle:'dotted', textAlign:'left'}">토요일</div>
+<div v-mystyle="{color:'red', fontSize:'20px', border:'1px', borderStyle:'solid', textAlign:'center'}">일요일</div>
 </div>
 <script type = "text/javascript">
+// binding 값이 넘어온 값
 Vue.directive("mystyle",{
    bind(elm,binding, nodename) {
 	   elm.style.color = binding.value.color;
 	   elm.style.fontSize = binding.value.fontSize;
 	   elm.style.border = binding.value.border;
 	   elm.style.borderStyle =binding.value.borderStyle;
-	   elm.style.textAlign = 'center';
+	   elm.style.textAlign = binding.value.textAlign;
+	   //elm.style.textAlign = 'center';
 	   //console.log(nodename.tag);
 	   //console.log(nodename.elm);
    }
@@ -25,7 +27,7 @@ Vue.directive("mystyle",{
 var mydirective = new Vue({
    el: '#mydirective'
 });
-  Vue.config.devtools = true;
+  Vue.config.devtools = true; //크롬 데브툴 먹게 하려고 그냥 하는거!
 </script>
 </body>
 </html>

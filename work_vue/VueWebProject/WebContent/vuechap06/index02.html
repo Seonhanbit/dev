@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>SSAFY</title>
+<style>
+body {
+	background-color: #ffffff;
+}
+
+#second>h2 {
+	margin: auto;
+	padding: 0px;
+	text-align: center;
+	color: blue;
+}
+
+.red {
+	color: red;
+}
+
+#signup-form {
+	width: 70%;
+	height: 200px;
+	margin: auto;
+	padding: 20px;
+	text-align: center;
+	font-family: serif;
+	font-size: 14px;
+}
+
+#signup-form2 {
+	width: 70%;
+	height: 200px;
+	margin: auto;
+	padding: 20px;
+	text-align: center;
+	font-family: serif;
+	font-size: 14px;
+	color: red;
+}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+</head>
+<body>
+	<div id='second'>
+		<h2>SAFY HRM</h2>
+	</div>
+	<div id="signup_section">
+		<!-- @submit.prevent 액션 이벤트 되기전에 막기 addEmp로 액션값이 넘어감 -->
+		<form action="" method="post" @submit.prevent="addEmp">
+			아이디* <input id="_signId" name="id" type="text" v-model="id"
+				placeholder="아이디를 입력하세요" /><br /> 
+			비밀번호* <input id="_signPw"
+				name="pw" type="password" v-model="pw" placeholder="패스워드를 입력하세요" /><br />
+			<button type="submit" name="button">사원추가</button>
+		</form>
+		<table v-bind:style="{ border:'1px solid black', marginTop: '15px', borderCollapse: 'collapse' }">
+			<tr>
+				<th v-bind:style="tablestyle">사원번호</th>
+				<th v-bind:style="tablestyle">아이디</th>
+				<th v-bind:style="tablestyle">비밀번호</th>
+			</tr>
+			<tbody v-if="emp_list[0]">
+				<tr v-for="(e,i) in emp_list">
+					<td v-bind:style="tablestyle">{{i+1}}</td>
+					<td v-bind:style="tablestyle">{{e.id}}</td>
+					<td v-bind:style="tablestyle">{{e.pw}}</td>
+				</tr>
+			</tbody>
+		</table>
+		<br>
+		<br>
+		<h2>사원 찾기</h2>
+		<input type="number" @keyup.enter="findEmp">
+		<h3 v-cloak>아이디 : {{emp.id}}</h3>
+		<h3 v-cloak>패스워드 : {{emp.pw}}</h3>
+	</div>
+	<script type="text/javascript">
+    var model = {
+        tablestyle: {
+          border: '1px solid black',
+          width: '100px'
+        },
+        id: "",
+        pw: "",
+        emp_list: [],
+        emp: { id: "", pw: "" }
+      };
+      var signup_section = new Vue({
+        el: '#signup_section',
+        data: model,
+        methods: {
+          addEmp() {
+            if (this.id && this.pw) {
+              this.emp_list.push({
+                id: this.id,
+                pw: this.pw
+              });
+              this.id = "";
+              this.pw = "";
+            } else alert("id나 pw를 제대로 입력하세요.")
+          },
+          findEmp(e) {
+            if (this.emp_list[e.target.value - 1]) {
+              this.emp.id = this.emp_list[e.target.value - 1].id;
+              this.emp.pw = this.emp_list[e.target.value - 1].pw;
+            } else alert(`존재하지 않는 사원 번호(${e.target.value})입니다.`)
+            e.target.value="";
+          }
+        }
+      })
+      Vue.config.devtools = true;
+    </script>
+
+</body>
+</html>

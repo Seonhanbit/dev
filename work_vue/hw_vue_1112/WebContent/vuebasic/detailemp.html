@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>axios</title>
+<style>
+body {
+	background-color: #ffffff;
+}
+
+#second>h2 {
+	margin: auto;
+	padding: 0px;
+	text-align: center;
+	color: black;
+}
+
+.red {
+	color: red;
+}
+
+#tid {
+	border: 1px;
+	border-color: blue;
+	border-collapse: collapse;
+	margin: auto;
+	text-align: center;
+}
+</style>
+<script src="https://unpkg.com/vue"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+</head>
+<body>
+	<div id='second'>
+		<h2>사원정보</h2>
+	</div>
+	<div id="app">
+		<section v-if="errored">
+			<p>Error In AJAX Transport</p>
+		</section>
+		<section v-else>
+			<div v-if="loading">Loading...</div>
+			<table id='tid' style='border: 1px'>
+				<!-- 				<tr>
+				<select v-model="selectname">
+					<input type="text" v-model="name">
+					<button v-on:click="" name="button">검색</button>
+				</tr> -->
+				<tr>
+					<td>사원 아이디</td>
+					<td>사원명</td>
+					<td>직책</td>
+					<td>이메일</td>
+					<td>연봉</td>
+					<td>퇴사</td>
+				</tr>
+				<div v-else>
+					<tr v-for="emp in info">
+						<template v-if="emp.id==pid">
+						<td v-html="emp.id"></td>
+						<td v-html="emp.name"></td>
+						<td v-html="emp.title"></td>
+						<td v-html="emp.mailid"></td>
+						<td v-html="emp.salary"></td>
+						<td><button type="submit" name="button">퇴사</button></td>
+						</template>
+					</tr>
+				</div>
+			</table>
+		</section>
+	</div>
+	<!-- <div id="epp">
+		<td v-html="pid"></td>
+	</div> -->
+	<script type="text/javascript">
+	function getParam(sname) {
+	    var params = location.search.substr(location.search.indexOf("?") + 1);
+	    var sval = "";
+	    params = params.split("&");
+	    for (var i = 0; i < params.length; i++) {
+	        temp = params[i].split("=");
+	        if ([temp[0]] == sname) { sval = temp[1]; }
+	    }
+	    return sval;
+	}
+
+	var pid = getParam("pid");
+	console.log(pid);
+	//app.openDetail(pid);
+	
+   new Vue({
+	  el: '#app',
+	  data () {			// data:function()    => data(){ }     restful같은 동적 데이타 처리 할 때 
+	    return {
+	      info: null,
+	      loading: true,
+	      errored: false
+	    }
+	  },
+	  mounted () { //mounted되면 함수 실행. mounted :function() 줄여쓰기
+	    axios
+	      .get('./emp.json')
+	      .then(function(response){app.info = response.data}) // .then(response => (this.info = response.data))
+	      .catch(error => {
+	        console.log(error)
+	        this.errored = true
+	      })
+	      .finally(() => this.loading = false)
+	  }
+	});
+    /* app =new Vue({
+	  el: '#epp',
+	  data () {			// data:function()    => data(){ }     restful같은 동적 데이타 처리 할 때 
+	    return {
+	      info: null,
+	      loading: true,
+	      errored: false
+	    }
+	  },
+	  methods:{
+		  openDetail(pid){
+			  console.log(pid);
+			  //pid = e.target.textContent;
+			  //parent.location.href = './detailemp.html?pid='+e.target.textContent;
+		  }
+	  }
+	}) */
+  </script>
+</body>
+</html>

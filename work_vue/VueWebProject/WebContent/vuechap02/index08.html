@@ -21,7 +21,7 @@
       el : '#first',
       components:{
           'my-svg': {
-        	  props: ['ccx','ccy','cr'],
+        	  props: ['ccx','ccy','cr'], //상위에서 받은 걸 연결 시켜주기(키워드)
         	  template: '<circle :cx="ccx" :cy="ccy" :r="cr" stroke="green" stroke-width="4" fill="yellow" />'
           }
        }

@@ -10,7 +10,8 @@
     <h2 v-for="(value, name, index) in items">{{ index+"번째 물품 : "+name+", 가격 : "+value}}</h2>
   </div>
   <script type="text/javascript">
-    new Vue({
+  //배열일때는  value.으로 접근 가능 
+  new Vue({
       el: "#app",
       data: {
         items: {
