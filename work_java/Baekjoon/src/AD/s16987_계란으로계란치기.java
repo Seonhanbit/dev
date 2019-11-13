@@ -33,15 +33,39 @@ public class s16987_계란으로계란치기 {
 			Egg tmp = new Egg(Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken()));
 			egg[i] = tmp;
 		}
-
-		
-		bw.append(res+"\n");
+		dfs(egg, 0);
+		bw.append(res + "\n");
 		bw.flush();
 		bw.close();
 	}
+
 	static void dfs(Egg[] egg, int cnt) {
-		if(cnt==egg.length){
+		if (cnt == egg.length) {
+			int n = 0;
+			for (int i = 0; i < egg.length; i++) {
+				if (egg[i].s <= 0)
+					n++;
+			}
+			res = Math.max(n, res);
 			return;
 		}
+		boolean ck = false;
+		Egg myEgg = egg[cnt];
+		for (int i = 0; i < egg.length; i++) {
+			if (i == cnt)
+				continue;
+			if(myEgg.s<=0)
+				break;
+			if (egg[i].s > 0) {
+				ck = true;
+				myEgg.s -= egg[i].w;
+				egg[i].s -= myEgg.w;
+				dfs(egg, cnt + 1);
+				myEgg.s += egg[i].w;
+				egg[i].s += myEgg.w;
+			}
+		}
+		if(!ck)
+			dfs(egg, cnt + 1);
 	}
 }
