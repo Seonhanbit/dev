@@ -68,7 +68,6 @@ public class s_1949_등산로조성 {
 					dfs(nx, ny, cnt + 1, true);
 					arr[nx][ny] = tmp;
 				}
-				
 			}
 		}
 		visited[x][y] = false;

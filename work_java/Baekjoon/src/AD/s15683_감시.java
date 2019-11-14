@@ -131,7 +131,9 @@ public class s15683_감시 {
 		
 		for (int i = 0; i < cameraPos[cameraList.get(idx).num].length; i++) {
 			sel[idx] = i;
+			//
 			perm_re(sel, idx+1);
+			//
 		}
 	}
 

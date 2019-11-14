@@ -3,7 +3,7 @@ package preTest;
 import java.io.*;
 import java.util.*;
 
-public class s_2112_보호필름 {
+public class s_2112_보호필름아님 {
 	static int T, D, W, K, res, res1;
 	static int[][] arr;
 	static int[][] tmp;
@@ -69,10 +69,6 @@ public class s_2112_보호필름 {
 		powerset(narr, idx + 1, sel);
 		sel[idx] = true;
 		powerset(narr, idx + 1, sel);
-	}
-
-	static void dfs() {
-		
 	}
 	
 	static int func(ArrayList<Integer> list1) {
