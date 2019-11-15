@@ -95,6 +95,7 @@ public class s_1012_유기농배추 {
 		visit[x][y] = true;
 		while (!queue.isEmpty()) {
 			Q temp = queue.poll();
+
 			for (int i = 0; i < 4; i++) {
 				int next_x = temp.x + dx[i], next_y = temp.y + dy[i];
 				if (!range(next_x, next_y))
