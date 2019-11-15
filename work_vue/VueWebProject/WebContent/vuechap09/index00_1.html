@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>SSAFY</title>
+  <style type="text/css">
+    #first div {
+      color: blue;
+    }
+  </style>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+  <div id="example-2">
+    <counter></counter>
+    <counter></counter>
+    <counter></counter>
+  </div>
+  <script type="text/x-template" id="counter">
+    <button v-on:click="count += 1">{{ "카운트 : "+count }}</button> 
+</script>
+  <script type="text/javascript">
+    let data = {
+      count: 0
+    };
+    //함수가 각자 호출
+    Vue.component('counter', {
+      template: '#counter',
+      data() {
+        return data; //요기서 새로 만들어버리면 각자 별도의 데이터 받음
+      }
+    });
+    new Vue({
+      el: '#example-2'
+    });
+    Vue.config.devtools = true;
+  </script>
+</body>
+
+</html>

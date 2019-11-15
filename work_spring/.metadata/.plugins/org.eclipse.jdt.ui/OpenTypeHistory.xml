@@ -1,10 +1,2 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<typeInfoHistroy>
-<typeInfo handle="=SpringApp/src\/main\/java&lt;ssafy.product{Phone.java[Phone" modifiers="513" timestamp="1571116059962"/>
-<typeInfo handle="=SpringApp/src\/main\/java&lt;ssafy.product{Camera.java[Camera" modifiers="513" timestamp="1571114801192"/>
-<typeInfo handle="=SpringMVC/src\/main\/java&lt;edu.ssafy.service{MemService.java[MemService" modifiers="513" timestamp="1571724810710"/>
-<typeInfo handle="=SpringMVC/src\/main\/java&lt;edu.ssafy.repository{MemRepo.java[MemRepo" modifiers="513" timestamp="1571724781907"/>
-<typeInfo handle="=SpringMVC/src\/main\/java&lt;edu.ssafy.repository{ProRepo.java[ProRepo" modifiers="513" timestamp="1571732918396"/>
-<typeInfo handle="=SpringWebMVCREST/src\/main\/java&lt;edu.ssafy.service{BoardService.java[BoardService" modifiers="513" timestamp="1572249384972"/>
-<typeInfo handle="=SpringWebMVCREST/src\/main\/java&lt;edu.ssafy.repository{BoardRepository.java[BoardRepository" modifiers="513" timestamp="1572249365413"/>
-</typeInfoHistroy>
+<typeInfoHistroy/>
