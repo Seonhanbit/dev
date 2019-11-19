@@ -58,7 +58,16 @@ alinfo varchar(500)
 ​
 select*from memtb;
 delete from memtb where id='ssafy';
-drop table memtb;*/
+drop table memtb;
+
+create table qna(
+num int auto_increment primary key,
+title varchar(50) not null,
+content varchar(2000),
+id varchar(20)
+);
+
+*/
 
 @Controller
 public class FoodController {

@@ -10,6 +10,9 @@
 			alias="food" />
 		<typeAlias type="com.ssafy.food.dto.MemVO"
 			alias="member" />
+		<typeAlias type="com.ssafy.food.dto.QnaVO"
+			alias="qna" />
+			
 	</typeAliases>
 	<!-- 디비연결정보는 스프링이 연동하면서 생략가능 -->
 
@@ -17,5 +20,6 @@
 	<mappers>
 		<mapper resource="foodMapper.xml" />
 		<mapper resource="memberMapper.xml"/>
+		<mapper resource="qnaMapper.xml"/>
 	</mappers>
 </configuration>

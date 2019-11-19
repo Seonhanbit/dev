@@ -16655,3 +16655,10 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact org.mybatis.s
 2019-11-19 10:54:22,045 [Worker-45: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2019-11-19 10:54:22,046 [Worker-45: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2019-11-19 10:54:22,046 [Worker-45: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\student\Documents\dev\work_spring\login\src\test\resources
+2019-11-19 13:43:20,754 [Worker-103: Launching Executing test in C__Users_student_Documents_dev_work_spring_login] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\student\Documents\dev\work_spring\login
+2019-11-19 13:43:20,754 [Worker-103: Launching Executing test in C__Users_student_Documents_dev_work_spring_login] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B test
+2019-11-19 16:49:53,457 [Worker-155: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-19 16:49:53,458 [Worker-155: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-11-19 16:49:53,458 [Worker-155: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-11-19 16:49:53,460 [Worker-155: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-19 16:49:53,460 [Worker-155: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\student\Desktop\vueboot\src\test\resources

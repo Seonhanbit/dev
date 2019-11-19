@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <script src="https://unpkg.com/vue"></script>
+        <script src="https://unpkg.com/vuex"></script>
+    </head>
+    <body>
+        <div id="app">
+            <p>{{cnt}}</p>
+            <p>
+                <button @click="increase">count++</button>
+                <button @click="decrease">count--</button>
+            </p>
+
+        </div>
+
+
+        <script>
+            const INCREASE ="increase"; //오타날까봐 미리 상수로 선언해줌
+            const DECREASE ="decrease";
+            const store = new Vuex.Store({
+                //상태값을 저장할 공간 하나
+                state : { cnt : 0 },
+                //상태값을 변이시키는 뮤테이션
+                mutations :{
+                    [INCREASE] : state => state.cnt++,
+                    [DECREASE] : state => state.cnt--
+                },
+                //뮤테이션을 호출하는 액션
+                actions :{
+                    [INCREASE] (){
+                        store.commit(INCREASE);
+                    },
+                    [DECREASE] (){
+                        store.commit(DECREASE);
+                    }
+                }
+            });
+            new Vue({
+                el : "#app",
+                data : {
+                },
+                computed : {
+                    cnt(){
+                        return store.state.cnt;
+                    }
+                },
+                methods :{
+                    increase() {
+                        store.dispatch(INCREASE);
+                    },
+                    decrease(){
+                        store.dispatch(DECREASE);
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>

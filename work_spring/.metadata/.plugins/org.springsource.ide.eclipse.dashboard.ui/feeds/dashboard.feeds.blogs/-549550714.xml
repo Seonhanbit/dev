@@ -5,7 +5,35 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2019-11-18T16:02:23Z</updated>
+  <updated>2019-11-19T03:28:22Z</updated>
+  <entry>
+    <title>This Week in Spring - November 18th, 2019</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/11/19/this-week-in-spring-november-18th-2019" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2019-11-19:3875</id>
+    <updated>2019-11-19T03:28:22Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! Welcome to another of &lt;em&gt;This Week in Spring&lt;/em&gt;. We&amp;rsquo;ve got a lot to cover, so let&amp;rsquo;s get to it!&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/11/18/spring-data-moore-sr2-and-lovelace-sr13-available"&gt;Spring Data Moore SR2 and Lovelace SR13 available&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/11/15/a-bootiful-podcast-redhat-ibm-s-s-bastien-blanc-on-oauth-keycloak-the-french-riviera-and-more"&gt;A Bootiful Podcast: RedHat / IBM&amp;rsquo;s S?bastien Blanc on OAuth, KeyCloak, the French riviera, and more&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/11/14/spring-cloud-open-service-broker-3-1-0-rc1-released"&gt;Spring Cloud Open Service Broker 3.1.0.RC1 Released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/11/14/spring-security-oauth-2-4-0-2-3-8-released"&gt;Spring Security OAuth 2.4.0, 2.3.8 Released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/11/14/spring-security-oauth-2-0-roadmap-update"&gt;Spring Security OAuth 2.0 Roadmap Update&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/11/12/spring-cloud-hoxton-rc2-released"&gt;Spring Cloud Hoxton.RC2 Released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/SpringData/status/1196458944396484609"&gt;https://twitter.com/SpringData/status/1196458944396484609&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=4-vew8ck_6g"&gt;My three hour masterclass on all things Reactive Spring from Devoxx Belgium 2019 is now online&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.rabbitmq.com/blog/2019/11/13/this-month-in-rabbitmq-november-2019/"&gt;This Month in RabbitMQ: November 2019&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://atos.net/en/2019/press-release_2019_10_09/289359"&gt;Atos Delivers Faster Cloud Adoption with New SyntBots Accelerators for Pivotal Platform&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://piotrminkowski.wordpress.com/2019/11/15/rate-limiting-in-spring-cloud-gateway-with-redis/"&gt;A nice post on doing rate limiting with Spring Cloud Gateway&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/dormaindrewitz/status/1195340680010166273?s=12"&gt;I&amp;rsquo;ll be doinng an Azure Spring Cloud webinar on 5 December 2019-join me!&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/sharat_chander/status/1195030431587946496"&gt;I love Sharat Chandler&amp;rsquo;s tweets linking us to these videos for Java from &lt;em&gt;waaaaaaay&lt;/em&gt; back&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://gasparbarancelli.github.io/spring-native-query/"&gt;This looked interesting - Spring Native Query&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Spring Data Moore SR2 and Lovelace SR13 available</title>
     <link rel="alternate" href="https://spring.io/blog/2019/11/18/spring-data-moore-sr2-and-lovelace-sr13-available" />
@@ -1022,23 +1050,6 @@ az spring-cloud app deploy -n demo-app --jar-path target/demo-0.0.1-SNAPSHOT.jar
 &lt;p&gt;The first maintenance release of the 5.2 line includes &lt;a href="https://github.com/spring-projects/spring-framework/releases/tag/v5.2.1.RELEASE"&gt;over 35 fixes and improvements&lt;/a&gt;. Spring Framework 5.1.11 &lt;a href="https://github.com/spring-projects/spring-framework/releases/tag/v5.1.11.RELEASE"&gt;includes 7 selected fixes and improvements&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;As usual, we&amp;rsquo;ll follow up shortly with corresponding Spring Boot releases (2.2.1 and 2.1.10).&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://projects.spring.io/spring-framework/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-framework"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-framework/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-framework/docs/5.2.1.RELEASE/spring-framework-reference"&gt;Documentation&lt;/a&gt;&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>A Bootiful Podcast: Hibernate guru Vlad Mihalcea</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/10/31/a-bootiful-podcast-hibernate-guru-vlad-mihalcea" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2019-10-31:3855</id>
-    <updated>2019-10-31T22:22:14Z</updated>
-    <content type="html">&lt;iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/706122148&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"&gt;&lt;/iframe&gt;
-&lt;p&gt;Hi Spring fans! in today&amp;rsquo;s episode &lt;a href="http://twitter.com/starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks to &lt;a href="http://twitter.com/vlad_mihalcea"&gt;Vlad Mihalcea (@vlad_mihalcea)&lt;/a&gt; about Hibernate, databases, optimizations, and more. &lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="http://twitter.com/vlad_mihalcea"&gt;Vlad on Twitter&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://vladmihalcea.com/"&gt;Vlad&amp;rsquo;s blog&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

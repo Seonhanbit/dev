@@ -1,0 +1,29 @@
+<html>
+    <body>
+
+
+        <script>
+            const authorize = function(b){
+                return new Promise(function(resolve, reject){
+                    //ajax로 로그인 시도
+                    //성공하면 resolve, 안되면 reject
+                    if(b){
+                        //resolve(필요하다면 파라미터);
+                        //후속 작업은 뭘 할지 안정해진거고, 호출할거야 말해주는 것
+                        resolve("인증됨");
+                    }else{
+                        reject("인증안됨");
+                    }
+                });
+            }
+            //프라미스 실행
+            authorize(true)
+                .then(function(result){
+                    console.log(result) //result 인증됨
+                })
+                .catch(function(err){
+                    console.log(err) //err 인증안됨
+                });
+        </script>
+    </body>
+</html>
