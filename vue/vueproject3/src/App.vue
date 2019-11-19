@@ -15,8 +15,10 @@
 </template>
 
 <script>
+//최상위 컴포넌트, 라우터 링크의 to로 연결하기 -> 아래 라우터 뷰에서 보여주기
+//컴포넌트는  template와 뷰 한개로 구성
 export default {
-  name: "app"
+  name: "app" //위 div id와 똑같음
 };
 </script>
 

@@ -12,18 +12,18 @@ Vue.use(Router);
 
 export default new Router({
   mode: "history",
-  routes: [
+  routes: [ //배열로 여러개의 라우터를 담고 있음
     {
-      path: "/",
-      name: "customers",
+      path: "/", //path는 to랑 연결
+      name: "customers", //별명같은 이름
       alias: "/customer",
-      component: CustomersList
+      component: CustomersList //import하는 연결 이름
     },
     {
-      path: '/detailcustomer/:id',
+      path: '/detailcustomer/:id', //뒤에 인자를 같이 보내줄때
       name: 'detailcustomer',
       component: DetailCustomer,
-      props: true,
+      props: true, //부모에서 자식으로 인자를 보낼때 props를 true해주기
     },
     {
       path: "/search",
@@ -44,7 +44,7 @@ export default new Router({
       path: "/chartcustomer",
       name: "chartcustomer",
       component: ChartCustomer
-    } 
+    }
     ,
     {
       path: '/updatecustomer/:id',

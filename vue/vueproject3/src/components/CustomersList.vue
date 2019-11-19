@@ -32,13 +32,24 @@
 </template>
 
 <script>
+//axios로 데이터를 불러오는 코드
 import http from "../http-common";
+
+//@click은 v-on:click과 같은 의미(값이 바뀌어도 리 랜더링 안함)
+//v-if는 true일때 나오고, false일때는 주석처리 -> 없는 것과 같음
+//v-show는 true일때 나오고, false일때는 display:none -> DOM트리 안에 있고 값 넣을 수 있음
+
+//v-bind : 단방향, 가져오기만 가능
+//v-model : 양방향, 한쪽 값이 바뀌면 자동으로 바뀜
+
 export default {
   name: "customers-list",
   data() {
+    //데이터를 함수로 리턴하는 이유
+    //vue데이터 바꿀 때 DOM까지 반영시키기 위해 사용 : 리랜더링
     return {
       upHere: false,
-      info: [],
+      info: [], //배열값은 초기화 필요
       loading: true,
       errored: false
     };
@@ -46,9 +57,9 @@ export default {
   methods: {
     retrieveCustomers() {
       http
-        .get("/findAllEmployees")
-        .then(response => (this.info = response.data))
-        .catch(() => {
+        .get("/findAllEmployees") //URI값
+        .then(response => (this.info = response.data)) //성공 시
+        .catch(() => { //실패 시
           this.errored = true;
         })
         .finally(() => (this.loading = false));
@@ -82,13 +93,15 @@ export default {
         .finally(() => (this.loading = false));
     }
   },
-  filters: {
+  filters: { // 적용 방식 {{ emp.salary | salarydecimal }}
     salarydecimal(value) {
       var a = parseInt(value);
       return a.toFixed(2);
     }
   },
   mounted() {
+    //뷰 사이클 중 마운트 할때 하겠다
+    //DOM  삽입 단계
     this.retrieveCustomers();
   }
 };

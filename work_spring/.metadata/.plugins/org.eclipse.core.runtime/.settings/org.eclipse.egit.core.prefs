@@ -1,4 +1,4 @@
-GitRepositoriesView.GitDirectories=C\:\\Users\\student\\Documents\\GitHub\\dev\\.git;
-GitRepositoriesView.GitDirectories.relative=C\:\\Users\\student\\Documents\\GitHub\\dev\\.git;
+GitRepositoriesView.GitDirectories=C\:\\Users\\student\\Documents\\dev\\.git;C\:\\Users\\student\\Documents\\GitHub\\dev\\.git;
+GitRepositoriesView.GitDirectories.relative=C\:\\Users\\student\\Documents\\dev\\.git;C\:\\Users\\student\\Documents\\GitHub\\dev\\.git;
 core_autoIgnoreDerivedResources=false
 eclipse.preferences.version=1

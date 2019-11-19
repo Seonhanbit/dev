@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.ssafy.edu.vue.dao.HrmMapper">
+ <select id="findAllEmployees" resultType="com.ssafy.edu.vue.dto.EmployeeDto">
+select e.id id, e.name name, e.mailid mailid, e.start_date start_date, 
+e.manager_id manager_id, e.title title,  e.dept_id dept_id, d.name dept_name,                     
+	ifnull(e.salary,0.0) salary, ifnull(e.commission_pct,0.0) commission_pct                                        
+	from s_emp e join  s_dept d on e.dept_id=d.dept_id order by e.id 
+<!-- 	select id, name, mailid, start_date, manager_id, title, dept_id    ,                      
+	ifnull(salary,0.0) salary, ifnull(commission_pct,0.0) commission_pct                                        
+	from s_emp order by id  -->      
+ </select>
+  <select id="findEmployeeById" parameterType="java.lang.Integer" resultType="com.ssafy.edu.vue.dto.EmployeeDto">
+<!-- 	select id, name, mailid, start_date, manager_id, title, dept_id    ,                      
+	ifnull(salary,0.0) salary, ifnull(commission_pct,0.0) commission_pct                                        
+	from s_emp where id= #{id}   --> 
+	select e.id id, e.name name, e.mailid mailid, e.start_date start_date, 
+e.manager_id manager_id, e.title title,  e.dept_id dept_id, d.name dept_name,                     
+	ifnull(e.salary,0.0) salary, ifnull(e.commission_pct,0.0) commission_pct                                        
+	from s_emp e join  s_dept d on e.dept_id=d.dept_id
+	 where e.id= #{id} order by e.id 
+ </select>
+  <select id="findAllTitles" resultType="com.ssafy.edu.vue.dto.EmployeeDto">
+	select distinct title from s_emp      
+ </select>
+  <select id="getEmployeesTotal" resultType="java.lang.Integer">
+    	SELECT COUNT(*) FROM s_emp
+    </select>
+     <select id="findLikeEmployees" parameterType="java.lang.String"
+      resultType="com.ssafy.edu.vue.dto.EmployeeDto" >
+	select id, name, mailid, start_date, manager_id, title, dept_id    ,                      
+	ifnull(salary,0.0) salary, ifnull(commission_pct,0.0) commission_pct                                        
+	from s_emp where name like  concat('%',#{name},'%')  
+ </select>
+     <insert id="addEmployee" parameterType="com.ssafy.edu.vue.dto.EmployeeDto" >
+    		INSERT INTO s_emp	     
+			(id, name, mailid, start_date, manager_id, title, dept_id,      SALARY,       COMMISSION_PCT)
+			VALUES(
+            #{id},#{name},#{mailid},#{start_date},
+				<if test="manager_id != '' and manager_id != null and  manager_id != 0 " >
+				#{manager_id}
+			</if>       		
+			<if test="manager_id == '' or manager_id == null or manager_id == 0 " >
+				null
+			</if>  
+            ,#{title},#{dept_id},#{salary},
+			<if test="commission_pct != '' and commission_pct != null and  commission_pct != 0 " >
+				#{commission_pct}
+			</if>       		
+			<if test="commission_pct == '' or commission_pct == null or commission_pct == 0 " >
+				null
+			</if>  
+	        )
+    </insert>
+    <update id="updateEmployee" parameterType="com.ssafy.edu.vue.dto.EmployeeDto">
+    	UPDATE s_emp   SET                      
+	        name=#{name}, mailid=#{mailid}  ,  start_date= #{start_date},         
+	        manager_id=#{manager_id},    title=#{title},                                  
+	        dept_id=#{dept_id},salary=#{salary}  
+	        <if test="commission_pct != '' and commission_pct != null and  commission_pct != 0 " >
+				,commission_pct=#{commission_pct} 
+			</if>
+	          <if test="commission_pct == '' or commission_pct == null or commission_pct == 0 " >
+				,commission_pct=null 
+			</if>  
+	        WHERE id=#{id}                
+    </update>
+    <delete id="deleteEmployee" parameterType="java.lang.Integer">
+        DELETE   FROM   s_emp     WHERE id=#{id}    
+    </delete>
+     <select id="findAllDepartments" resultType="com.ssafy.edu.vue.dto.DepartmentDto">
+	select dept_id, name, region_id from s_dept              
+ </select>
+  <select id="findAfterAdd"  resultType="java.lang.Integer">
+	   		SELECT MAX(id)  FROM s_emp            
+    </select>
+<select id="findAllDepCounts" resultType="com.ssafy.edu.vue.dto.DepCountDto">
+	       SELECT COUNT(*) COUNT, IFNULL(E.DEPT_ID,0) DEPT_ID,       
+	        IFNULL(D.NAME,'NOTYET') NAME            
+	        FROM S_EMP E LEFT OUTER JOIN S_DEPT D                                  
+	        ON E.DEPT_ID=D.DEPT_ID                          
+	        GROUP BY E.DEPT_ID, D.NAME                        
+	        ORDER BY COUNT DESC,E.DEPT_ID ASC                                                      
+    </select>
+    	<!-- private int deptid;
+	private String dname;
+	private int eid;
+	private String ename;
+	private String emailid; -->
+    <select id="findAllDeptEmps" resultType="com.ssafy.edu.vue.dto.DepartmentEmpDto">
+	          select e.id eid, e.name ename, e.mailid emailid,
+	          d.dept_id deptid, d.name dname 
+	          from s_emp e, s_dept d
+   where e.dept_id=d.dept_id
+   order by e.dept_id;                                                   
+    </select>
+    <select id="findEmployeesByManagerId" parameterType="java.lang.Integer"
+     resultType="com.ssafy.edu.vue.dto.EmployeeDto">
+      select e.id id, e.name name, e.mailid mailid, e.start_date start_date,
+ e.title title,  e.dept_id dept_id,  ifnull(e.salary,0.0) salary            
+		    FROM s_emp e, s_emp d                               
+		    WHERE e.MANAGER_ID=d.id  
+            AND e.MANAGER_ID= #{manager_id}
+    </select>
+    
+     <select id="findDepartmentsByname" parameterType="java.lang.String" 
+     resultType="com.ssafy.edu.vue.dto.EmployeeDto">
+	select id, name, mailid, start_date, manager_id, title, dept_id    ,                      
+	ifnull(salary,0.0) salary, ifnull(commission_pct,0.0) commission_pct                                        
+	from s_emp WHERE  
+    DEPT_ID   IN   (SELECT DEPT_ID FROM S_DEPT 
+    WHERE name like  concat('%',#{name},'%') 
+    )       
+	ORDER BY DEPT_ID  
+	<!-- WHERE NAME=#{name} -->  
+ </select>
+         <select id="findDepartmentsBydeptid" parameterType="java.lang.Integer" 
+     resultType="com.ssafy.edu.vue.dto.EmployeeDto">
+	select id, name, mailid, start_date, manager_id, title, dept_id    ,                      
+	ifnull(salary,0.0) salary, ifnull(commission_pct,0.0) commission_pct                                        
+	from s_emp WHERE DEPT_ID=#{dept_id}        
+ </select>
+</mapper>
+<!-- private int id;
+	private String name;
+	private String mailid;
+	private String start_date;
+	private int manager_id;
+	private String title;
+	private int dept_id;
+	private double salary;
+	private double commission_pct=0.0; -->

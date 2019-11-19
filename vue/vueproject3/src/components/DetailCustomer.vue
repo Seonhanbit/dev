@@ -56,13 +56,13 @@ import http from "../http-common";
 
 export default {
   name: "detailcustomer",
-  props: ["id"],
+  props: ["id"], //부모한테 받은 인자값
   data() {
     return {
       info: [],
       loading: true,
       errored: false,
-      cid: "",
+      cid: "", //문자열, 배열, 객체는 초기화 필요
       cemp: {}
     };
   },
@@ -73,7 +73,7 @@ export default {
     }
   },
   methods: {
-    show_detail: function(employeeid) {
+    show_detail: function(employeeid) { //인자를 받은 함수
       alert(employeeid + "수정하기");
       //아래를 수정했다.
       this.$router.push("/updatecustomer/" + employeeid);

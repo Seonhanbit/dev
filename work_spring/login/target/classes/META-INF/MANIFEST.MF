@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: login
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: student
+Implementation-Vendor-Id: com.ssafy.edu
+Build-Jdk: 1.8.0_192
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/login
+Created-By: Maven Integration for Eclipse
+

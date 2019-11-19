@@ -144,7 +144,7 @@ import http from "../http-common";
 
 export default {
   name: "updatecustomer",
-  props: ["id"],
+  props: ["id"], //받은 인자값
   data() {
     return {
       info: null,
@@ -235,6 +235,7 @@ export default {
 
       http
         .post("/updateEmployee", {
+          //Stringboot 서버를 보면 DTO로 받으니까 받을 인자 id까지 같이 넘겨주기
           commission_pct: this.customer.commission_pct,
           dept_id: this.customer.dept_id,
           mailid: this.customer.mailid,

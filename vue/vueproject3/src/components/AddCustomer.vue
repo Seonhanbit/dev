@@ -6,8 +6,8 @@
 <table class="content_table">
 <colgroup>
 		<col style="width:30%;" />
-		<col style="width:70%;" />							
-</colgroup>	
+		<col style="width:70%;" />
+</colgroup>
 <tr>
 <th>이름</th>
 <td><input data-msg="이름" type="text" name="name" id="_name"  v-model="cname" style="width:30%"/></td>
@@ -78,7 +78,7 @@
 <script>
 import http from "../http-common";
 
-export default {
+export default { //무조건 뷰 객체
 	name: "add-customer",
 	data() {
 		return {
@@ -103,11 +103,11 @@ export default {
 			var a=parseInt(value);
 			return a.toFixed(2);
 		}
-	}, 
+	},
 	mounted () {
 	http
 		.get('/findAllEmployees')
-		.then(response => (this.info = response.data))
+		.then(response => (this.info = response.data)) //성공 시 데이터를 인포에 넣어줌 function(response)
 		.catch(() => {
 			this.errored = true
 		})
@@ -136,7 +136,7 @@ export default {
 		if(this.csalary==''){ alert('월급을 입력하세요.'); return ;}
 		if(this.cstart_date==''){ alert('입사일을 선택하세요.'); return ;}
 		if(this.ctitle==''){ alert('직책을 선택하세요.'); return ;}
-		
+
 		http.post('/addEmployee', {
 			commission_pct: this.ccommission_pct,
 			dept_id: this.cdept_id,
@@ -146,7 +146,7 @@ export default {
 			salary: this.csalary,
 			start_date:this.cstart_date,
 			title: this.ctitle
-		} 
+		}
 		).then(response => {
 				if (response.data.state=='succ') {
 					alert("입사처리를 하였습니다.");

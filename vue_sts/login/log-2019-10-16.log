@@ -1,0 +1,142 @@
+2019-10-16 00:41:14.374  INFO 11140 --- [nio-8397-exec-1] com.ssafy.edu.controller.AuthController  : 1-------------authenticateUser-----------------------------LoginRequest [usernameOrEmail=tttttt, password=tttttt]
+2019-10-16 00:41:14.382 DEBUG 11140 --- [nio-8397-exec-1] org.hibernate.SQL                        : select memberuser0_.id as id1_2_, memberuser0_.created_at as created_2_2_, memberuser0_.updated_at as updated_3_2_, memberuser0_.email as email4_2_, memberuser0_.name as name5_2_, memberuser0_.password as password6_2_, memberuser0_.username as username7_2_ from users memberuser0_ where memberuser0_.username=? or memberuser0_.email=?
+2019-10-16 00:41:14.391 DEBUG 11140 --- [nio-8397-exec-1] org.hibernate.SQL                        : select roles0_.user_id as user_id1_1_0_, roles0_.role_id as role_id2_1_0_, role1_.id as id1_0_1_, role1_.name as name2_0_1_ from user_roles roles0_ inner join roles role1_ on roles0_.role_id=role1_.id where roles0_.user_id=?
+2019-10-16 00:41:15.921 DEBUG 11140 --- [io-8397-exec-10] org.hibernate.SQL                        : select memberuser0_.id as id1_2_, memberuser0_.created_at as created_2_2_, memberuser0_.updated_at as updated_3_2_, memberuser0_.email as email4_2_, memberuser0_.name as name5_2_, memberuser0_.password as password6_2_, memberuser0_.username as username7_2_ from users memberuser0_ where memberuser0_.username=?
+2019-10-16 08:21:21.752  WARN 11140 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7h38m6s677ms339µs200ns).
+2019-10-16 14:30:49.420  WARN 11140 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6h33s478ms417µs100ns).
+2019-10-16 17:11:58.411  WARN 11140 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h41m8s991ms404µs400ns).
+2019-10-16 18:43:58.690  WARN 11140 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=48m339ms904µs900ns).
+2019-10-16 19:43:28.310  INFO 11140 --- [nio-8397-exec-4] com.ssafy.edu.controller.AuthController  : 1-------------authenticateUser-----------------------------LoginRequest [usernameOrEmail=tttttt, password=tttttt]
+2019-10-16 19:43:28.326 DEBUG 11140 --- [nio-8397-exec-4] org.hibernate.SQL                        : select memberuser0_.id as id1_2_, memberuser0_.created_at as created_2_2_, memberuser0_.updated_at as updated_3_2_, memberuser0_.email as email4_2_, memberuser0_.name as name5_2_, memberuser0_.password as password6_2_, memberuser0_.username as username7_2_ from users memberuser0_ where memberuser0_.username=? or memberuser0_.email=?
+2019-10-16 19:43:28.338 DEBUG 11140 --- [nio-8397-exec-4] org.hibernate.SQL                        : select roles0_.user_id as user_id1_1_0_, roles0_.role_id as role_id2_1_0_, role1_.id as id1_0_1_, role1_.name as name2_0_1_ from user_roles roles0_ inner join roles role1_ on roles0_.role_id=role1_.id where roles0_.user_id=?
+2019-10-16 19:43:29.897 DEBUG 11140 --- [nio-8397-exec-9] org.hibernate.SQL                        : select memberuser0_.id as id1_2_, memberuser0_.created_at as created_2_2_, memberuser0_.updated_at as updated_3_2_, memberuser0_.email as email4_2_, memberuser0_.name as name5_2_, memberuser0_.password as password6_2_, memberuser0_.username as username7_2_ from users memberuser0_ where memberuser0_.username=?
+2019-10-16 20:45:20.023  WARN 11140 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=45m50s853ms225µs300ns).
+2019-10-16 21:04:54.778 DEBUG 11140 --- [nio-8397-exec-5] org.hibernate.SQL                        : select memberuser0_.id as col_0_0_ from users memberuser0_ where memberuser0_.email=? limit ?
+2019-10-16 21:05:10.146 DEBUG 11140 --- [nio-8397-exec-1] org.hibernate.SQL                        : select memberuser0_.id as col_0_0_ from users memberuser0_ where memberuser0_.email=? limit ?
+2019-10-16 21:09:01.700 DEBUG 11140 --- [nio-8397-exec-2] org.hibernate.SQL                        : select memberuser0_.id as col_0_0_ from users memberuser0_ where memberuser0_.username=? limit ?
+2019-10-16 21:09:08.842 DEBUG 11140 --- [nio-8397-exec-8] org.hibernate.SQL                        : select memberuser0_.id as col_0_0_ from users memberuser0_ where memberuser0_.username=? limit ?
+2019-10-16 21:20:42.875  WARN 11140 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m22s413ms504µs700ns).
+2019-10-16 22:32:11.970  INFO 11140 --- [nio-8397-exec-9] com.ssafy.edu.controller.AuthController  : 1-------------authenticateUser-----------------------------LoginRequest [usernameOrEmail=tttttt, password=tttttt]
+2019-10-16 22:32:12.079 DEBUG 11140 --- [nio-8397-exec-9] org.hibernate.SQL                        : select memberuser0_.id as id1_2_, memberuser0_.created_at as created_2_2_, memberuser0_.updated_at as updated_3_2_, memberuser0_.email as email4_2_, memberuser0_.name as name5_2_, memberuser0_.password as password6_2_, memberuser0_.username as username7_2_ from users memberuser0_ where memberuser0_.username=? or memberuser0_.email=?
+2019-10-16 22:32:12.146 DEBUG 11140 --- [nio-8397-exec-9] org.hibernate.SQL                        : select roles0_.user_id as user_id1_1_0_, roles0_.role_id as role_id2_1_0_, role1_.id as id1_0_1_, role1_.name as name2_0_1_ from user_roles roles0_ inner join roles role1_ on roles0_.role_id=role1_.id where roles0_.user_id=?
+2019-10-16 22:32:13.763 DEBUG 11140 --- [nio-8397-exec-7] org.hibernate.SQL                        : select memberuser0_.id as id1_2_, memberuser0_.created_at as created_2_2_, memberuser0_.updated_at as updated_3_2_, memberuser0_.email as email4_2_, memberuser0_.name as name5_2_, memberuser0_.password as password6_2_, memberuser0_.username as username7_2_ from users memberuser0_ where memberuser0_.username=?
+2019-10-16 22:56:37.787  INFO 11140 --- [nio-8397-exec-1] com.ssafy.edu.controller.AuthController  : 1-------------authenticateUser-----------------------------LoginRequest [usernameOrEmail=tttttt, password=tttttt]
+2019-10-16 22:56:37.795 DEBUG 11140 --- [nio-8397-exec-1] org.hibernate.SQL                        : select memberuser0_.id as id1_2_, memberuser0_.created_at as created_2_2_, memberuser0_.updated_at as updated_3_2_, memberuser0_.email as email4_2_, memberuser0_.name as name5_2_, memberuser0_.password as password6_2_, memberuser0_.username as username7_2_ from users memberuser0_ where memberuser0_.username=? or memberuser0_.email=?
+2019-10-16 22:56:37.801 DEBUG 11140 --- [nio-8397-exec-1] org.hibernate.SQL                        : select roles0_.user_id as user_id1_1_0_, roles0_.role_id as role_id2_1_0_, role1_.id as id1_0_1_, role1_.name as name2_0_1_ from user_roles roles0_ inner join roles role1_ on roles0_.role_id=role1_.id where roles0_.user_id=?
+2019-10-16 22:56:39.411 DEBUG 11140 --- [io-8397-exec-10] org.hibernate.SQL                        : select memberuser0_.id as id1_2_, memberuser0_.created_at as created_2_2_, memberuser0_.updated_at as updated_3_2_, memberuser0_.email as email4_2_, memberuser0_.name as name5_2_, memberuser0_.password as password6_2_, memberuser0_.username as username7_2_ from users memberuser0_ where memberuser0_.username=?
+2019-10-16 23:03:07.082  INFO 11140 --- [nio-8397-exec-8] com.ssafy.edu.controller.AuthController  : 1-------------authenticateUser-----------------------------LoginRequest [usernameOrEmail=tttttt, password=tttttt]
+2019-10-16 23:03:07.089 DEBUG 11140 --- [nio-8397-exec-8] org.hibernate.SQL                        : select memberuser0_.id as id1_2_, memberuser0_.created_at as created_2_2_, memberuser0_.updated_at as updated_3_2_, memberuser0_.email as email4_2_, memberuser0_.name as name5_2_, memberuser0_.password as password6_2_, memberuser0_.username as username7_2_ from users memberuser0_ where memberuser0_.username=? or memberuser0_.email=?
+2019-10-16 23:03:07.092 DEBUG 11140 --- [nio-8397-exec-8] org.hibernate.SQL                        : select roles0_.user_id as user_id1_1_0_, roles0_.role_id as role_id2_1_0_, role1_.id as id1_0_1_, role1_.name as name2_0_1_ from user_roles roles0_ inner join roles role1_ on roles0_.role_id=role1_.id where roles0_.user_id=?
+2019-10-16 23:03:08.571 DEBUG 11140 --- [nio-8397-exec-3] org.hibernate.SQL                        : select memberuser0_.id as id1_2_, memberuser0_.created_at as created_2_2_, memberuser0_.updated_at as updated_3_2_, memberuser0_.email as email4_2_, memberuser0_.name as name5_2_, memberuser0_.password as password6_2_, memberuser0_.username as username7_2_ from users memberuser0_ where memberuser0_.username=?
+2019-10-16 23:55:06.771  INFO 11140 --- [nio-8397-exec-7] com.ssafy.edu.controller.AuthController  : 1-------------registerUser-----------------------------com.ssafy.edu.payload.SignUpRequest@1b4e1211
+2019-10-16 23:55:06.812 DEBUG 11140 --- [nio-8397-exec-7] org.hibernate.SQL                        : select memberuser0_.id as col_0_0_ from users memberuser0_ where memberuser0_.username=? limit ?
+2019-10-16 23:55:06.836  INFO 11140 --- [nio-8397-exec-7] com.ssafy.edu.controller.AuthController  : 2-------------registerUser-----------------------------com.ssafy.edu.payload.SignUpRequest@1b4e1211
+2019-10-16 23:55:06.841 DEBUG 11140 --- [nio-8397-exec-7] org.hibernate.SQL                        : select memberuser0_.id as col_0_0_ from users memberuser0_ where memberuser0_.email=? limit ?
+2019-10-16 23:55:06.842  INFO 11140 --- [nio-8397-exec-7] com.ssafy.edu.controller.AuthController  : 3-------------registerUser-----------------------------com.ssafy.edu.payload.SignUpRequest@1b4e1211
+2019-10-16 23:55:06.843  INFO 11140 --- [nio-8397-exec-7] com.ssafy.edu.controller.AuthController  : 4-------------registerUser-----------------------------com.ssafy.edu.model.MemberUser@27da9d90
+2019-10-16 23:55:07.029 DEBUG 11140 --- [nio-8397-exec-7] org.hibernate.SQL                        : select role0_.id as id1_0_, role0_.name as name2_0_ from roles role0_ where role0_.name=?
+2019-10-16 23:55:08.014 DEBUG 11140 --- [nio-8397-exec-7] org.hibernate.SQL                        : insert into users (created_at, updated_at, email, name, password, username) values (?, ?, ?, ?, ?, ?)
+2019-10-16 23:55:08.138 DEBUG 11140 --- [nio-8397-exec-7] org.hibernate.SQL                        : insert into user_roles (user_id, role_id) values (?, ?)
+2019-10-16 23:55:08.228 ERROR 11140 --- [nio-8397-exec-7] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Handler dispatch failed; nested exception is java.lang.NoClassDefFoundError: com/ssafy/edu/payload/ApiResponse] with root cause
+
+java.lang.ClassNotFoundException: com.ssafy.edu.payload.ApiResponse
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:338)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at com.ssafy.edu.controller.AuthController.registerUser(AuthController.java:108)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:209)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:136)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:991)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:925)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:877)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:851)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at com.ssafy.edu.security.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:46)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:66)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:800)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:806)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+2019-10-16 23:57:31.876  WARN 11140 --- [nio-8397-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
