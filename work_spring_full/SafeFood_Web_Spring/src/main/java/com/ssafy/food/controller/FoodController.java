@@ -25,7 +25,7 @@ import com.ssafy.food.service.IFoodService;
 
 /*create database fooddb;
 use fooddb;
-​
+
 create table food (
    code int primary key,
    name varchar(30),
@@ -45,7 +45,7 @@ create table food (
 );
 select*from food;
 drop table food;
-​
+
 create table memtb(
 id varchar(20) primary key,
 pw varchar(20),
@@ -55,10 +55,6 @@ email varchar(50),
 tel varchar(50),
 alinfo varchar(500)
 );
-​
-select*from memtb;
-delete from memtb where id='ssafy';
-drop table memtb;
 
 create table qna(
 num int auto_increment primary key,
@@ -67,7 +63,32 @@ content varchar(2000),
 id varchar(20)
 );
 
-*/
+create table board(
+num int auto_increment primary key,
+id varchar(20) not null,
+title varchar(200),
+content varchar(2000)
+);
+select*from board;
+drop table board;
+
+create table comment(
+num int auto_increment primary key,
+qnanum varchar(20) not null,
+content varchar(200),
+id varchar(20)
+);
+select*from comment;
+drop table comment;
+
+INSERT INTO qna VALUES ('박구곤', 'sky98', 'test1');
+
+select* from qna;
+drop table qna;
+
+select*from memtb; 
+delete from memtb where id='ssafy';
+drop table memtb;*/
 
 @Controller
 public class FoodController {

@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +16,7 @@ import com.ssafy.food.service.IFoodService;
 
 import io.swagger.annotations.ApiOperation;
 
+@CrossOrigin(origins = {"*"}, maxAge = 6000)
 @RestController
 @RequestMapping("/api")
 public class RestFoodController {
@@ -24,6 +26,7 @@ public class RestFoodController {
 	@ApiOperation(value="음식을 code로 조회합니다.")
 	@GetMapping("/pdetail/{code}")
 	public ResponseEntity<FoodVO> pdetail(@PathVariable String code) {
+		//System.out.println(code);
 		ResponseEntity<FoodVO> re = null;
 		try {
 			FoodVO food = new FoodVO();
@@ -38,6 +41,7 @@ public class RestFoodController {
 	@ApiOperation(value="음식 전체를 조회합니다.")
 	@GetMapping(value = "/productInfo")
 	public ResponseEntity<List<FoodVO>> productInfo() {
+		//System.out.println("-----");
 		ResponseEntity<List<FoodVO>> re = null;
 		try {
 			List<FoodVO> list = ser.getFoodList();

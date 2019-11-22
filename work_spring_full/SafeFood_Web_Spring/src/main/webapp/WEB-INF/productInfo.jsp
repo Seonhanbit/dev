@@ -200,7 +200,7 @@ legend.scheduler-border {
 					</select></th>
 
 					<th><input type="text" class="selectbox" name=search>
-						<button type="submit" class="btn btn-sm btn-info") >검색</button></th>
+						<button type="submit" class="btn btn-sm btn-info" >검색</button></th>
 				</form>
 			</tr>
 		</table>
