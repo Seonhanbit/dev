@@ -9,5 +9,4 @@ public interface IMemberDao {
 	boolean delMem(String id);
 	MemVO getMemInfo(String id);
 	String searchpw(String id, String name);
-	void pick(String id, String code);
 }

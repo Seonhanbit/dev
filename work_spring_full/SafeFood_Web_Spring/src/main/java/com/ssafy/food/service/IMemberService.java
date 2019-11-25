@@ -10,5 +10,4 @@ public interface IMemberService {
 	String searchpw(String id, String name);
 	boolean delMem(String id);
 	boolean updateMem(String id, String pw, String name, String addr, String email, String tel, String alinfo);
-	void pick(String id, String code);
 }

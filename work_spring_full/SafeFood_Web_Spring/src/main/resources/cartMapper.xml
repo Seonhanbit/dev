@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cart">
+  
+  <select id="selectList" parameterType="member" resultType="int">
+   	select code from food as f join cart as c on c.foodcode = f.code where c.userid=#{id};
+  </select>
+  
+  <insert id="insertCart" parameterType="cart">
+    insert into cart(userid, foodcode, amount) values(#{userid}, #{foodcode}, #{amount});
+  </insert>
+  
+  <delete id="deleteCart" parameterType="int">
+  	delete from cart where cartid =#{cartid};
+  </delete>
+
+</mapper>

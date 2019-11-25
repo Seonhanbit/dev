@@ -37,10 +37,5 @@ public class MemberServiceImpl implements IMemberService {
 	public boolean updateMem(String id, String pw, String name, String addr, String email, String tel, String alinfo) {
 		return man.updateMem(id, pw, name, addr, email, tel, alinfo);
 	}
-	@Override
-	public void pick(String id, String code) {
-		// TODO Auto-generated method stub
-		man.pick(id, code);
-	}
 	
 }

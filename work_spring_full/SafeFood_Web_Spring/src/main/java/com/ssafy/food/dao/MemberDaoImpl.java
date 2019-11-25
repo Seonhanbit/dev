@@ -69,14 +69,4 @@ public class MemberDaoImpl implements IMemberDao {
 		return res;
 	}
 
-	@Override
-	public void pick(String id, String code) {
-		// TODO Auto-generated method stub
-		HashMap<String, String> map = new HashMap<String, String>();
-		map.put("id", id);
-		map.put("code", code);
-		
-		session.insert("member.pick", map);
-	}
-
 }

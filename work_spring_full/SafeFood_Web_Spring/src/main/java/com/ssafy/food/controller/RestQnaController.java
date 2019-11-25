@@ -45,6 +45,7 @@ public class RestQnaController {
 	@ApiOperation(value="QnA 전체를 조회합니다.")
 	@GetMapping(value = "/qnaList")
 	public ResponseEntity<List<QnaVO>> qnaList() {
+		System.out.println("--------------");
 		ResponseEntity<List<QnaVO>> re = null;
 		try {
 			List<QnaVO> list = ser.getQnaList();

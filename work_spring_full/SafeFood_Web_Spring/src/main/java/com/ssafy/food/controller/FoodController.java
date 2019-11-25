@@ -56,6 +56,17 @@ tel varchar(50),
 alinfo varchar(500)
 );
 
+create table cart(
+	cartid int primary key auto_increment,
+    userid varchar(20),
+    foodcode int,
+    amount int
+);
+select code from food as f join cart as c on c.foodcode= f.code where c.userid='2';
+
+select*from cart;
+INSERT INTO cart VALUES (1, '박구곤', 11, 1);
+
 create table qna(
 num int auto_increment primary key,
 title varchar(50) not null,

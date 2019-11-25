@@ -8,8 +8,16 @@ public class MemVO {
     private String email;
     private String tel;
     private String alinfo;
+    private String pick;
     
-    public MemVO() {
+    
+    public String getPick() {
+		return pick;
+	}
+	public void setPick(String pick) {
+		this.pick = pick;
+	}
+	public MemVO() {
         super();
     }
     public MemVO(String id, String pw, String name, String addr, String email, String tel, String alinfo) {
@@ -22,7 +30,19 @@ public class MemVO {
         this.tel = tel;
         this.alinfo = alinfo;
     }
-    public String getId() {
+    
+    public MemVO(String id, String pw, String name, String addr, String email, String tel, String alinfo, String pick) {
+		super();
+		this.id = id;
+		this.pw = pw;
+		this.name = name;
+		this.addr = addr;
+		this.email = email;
+		this.tel = tel;
+		this.alinfo = alinfo;
+		this.pick = pick;
+	}
+	public String getId() {
         return id;
     }
     public void setId(String id) {

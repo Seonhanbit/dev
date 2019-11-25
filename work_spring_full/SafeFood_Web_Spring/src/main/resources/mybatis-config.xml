@@ -17,6 +17,10 @@
 		<typeAlias type="com.ssafy.food.dto.BoardVO"
 			alias="board" />
 			
+		<typeAlias type="com.ssafy.food.dto.CartVO"
+			alias="cart" />
+			
+			
 	</typeAliases>
 	<!-- 디비연결정보는 스프링이 연동하면서 생략가능 -->
 
@@ -27,5 +31,6 @@
 		<mapper resource="qnaMapper.xml"/>
 		<mapper resource="commentMapper.xml"/>
 		<mapper resource="boardMapper.xml"/>
+		<mapper resource="cartMapper.xml"/>
 	</mappers>
 </configuration>

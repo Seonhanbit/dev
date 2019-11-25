@@ -152,8 +152,6 @@ public class MemberController {
 	public ModelAndView pick(HttpServletRequest req, ModelAndView mv) {
 		String id = (String) req.getSession().getAttribute("id");
 		String code = req.getParameter("code");
-		
-		ser.pick(id, code);
 		mv.addObject("code", code);
 		mv.setViewName("redirect:pdetail");
 		return mv;
