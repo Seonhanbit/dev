@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
@@ -28,11 +29,22 @@ public class RestMemberController {
 	@Autowired
 	private IMemberService ser;
 
+	/*
+	 * @ApiOperation(value = "맴버를 등록합니다.")
+	 * 
+	 * @PostMapping(value = "/SignUp") public ResponseEntity<String> insert(MemVO
+	 * mem) { ResponseEntity<String> re = null; try { ser.addMem(mem.getId(),
+	 * mem.getPw(), mem.getName(), mem.getAddr(), mem.getEmail(), mem.getTel(),
+	 * mem.getAlinfo()); re = new ResponseEntity<String>("잘 들어 갔어용~",
+	 * HttpStatus.OK); } catch (Exception e) { // HttpStatus 통신은 제대로 된거니까 OK re =
+	 * new ResponseEntity<String>("입력 실패 문제가 생겼다!", HttpStatus.OK); } return re; }
+	 */
 	@ApiOperation(value = "맴버를 등록합니다.")
 	@PostMapping(value = "/SignUp")
-	public ResponseEntity<String> insert(MemVO mem) {
+	public ResponseEntity<String> insert(@RequestBody MemVO mem) {
 		ResponseEntity<String> re = null;
 		try {
+			System.out.println(mem.toString());
 			ser.addMem(mem.getId(), mem.getPw(), mem.getName(), mem.getAddr(), mem.getEmail(), mem.getTel(),
 					mem.getAlinfo());
 			re = new ResponseEntity<String>("잘 들어 갔어용~", HttpStatus.OK);
@@ -96,31 +108,47 @@ public class RestMemberController {
 		return re;
 	}
 
-	// 로그인 로그아웃?
 	@ApiOperation(value = "로그인 처리")
-	@GetMapping("/Login")
-	public ModelAndView Login(HttpServletRequest req, ModelAndView mv, HttpSession se) {
-		String id = req.getParameter("mid");
-		String pw = req.getParameter("mpw");
-		boolean isLogin = ser.isLogin(id, pw);
-		if (isLogin) {
-			// 세션에 로그인 저장
-			se.setAttribute("islogin", "isLogin");
-			se.setAttribute("id", id);
+	@PostMapping("/Login")
+	public boolean Login(@RequestBody MemVO mem) {
+		System.out.println("로그인을 하기위해 여기에 왔습니다.");
+		String id = mem.getId();
+		String pw = mem.getPw();
+		System.out.println(id + " " + pw);
+		ResponseEntity<String> re = null;
+		try {
+			boolean isLogin = ser.isLogin(id, pw);
+			// boolean isLogin = ser.isLogin(id, pw);
+			System.out.println(isLogin);
+			return isLogin;
 			/*
-			 * req.getSession().setAttribute("islogin", "isLogin");
-			 * req.getSession().setAttribute("id", id);
+			 * if (isLogin) { re = new ResponseEntity<String>("성공", HttpStatus.OK); }
 			 */
+		} catch (Exception e) {
+			re = new ResponseEntity<String>("조회 실패 문제가 생겼다!", HttpStatus.OK);
+			return false;
 		}
-		mv.setViewName("redirect:main");
-		return mv;
 	}
 
-	@ApiOperation(value = "로그아웃 처리")
-	@GetMapping("/Logout")
-	public ModelAndView Logout(HttpServletRequest req, ModelAndView mv, HttpSession ss) {
-		ss.invalidate();
-		mv.setViewName("redirect:main");
-		return mv;
-	}
+	// 로그인 로그아웃?
+	/*
+	 * @ApiOperation(value = "로그인 처리")
+	 * 
+	 * @GetMapping("/Login") public ModelAndView Login(HttpServletRequest req,
+	 * ModelAndView mv, HttpSession se) { String id = req.getParameter("mid");
+	 * String pw = req.getParameter("mpw"); boolean isLogin = ser.isLogin(id, pw);
+	 * if (isLogin) { // 세션에 로그인 저장 se.setAttribute("islogin", "isLogin");
+	 * se.setAttribute("id", id);
+	 * 
+	 * req.getSession().setAttribute("islogin", "isLogin");
+	 * req.getSession().setAttribute("id", id);
+	 * 
+	 * } mv.setViewName("redirect:main"); return mv; }
+	 * 
+	 * @ApiOperation(value = "로그아웃 처리")
+	 * 
+	 * @GetMapping("/Logout") public ModelAndView Logout(HttpServletRequest req,
+	 * ModelAndView mv, HttpSession ss) { ss.invalidate();
+	 * mv.setViewName("redirect:main"); return mv; }
+	 */
 }

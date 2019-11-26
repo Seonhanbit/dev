@@ -38,4 +38,20 @@ public class CartDaoImpl implements ICartDao {
 			return false;
 	}
 
+	@Override
+	public List<CartVO> getCartAllList() {
+		return session.selectList("cart.selectAllList");
+	}
+
+	@Override
+	public void update(String userid, int foodcode, int amount) {
+		CartVO c = new CartVO(userid, foodcode, amount);
+		session.selectList("cart.updateAmount",c);	
+	}
+
+	@Override
+	public List<Integer> getAmountList(String userid) {
+		return session.selectList("cart.selectAmountList", userid);
+	}
+
 }

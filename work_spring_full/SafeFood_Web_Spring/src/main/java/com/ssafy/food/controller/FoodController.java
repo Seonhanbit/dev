@@ -62,9 +62,10 @@ create table cart(
     foodcode int,
     amount int
 );
-select code from food as f join cart as c on c.foodcode= f.code where c.userid='2';
+select code from food as f join cart as c on c.foodcode= f.code where c.userid='3';
 
 select*from cart;
+drop table cart;
 INSERT INTO cart VALUES (1, '박구곤', 11, 1);
 
 create table qna(
