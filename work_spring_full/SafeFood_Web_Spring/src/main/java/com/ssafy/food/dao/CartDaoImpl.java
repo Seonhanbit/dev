@@ -54,4 +54,9 @@ public class CartDaoImpl implements ICartDao {
 		return session.selectList("cart.selectAmountList", userid);
 	}
 
+	@Override
+	public List<CartVO> getCartUserList(String userid) {
+		return session.selectList("cart.selectuseridList", userid);
+	}
+
 }

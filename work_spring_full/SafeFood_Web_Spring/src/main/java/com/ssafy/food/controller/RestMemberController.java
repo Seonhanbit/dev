@@ -26,6 +26,7 @@ import io.swagger.annotations.ApiOperation;
 @RestController
 @RequestMapping("/api")
 public class RestMemberController {
+	
 	@Autowired
 	private IMemberService ser;
 
@@ -69,11 +70,11 @@ public class RestMemberController {
 	}
 
 	@ApiOperation(value = "비밀번호를 찾습니다.")
-	@GetMapping(value = "/searchpw")
-	public ResponseEntity<String> searchpw(MemVO mem) {
+	@GetMapping(value = "/searchpw/{id}/{name}")
+	public ResponseEntity<String> searchpw(@PathVariable String id, @PathVariable String name) {
 		ResponseEntity<String> re = null;
 		try {
-			String pw = ser.searchpw(mem.getId(), mem.getName());
+			String pw = ser.searchpw(id, name);
 			re = new ResponseEntity<String>(pw, HttpStatus.OK);
 		} catch (Exception e) {
 			re = new ResponseEntity<String>("비밀번호 찾기에 문제가 생겼다!", HttpStatus.OK);
@@ -111,10 +112,8 @@ public class RestMemberController {
 	@ApiOperation(value = "로그인 처리")
 	@PostMapping("/Login")
 	public boolean Login(@RequestBody MemVO mem) {
-		System.out.println("로그인을 하기위해 여기에 왔습니다.");
 		String id = mem.getId();
 		String pw = mem.getPw();
-		System.out.println(id + " " + pw);
 		ResponseEntity<String> re = null;
 		try {
 			boolean isLogin = ser.isLogin(id, pw);

@@ -1,5 +1,7 @@
 package com.ssafy.food.controller;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ssafy.food.controller.FoodController.cnt_keyword;
 import com.ssafy.food.dto.FoodVO;
 import com.ssafy.food.service.IFoodService;
 
@@ -38,6 +41,18 @@ public class RestFoodController {
 		return re;
 	}
 	
+	class cnt_keyword {
+		String keyword;
+		int cnt;
+
+		public cnt_keyword(String keyword, int cnt) {
+			this.keyword = keyword;
+			this.cnt = cnt;
+		};
+	}
+
+	List<cnt_keyword> cntlist = new ArrayList<>();
+	
 	@ApiOperation(value="음식 전체를 조회합니다.")
 	@GetMapping(value = "/productInfo")
 	public ResponseEntity<List<FoodVO>> productInfo() {
@@ -55,6 +70,7 @@ public class RestFoodController {
 	@ApiOperation(value="음식을 상세조회합니다.")
 	@GetMapping(value = "/searchProduct/{searchType}/{search}")
 	public ResponseEntity<List<FoodVO>> searchProduct(@PathVariable String searchType, @PathVariable String search) {
+		int cnt = 0;
 		ResponseEntity<List<FoodVO>> re = null;
 		List<FoodVO> FoodList = null;
 		try {
@@ -67,12 +83,71 @@ public class RestFoodController {
 				String pcom = search;
 				FoodList = (List<FoodVO>) ser.getFoodmaker(pcom);
 			}
+			cnt = FoodList.size();
+			// 제품명 순으로 정렬
+			Collections.sort(FoodList);
+			String keyword = search;
+			cntlist.add(new cnt_keyword(keyword, 0));
+			for (int i = 0; i < cntlist.size(); i++) {
+				if(cntlist.get(i).keyword.equals(keyword)) {
+					cntlist.get(i).cnt++;
+					break;
+				}
+			}
+			//System.out.println(keyword);
 			re = new ResponseEntity<List<FoodVO>>(FoodList, HttpStatus.OK);
 		} catch (Exception e) {
 			re = new ResponseEntity("조회 실패 문제가 생겼다!", HttpStatus.OK);
 		}
 		return re;
 	}
+	
+	///////////구현하기
+	@ApiOperation(value="검색한 단어가 포함된 제품 수를 조회합니다.")
+	@GetMapping(value="/searchCnt/{searchType}/{search}")
+	public ResponseEntity<Integer> searchCnt(@PathVariable String searchType, @PathVariable String search){
+		ResponseEntity<Integer> re = null;
+		List<FoodVO> FoodList = null;
+		int cnt = 0;
+		try {
+			if (search.equals(""))
+				FoodList = ser.getFoodList();
+
+			else if (searchType.equals("상품명")) {
+				FoodList = (List<FoodVO>) ser.getFoodnamelist(search);
+			} else {
+				String pcom = search;
+				FoodList = (List<FoodVO>) ser.getFoodmaker(pcom);
+			}
+			cnt = FoodList.size();
+			re = new ResponseEntity<Integer>(cnt, HttpStatus.OK);
+		} catch (Exception e) {
+			re = new ResponseEntity("조회 실패 문제가 생겼다!", HttpStatus.OK);
+		}
+		return re;
+	}
+	
+	
+	@ApiOperation(value="가장 많이 검색한 키워드를 보여줍니다.")
+	@GetMapping(value="/searchKey")
+	public ResponseEntity<String> searchKey(){
+		ResponseEntity<String> re = null;
+		try {
+			int max_cnt = Integer.MIN_VALUE;
+			String str = "";
+			for (int i = 0; i < cntlist.size(); i++) {
+				if (max_cnt < cntlist.get(i).cnt) {
+					max_cnt = cntlist.get(i).cnt;
+					str = cntlist.get(i).keyword;
+				}
+			}
+			re = new ResponseEntity<String>(str, HttpStatus.OK);
+		} catch (Exception e) {
+			re = new ResponseEntity<String>("조회 실패 문제가 생겼다!", HttpStatus.OK);
+		}
+		return re;
+	}
+	
 	
 	//date,calo
 

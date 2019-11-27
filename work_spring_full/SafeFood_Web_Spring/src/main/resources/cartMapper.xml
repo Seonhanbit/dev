@@ -27,4 +27,8 @@
 	<select id="selectAllList" resultType="cart">
 		select * from cart
 	</select>
+	
+	<select id="selectuseridList" resultType="cart" parameterType="string">
+		select * from cart where userid = #{userid};
+	</select>
 </mapper>

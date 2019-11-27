@@ -17,9 +17,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ssafy.food.dto.CartVO;
 import com.ssafy.food.dto.FoodVO;
+import com.ssafy.food.dto.MemVO;
 import com.ssafy.food.dto.MypickVO;
 import com.ssafy.food.service.ICartService;
 import com.ssafy.food.service.IFoodService;
+import com.ssafy.food.service.IMemberService;
 
 import io.swagger.annotations.ApiOperation;
 
@@ -33,6 +35,9 @@ public class RestCartController {
 
 	@Autowired
 	private IFoodService foodser;
+	
+	@Autowired
+	private IMemberService memser;
 
 	@ApiOperation(value = "cart를 등록합니다.")
 	@PostMapping(value = "/insertCart/{userid}/{foodcode}/{amount}")
@@ -70,11 +75,19 @@ public class RestCartController {
 	}
 
 	@ApiOperation(value = "cart를 삭제합니다.")
-	@DeleteMapping(value = "/deleteCart/{cartid}")
-	public ResponseEntity<String> deleteCart(@PathVariable String cartid) {
+	@DeleteMapping(value = "/deleteCart/{foodcode}/{userid}")
+	public ResponseEntity<String> deleteCart(@PathVariable String foodcode, @PathVariable String userid) {
 		ResponseEntity<String> re = null;
 		try {
-			int cid = Integer.parseInt(cartid);
+			int foodcd = Integer.parseInt(foodcode);
+			int cid = 0;
+			// 푸드코드
+			List<CartVO> list = ser.getCartUserList(userid);
+
+			for (int i = 0; i < list.size(); i++) {
+				if (list.get(i).getFoodcode() == foodcd)
+					cid = list.get(i).getCartid();
+			}
 			ser.delCart(cid);
 			re = new ResponseEntity<String>("잘 들어 갔어용~", HttpStatus.OK);
 		} catch (Exception e) {
@@ -91,24 +104,62 @@ public class RestCartController {
 			List<MypickVO> list = new ArrayList<MypickVO>();
 
 			List<Integer> cartlist = ser.getCartList(userid);
-			System.out.println(cartlist.size());
 			List<FoodVO> foodlist = foodser.getFoodList();
-			System.out.println(foodlist.size());
+			
+			MemVO selectOne = memser.memInfo(userid);
+			String[] alergy = selectOne.getAlinfo().split(",");
+			
+			
 			for (int i = 0; i < cartlist.size(); i++) {
 				for (int j = 0; j < foodlist.size(); j++) {
 					if (foodlist.get(j).getCode() == cartlist.get(i)) {
-						list.add(new MypickVO(foodlist.get(j).getCode(), foodlist.get(j).getImage(),foodlist.get(j).getName()));
+						for(int k=0; k<alergy.length; k++) {
+							if(foodlist.get(j).getMaterial().contains(alergy[k])) {
+								list.add(new MypickVO(foodlist.get(j).getCode(), foodlist.get(j).getImage(),
+										foodlist.get(j).getName(), true));
+							}else {
+								list.add(new MypickVO(foodlist.get(j).getCode(), foodlist.get(j).getImage(),
+										foodlist.get(j).getName(), false));
+							}
+						}
 					}
 				}
 			}
+			
 			List<Integer> amountlist = ser.getAmountList(userid);
-			for(int i=0; i<amountlist.size(); i++) {
-				list.set(i,new MypickVO(list.get(i).getCode(),list.get(i).getImage(),list.get(i).getName(), amountlist.get(i)));
+			for (int i = 0; i < amountlist.size(); i++) {
+				list.set(i, new MypickVO(list.get(i).getCode(), list.get(i).getImage(), list.get(i).getName(),
+						list.get(i).isInclude(),amountlist.get(i)));
 			}
-			//System.out.println(list.toString());
+			
 			re = new ResponseEntity<List<MypickVO>>(list, HttpStatus.OK);
 		} catch (Exception e) {
 			re = new ResponseEntity("조회 실패 문제가 생겼다!", HttpStatus.OK);
+		}
+		return re;
+	}
+
+	@ApiOperation(value = "예상칼로리를 조회합니다.")
+	@GetMapping(value = "/maxCalo/{userid}")
+	public ResponseEntity<String> maxCalo(@PathVariable String userid) {
+		ResponseEntity<String> re = null;
+		try {
+			int calo = 0;
+			List<CartVO> cartlist = ser.getCartUserList(userid);
+			List<FoodVO> foodlist = foodser.getFoodList();
+			for (int i = 0; i < cartlist.size(); i++) {
+				for (int j = 0; j < foodlist.size(); j++) {
+					if (cartlist.get(i).getFoodcode() == foodlist.get(j).getCode()) {
+						double ncalo = Double.parseDouble(foodlist.get(j).getCalory());
+						calo += cartlist.get(i).getAmount() * ncalo;
+					}
+				}
+			}
+			
+			String res = String.valueOf(calo);
+			re = new ResponseEntity<String>(res, HttpStatus.OK);
+		} catch (Exception e) {
+			re = new ResponseEntity<String>("조회 실패 문제가 생겼다!", HttpStatus.OK);
 		}
 		return re;
 	}

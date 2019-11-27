@@ -44,4 +44,9 @@ public class CartServiceImpl implements ICartService{
 		return man.getAmountList(userid);
 	}
 
+	@Override
+	public List<CartVO> getCartUserList(String userid) {
+		return man.getCartUserList(userid);
+	}
+
 }

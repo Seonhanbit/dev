@@ -11,4 +11,5 @@ public interface ICartDao {
 	public List<CartVO> getCartAllList();
 	public void update(String userid, int foodcode, int amount);
 	public List<Integer> getAmountList(String userid);
+	public List<CartVO> getCartUserList(String userid);
 }

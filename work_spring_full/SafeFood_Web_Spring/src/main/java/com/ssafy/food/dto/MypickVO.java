@@ -5,6 +5,15 @@ public class MypickVO {
 	private String image;
 	private String name;
 	private int amount;
+	private boolean include;
+	
+
+	public boolean isInclude() {
+		return include;
+	}
+	public void setInclude(boolean include) {
+		this.include = include;
+	}
 	
 	public int getCode() {
 		return code;
@@ -30,19 +39,24 @@ public class MypickVO {
 	public void setAmount(int amount) {
 		this.amount = amount;
 	}
-	public MypickVO(int code, String image, String name) {
+	
+	public MypickVO(int code, String image, String name, boolean include) {
 		super();
 		this.code = code;
 		this.image = image;
 		this.name = name;
+		this.include = include;
 	}
-	public MypickVO(int code, String image, String name, int amount) {
+	
+	public MypickVO(int code, String image, String name, boolean include, int amount) {
 		super();
 		this.code = code;
 		this.image = image;
 		this.name = name;
+		this.include = include;
 		this.amount = amount;
 	}
+	
 	public MypickVO() {
 		super();
 		// TODO Auto-generated constructor stub
