@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ssafy.food.delivery;
 import com.ssafy.food.controller.FoodController.cnt_keyword;
 import com.ssafy.food.dto.FoodVO;
 import com.ssafy.food.service.IFoodService;
@@ -102,7 +103,6 @@ public class RestFoodController {
 		return re;
 	}
 	
-	///////////구현하기
 	@ApiOperation(value="검색한 단어가 포함된 제품 수를 조회합니다.")
 	@GetMapping(value="/searchCnt/{searchType}/{search}")
 	public ResponseEntity<Integer> searchCnt(@PathVariable String searchType, @PathVariable String search){
@@ -149,6 +149,22 @@ public class RestFoodController {
 	}
 	
 	
-	//date,calo
+	//date 구현하자
+	@ApiOperation(value="예상 배송 일을 보여줍니다.")
+	@GetMapping(value="/date/{posx}/{posy}")
+	public ResponseEntity<String> date(@PathVariable String posx, @PathVariable String posy){
+		ResponseEntity<String> re = null;
+		try {
+			int x = Integer.parseInt(posx);
+			int y = Integer.parseInt(posy);
+			String day = Integer.toString(new delivery().execute(x, y));
+			re = new ResponseEntity<String>(day, HttpStatus.OK);
+		} catch (Exception e) {
+			re = new ResponseEntity<String>("조회 실패 문제가 생겼다!", HttpStatus.OK);
+		}
+		return re;
+	}
+	
+	//calo
 
 }

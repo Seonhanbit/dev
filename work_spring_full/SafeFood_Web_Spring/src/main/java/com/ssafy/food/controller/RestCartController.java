@@ -35,7 +35,7 @@ public class RestCartController {
 
 	@Autowired
 	private IFoodService foodser;
-	
+
 	@Autowired
 	private IMemberService memser;
 
@@ -105,33 +105,38 @@ public class RestCartController {
 
 			List<Integer> cartlist = ser.getCartList(userid);
 			List<FoodVO> foodlist = foodser.getFoodList();
-			
+
 			MemVO selectOne = memser.memInfo(userid);
 			String[] alergy = selectOne.getAlinfo().split(",");
-			
-			
+
+			HashSet<Integer> set = new HashSet<Integer>();
+
 			for (int i = 0; i < cartlist.size(); i++) {
 				for (int j = 0; j < foodlist.size(); j++) {
 					if (foodlist.get(j).getCode() == cartlist.get(i)) {
-						for(int k=0; k<alergy.length; k++) {
-							if(foodlist.get(j).getMaterial().contains(alergy[k])) {
-								list.add(new MypickVO(foodlist.get(j).getCode(), foodlist.get(j).getImage(),
-										foodlist.get(j).getName(), true));
-							}else {
-								list.add(new MypickVO(foodlist.get(j).getCode(), foodlist.get(j).getImage(),
-										foodlist.get(j).getName(), false));
+						for (int k = 0; k < alergy.length; k++) {
+							if (foodlist.get(j).getMaterial().contains(alergy[k])) {
+								if (set.add(foodlist.get(j).getCode())) {
+									list.add(new MypickVO(foodlist.get(j).getCode(), foodlist.get(j).getImage(),
+											foodlist.get(j).getName(), true));
+								}
+							} else {
+								if (set.add(foodlist.get(j).getCode())) {
+									list.add(new MypickVO(foodlist.get(j).getCode(), foodlist.get(j).getImage(),
+											foodlist.get(j).getName(), false));
+								}
 							}
 						}
 					}
 				}
 			}
-			
+
 			List<Integer> amountlist = ser.getAmountList(userid);
 			for (int i = 0; i < amountlist.size(); i++) {
 				list.set(i, new MypickVO(list.get(i).getCode(), list.get(i).getImage(), list.get(i).getName(),
-						list.get(i).isInclude(),amountlist.get(i)));
+						list.get(i).isInclude(), amountlist.get(i)));
 			}
-			
+
 			re = new ResponseEntity<List<MypickVO>>(list, HttpStatus.OK);
 		} catch (Exception e) {
 			re = new ResponseEntity("조회 실패 문제가 생겼다!", HttpStatus.OK);
@@ -155,7 +160,7 @@ public class RestCartController {
 					}
 				}
 			}
-			
+
 			String res = String.valueOf(calo);
 			re = new ResponseEntity<String>(res, HttpStatus.OK);
 		} catch (Exception e) {
