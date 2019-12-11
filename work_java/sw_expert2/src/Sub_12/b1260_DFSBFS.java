@@ -26,29 +26,36 @@ public class b1260_DFSBFS {
 			arr[a][b] = 1;
 			arr[b][a] = 1;
 		}
-		dfs(V); 
+		dfs(V);
 		System.out.println();
 		visited = new boolean[N + 1];
-		
+		bfs();
+
 	}
 
 	public static void dfs(int current) {
 		visited[current] = true;
-		System.out.print(current+" ");
+		System.out.print(current + " ");
 		for (int i = 1; i <= N; i++) {
 			if (arr[current][i] != 0 && !visited[i])
 				dfs(i);
 		}
-		//visited[current] = false;
+		// visited[current] = false;
 	}
 
 	public static void bfs() {
 		Queue<Integer> queue = new LinkedList<Integer>();
 		queue.add(V);
-		while(!queue.isEmpty()) {
+		visited[V] = true;
+		while (!queue.isEmpty()) {
 			int n = queue.poll();
-			System.out.print(n+" ");
-			
+			System.out.print(n + " ");
+			for (int i = 1; i <= N; i++) {
+				if (arr[n][i] != 0 && !visited[i]) {
+					queue.add(i);
+					visited[i] = true;
+				}
+			}
 		}
 	}
 }
