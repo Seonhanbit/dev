@@ -12,7 +12,7 @@ import java.util.*;
 //배열을 만들고 1,2,3번쨰는 한칸씩 미루고
 //4번칸에 있는 숫자만큼 점수를 늘려주기(3번쨰에서 4번쨰는 누적합)
 
-public class b17281_야구 {
+public class b17281_야구_보충필요 {
 	static int N, res;
 	static int[][] arr;
 	static boolean[][] visited;
