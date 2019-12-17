@@ -2,7 +2,9 @@ package Sub_12;
 
 import java.io.*;
 import java.util.*;
-
+//모든 마름모조건을 검수하기 → 4중 포문
+//5번 영역찾기
+//1,2,3,4,5번 영역별로 인구수 더하기
 public class b17779_게리맨더링2 {
 	static int N, min;
 	static int[][] arr;
