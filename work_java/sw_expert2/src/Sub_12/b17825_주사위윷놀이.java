@@ -131,15 +131,4 @@ public class b17825_주사위윷놀이 {
 			pos[i][1] = n;
 		}
 	}
-
-	public void re_perm(int[] res, int n) {
-		if (n == su.length) {
-			// res
-			return;
-		}
-		for (int i = 0; i < 10; i++) {
-			res[n] = su[i];
-			re_perm(res, n + 1);
-		}
-	}
 }
