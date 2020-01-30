@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="voter">
+
+	<select id="getVoterAllList" resultType="voter">
+		select * from voter;
+	</select>
+	<insert id="insertVoter" parameterType="voter">
+		insert into voter(code, name, areaCode) 
+		values(#{code}, #{name}, #{areaCode});
+	</insert>
+	<delete id="delVoter" parameterType="int">
+		delete from voter 
+		where code = #{code};
+	</delete>
+	<update id="updateVoter" parameterType="voter">
+		update voter 
+		set name = #{name}, areaCode = #{areaCode}
+		where code = #{code};
+	</update>
+</mapper>

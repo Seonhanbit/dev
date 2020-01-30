@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="middle">
+
+	<select id="getMiddlepartAllList" resultType="middle">
+		select * from middlepart;
+	</select>
+	<insert id="insertMiddlepart" parameterType="middle">
+		insert into middlepart(code,name, mainpart, areaCode)
+		values(#{code}, #{name}, #{mainpart}, #{areaCode});
+	</insert>
+	<delete id="delMiddlepart" parameterType="String">
+		delete from middlepart where code = #{code};
+	</delete>
+	<update id="updateMiddlepart" parameterType="middle">
+		update middlepart
+		set name = #{name}, mainpart=#{mainpart}, areaCode=#{areaCode}
+		where code = #{code};
+	</update>
+	<select id="getMaincodeAllList" resultType="middle" parameterType="String">
+		select md.code, md.name, md.mainpart, md.areaCode 
+		from middlepart md join mainpart m on m.code=md.mainpart where m.code = #{maincode};
+	</select>
+</mapper>

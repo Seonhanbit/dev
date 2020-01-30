@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="vote">
+
+	<select id="getVoteAllList" resultType="vote">
+		select * from vote;
+	</select>
+	<insert id="insertVote" parameterType="vote">
+		insert into vote(name, middlepart, start, end)
+		values(#{name}, #{middlepart}, #{start}, #{end});
+	</insert>
+	<delete id="delVote" parameterType="int">
+		delete from vote where code = #{code};
+	</delete>
+	<update id="updateVote" parameterType="vote">
+		update vote 
+		set name = #{name}, middlepart = #{middlepart}, start =#{start}, end=#{end} 
+		where code = #{code};
+	</update>
+	<select id="getVoteList" resultType="vote" parameterType="int">
+		select 
+			v.*
+		from
+			vote v,
+			middlepart mp,
+			area a,
+			voter vr
+		where 1
+			and v.middlepart=mp.code 
+			and mp.areaCode=a.areacode
+			and a.areacode=vr.areacode
+			and vr.code = #{votercode}
+        	and not exists (select 'X' from votetf vtf where v.code = vtf.votecode and vr.code = vtf.votercode)
+		union
+		select
+			*
+		from  vote
+		where
+		middlepart='대선';
+	</select>
+</mapper>

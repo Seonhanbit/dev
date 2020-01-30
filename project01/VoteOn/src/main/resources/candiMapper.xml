@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="candi">
+
+	<select id="getCandiAllList" resultType="candi">
+		select * from candidate;
+	</select>
+	<select id="getCandiCode" resultType="candi" parameterType="int">
+		select * from candidate where code = #{code};
+	</select>
+	<insert id="insertCandi" parameterType="candi">
+		insert into candidate(name, num, party, votecode, pick) 
+		values(#{name}, #{num}, #{party}, #{votecode}, #{pick});
+	</insert>
+	<delete id="delCandi" parameterType="int">
+		delete from candidate 
+		where code = #{code};
+	</delete>
+	<update id="updateCandi" parameterType="candi">
+		update candidate 
+		set name = #{name}, num = #{num}, party = #{party}, votecode = #{votecode}, pick = #{pick}
+		where code = #{code};
+	</update>
+	<update id="updateCandiSu" parameterType="int">
+		update candidate 
+		set pick = #{pick}
+		where code = #{code};
+	</update>
+
+</mapper>

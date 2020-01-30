@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<!-- 모델 클래스에 대한 풀패키지명 넘나 길고 부담스러우니깐 별칭 -->
+	<typeAliases>
+		<typeAlias type="com.ssafy.food.dto.FoodVO"
+			alias="food" />
+		<typeAlias type="com.ssafy.food.dto.MemVO"
+			alias="member" />
+		<typeAlias type="com.ssafy.food.dto.QnaVO"
+			alias="qna" />
+		<typeAlias type="com.ssafy.food.dto.CommentVO"
+			alias="comment" />
+		<typeAlias type="com.ssafy.food.dto.BoardVO"
+			alias="board" />
+			
+		<typeAlias type="com.ssafy.food.dto.CartVO"
+			alias="cart" />
+			
+			
+	</typeAliases>
+	<!-- 디비연결정보는 스프링이 연동하면서 생략가능 -->
+
+	<!-- 매퍼파일들의 위치 -->
+	<mappers>
+		<mapper resource="foodMapper.xml" />
+		<mapper resource="memberMapper.xml"/>
+		<mapper resource="qnaMapper.xml"/>
+		<mapper resource="commentMapper.xml"/>
+		<mapper resource="boardMapper.xml"/>
+		<mapper resource="cartMapper.xml"/>
+	</mappers>
+</configuration>

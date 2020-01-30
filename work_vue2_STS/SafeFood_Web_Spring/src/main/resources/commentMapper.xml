@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="comment">
+
+    <insert id="insertComment" parameterType="map">
+        insert into comment(qnanum, content, id)
+        values(#{qnanum}, #{content}, #{id})
+    </insert>
+        <delete id="deleteComment" parameterType="int">
+        delete from comment
+        where num  = #{num }
+    </delete>
+    
+    <select id="selectList" resultType="comment">
+        select *
+        from comment
+        where qnanum = #{qnanum}
+    </select>
+    
+    <update id="updateComment" parameterType="comment">
+        update comment
+        set content = #{content}, id = #{id}
+        where num  = #{num }
+    </update>
+
+
+</mapper>

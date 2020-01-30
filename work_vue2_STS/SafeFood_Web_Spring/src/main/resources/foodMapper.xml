@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="food">
+	<select id="selectOne" parameterType="string" resultType="food">
+		select * from food where code = #{code}
+	</select>
+	<select id="selectList" resultType="food">
+		select * from food order by code
+	</select>
+
+	<insert id="insertFood" parameterType="food">
+		insert into food(code, name, maker, material, image, supportpereat, calory,
+		carbo, protein, fat, sugar, natrium, chole, fattyacid, transfat)
+		values (#{code}, #{name}, #{maker}, #{material}, #{image},
+		#{supportpereat}, #{calory}, #{carbo}, #{protein}, #{fat}, #{sugar},
+		#{natrium}, #{chole}, #{fattyacid}, #{transfat})
+	</insert>
+	<delete id="deleteAllMembers">
+		TRUNCATE TABLE food
+	</delete>
+	<select id="selectMaker" parameterType="string"
+		resultType="food">
+		select code, name, maker, material, image from food where maker like
+		CONCAT('%',#{maker},'%')
+	</select>
+	<select id="selectName" parameterType="string" resultType="food">
+		select code, name, maker, material, image from food where name like
+		CONCAT('%',#{name},'%')
+	</select>
+	<select id="selectNameList" parameterType="string"
+		resultType="food">
+		select code, name, maker, material, image from food where name like
+		CONCAT('%',#{name},'%')
+	</select>
+	
+	<select id="pickList">
+		select f.* from food f join pick p using(code) where id = #{id}
+	</select>
+</mapper>
