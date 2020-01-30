@@ -36,7 +36,25 @@ public class RestVoterController {
 			List<VoterVO> list = ser.getVoterAllList();
 			re = new ResponseEntity<List<VoterVO>>(list, HttpStatus.OK);
 		} catch (Exception e) {
-			re = new ResponseEntity("모든 투표자 데이터 조회 실패 문제가 생겼다!", HttpStatus.OK);
+			re = new ResponseEntity("failure", HttpStatus.OK);
+		}
+		return re;
+	}
+	
+	@ApiOperation(value = "투표자 code와 name 입력 시 투표자 이름이 맞는지 TF로 나타냅니다.")
+	@GetMapping("/getVoterNameTF/{votercode}/{name}")
+	public ResponseEntity<String> getVoterNameTF(@PathVariable String votercode, @PathVariable String name){
+		ResponseEntity<String> re = null;
+		try {
+			String TF = "";
+			VoterVO test_voter = ser.getVotercode(votercode);
+			if(name.equals(test_voter.getName()))
+				TF = "true";
+			else
+				TF = "false";
+			re = new ResponseEntity<String>(TF, HttpStatus.OK);
+		} catch (Exception e) {
+			re = new ResponseEntity<String>("failure", HttpStatus.OK);
 		}
 		return re;
 	}
@@ -47,9 +65,9 @@ public class RestVoterController {
 		ResponseEntity<String> re = null;
 		try {
 			ser.insertVoter(voter.getCode(),voter.getName(), voter.getAreaCode());
-			re = new ResponseEntity<String>("잘 들어 갔어용~", HttpStatus.OK);
+			re = new ResponseEntity<String>("success", HttpStatus.OK);
 		} catch (Exception e) {
-			re = new ResponseEntity<String>("입력 실패 문제가 생겼다!", HttpStatus.OK);
+			re = new ResponseEntity<String>("failure", HttpStatus.OK);
 		}
 		return re;
 	}
@@ -59,11 +77,10 @@ public class RestVoterController {
 	public ResponseEntity<String> delVoter(@PathVariable String code) {
 		ResponseEntity<String> re = null;
 		try {
-			int ncode = Integer.parseInt(code);
-			ser.delVoter(ncode);
-			re = new ResponseEntity<String>("잘 들어 갔어용~", HttpStatus.OK);
+			ser.delVoter(code);
+			re = new ResponseEntity<String>("success", HttpStatus.OK);
 		} catch (Exception e) {
-			re = new ResponseEntity<String>("삭제 실패 문제가 생겼다!", HttpStatus.OK);
+			re = new ResponseEntity<String>("failure", HttpStatus.OK);
 		}
 		return re;
 	}
@@ -74,9 +91,9 @@ public class RestVoterController {
 		ResponseEntity<String> re = null;
 		try {
 			ser.updateVoter(voter.getCode(), voter.getName(), voter.getAreaCode());
-			re = new ResponseEntity<String>("업데이트 성공 ", HttpStatus.OK);
+			re = new ResponseEntity<String>("success", HttpStatus.OK);
 		} catch (Exception e) {
-			re = new ResponseEntity<String>("업데이트 실패", HttpStatus.OK);
+			re = new ResponseEntity<String>("failure", HttpStatus.OK);
 		}
 		return re;
 	}

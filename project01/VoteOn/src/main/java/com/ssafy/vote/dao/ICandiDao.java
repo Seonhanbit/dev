@@ -19,6 +19,12 @@ public interface ICandiDao {
 	public CandidateVO getCandiCode(int code);
 	/**
 	 * @author : 선한빛
+	 * 기능 : 투표 code로 해당 투표 후보자 리스트 조회
+	 * @Date : 2020. 1. 30.
+	 */
+	public List<CandidateVO> getCandiVotecode(int votecode);
+	/**
+	 * @author : 선한빛
 	 * 기능 : 후보자 등록
 	 * @Date : 2020. 1. 28.
 	 */

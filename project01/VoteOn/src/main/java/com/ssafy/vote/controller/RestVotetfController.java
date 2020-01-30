@@ -32,11 +32,10 @@ public class RestVotetfController {
 	public ResponseEntity<List<Integer>> getvotecode(String votercode) {
 		ResponseEntity<List<Integer>> re = null;
 		try {
-			int nvotercode = Integer.parseInt(votercode);
-			List<Integer> list = ser.getvotecode(nvotercode);
+			List<Integer> list = ser.getvotecode(votercode);
 			re = new ResponseEntity<List<Integer>>(list, HttpStatus.OK);
 		} catch (Exception e) {
-			re = new ResponseEntity("데이터 조회 실패 문제가 생겼다!", HttpStatus.OK);
+			re = new ResponseEntity("failure", HttpStatus.OK);
 		}
 		return re;
 	}
@@ -47,9 +46,9 @@ public class RestVotetfController {
 		ResponseEntity<String> re = null;
 		try {
 			ser.insertVotetf(votetf.getVotercode(), votetf.getVotecode());
-			re = new ResponseEntity<String>("잘 들어 갔어용~", HttpStatus.OK);
+			re = new ResponseEntity<String>("success", HttpStatus.OK);
 		} catch (Exception e) {
-			re = new ResponseEntity<String>("입력 실패 문제가 생겼다!", HttpStatus.OK);
+			re = new ResponseEntity<String>("failure", HttpStatus.OK);
 		}
 		return re;
 	}
@@ -60,9 +59,9 @@ public class RestVotetfController {
 		ResponseEntity<String> re = null;
 		try {
 			ser.delVotetf(votetf.getVotercode(), votetf.getVotecode());
-			re = new ResponseEntity<String>("잘 들어 갔어용~", HttpStatus.OK);
+			re = new ResponseEntity<String>("success", HttpStatus.OK);
 		} catch (Exception e) {
-			re = new ResponseEntity<String>("삭제 실패 문제가 생겼다!", HttpStatus.OK);
+			re = new ResponseEntity<String>("failure", HttpStatus.OK);
 		}
 		return re;
 	}

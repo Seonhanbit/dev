@@ -20,7 +20,7 @@ public class VoterDaoImpl implements IVoterDao {
 	}
 
 	@Override
-	public boolean insertVoter(int code, String name, String areaCode) {
+	public boolean insertVoter(String code, String name, String areaCode) {
 		VoterVO v = new VoterVO(code, name, areaCode);
 		int n = session.insert("voter.insertVoter", v);
 		if (n == 1)
@@ -30,7 +30,7 @@ public class VoterDaoImpl implements IVoterDao {
 	}
 
 	@Override
-	public boolean delVoter(int code) {
+	public boolean delVoter(String code) {
 		int n = session.delete("voter.delVoter", code);
 		if (n != 0)
 			return true;
@@ -39,13 +39,18 @@ public class VoterDaoImpl implements IVoterDao {
 	}
 
 	@Override
-	public boolean updateVoter(int code, String name, String areaCode) {
+	public boolean updateVoter(String code, String name, String areaCode) {
 		VoterVO v = new VoterVO(code, name, areaCode);
 		int n = session.update("voter.updateVoter", v);
 		if (n != 0)
 			return true;
 		else
 			return false;
+	}
+
+	@Override
+	public VoterVO getVotercode(String code) {
+		return session.selectOne("voter.getVotercode", code);
 	}
 
 }

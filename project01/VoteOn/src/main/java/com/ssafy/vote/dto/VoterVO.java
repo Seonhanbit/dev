@@ -1,16 +1,16 @@
 package com.ssafy.vote.dto;
 
 public class VoterVO {
-	private int code;
+	private String code;
 	private String name;
 	private String areaCode;
-	
-	public int getCode() {
+
+	public String getCode() {
 		return code;
 	}
 
 
-	public void setCode(int code) {
+	public void setCode(String code) {
 		this.code = code;
 	}
 
@@ -24,20 +24,21 @@ public class VoterVO {
 		this.name = name;
 	}
 
+
 	public VoterVO() {
 	}
 
 
-	public VoterVO(int code, String name, String areaCode) {
+	public VoterVO(String code, String name, String areaCode) {
 		this.code = code;
 		this.name = name;
 		this.areaCode = areaCode;
 	}
-
-	public VoterVO(String name, String areaCode) {
+	
+	public VoterVO(String code, String name) {
+		this.code = code;
 		this.name = name;
-		this.areaCode = areaCode;
-	}
+	}	
 
 	public String getAreaCode() {
 		return areaCode;

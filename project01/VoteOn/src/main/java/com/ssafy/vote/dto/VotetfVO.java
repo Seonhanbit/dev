@@ -1,12 +1,13 @@
 package com.ssafy.vote.dto;
 
 public class VotetfVO {
-	private int votercode;
+	private String votercode;
 	private int votecode;
-	public int getVotercode() {
+
+	public String getVotercode() {
 		return votercode;
 	}
-	public void setVotercode(int votercode) {
+	public void setVotercode(String votercode) {
 		this.votercode = votercode;
 	}
 	public int getVotecode() {
@@ -16,7 +17,7 @@ public class VotetfVO {
 		this.votecode = votecode;
 	}
 
-	public VotetfVO(int votercode, int votecode) {
+	public VotetfVO(String votercode, int votecode) {
 		super();
 		this.votercode = votercode;
 		this.votecode = votecode;

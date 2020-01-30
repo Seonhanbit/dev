@@ -36,12 +36,12 @@ public class RestCandiController {
 			List<CandidateVO> list = ser.getCandiAllList();
 			re = new ResponseEntity<List<CandidateVO>>(list, HttpStatus.OK);
 		} catch (Exception e) {
-			re = new ResponseEntity("모든 후보자 데이터 조회 실패 문제가 생겼다!", HttpStatus.OK);
+			re = new ResponseEntity("failure", HttpStatus.OK);
 		}
 		return re;
 	}
 
-	@ApiOperation(value = "code로 특정 후보자 데이터를 조회합니다.")
+	@ApiOperation(value = "후보자 code로 특정 후보자 데이터를 조회합니다.")
 	@GetMapping("/getCandiCode/{code}")
 	public ResponseEntity<CandidateVO> getCandiCode(String code) {
 		ResponseEntity<CandidateVO> re = null;
@@ -51,20 +51,34 @@ public class RestCandiController {
 			candi = ser.getCandiCode(ncode);
 			re = new ResponseEntity<CandidateVO>(candi, HttpStatus.OK);
 		} catch (Exception e) {
-			re = new ResponseEntity("모든 후보자 데이터 조회 실패 문제가 생겼다!", HttpStatus.OK);
+			re = new ResponseEntity("failure", HttpStatus.OK);
 		}
 		return re;
 	}
-
+	
+	@ApiOperation(value = "투표 code로 해당 투표 후보자 리스트를 조회합니다.")
+	@GetMapping("/getCandiVotecode/{votecode}")
+	public ResponseEntity<List<CandidateVO>> getCandiVotecode(String votecode) {
+		ResponseEntity<List<CandidateVO>> re = null;
+		try {
+			int nvotecode = Integer.parseInt(votecode);
+			List<CandidateVO> list = ser.getCandiVotecode(nvotecode);
+			re = new ResponseEntity<List<CandidateVO>>(list, HttpStatus.OK);
+		} catch (Exception e) {
+			re = new ResponseEntity("failure", HttpStatus.OK);
+		}
+		return re;
+	}
+	
 	@ApiOperation(value = "후보자를 등록합니다.")
 	@PostMapping("/insertCandi")
 	public ResponseEntity<String> insertCandi(@RequestBody CandidateVO candi) {
 		ResponseEntity<String> re = null;
 		try {
 			ser.insertCandi(candi.getName(), candi.getNum(), candi.getParty(), candi.getVotecode(), candi.getPick());
-			re = new ResponseEntity<String>("잘 들어 갔어용~", HttpStatus.OK);
+			re = new ResponseEntity<String>("success", HttpStatus.OK);
 		} catch (Exception e) {
-			re = new ResponseEntity<String>("후보자 등록 실패 문제가 생겼다!", HttpStatus.OK);
+			re = new ResponseEntity<String>("failure", HttpStatus.OK);
 		}
 		return re;
 	}
@@ -76,9 +90,9 @@ public class RestCandiController {
 		try {
 			int ncode = Integer.parseInt(code);
 			ser.delCandi(ncode);
-			re = new ResponseEntity<String>("잘 들어 갔어용~", HttpStatus.OK);
+			re = new ResponseEntity<String>("success", HttpStatus.OK);
 		} catch (Exception e) {
-			re = new ResponseEntity<String>("삭제 실패 문제가 생겼다!", HttpStatus.OK);
+			re = new ResponseEntity<String>("failure", HttpStatus.OK);
 		}
 		return re;
 	}
@@ -90,9 +104,9 @@ public class RestCandiController {
 		try {
 			ser.updateCandi(candi.getCode(), candi.getName(), candi.getNum(), candi.getParty(), candi.getVotecode(),
 					candi.getPick());
-			re = new ResponseEntity<String>("업데이트 성공 ", HttpStatus.OK);
+			re = new ResponseEntity<String>("success", HttpStatus.OK);
 		} catch (Exception e) {
-			re = new ResponseEntity<String>("업데이트 실패", HttpStatus.OK);
+			re = new ResponseEntity<String>("failure", HttpStatus.OK);
 		}
 		return re;
 	}
@@ -107,9 +121,9 @@ public class RestCandiController {
 			CandidateVO candi = ser.getCandiCode(ncode);
 			int pick = candi.getPick() + 1;
 			ser.updateCandiSu(ncode, pick);
-			re = new ResponseEntity<String>("업데이트 성공 ", HttpStatus.OK);
+			re = new ResponseEntity<String>("success", HttpStatus.OK);
 		} catch (Exception e) {
-			re = new ResponseEntity<String>("업데이트 실패", HttpStatus.OK);
+			re = new ResponseEntity<String>("failure", HttpStatus.OK);
 		}
 		return re;
 	}

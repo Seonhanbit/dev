@@ -13,6 +13,8 @@
 		<typeAlias type="com.ssafy.vote.dto.MainpartVO" alias="main" />
 		<typeAlias type="com.ssafy.vote.dto.MiddlepartVO" alias="middle" />
 		<typeAlias type="com.ssafy.vote.dto.VotetfVO" alias="votetf" />
+		<typeAlias type="com.ssafy.vote.dto.PartyVO" alias="party" />
+		<typeAlias type="com.ssafy.vote.dto.StatisticsVO" alias="stati" />
 	</typeAliases>
 	<!-- 디비연결정보는 스프링이 연동하면서 생략가능 -->
 
@@ -25,5 +27,7 @@
 		<mapper resource="mainpartMapper.xml" />
 		<mapper resource="middlepartMapper.xml" />
 		<mapper resource="votetfMapper.xml" />
+		<mapper resource="partyMapper.xml" />
+		<mapper resource="statisticsMapper.xml" />
 	</mappers>
 </configuration>

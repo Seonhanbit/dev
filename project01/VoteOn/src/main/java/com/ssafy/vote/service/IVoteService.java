@@ -34,7 +34,7 @@ public interface IVoteService {
 	 * 기능 : 투표자 코드를 입력 받은 뒤 해당 투표 리스트를 조회하는 기능
 	 * @Date : 2020. 1. 29.
 	 */
-	public List<VoteVO> getVoteList(int votercode);
+	public List<VoteVO> getVoteList(String votercode);
 
 
 

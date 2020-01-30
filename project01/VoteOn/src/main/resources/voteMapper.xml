@@ -19,7 +19,7 @@
 		set name = #{name}, middlepart = #{middlepart}, start =#{start}, end=#{end} 
 		where code = #{code};
 	</update>
-	<select id="getVoteList" resultType="vote" parameterType="int">
+	<select id="getVoteList" resultType="vote" parameterType="String">
 		select 
 			v.*
 		from

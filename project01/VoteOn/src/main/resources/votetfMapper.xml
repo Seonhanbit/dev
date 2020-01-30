@@ -4,14 +4,14 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="votetf">
 
-	<select id="getvotecode" resultType="int">
+	<select id="getvotecode" resultType="String">
 		select votecode from votetf where votercode =#{votercode};
 	</select>
 	<insert id="insertVotetf" parameterType="votetf">
 		insert into votetf(votercode,votecode)
 		values(#{votercode}, #{votecode});
 	</insert>
-	<delete id="delVotetf" parameterType="map">
+	<delete id="delVotetf" parameterType="votetf">
 		delete from votetf 
 		where votercode = #{votercode} and votecode = #{votecode};
 	</delete>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="party">
+
+	<select id="getPartyAllList" resultType="party">
+		select * from partytb;
+	</select>
+	<insert id="insertParty" parameterType="party">
+		insert into partytb(p_code,p_name)
+		values(#{p_code}, #{p_name});
+	</insert>
+	<delete id="delParty" parameterType="String">
+		delete from partytb where p_code = #{p_code};
+	</delete>
+	<update id="updateParty" parameterType="party">
+		update partytb 
+		set p_name = #{p_name}
+		where p_code = #{p_code}
+	</update>
+
+</mapper>

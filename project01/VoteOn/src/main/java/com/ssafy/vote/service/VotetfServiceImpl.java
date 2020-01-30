@@ -14,17 +14,17 @@ public class VotetfServiceImpl implements IVotetfService{
 	IVotetfDao man;
 	
 	@Override
-	public boolean insertVotetf(int votercode, int votecode) {
+	public boolean insertVotetf(String votercode, int votecode) {
 		return man.insertVotetf(votercode, votecode);
 	}
 
 	@Override
-	public boolean delVotetf(int votercode, int votecode) {
+	public boolean delVotetf(String votercode, int votecode) {
 		return man.delVotetf(votercode, votecode);
 	}
 
 	@Override
-	public List<Integer> getvotecode(int votercode) {
+	public List<Integer> getvotecode(String votercode) {
 		return man.getvotecode(votercode);
 	}
 

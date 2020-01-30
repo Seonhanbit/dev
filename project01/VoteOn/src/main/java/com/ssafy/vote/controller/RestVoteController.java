@@ -81,7 +81,7 @@ public class RestVoteController {
 			List<VoteVO> list = ser.getVoteAllList();
 			re = new ResponseEntity<List<VoteVO>>(list, HttpStatus.OK);
 		} catch (Exception e) {
-			re = new ResponseEntity("모든 투표 데이터 조회 실패 문제가 생겼다!", HttpStatus.OK);
+			re = new ResponseEntity("failure", HttpStatus.OK);
 		}
 		return re;
 	}
@@ -92,10 +92,10 @@ public class RestVoteController {
 		ResponseEntity<String> re = null;
 		try {
 			ser.insertVote(vote.getName(), vote.getMiddlepart(), vote.getStart(), vote.getEnd());
-			re = new ResponseEntity<String>("잘 들어 갔어용~", HttpStatus.OK);
+			re = new ResponseEntity<String>("success", HttpStatus.OK);
 		} catch (Exception e) {
 			// HttpStatus 통신은 제대로 된거니까 OK
-			re = new ResponseEntity<String>("입력 실패 문제가 생겼다!", HttpStatus.OK);
+			re = new ResponseEntity<String>("failure", HttpStatus.OK);
 		}
 		return re;
 	}
@@ -107,9 +107,9 @@ public class RestVoteController {
 		try {
 			int ncode = Integer.parseInt(code);
 			ser.delVote(ncode);
-			re = new ResponseEntity<String>("잘 들어 갔어용~", HttpStatus.OK);
+			re = new ResponseEntity<String>("success", HttpStatus.OK);
 		} catch (Exception e) {
-			re = new ResponseEntity<String>("삭제 실패 문제가 생겼다!", HttpStatus.OK);
+			re = new ResponseEntity<String>("failure", HttpStatus.OK);
 		}
 		return re;
 	}
@@ -120,9 +120,9 @@ public class RestVoteController {
 		ResponseEntity<String> re = null;
 		try {
 			ser.updateVote(vote.getCode(), vote.getName(), vote.getMiddlepart(), vote.getStart(), vote.getEnd());
-			re = new ResponseEntity<String>("업데이트 성공 ", HttpStatus.OK);
+			re = new ResponseEntity<String>("success", HttpStatus.OK);
 		} catch (Exception e) {
-			re = new ResponseEntity<String>("업데이트 실패", HttpStatus.OK);
+			re = new ResponseEntity<String>("failure", HttpStatus.OK);
 		}
 		return re;
 	}
@@ -132,11 +132,10 @@ public class RestVoteController {
 	public ResponseEntity<List<VoteVO>> getVoteList(String votercode) {
 		ResponseEntity<List<VoteVO>> re = null;
 		try {
-			int nvotecode = Integer.parseInt(votercode);
-			List<VoteVO> list = ser.getVoteList(nvotecode);
+			List<VoteVO> list = ser.getVoteList(votercode);
 			re = new ResponseEntity<List<VoteVO>>(list, HttpStatus.OK);
 		} catch (Exception e) {
-			re = new ResponseEntity("해당 투표 데이터 조회 실패 문제가 생겼다!", HttpStatus.OK);
+			re = new ResponseEntity("failure", HttpStatus.OK);
 		}
 		return re;
 	}

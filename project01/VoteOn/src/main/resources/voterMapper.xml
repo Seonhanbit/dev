@@ -7,11 +7,15 @@
 	<select id="getVoterAllList" resultType="voter">
 		select * from voter;
 	</select>
+	<select id="getVotercode" resultType="voter" parameterType="String">
+		select * from voter where code = #{code};
+	</select>
+	
 	<insert id="insertVoter" parameterType="voter">
 		insert into voter(code, name, areaCode) 
 		values(#{code}, #{name}, #{areaCode});
 	</insert>
-	<delete id="delVoter" parameterType="int">
+	<delete id="delVoter" parameterType="String">
 		delete from voter 
 		where code = #{code};
 	</delete>

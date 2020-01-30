@@ -49,7 +49,7 @@ public class VoteDaoImpl implements IVoteDao{
 	}
 
 	@Override
-	public List<VoteVO> getVoteList(int votercode) {
+	public List<VoteVO> getVoteList(String votercode) {
 		return session.selectList("vote.getVoteList", votercode);
 	}
 

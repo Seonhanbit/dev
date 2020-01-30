@@ -67,4 +67,9 @@ public class CandiDaoImpl implements ICandiDao{
 		return session.selectOne("candi.getCandiCode",code);
 	}
 
+	@Override
+	public List<CandidateVO> getCandiVotecode(int votecode) {
+		return session.selectList("candi.getCandiVotecode",votecode);
+	}
+
 }

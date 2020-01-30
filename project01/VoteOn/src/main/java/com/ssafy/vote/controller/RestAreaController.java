@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ssafy.vote.dto.AreaVO;
 import com.ssafy.vote.service.IAreaService;
 
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
 @CrossOrigin(origins = { "*" }, maxAge = 6000)
@@ -36,7 +37,7 @@ public class RestAreaController {
 			List<AreaVO> list = ser.getAreaAllList();
 			re = new ResponseEntity<List<AreaVO>>(list, HttpStatus.OK);
 		} catch (Exception e) {
-			re = new ResponseEntity("모든 지역 데이터 조회 실패 문제가 생겼다!", HttpStatus.OK);
+			re = new ResponseEntity("failure", HttpStatus.OK);
 		}
 		return re;
 	}
@@ -47,9 +48,9 @@ public class RestAreaController {
 		ResponseEntity<String> re = null;
 		try {
 			ser.insertArea(area.getAreaCode(), area.getName());
-			re = new ResponseEntity<String>("잘 들어 갔어용~", HttpStatus.OK);
+			re = new ResponseEntity<String>("success", HttpStatus.OK);
 		} catch (Exception e) {
-			re = new ResponseEntity<String>("입력 실패 문제가 생겼다!", HttpStatus.OK);
+			re = new ResponseEntity<String>("failure", HttpStatus.OK);
 		}
 		return re;
 	}
@@ -60,9 +61,9 @@ public class RestAreaController {
 		ResponseEntity<String> re = null;
 		try {
 			ser.delArea(areaCode);
-			re = new ResponseEntity<String>("잘 들어 갔어용~", HttpStatus.OK);
+			re = new ResponseEntity<String>("success", HttpStatus.OK);
 		} catch (Exception e) {
-			re = new ResponseEntity<String>("삭제 실패 문제가 생겼다!", HttpStatus.OK);
+			re = new ResponseEntity<String>("failure", HttpStatus.OK);
 		}
 		return re;
 	}
@@ -73,9 +74,9 @@ public class RestAreaController {
 		ResponseEntity<String> re = null;
 		try {
 			ser.updateArea(area.getAreaCode(), area.getName());
-			re = new ResponseEntity<String>("업데이트 성공 ", HttpStatus.OK);
+			re = new ResponseEntity<String>("success", HttpStatus.OK);
 		} catch (Exception e) {
-			re = new ResponseEntity<String>("업데이트 실패", HttpStatus.OK);
+			re = new ResponseEntity<String>("failure", HttpStatus.OK);
 		}
 		return re;
 	}

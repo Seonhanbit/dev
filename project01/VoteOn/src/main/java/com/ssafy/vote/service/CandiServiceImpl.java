@@ -46,4 +46,9 @@ public class CandiServiceImpl implements ICandiService{
 		return man.getCandiCode(code);
 	}
 
+	@Override
+	public List<CandidateVO> getCandiVotecode(int votecode) {
+		return man.getCandiVotecode(votecode);
+	}
+
 }

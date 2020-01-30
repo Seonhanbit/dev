@@ -15,37 +15,39 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ssafy.vote.dto.PartyVO;
-import com.ssafy.vote.service.IPartyService;
+import com.ssafy.vote.dto.StatisticsVO;
+import com.ssafy.vote.service.IStatisticsService;
 
 import io.swagger.annotations.ApiOperation;
 
 @CrossOrigin(origins = { "*" }, maxAge = 6000)
 @RestController
-@RequestMapping("/api/party")
-public class RestPartyController {
+@RequestMapping("/api/statistics")
+public class RestStatisticsController {
 	
 	@Autowired
-	IPartyService ser;
+	IStatisticsService ser;
 	
-	@ApiOperation(value="모든 정당을 조회합니다.")
-	@GetMapping("/getPartyAllList")
-	public ResponseEntity<List<PartyVO>> getPartyAllList(){
-		ResponseEntity<List<PartyVO>> re = null;
+	@ApiOperation(value = "모든 통계를 조회합니다.")
+	@GetMapping("/getStatisticsAllList")
+	public ResponseEntity<List<StatisticsVO>> getStatisticsAllList() {
+		ResponseEntity<List<StatisticsVO>> re = null;
 		try {
-			List<PartyVO> list = ser.getPartyAllList();
-			re = new ResponseEntity<List<PartyVO>>(list, HttpStatus.OK);
-		}catch (Exception e) {
+			List<StatisticsVO> list = ser.getStatisticsAllList();
+			re = new ResponseEntity<List<StatisticsVO>>(list, HttpStatus.OK);
+		} catch (Exception e) {
 			re = new ResponseEntity("failure", HttpStatus.OK);
 		}
 		return re;
 	}
-	@ApiOperation(value = "정당을 등록합니다.")
-	@PostMapping("/insertParty")
-	public ResponseEntity<String> insertParty(@RequestBody PartyVO party) {
+
+	@ApiOperation(value = "후보자고유키로 투표를 등록합니다.")
+	@PostMapping("/insertStatistics/{candi_code}")
+	public ResponseEntity<String> insertStatistics(@PathVariable String candi_code) {
 		ResponseEntity<String> re = null;
 		try {
-			ser.insertParty(party.getp_code(), party.getP_name());
+			int ncode = Integer.parseInt(candi_code);
+			ser.insertStatistics(ncode);
 			re = new ResponseEntity<String>("success", HttpStatus.OK);
 		} catch (Exception e) {
 			re = new ResponseEntity<String>("failure", HttpStatus.OK);
@@ -53,12 +55,13 @@ public class RestPartyController {
 		return re;
 	}
 
-	@ApiOperation(value = "정당을 삭제합니다.")
-	@DeleteMapping(value = "/delParty/{p_code}")
-	public ResponseEntity<String> delParty(@PathVariable String p_code) {
+	@ApiOperation(value = "투표를 삭제합니다.")
+	@DeleteMapping(value = "/delStatistics/{s_code}")
+	public ResponseEntity<String> delStatistics(@PathVariable String s_code) {
 		ResponseEntity<String> re = null;
 		try {
-			ser.delParty(p_code);
+			int ncode = Integer.parseInt(s_code);
+			ser.delStatistics(ncode);
 			re = new ResponseEntity<String>("success", HttpStatus.OK);
 		} catch (Exception e) {
 			re = new ResponseEntity<String>("failure", HttpStatus.OK);
@@ -66,12 +69,12 @@ public class RestPartyController {
 		return re;
 	}
 
-	@ApiOperation(value = "정당을 수정합니다.")
-	@PutMapping(value = "/updateParty")
-	public ResponseEntity<String> updateParty(@RequestBody  PartyVO party) {
+	@ApiOperation(value = "투표를 수정합니다.")
+	@PutMapping(value = "/updateStatistics")
+	public ResponseEntity<String> updateStatistics(@RequestBody  StatisticsVO stati) {
 		ResponseEntity<String> re = null;
 		try {
-			ser.updateParty(party.getp_code(), party.getP_name());
+			ser.updateStatistics(stati.getS_code(), stati.getCandi_code(), stati.getS_date());
 			re = new ResponseEntity<String>("success", HttpStatus.OK);
 		} catch (Exception e) {
 			re = new ResponseEntity<String>("failure", HttpStatus.OK);

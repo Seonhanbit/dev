@@ -10,6 +10,10 @@
 	<select id="getCandiCode" resultType="candi" parameterType="int">
 		select * from candidate where code = #{code};
 	</select>
+	<select id="getCandiVotecode" resultType="candi" parameterType="int">
+		select * from candidate where votecode = #{votecode};
+	</select>
+	
 	<insert id="insertCandi" parameterType="candi">
 		insert into candidate(name, num, party, votecode, pick) 
 		values(#{name}, #{num}, #{party}, #{votecode}, #{pick});

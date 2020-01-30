@@ -22,18 +22,23 @@ public class VoterServiceImpl implements IVoterService {
 	}
 
 	@Override
-	public boolean insertVoter(int code, String name, String areaCode) {
+	public boolean insertVoter(String code, String name, String areaCode) {
 		return man.insertVoter(code, name, areaCode);
 	}
 
 	@Override
-	public boolean delVoter(int code) {
+	public boolean delVoter(String code) {
 		return man.delVoter(code);
 	}
 
 	@Override
-	public boolean updateVoter(int code, String name, String areaCode) {
+	public boolean updateVoter(String code, String name, String areaCode) {
 		return man.updateVoter(code, name, areaCode);
+	}
+
+	@Override
+	public VoterVO getVotercode(String code) {
+		return man.getVotercode(code);
 	}
 
 }

@@ -36,7 +36,7 @@ public class RestMainpartController {
 			List<MainpartVO> list = ser.getMainpartAllList();
 			re = new ResponseEntity<List<MainpartVO>>(list, HttpStatus.OK);
 		}catch(Exception e){
-			re = new ResponseEntity("모든  대분류 데이터 조회 실패 문제가 생겼다!", HttpStatus.OK);
+			re = new ResponseEntity("failure", HttpStatus.OK);
 		}
 		return re;
 	}
@@ -60,9 +60,9 @@ public class RestMainpartController {
 		ResponseEntity<String> re = null;
 		try {
 			ser.delMainpart(code);
-			re = new ResponseEntity<String>("잘 들어 갔어용~", HttpStatus.OK);
+			re = new ResponseEntity<String>("success", HttpStatus.OK);
 		} catch (Exception e) {
-			re = new ResponseEntity<String>("삭제 실패 문제가 생겼다!", HttpStatus.OK);
+			re = new ResponseEntity<String>("failure", HttpStatus.OK);
 		}
 		return re;
 	}
@@ -73,9 +73,9 @@ public class RestMainpartController {
 		ResponseEntity<String> re = null;
 		try {
 			ser.updateMainpart(main.getCode(), main.getName());
-			re = new ResponseEntity<String>("업데이트 성공 ", HttpStatus.OK);
+			re = new ResponseEntity<String>("success", HttpStatus.OK);
 		} catch (Exception e) {
-			re = new ResponseEntity<String>("업데이트 실패", HttpStatus.OK);
+			re = new ResponseEntity<String>("failure", HttpStatus.OK);
 		}
 		return re;
 	}

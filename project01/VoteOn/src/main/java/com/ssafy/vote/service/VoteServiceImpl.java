@@ -37,7 +37,7 @@ public class VoteServiceImpl implements IVoteService {
 	}
 
 	@Override
-	public List<VoteVO> getVoteList(int votercode) {
+	public List<VoteVO> getVoteList(String votercode) {
 		return man.getVoteList(votercode);
 	}
 
