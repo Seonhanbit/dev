@@ -38,6 +38,6 @@
 			*
 		from  vote
 		where
-		middlepart='대선';
+		middlepart='D_DAESEON';
 	</select>
 </mapper>

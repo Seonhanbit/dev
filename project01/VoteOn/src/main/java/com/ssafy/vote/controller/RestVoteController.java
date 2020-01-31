@@ -94,7 +94,6 @@ public class RestVoteController {
 			ser.insertVote(vote.getName(), vote.getMiddlepart(), vote.getStart(), vote.getEnd());
 			re = new ResponseEntity<String>("success", HttpStatus.OK);
 		} catch (Exception e) {
-			// HttpStatus 통신은 제대로 된거니까 OK
 			re = new ResponseEntity<String>("failure", HttpStatus.OK);
 		}
 		return re;

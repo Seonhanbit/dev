@@ -41,7 +41,7 @@ public class RestStatisticsController {
 		return re;
 	}
 
-	@ApiOperation(value = "후보자고유키로 투표를 등록합니다.")
+	@ApiOperation(value = "후보자고유키로 통계를 등록합니다.")
 	@PostMapping("/insertStatistics/{candi_code}")
 	public ResponseEntity<String> insertStatistics(@PathVariable String candi_code) {
 		ResponseEntity<String> re = null;
@@ -55,7 +55,7 @@ public class RestStatisticsController {
 		return re;
 	}
 
-	@ApiOperation(value = "투표를 삭제합니다.")
+	@ApiOperation(value = "통계를 삭제합니다.")
 	@DeleteMapping(value = "/delStatistics/{s_code}")
 	public ResponseEntity<String> delStatistics(@PathVariable String s_code) {
 		ResponseEntity<String> re = null;
@@ -69,7 +69,7 @@ public class RestStatisticsController {
 		return re;
 	}
 
-	@ApiOperation(value = "투표를 수정합니다.")
+	@ApiOperation(value = "통계를 수정합니다.")
 	@PutMapping(value = "/updateStatistics")
 	public ResponseEntity<String> updateStatistics(@RequestBody  StatisticsVO stati) {
 		ResponseEntity<String> re = null;
@@ -82,4 +82,5 @@ public class RestStatisticsController {
 		return re;
 	}
 
+	//후보자고유키로 
 }

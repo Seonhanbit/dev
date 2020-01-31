@@ -80,7 +80,5 @@ public class RestAreaController {
 		}
 		return re;
 	}
-
-	
 	
 }
