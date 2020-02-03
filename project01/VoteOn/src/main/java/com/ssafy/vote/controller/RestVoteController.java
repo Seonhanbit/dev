@@ -128,7 +128,7 @@ public class RestVoteController {
 	
 	@ApiOperation(value = "투표자 코드를 입력받은 뒤, 해당되는 투표 리스트를 조회합니다.")
 	@GetMapping("/getVoteList/{votercode}")
-	public ResponseEntity<List<VoteVO>> getVoteList(String votercode) {
+	public ResponseEntity<List<VoteVO>> getVoteList(@PathVariable String votercode) {
 		ResponseEntity<List<VoteVO>> re = null;
 		try {
 			List<VoteVO> list = ser.getVoteList(votercode);

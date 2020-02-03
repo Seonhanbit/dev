@@ -20,5 +20,29 @@
 		s_date = #{s_date}
 		where s_code = #{s_code}
 	</update>
-
+	<select id="getCandiPick" parameterType="map" resultType="candi">
+		select 
+			c.name, count(s.candi_code) as pick
+		from 
+   			candidate c,
+    		statistics s
+		where 1
+			AND c.code = s.candi_code
+			AND c.votecode = #{votecode}
+    		AND hour(s.s_date) = #{hour}
+			AND date(s.s_date) = #{date}
+		group by s.candi_code;
+	</select>
+	<select id="getHourCnt" parameterType="map" resultType="sResult">
+		select
+			z.h,
+			count(h) as cnt
+		from (
+			select 
+				*,
+				hour(s_date) as h
+			from statistics where date(s_date) = #{date} and candi_code=#{candi_code}
+			)z
+		group by h;
+	</select>
 </mapper>

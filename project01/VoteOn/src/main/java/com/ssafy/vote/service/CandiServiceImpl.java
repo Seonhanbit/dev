@@ -13,6 +13,9 @@ public class CandiServiceImpl implements ICandiService{
 	
 	@Autowired
 	ICandiDao man;
+	
+	@Autowired
+	IStatisticsService s_ser;	
 
 	public CandiServiceImpl() {}
 	
@@ -38,7 +41,15 @@ public class CandiServiceImpl implements ICandiService{
 
 	@Override
 	public boolean updateCandiSu(int code, int pick) {
-		return man.updateCandiSu(code, pick);
+		CandidateVO candi = man.getCandiCode(code);
+		int npick = candi.getPick() + pick;
+		
+		if(man.updateCandiSu(code, npick)) {
+			s_ser.insertStatistics(code);
+			return true;
+		}else
+			return false;
+		
 	}
 
 	@Override

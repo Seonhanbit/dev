@@ -50,6 +50,12 @@ public class CandidateVO {
 	}
 	public CandidateVO() {
 	}
+	
+	public CandidateVO(String name, int pick) {
+		this.name = name;
+		this.pick = pick;
+	}
+	
 	public CandidateVO(int code, String name, String num, String party, int votecode, int pick) {
 		super();
 		this.code = code;

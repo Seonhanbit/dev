@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ssafy.vote.dto.CandidateVO;
+import com.ssafy.vote.dto.StatisticsResultVO;
 import com.ssafy.vote.dto.StatisticsVO;
 import com.ssafy.vote.service.IStatisticsService;
 
@@ -81,6 +83,30 @@ public class RestStatisticsController {
 		}
 		return re;
 	}
+	
+	@ApiOperation(value = "투표 고유키,날짜,시간을 받고 후보자명/득표수를 조회합니다.")
+	@GetMapping("/getCandiPick/{votecode}/{date}/{hour}")
+	public ResponseEntity<List<CandidateVO>> getCandiPick(@PathVariable String votecode, @PathVariable String date, @PathVariable String hour) {
+		ResponseEntity<List<CandidateVO>> re = null;
+		try {
+			List<CandidateVO> list = ser.getCandiPick(votecode, date, hour);
+			re = new ResponseEntity<List<CandidateVO>>(list, HttpStatus.OK);
+		} catch (Exception e) {
+			re = new ResponseEntity("failure", HttpStatus.OK);
+		}
+		return re;
+	}
 
-	//후보자고유키로 
+	@ApiOperation(value = "후보자 고유키를 받고 시간대별 득표수를 조회합니다.(24시간 정제)")
+	@GetMapping("/getHourCnt/{candi_code}/{date}")
+	public ResponseEntity<List<StatisticsResultVO>> getHourCnt(@PathVariable String candi_code, @PathVariable String date) {
+		ResponseEntity<List<StatisticsResultVO>> re = null;
+		try {
+			List<StatisticsResultVO> list = ser.getHourCnt(candi_code, date);
+			re = new ResponseEntity<List<StatisticsResultVO>>(list, HttpStatus.OK);
+		} catch (Exception e) {
+			re = new ResponseEntity("failure", HttpStatus.OK);
+		}
+		return re;
+	}
 }

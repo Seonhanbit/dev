@@ -43,7 +43,7 @@ public class RestCandiController {
 
 	@ApiOperation(value = "후보자 code로 특정 후보자 데이터를 조회합니다.")
 	@GetMapping("/getCandiCode/{code}")
-	public ResponseEntity<CandidateVO> getCandiCode(String code) {
+	public ResponseEntity<CandidateVO> getCandiCode(@PathVariable String code) {
 		ResponseEntity<CandidateVO> re = null;
 		try {
 			CandidateVO candi = new CandidateVO();
@@ -58,7 +58,7 @@ public class RestCandiController {
 	
 	@ApiOperation(value = "투표 code로 해당 투표 후보자 리스트를 조회합니다.")
 	@GetMapping("/getCandiVotecode/{votecode}")
-	public ResponseEntity<List<CandidateVO>> getCandiVotecode(String votecode) {
+	public ResponseEntity<List<CandidateVO>> getCandiVotecode(@PathVariable String votecode) {
 		ResponseEntity<List<CandidateVO>> re = null;
 		try {
 			int nvotecode = Integer.parseInt(votecode);
@@ -111,16 +111,14 @@ public class RestCandiController {
 		return re;
 	}
 
-	// 여기서 파라미터를 배열로 받아서 for문 돌려라 ?? 배열로 어떻게 받아???
+	// 여기서 파라미터를 배열로 받아서 for문 돌려라 ?? 배열로 어떻게 받아??? string으로 받을 수 있음
 	@ApiOperation(value = "후보자의 득표수를 업데이트합니다.")
 	@PutMapping(value = "/updateCandiSu/{code}")
 	public ResponseEntity<String> updateCandiSu(@PathVariable String code) {
 		ResponseEntity<String> re = null;
 		try {
 			int ncode = Integer.parseInt(code);
-			CandidateVO candi = ser.getCandiCode(ncode);
-			int pick = candi.getPick() + 1;
-			ser.updateCandiSu(ncode, pick);
+			ser.updateCandiSu(ncode, 1);
 			re = new ResponseEntity<String>("success", HttpStatus.OK);
 		} catch (Exception e) {
 			re = new ResponseEntity<String>("failure", HttpStatus.OK);
