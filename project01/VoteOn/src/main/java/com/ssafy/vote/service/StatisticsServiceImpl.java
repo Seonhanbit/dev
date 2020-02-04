@@ -1,5 +1,6 @@
 package com.ssafy.vote.service;
 
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,9 +11,9 @@ import com.ssafy.vote.dto.CandidateVO;
 import com.ssafy.vote.dto.StatisticsResultVO;
 import com.ssafy.vote.dto.StatisticsVO;
 
-@Service(value="StatisticsServiceImpl")
-public class StatisticsServiceImpl implements IStatisticsService{
-	
+@Service(value = "StatisticsServiceImpl")
+public class StatisticsServiceImpl implements IStatisticsService {
+
 	@Autowired
 	IStatisticsDao man;
 
@@ -43,7 +44,42 @@ public class StatisticsServiceImpl implements IStatisticsService{
 
 	@Override
 	public List<StatisticsResultVO> getHourCnt(String candi_code, String date) {
-		return man.getHourCnt(candi_code, date);
+		List<StatisticsResultVO> list = man.getHourCnt(candi_code, date);
+		if (list.size() == 0) {
+			for (int i = 0; i < 24; i++) {
+				if(i>=10) {
+					String str = i+"";
+					list.add(new StatisticsResultVO(str, "0"));
+				}else {
+					String str = "0"+i;
+					list.add(new StatisticsResultVO(str, "0"));
+				}
+			}
+		} else {
+			for (int j = 0; j < 24; j++) {
+				boolean flag = true;
+				for (int i = 0; i < list.size(); i++) {
+					String str = "0" + list.get(i).getHour();
+					String nj = "0" + j;
+					if (str.equals(nj)) {
+						flag = false;
+						list.set(i, new StatisticsResultVO(str, list.get(i).getCnt()));
+						break;
+					}
+				}
+				if (flag) {
+					if(j>=10) {
+						String str = j+"";
+						list.add(new StatisticsResultVO(str, "0"));
+					}else {
+						String str = "0"+j;
+						list.add(new StatisticsResultVO(str, "0"));
+					}
+				}
+			}
+			Collections.sort(list);
+		}
+		return list;
 	}
 
 }

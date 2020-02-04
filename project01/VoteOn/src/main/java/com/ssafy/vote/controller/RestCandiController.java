@@ -110,15 +110,13 @@ public class RestCandiController {
 		}
 		return re;
 	}
-
-	// 여기서 파라미터를 배열로 받아서 for문 돌려라 ?? 배열로 어떻게 받아??? string으로 받을 수 있음
+	
 	@ApiOperation(value = "후보자의 득표수를 업데이트합니다.")
-	@PutMapping(value = "/updateCandiSu/{code}")
-	public ResponseEntity<String> updateCandiSu(@PathVariable String code) {
+	@PutMapping(value = "/updateCandiList/{code}")
+	public ResponseEntity<String> updateCandiList(@PathVariable String code) {
 		ResponseEntity<String> re = null;
 		try {
-			int ncode = Integer.parseInt(code);
-			ser.updateCandiSu(ncode, 1);
+			ser.updateCandiList(code);
 			re = new ResponseEntity<String>("success", HttpStatus.OK);
 		} catch (Exception e) {
 			re = new ResponseEntity<String>("failure", HttpStatus.OK);

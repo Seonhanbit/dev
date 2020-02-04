@@ -35,7 +35,7 @@
 	</select>
 	<select id="getHourCnt" parameterType="map" resultType="sResult">
 		select
-			z.h,
+			z.h as hour,
 			count(h) as cnt
 		from (
 			select 

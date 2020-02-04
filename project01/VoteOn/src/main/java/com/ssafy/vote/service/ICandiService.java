@@ -47,4 +47,6 @@ public interface ICandiService {
 	 * @Date : 2020. 1. 28.
 	 */
 	public boolean updateCandiSu(int code, int pick);
+	
+	public void updateCandiList(String code);
 }

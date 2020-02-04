@@ -62,4 +62,13 @@ public class CandiServiceImpl implements ICandiService{
 		return man.getCandiVotecode(votecode);
 	}
 
+	@Override
+	public void updateCandiList(String code) {
+		String[] str = code.split(",");
+		for(int i=0; i<str.length; i++) {
+			int ncode = Integer.parseInt(str[i]);
+			this.updateCandiSu(ncode, 1);
+		}
+	}
+
 }

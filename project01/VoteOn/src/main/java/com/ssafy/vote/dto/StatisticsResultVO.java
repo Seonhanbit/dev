@@ -1,6 +1,6 @@
 package com.ssafy.vote.dto;
 
-public class StatisticsResultVO {
+public class StatisticsResultVO implements Comparable<StatisticsResultVO>{
 	private String hour;
 	private String cnt;
 	public String getHour() {
@@ -25,6 +25,10 @@ public class StatisticsResultVO {
 	@Override
 	public String toString() {
 		return "StatisticsResultVO [hour=" + hour + ", cnt=" + cnt + "]";
+	}
+	@Override
+	public int compareTo(StatisticsResultVO o) {
+		return this.hour.compareTo(o.hour);
 	}
 	
 }
