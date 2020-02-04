@@ -21,35 +21,37 @@ import com.ssafy.vote.service.IVoteService;
 import io.swagger.annotations.ApiOperation;
 
 /*
-create database voteon;
 use voteon;
 
 create table vote(
 	code int auto_increment primary key,
-    name varchar(200),
-    middlepart varchar(200) not null,
+    name varchar(100),
+    middlepart varchar(100) not null,
     start datetime,
     end datetime
 );
 
 create table candidate(
 	code int auto_increment primary key,
-    name varchar(200),
+    name varchar(100),
     num varchar(100),
     party varchar(100),
     votecode int,
     pick int
 );
 
+alter table candidate add unique candi_unique(votecode, num);
+
 create table voter(
-	code int primary key,
-    name varchar(200),
+	code int auto_increment primary key,
+    id_num varchar(100) unique key,
+    name varchar(100),
     areaCode varchar(100)
 );
 
 create table area(
 	areaCode varchar(100) primary key,
-    name varchar(200)
+    name varchar(100)
 );
 
 create table middlepart(
@@ -64,7 +66,23 @@ create table mainpart(
     name varchar(100)
 );
 
-drop table voter;*/
+create table votetf(
+	votercode varchar(100),
+    votecode int,
+    constraint votetf_pk primary key(votercode, votecode)
+);
+
+create table partytb(
+	p_code varchar(100) primary key,
+    p_name varchar(100)
+);
+
+create table statistics(
+	s_code int auto_increment primary key,
+    candi_code int,
+    s_date datetime
+);
+*/
 
 @CrossOrigin(origins = {"*"}, maxAge = 6000)
 @RestController

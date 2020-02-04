@@ -20,14 +20,17 @@ import com.ssafy.vote.service.IVoterService;
 
 import io.swagger.annotations.ApiOperation;
 
-@CrossOrigin(origins = {"*"}, maxAge = 6000)
+@CrossOrigin(origins = { "*" }, maxAge = 6000)
 @RestController
 @RequestMapping("/api/voter")
 public class RestVoterController {
-	
+
 	@Autowired
 	private IVoterService ser;
 	
+	//@Autowired
+	//BCryptPasswordEncoder passwordEncoder;
+
 	@ApiOperation(value = "모든 투표자를 조회합니다.")
 	@GetMapping("/getVoterAllList")
 	public ResponseEntity<List<VoterVO>> getVoterAllList() {
@@ -40,15 +43,20 @@ public class RestVoterController {
 		}
 		return re;
 	}
-	
+
+	// 암호화 지금 이 코드는 오토 코드 주민 번호가 아니야
 	@ApiOperation(value = "투표자 code와 name 입력 시 투표자 이름이 맞는지 TF로 나타냅니다.")
 	@GetMapping("/getVoterNameTF/{votercode}/{name}")
-	public ResponseEntity<String> getVoterNameTF(@PathVariable String votercode, @PathVariable String name){
+	public ResponseEntity<String> getVoterNameTF(@PathVariable String votercode, @PathVariable String name) {
 		ResponseEntity<String> re = null;
 		try {
 			String TF = "";
-			VoterVO test_voter = ser.getVotercode(votercode);
-			if(name.equals(test_voter.getName()))
+			int ncode = Integer.parseInt(votercode);
+			VoterVO test_voter = ser.getVotercode(ncode);
+			//String newP = passwordEncoder.encode(test_voter.getId_num());
+			
+			//System.out.println(newP);
+			if (name.equals(test_voter.getName()))
 				TF = "true";
 			else
 				TF = "false";
@@ -59,12 +67,33 @@ public class RestVoterController {
 		return re;
 	}
 
+	// 암호화
+	@ApiOperation(value = "투표자 이름/주민번호 입력시 투표자 고유키를 넘겨주는 기능")
+	@GetMapping("/getOnlyVotercode/{name}/{id_num}")
+	public ResponseEntity<String> getOnlyVotercode(@PathVariable String name, @PathVariable String id_num) {
+		ResponseEntity<String> re = null;
+		try {
+			
+			int votercode = ser.getOnlyVotercode(name, id_num);
+			VoterVO test_voter = ser.getVotercode(votercode);
+			if (name.equals(test_voter.getName())) {
+				String str = ser.getOnlyVotercode(name, id_num) + "";
+				re = new ResponseEntity<String>(str, HttpStatus.OK);
+			}else
+				re = new ResponseEntity<String>("false", HttpStatus.OK);
+		} catch (Exception e) {
+			re = new ResponseEntity<String>("failure", HttpStatus.OK);
+		}
+		return re;
+	}
+
+	// 암호화
 	@ApiOperation(value = "투표자를 등록합니다.")
 	@PostMapping("/insertVoter")
 	public ResponseEntity<String> insertVoter(@RequestBody VoterVO voter) {
 		ResponseEntity<String> re = null;
 		try {
-			ser.insertVoter(voter.getCode(),voter.getName(), voter.getAreaCode());
+			ser.insertVoter(voter.getCode(), voter.getId_num(), voter.getName(), voter.getAreaCode());
 			re = new ResponseEntity<String>("success", HttpStatus.OK);
 		} catch (Exception e) {
 			re = new ResponseEntity<String>("failure", HttpStatus.OK);
@@ -77,7 +106,8 @@ public class RestVoterController {
 	public ResponseEntity<String> delVoter(@PathVariable String code) {
 		ResponseEntity<String> re = null;
 		try {
-			ser.delVoter(code);
+			int ncode = Integer.parseInt(code);
+			ser.delVoter(ncode);
 			re = new ResponseEntity<String>("success", HttpStatus.OK);
 		} catch (Exception e) {
 			re = new ResponseEntity<String>("failure", HttpStatus.OK);

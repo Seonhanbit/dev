@@ -110,13 +110,14 @@ public class RestCandiController {
 		}
 		return re;
 	}
-	
-	@ApiOperation(value = "후보자의 득표수를 업데이트합니다.")
-	@PutMapping(value = "/updateCandiList/{code}")
-	public ResponseEntity<String> updateCandiList(@PathVariable String code) {
+
+	@ApiOperation(value = "투표자고유키+후보지고유키,를 받을 후 후보자의 득표수를 업데이트합니다.")
+	@PutMapping(value = "/updateCandiList/{votercode}/{code}")
+	public ResponseEntity<String> updateCandiList(@PathVariable String votercode, @PathVariable String code) {
 		ResponseEntity<String> re = null;
 		try {
-			ser.updateCandiList(code);
+			int ncode = Integer.parseInt(votercode);
+			ser.updateCandiList(ncode, code);
 			re = new ResponseEntity<String>("success", HttpStatus.OK);
 		} catch (Exception e) {
 			re = new ResponseEntity<String>("failure", HttpStatus.OK);

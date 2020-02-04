@@ -47,6 +47,10 @@ public interface ICandiService {
 	 * @Date : 2020. 1. 28.
 	 */
 	public boolean updateCandiSu(int code, int pick);
-	
-	public void updateCandiList(String code);
+	/**
+	 * @author : 선한빛
+	 * 기능 : 후보자 고유키를 받는 기능
+	 * @Date : 2020. 2. 4.
+	 */
+	public void updateCandiList(int votercode, String code);
 }

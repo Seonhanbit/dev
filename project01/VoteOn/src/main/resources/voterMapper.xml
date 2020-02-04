@@ -7,15 +7,19 @@
 	<select id="getVoterAllList" resultType="voter">
 		select * from voter;
 	</select>
-	<select id="getVotercode" resultType="voter" parameterType="String">
+	<select id="getVotercode" resultType="voter" parameterType="int">
 		select * from voter where code = #{code};
 	</select>
+	<select id="getOnlyVotercode" resultType="int" parameterType="voter">
+		select code from voter where name =#{name} and id_num =#{id_num}
+	</select>
+	
 	
 	<insert id="insertVoter" parameterType="voter">
-		insert into voter(code, name, areaCode) 
-		values(#{code}, #{name}, #{areaCode});
+		insert into voter(code, id_num, name, areaCode) 
+		values(#{code}, #{id_num}, #{name}, #{areaCode});
 	</insert>
-	<delete id="delVoter" parameterType="String">
+	<delete id="delVoter" parameterType="int">
 		delete from voter 
 		where code = #{code};
 	</delete>

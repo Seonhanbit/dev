@@ -16,7 +16,7 @@ public class VotetfDaoImpl implements IVotetfDao{
 	SqlSession session;
 
 	@Override
-	public boolean insertVotetf(String votercode, int votecode) {
+	public boolean insertVotetf(int votercode, int votecode) {
 		VotetfVO v = new VotetfVO(votercode, votecode);
 		int n = session.insert("votetf.insertVotetf", v);
 		if (n == 1)
@@ -26,7 +26,7 @@ public class VotetfDaoImpl implements IVotetfDao{
 	}
 
 	@Override
-	public boolean delVotetf(String votercode, int votecode) {
+	public boolean delVotetf(int votercode, int votecode) {
 		VotetfVO v = new VotetfVO(votercode, votecode);
 		int n = session.delete("votetf.delVotetf", v);
 		if (n != 0)
@@ -36,7 +36,7 @@ public class VotetfDaoImpl implements IVotetfDao{
 	}
 
 	@Override
-	public List<Integer> getvotecode(String votercode) {
+	public List<Integer> getvotecode(int votercode) {
 		return session.selectList("votetf.getvotecode",votercode);
 	}
 

@@ -32,7 +32,8 @@ public class RestVotetfController {
 	public ResponseEntity<List<Integer>> getvotecode(String votercode) {
 		ResponseEntity<List<Integer>> re = null;
 		try {
-			List<Integer> list = ser.getvotecode(votercode);
+			int ncode = Integer.parseInt(votercode);
+			List<Integer> list = ser.getvotecode(ncode);
 			re = new ResponseEntity<List<Integer>>(list, HttpStatus.OK);
 		} catch (Exception e) {
 			re = new ResponseEntity("failure", HttpStatus.OK);
