@@ -7,6 +7,12 @@ import com.ssafy.vote.dto.VoteVO;
 public interface IVoteDao {
 
 	public List<VoteVO> getVoteAllList();
+	/**
+	 * @author : 정준호
+	 * @Date : 2020. 2. 10.
+	 * @return 현재 기준으로 진행되고 있는 투표 리스트 반환(중분류 이름과 같이 반환 중분류 접근 *.middlepart)
+	 */
+	public List<VoteVO> getVoteActiveList();
 	public boolean insertVote(String name, String middlepart, String start, String end);
 	public boolean delVote(int code);
 	public boolean updateVote(int code, String name, String middlepart, String start, String end);

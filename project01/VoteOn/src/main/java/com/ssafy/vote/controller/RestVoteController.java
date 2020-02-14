@@ -1,6 +1,8 @@
 package com.ssafy.vote.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,6 +23,7 @@ import com.ssafy.vote.service.IVoteService;
 import io.swagger.annotations.ApiOperation;
 
 /*
+create database voteon;
 use voteon;
 
 create table vote(
@@ -48,6 +51,10 @@ create table voter(
     name varchar(100),
     areaCode varchar(100)
 );
+
+select * from voter;
+
+drop table voter;
 
 create table area(
 	areaCode varchar(100) primary key,
@@ -84,7 +91,7 @@ create table statistics(
 );
 */
 
-@CrossOrigin(origins = {"*"}, maxAge = 6000)
+@CrossOrigin(origins = { "*" }, maxAge = 6000)
 @RestController
 @RequestMapping("/api/vote")
 public class RestVoteController {
@@ -100,6 +107,20 @@ public class RestVoteController {
 			re = new ResponseEntity<List<VoteVO>>(list, HttpStatus.OK);
 		} catch (Exception e) {
 			re = new ResponseEntity("failure", HttpStatus.OK);
+		}
+		return re;
+	}
+	
+	@ApiOperation(value = "진행중인 투표 데이터를 조회합니다.")
+	@GetMapping("/getVoteActiveList")
+	public ResponseEntity<List<VoteVO>> getVoteActiveList() {
+		ResponseEntity<List<VoteVO>> re = null;
+		try {
+			List<VoteVO> list = ser.getVoteActiveList();
+			re = new ResponseEntity<List<VoteVO>>(list, HttpStatus.OK);
+		} catch (Exception e) {
+			re = new ResponseEntity("failure", HttpStatus.OK);
+			e.printStackTrace();
 		}
 		return re;
 	}
@@ -157,4 +178,22 @@ public class RestVoteController {
 		return re;
 	}
 
+/*
+	@ApiOperation(value = "모든 투표 데이터를 조회합니다.")
+	@GetMapping("/getVoteAllList")
+	public ResponseEntity<Map> getVoteAllList() {
+		ResponseEntity<Map> re = null;
+		Map<String, Object> map = new HashMap<String, Object>();
+		try {
+			List<VoteVO> list = ser.getVoteAllList();
+			map.put("resmsg", "success");
+			map.put("resvalue", list);
+			re = new ResponseEntity<Map>(map, HttpStatus.OK);
+		} catch (Exception e) {
+			map.put("resmsg", "failure");
+			re = new ResponseEntity<Map>(map, HttpStatus.OK);
+		}
+		return re;
+	}
+*/
 }

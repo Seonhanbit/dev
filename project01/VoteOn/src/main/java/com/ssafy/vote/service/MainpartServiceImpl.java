@@ -4,10 +4,11 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.ssafy.vote.dao.IMainpartDao;
 import com.ssafy.vote.dto.MainpartVO;
-
+@Transactional
 @Service(value="MainpartServiceImpl")
 public class MainpartServiceImpl implements IMainpartService{
 	

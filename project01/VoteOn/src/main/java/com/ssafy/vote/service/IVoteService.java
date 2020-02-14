@@ -12,6 +12,12 @@ public interface IVoteService {
 	 */
 	public List<VoteVO> getVoteAllList();
 	/**
+	 * @author : 정준호
+	 * @Date : 2020. 2. 10.
+	 * @return 현재 기준으로 진행되고 있는 투표 리스트 반환(중분류 이름과 같이 반환 중분류 접근 *.middlepart)
+	 */
+	public List<VoteVO> getVoteActiveList();
+	/**
 	 * @author : 선한빛
 	 * 기능 : 투표를 등록하는 함수
 	 * @Date : 2020. 1. 22.

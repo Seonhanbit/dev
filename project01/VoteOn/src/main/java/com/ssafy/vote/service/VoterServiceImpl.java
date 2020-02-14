@@ -4,10 +4,11 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.ssafy.vote.dao.IVoterDao;
 import com.ssafy.vote.dto.VoterVO;
-
+@Transactional
 @Service(value="VoterServiceImpl")
 public class VoterServiceImpl implements IVoterService {
 	

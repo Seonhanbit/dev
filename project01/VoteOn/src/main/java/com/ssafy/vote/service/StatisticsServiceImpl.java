@@ -5,12 +5,13 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.ssafy.vote.dao.IStatisticsDao;
 import com.ssafy.vote.dto.CandidateVO;
 import com.ssafy.vote.dto.StatisticsResultVO;
 import com.ssafy.vote.dto.StatisticsVO;
-
+@Transactional
 @Service(value = "StatisticsServiceImpl")
 public class StatisticsServiceImpl implements IStatisticsService {
 
