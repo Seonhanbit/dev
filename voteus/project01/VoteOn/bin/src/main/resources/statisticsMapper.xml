@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="stati">
+
+	<select id="getStatisticsAllList" resultType="stati">
+		select * from statistics;
+	</select>
+	<insert id="insertStatistics" parameterType="int">
+		insert into statistics(candi_code, s_date)
+		values(#{candi_code}, now());
+	</insert>
+	<delete id="delStatistics" parameterType="int">
+		delete from statistics where s_code = #{s_code};
+	</delete>
+	<update id="updateStatistics" parameterType="stati">
+		update statistics 
+		set candi_code = #{candi_code},
+		s_date = #{s_date}
+		where s_code = #{s_code}
+	</update>
+	<select id="getCandiPick" parameterType="map" resultType="candi">
+		select 
+			c.name, count(s.candi_code) as pick
+		from 
+   			candidate c,
+    		statistics s
+		where 1
+			AND c.code = s.candi_code
+			AND c.votecode = #{votecode}
+    		AND hour(s.s_date) = #{hour}
+			AND date(s.s_date) = #{date}
+		group by s.candi_code;
+	</select>
+	<select id="getHourCnt" parameterType="map" resultType="sResult">
+		select
+			z.h as hour,
+			count(h) as cnt
+		from (
+			select 
+				*,
+				hour(s_date) as h
+			from statistics where date(s_date) = #{date} and candi_code=#{candi_code}
+			)z
+		group by h;
+	</select>
+</mapper>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="main">
+
+	<select id="getMainpartAllList" resultType="main">
+		select * from mainpart;
+	</select>
+	<insert id="insertMainpart" parameterType="main">
+		insert into mainpart(code,name)
+		values(#{code}, #{name});
+	</insert>
+	<delete id="delMainpart" parameterType="String">
+		delete from mainpart where code = #{code};
+	</delete>
+	<update id="updateMainpart" parameterType="main">
+		update mainpart 
+		set name = #{name}
+		where code = #{code};
+	</update>
+</mapper>

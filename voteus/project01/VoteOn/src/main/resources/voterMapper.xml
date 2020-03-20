@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="voter">
+
+	<select id="getVoterAllList" resultType="voter">
+		select * from voter;
+	</select>
+	<select id="getVotercode" resultType="voter" parameterType="int">
+		select * from voter where code = #{code};
+	</select>
+	<select id="getOnlyVotercode" resultType="int" parameterType="voter">
+		select code from voter where name =#{name} and id_num =#{id_num}
+	</select>
+	
+	<select id="getDaeseonVoteProgressData" resultType="hashmap">
+		SELECT
+			z.totalCnt,
+			z.completeCnt,
+			(z.totalCnt-z.completeCnt) AS incompleteCnt
+		FROM(
+			SELECT
+				(SELECT COUNT(CODE) FROM voter) AS totalCnt,
+				(
+					SELECT COUNT(CODE) 
+					FROM voter 
+					WHERE 
+						EXISTS(
+							SELECT 'X' 
+							FROM votetf 
+							WHERE 
+								votetf.votercode=voter.code 
+								AND votetf.votecode=#{voteCode}
+						)
+				) AS completeCnt
+		)z
+	</select>
+	
+	<select id="getNotDaeseonVoteProgressData" resultType="hashmap">
+		SELECT
+			z.totalCnt,
+			z.completeCnt,
+			(z.totalCnt-z.completeCnt) AS incompleteCnt
+		FROM(
+			select
+				(
+					SELECT 
+						COUNT(CODE)
+					FROM 
+						voter
+					WHERE 
+						voter.areaCode=(
+							SELECT 
+								mp.areaCode 
+							FROM 
+								middlepart mp 
+							WHERE 
+								mp.code=(
+									SELECT 
+										vote.middlepart 
+									FROM 
+										vote 
+									WHERE 
+										vote.code = #{voteCode}
+								)
+						)
+				) AS totalCnt,
+				(
+					SELECT 
+						COUNT(CODE)
+					FROM 
+						voter 
+					WHERE
+						voter.areaCode=(
+							SELECT 
+								mp.areaCode 
+							FROM 
+								middlepart mp 
+							WHERE 
+								mp.code=(
+									SELECT 
+										vote.middlepart 
+									FROM 
+										vote 
+									WHERE 
+										vote.code = #{voteCode}
+								)
+						)
+						AND EXISTS(SELECT 'X' FROM votetf WHERE votetf.votercode=voter.code AND votetf.votecode=#{voteCode})
+				) AS completeCnt
+		)z
+	</select>
+	
+	<insert id="insertVoter" parameterType="voter">
+		insert into voter(code, id_num, name, areaCode) 
+		values(#{code}, #{id_num}, #{name}, #{areaCode});
+	</insert>
+	<delete id="delVoter" parameterType="int">
+		delete from voter 
+		where code = #{code};
+	</delete>
+	<update id="updateVoter" parameterType="voter">
+		update voter 
+		set name = #{name}, areaCode = #{areaCode}
+		where code = #{code};
+	</update>
+</mapper>

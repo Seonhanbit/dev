@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="area">
+
+	<select id="getAreaAllList" resultType="area">
+		select * from area;
+	</select>
+	<insert id="insertArea" parameterType="area">
+		insert into area(areaCode,name)
+		values(#{areaCode}, #{name});
+	</insert>
+	<delete id="delArea" parameterType="String">
+		delete from area where areaCode = #{areaCode};
+	</delete>
+	<update id="updateArea" parameterType="area">
+		update area 
+		set name = #{name}
+		where areaCode = #{areaCode}
+	</update>
+
+</mapper>
