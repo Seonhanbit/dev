@@ -58,7 +58,7 @@
 
 **관리자 페이지**
 
-![image](./adminpage.png)
+![image](./shopper1.png)
 
 ## 6. 느낀 점
 
