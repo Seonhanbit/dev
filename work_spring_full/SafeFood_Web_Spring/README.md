@@ -54,8 +54,12 @@
 * Spring Boot로 RestAPI 구현
 
 ## 5. 스크린 샷
-**사용자 페이지**
+**일일 최대 칼로리**
+
 ![image](./shopper1.png)
+
+**배송관련 페이지**
+
 ![image](./shopper2.png)
 
 ## 6. 느낀 점
