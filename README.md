@@ -1,8 +1,7 @@
 # Develop 기록
 
-## 0. 파일정보
-
-* 회원별 음식 데이터 관리 웹 사이트(찜, 장바구니, 검색 관리 등)
+## 0. 프로젝트 경험
+* 
 * Vue를 통한 SPA 구현
 * Spring Boot를 통한 MVVM 패턴 구현
 
@@ -10,4 +9,18 @@
 
 **[Backend]**
 * Spring
-* Java
+* Django
+* JSP/Servlet
+
+**[frontend]**
+* HTML
+* CSS
+* Javascript
+* jQuery
+* Vue
+* React
+
+**[DB]**
+* Mysql
+
+## 2. 
