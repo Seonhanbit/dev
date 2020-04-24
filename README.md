@@ -1,9 +1,9 @@
 # Develop 기록
 
 ## 0. 프로젝트 경험
-* 
-* Vue를 통한 SPA 구현
-* Spring Boot를 통한 MVVM 패턴 구현
+* K-means 알고리즘을 통한 빅데이터 
+* KNN/CNN 알고리즘을 통한 머신러닝 프로젝트
+* Spring Boot를 통한 MVVM 패턴 웹 프로젝트 
 
 ## 1. 사용 기술
 
