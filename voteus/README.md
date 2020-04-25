@@ -19,19 +19,23 @@
 
 **Language**
 * Java, Python
+
 **Hardware**
 * Raspberry Pi
 * Kiosk
 * Camera Module
 * Finger Print Sensor
+
 **Library**
 * TensorFlow
 * React
+
 **Framework**
 * Spring Boot
 * Flask
 * Material UI
 * Spring security
+
 **Database**
 * MariaDB
 
