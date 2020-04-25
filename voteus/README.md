@@ -6,6 +6,8 @@
 * 비용과 인력을 줄이고, 효율성을 제고하고자 기획
 * 얼굴 : KNN 알고리즘 이용
 * 지문 : CNN 알고리즘 이용
+* SpringBoot와 React를 이용한 관리자 페이지 구성
+* Flask 템플릿에서 Python과 React를 이용한 사용자 페이지 구성
 
 **파일 정보**
 * Flask_practice : 지문/얼굴 인증 
@@ -13,10 +15,25 @@
 * react : admin frontend 페이지
 * React_User : user frontend 페이지
 
-## 1. 사용 기술
+## 1. 개발 환경
 
-* SpringBoot와 React를 이용한 관리자 페이지 구성
-* Flask 템플릿에서 Python과 React를 이용한 사용자 페이지 구성
+**Language**
+* Java, Python
+**Hardware**
+* Raspberry Pi
+* Kiosk
+* Camera Module
+* Finger Print Sensor
+**Library**
+* TensorFlow
+* React
+**Framework**
+* Spring Boot
+* Flask
+* Material UI
+* Spring security
+**Database**
+* MariaDB
 
 ## 2. 개발 계획
 
