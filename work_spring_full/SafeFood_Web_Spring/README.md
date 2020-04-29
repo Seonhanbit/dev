@@ -1,4 +1,4 @@
-# Personal Shopper
+# Personal Shopper :dango:
 
 ## 0. 개요
 
