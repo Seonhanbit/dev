@@ -75,6 +75,8 @@
 ## 5. 스크린 샷
 **사용자 페이지**
 
+![image](./userpage.JPG)
+
 **관리자 페이지**
 
 ![image](./adminpage.png)
