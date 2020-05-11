@@ -25,3 +25,4 @@
 
 ## 2. 공부할 내용
 * Docker
+* IntelliJ
