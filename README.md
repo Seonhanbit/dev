@@ -27,5 +27,3 @@
 * Docker
 * IntelliJ
 * Jenkins
-
-## 3. 
