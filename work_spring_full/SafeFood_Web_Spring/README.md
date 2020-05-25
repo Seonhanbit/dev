@@ -25,7 +25,7 @@
 
 ## 3. DB 모델링
 
-*  ![image](./DB.png)
+*  ![image](./DB.JPG)
 
 ## 4. 핵심 기능
 
