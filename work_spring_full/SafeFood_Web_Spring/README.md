@@ -4,7 +4,7 @@
 
 * 회원별 음식 데이터 관리 웹 사이트(찜, 장바구니, 검색 관리, 배송 등)
 * Vue를 통한 SPA 구현
-* Spring Boot를 통한 MVVM 패턴 구현
+* Spring Boot를 통한 RESTFUL API 
 
 ## 1. 사용 기술
 
