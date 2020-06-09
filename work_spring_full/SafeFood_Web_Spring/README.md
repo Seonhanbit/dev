@@ -6,6 +6,7 @@
 * Vue를 통한 SPA 구현
 * Spring Boot를 통한 RESTFUL API 구현
 * 회원가입/게시판
+* 관리자 페이지 - 
 
 ## 1. 사용 기술
 
