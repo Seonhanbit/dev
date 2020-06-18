@@ -9,27 +9,22 @@ public class p3 {
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		int[] arr1 = { 46, 33, 33, 22, 31, 50 };
 		int[] arr2 = { 27, 56, 19, 14, 14, 10 };
-		solution(6, arr1, arr2);
+		//solution(6, arr1, arr2);
 	}
 
-	public static int solution(String[][] clothes) {
-		int answer = clothes.length;
-		return answer;
-	}
-
-	static void combination(int[] arr, int n, int c, int[] sel) {
-		int answer = 0;
-		if (c == sel.length) {
-			System.out.println(Arrays.toString(sel));
-			return;
-		}
-
-		if (n == arr.length) {
-			return;
-		}
-
-		sel[c] = arr[n];
-		combination(arr, n + 1, c + 1, sel);
-		combination(arr, n + 1, c, sel);
-	}
+    public static String solution(String s) {
+        String answer = "";
+        String[] arr = s.split(" ");
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+        for(int i=0; i<arr.length; i++) {
+        	int tmp = Integer.parseInt(arr[i]);
+        	if(tmp>max)
+        		max = tmp;
+        	if(tmp<min)
+        		min = tmp;
+        }
+        answer = max+" "+min;
+        return answer;
+    }
 }
