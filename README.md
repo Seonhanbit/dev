@@ -27,3 +27,4 @@
 * Docker
 * IntelliJ
 * Jenkins
+* Algorithm
