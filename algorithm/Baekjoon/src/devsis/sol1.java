@@ -1,34 +1,64 @@
-package NDS;
+package setreci;
+
+class Change {
+	public long coin2 = 0;
+	public long bill5 = 0;
+	public long bill10 = 0;
+}
 
 public class sol1 {
 
 	public static void main(String[] args) {
-		String str = solution("Jackdaws love my big sphinx of quartz");
-		System.out.println(str);
+		// TODO Auto-generated method stub
+		// long s =6L;
+		long s = 9223372036854775807L;
+		// long s=1L;
+		solution(s);
 	}
 
-	public static String solution(String sentence) {
-		String answer = "";
-		sentence = sentence.toLowerCase();
-		char[] arr = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
-				't', 'u', 'v', 'w', 'x', 'y', 'z' };
-		boolean[] ckarr = new boolean[26];
-		for (int i = 0; i < sentence.length(); i++) {
-			for (int j = 0; j < arr.length; j++) {
-				if (arr[j] == sentence.charAt(i)) {
-					ckarr[j] = true;
-					break;
-				}
+	static long resultTen, resultFive, resultTwo;
+	static long resultSum;
+
+	private static Change solution(long s) {
+		// TODO Auto-generated method stub
+		Change ch = new Change();
+		resultTen = 0;
+		resultFive = 0;
+		resultTwo = 0;
+		resultSum = Long.MAX_VALUE;
+		recursive(s, 0, 0, 0);
+		if (resultSum == Long.MAX_VALUE) {
+			return null;
+		} else {
+			System.out.println(resultTen + " " + resultFive + " " + resultTwo);
+			ch.coin2 = resultTwo;
+			ch.bill5 = resultFive;
+			ch.bill10 = resultTen;
+			return ch;
+		}
+	}
+
+	private static void recursive(long s, long ten, long five, long two) {
+		// TODO Auto-generated method stub
+		if (s == 0) {
+			if (resultSum > ten + five + two) {
+				resultSum = ten + five + two;
+				resultTen = ten;
+				resultFive = five;
+				resultTwo = two;
 			}
+			return;
 		}
-		
-		for (int j = 0; j < arr.length; j++) {
-			if(!ckarr[j])
-				answer += arr[j];
+		if (s >= 10) {
+			recursive(s % 10, s / 10, five, two);
 		}
-		if(answer=="")
-			answer = "perfect";
-		return answer;
+		if (s >= 5) {
+			recursive(s % 5, ten, s / 5, two);
+		}
+		if (s >= 2) {
+			recursive(s % 2, ten, five, s / 2);
+		}
+
 	}
 
 }
