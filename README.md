@@ -12,7 +12,7 @@
 
 **[Backend]**
 * Spring
-* Django
+* Django(pandas, )
 * JSP/Servlet
 
 **[frontend]**
