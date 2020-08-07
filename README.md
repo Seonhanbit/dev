@@ -12,7 +12,7 @@
 
 **[Backend]**
 * Spring
-* Django(pandas, )
+* Django(pandas, scipy, numpy)
 * JSP/Servlet
 
 **[frontend]**
